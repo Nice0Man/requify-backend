@@ -6,7 +6,10 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.test_result import TestResult
-from app.schemas.test_result import TestResultCreate, TestResultUpdate
+from app.api.v1.domains.quality.testing.schemas import (
+    TestResultCreateRequest as TestResultCreate,
+    TestResultUpdateRequest as TestResultUpdate,
+)
 
 
 class CRUDTestResult(CRUDBase[TestResult, TestResultCreate, TestResultUpdate]):

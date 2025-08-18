@@ -12,7 +12,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     ForeignKey,
-    JSONnKey,
+    JSON,
     Integer,
     String,
     Text,
@@ -152,7 +152,7 @@ class Specification(Base, TimestampedMixin):
         comment="ID релиза (если спецификация для конкретного релиза)",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Автор спецификации",
     )

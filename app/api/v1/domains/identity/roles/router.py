@@ -99,7 +99,9 @@ async def get_roles(
     summary="Create Role",
     description="Create new role (System Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
     response_model=RoleDetailResponse,
 )
@@ -198,7 +200,9 @@ async def get_role_details(
     summary="Update Role",
     description="Update role information and permissions (System Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
     response_model=RoleDetailResponse,
 )
@@ -264,7 +268,9 @@ async def update_role(
     summary="Delete Role",
     description="Delete role (System Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def delete_role(
@@ -330,7 +336,9 @@ async def get_role_permissions(
     summary="Update Role Permissions",
     description="Update permissions for role (System Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
     response_model=RoleOperationResponse,
 )

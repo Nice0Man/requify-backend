@@ -15,9 +15,9 @@ from sqlalchemy.future import select
 from app.crud.base import CRUDBase
 from app.models.specification import Specification, specification_requirements
 from app.models.requirement import Requirement
-from app.schemas.specification import (
-    SpecificationCreate,
-    SpecificationUpdate,
+from app.api.v1.domains.quality.specifications.schemas import (
+    SpecificationCreateRequest as SpecificationCreate,
+    SpecificationUpdateRequest as SpecificationUpdate,
     SpecificationStatus,
 )
 

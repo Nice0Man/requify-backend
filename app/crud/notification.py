@@ -10,7 +10,10 @@ from datetime import datetime, timedelta
 
 from app.crud.base import CRUDBase
 from app.models.notification import Notification
-from app.schemas.notification import NotificationCreate, NotificationUpdate
+from app.api.v1.domains.collaboration.notifications.schemas import (
+    NotificationCreate,
+    NotificationUpdate,
+)
 
 
 class CRUDNotification(CRUDBase[Notification, NotificationCreate, NotificationUpdate]):

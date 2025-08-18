@@ -1,461 +1,341 @@
 """
 Quality Reports Router.
 
-Handles all quality reporting operations including test results,
-quality metrics, coverage reports, and defect analysis.
+API endpoints для отчетов по качеству.
 """
 
-from typing import Optional, List
-from fastapi import APIRouter, Depends, HTTPException, status, Query
+from fastapi import APIRouter, Depends, HTTPException, status
+from typing import List, Optional
 
-from app.api.dependencies import (
-    SessionDep,
-    CurrentActiveUserDep,
-    PermissionChecker,
-)
-from app.models import User
-from app.core.constants import Permission, RoleScope
-from app.services.reporting_service import ReportingService
+from app.api.dependencies.core.auth import get_current_user
+
+# TODO: Create quality permissions module
+# from app.api.dependencies.permissions.quality import require_reports_access
+from app.models.user import User
+
 from .schemas import (
-    TestReportRequest,
-    QualityMetricsResponse,
-    CoverageReportResponse,
-    DefectAnalysisResponse,
-    ReportGenerationResponse,
+    ReportGenerateRequest,
+    ReportUpdateRequest,
+    ReportResponse,
+    ReportDetailResponse,
     ReportListResponse,
+    ReportTemplateCreateRequest,
+    ReportTemplateResponse,
+    ReportFilterRequest,
+    ReportSearchRequest,
+    ReportStatisticsResponse,
+    ReportOperationResponse,
 )
 
-# Initialize services
-reporting_service = ReportingService()
-
-# Initialize permission checker
-permission_checker = PermissionChecker()
-
-router = APIRouter()
-
-# # Test Reports
-#
+router = APIRouter(prefix="/reports", tags=["quality-reports"])
 
 
-@router.get(
-    "/summary",
-    summary="Get Test Summary Report",
-    description="Get comprehensive test summary report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_REPORTS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=QualityMetricsResponse,
-)
-async def get_test_summary(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    period: str = Query("last_30_days", description="Report period"),
+# === Report Management ===
+
+
+@router.post("", response_model=ReportOperationResponse)
+async def generate_report(
+    request: ReportGenerateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение сводного отчета по тестированию.
-
-    Доступ: QA_VIEWER+
-    """
-    try:
-        summary = await reporting_service.generate_test_summary_report(
-            db=db,
-            project_id=project_id,
-            period=period,
-            current_user=current_user,
-        )
-
-        return QualityMetricsResponse(
-            project_id=project_id,
-            period=period,
-            metrics=summary,
-            generated_at=summary.get("generated_at"),
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate test summary: {str(e)}",
-        )
+    """Генерация отчета по качеству."""
+    # TODO: Implement report generation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report generation not implemented",
+    )
 
 
-@router.get(
-    "/coverage",
-    summary="Get Test Coverage Report",
-    description="Get test coverage analysis report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_REPORTS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=CoverageReportResponse,
-)
-async def get_coverage_report(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    coverage_type: str = Query(
-        "requirements", description="Coverage type: requirements, code, functional"
-    ),
+@router.get("", response_model=ReportListResponse)
+async def get_reports(
+    report_type: Optional[str] = None,
+    status: Optional[str] = None,
+    project_id: Optional[int] = None,
+    page: int = 1,
+    size: int = 20,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение отчета о покрытии тестами.
-
-    Доступ: QA_VIEWER+
-    """
-    try:
-        coverage = await reporting_service.generate_coverage_report(
-            db=db,
-            project_id=project_id,
-            coverage_type=coverage_type,
-            current_user=current_user,
-        )
-
-        return CoverageReportResponse(
-            project_id=project_id,
-            coverage_type=coverage_type,
-            coverage_data=coverage,
-            generated_at=coverage.get("generated_at"),
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate coverage report: {str(e)}",
-        )
+    """Получение списка отчетов."""
+    # TODO: Implement reports listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Reports listing not implemented",
+    )
 
 
-@router.get(
-    "/quality-metrics",
-    summary="Get Quality Metrics Report",
-    description="Get detailed quality metrics report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_QUALITY_METRICS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=QualityMetricsResponse,
-)
-async def get_quality_metrics(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    period: str = Query("last_30_days", description="Metrics period"),
+@router.get("/{report_id}", response_model=ReportDetailResponse)
+async def get_report(
+    report_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение метрик качества.
-
-    Доступ: QA_LEAD+
-    """
-    try:
-        metrics = await reporting_service.generate_quality_metrics_report(
-            db=db,
-            project_id=project_id,
-            period=period,
-            current_user=current_user,
-        )
-
-        return QualityMetricsResponse(
-            project_id=project_id,
-            period=period,
-            metrics=metrics,
-            generated_at=metrics.get("generated_at"),
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate quality metrics: {str(e)}",
-        )
+    """Получение детальной информации об отчете."""
+    # TODO: Implement report retrieval
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report retrieval not implemented",
+    )
 
 
-@router.get(
-    "/defect-analysis",
-    summary="Get Defect Analysis Report",
-    description="Get defect analysis and trends report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_QUALITY_METRICS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=DefectAnalysisResponse,
-)
-async def get_defect_analysis(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    period: str = Query("last_30_days", description="Analysis period"),
+@router.put("/{report_id}", response_model=ReportResponse)
+async def update_report(
+    report_id: int,
+    request: ReportUpdateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение анализа дефектов.
-
-    Доступ: QA_LEAD+
-    """
-    try:
-        analysis = await reporting_service.generate_defect_analysis_report(
-            db=db,
-            project_id=project_id,
-            period=period,
-            current_user=current_user,
-        )
-
-        return DefectAnalysisResponse(
-            project_id=project_id,
-            period=period,
-            analysis=analysis,
-            generated_at=analysis.get("generated_at"),
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate defect analysis: {str(e)}",
-        )
+    """Обновление настроек отчета."""
+    # TODO: Implement report update
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report update not implemented",
+    )
 
 
-# # Custom Reports Generation
-#
-
-
-@router.post(
-    "/generate",
-    summary="Generate Custom Report",
-    description="Generate custom quality report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.GENERATE_REPORTS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=ReportGenerationResponse,
-)
-async def generate_custom_report(
-    report_request: TestReportRequest,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+@router.delete("/{report_id}")
+async def delete_report(
+    report_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Генерация пользовательского отчета.
-
-    Доступ: QA_ENGINEER+
-    """
-    try:
-        result = await reporting_service.generate_custom_report(
-            db=db,
-            report_type=report_request.report_type,
-            project_id=report_request.project_id,
-            parameters=report_request.parameters,
-            format=report_request.format,
-            include_charts=report_request.include_charts,
-            include_recommendations=report_request.include_recommendations,
-            generated_by=current_user.id,
-        )
-
-        return ReportGenerationResponse(
-            success=True,
-            report_id=result["report_id"],
-            download_url=result["download_url"],
-            format=report_request.format,
-            file_size_bytes=result.get("file_size_bytes", 0),
-            pages_count=result.get("pages_count", 0),
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate report: {str(e)}",
-        )
+    """Удаление отчета."""
+    # TODO: Implement report deletion
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report deletion not implemented",
+    )
 
 
-@router.get(
-    "/",
-    summary="Get Reports List",
-    description="Get list of generated reports",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_REPORTS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=ReportListResponse,
-)
-async def get_reports_list(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    skip: int = Query(0, ge=0, description="Number of records to skip"),
-    limit: int = Query(100, ge=1, le=1000, description="Number of records to return"),
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    report_type: Optional[str] = Query(None, description="Filter by report type"),
+# === Report Operations ===
+
+
+@router.post("/{report_id}/regenerate", response_model=ReportOperationResponse)
+async def regenerate_report(
+    report_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение списка сгенерированных отчетов.
-
-    Доступ: QA_VIEWER+
-    """
-    try:
-        reports = await reporting_service.get_reports_list(
-            db=db,
-            skip=skip,
-            limit=limit,
-            project_id=project_id,
-            report_type=report_type,
-            current_user=current_user,
-        )
-
-        total = len(reports)
-        pages = (total + limit - 1) // limit
-
-        return ReportListResponse(
-            reports=reports,
-            total=total,
-            page=(skip // limit) + 1,
-            size=limit,
-            pages=pages,
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get reports list: {str(e)}",
-        )
+    """Повторная генерация отчета."""
+    # TODO: Implement report regeneration
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report regeneration not implemented",
+    )
 
 
-@router.get(
-    "/{report_id}/download",
-    summary="Download Report",
-    description="Download generated report",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_REPORTS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-)
+@router.post("/{report_id}/cancel", response_model=ReportOperationResponse)
+async def cancel_report_generation(
+    report_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Отмена генерации отчета."""
+    # TODO: Implement report cancellation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report cancellation not implemented",
+    )
+
+
+@router.get("/{report_id}/download")
 async def download_report(
-    report_id: str,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+    report_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Скачивание сгенерированного отчета.
-
-    Доступ: QA_VIEWER+
-    """
-    try:
-        download_info = await reporting_service.prepare_report_download(
-            db=db,
-            report_id=report_id,
-            current_user=current_user,
-        )
-
-        if not download_info:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Report not found",
-            )
-
-        return download_info
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to prepare download: {str(e)}",
-        )
+    """Скачивание отчета."""
+    # TODO: Implement report download
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report download not implemented",
+    )
 
 
-# # Automation Rate Reports
-#
+# === Report Templates ===
 
 
-@router.get(
-    "/automation-rate",
-    summary="Get Automation Rate Report",
-    description="Get test automation rate analysis",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_QUALITY_METRICS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-)
-async def get_automation_rate(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    period: str = Query("last_30_days", description="Analysis period"),
+@router.post("/templates", response_model=ReportTemplateResponse)
+async def create_report_template(
+    request: ReportTemplateCreateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение отчета об уровне автоматизации тестирования.
-
-    Доступ: QA_LEAD+
-    """
-    try:
-        automation_data = await reporting_service.generate_automation_rate_report(
-            db=db,
-            project_id=project_id,
-            period=period,
-            current_user=current_user,
-        )
-
-        return automation_data
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate automation rate report: {str(e)}",
-        )
+    """Создание шаблона отчета."""
+    # TODO: Implement report template creation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report template creation not implemented",
+    )
 
 
-# # Trend Analysis
-#
-
-
-@router.get(
-    "/trends",
-    summary="Get Quality Trends",
-    description="Get quality trends analysis over time",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_QUALITY_METRICS, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-)
-async def get_quality_trends(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    metric_type: str = Query(
-        "all", description="Metric type: all, defects, coverage, performance"
-    ),
-    period: str = Query("last_90_days", description="Trend period"),
+@router.get("/templates", response_model=List[ReportTemplateResponse])
+async def get_report_templates(
+    report_type: Optional[str] = None,
+    is_public: Optional[bool] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
 ):
-    """
-    Получение анализа трендов качества.
+    """Получение списка шаблонов отчетов."""
+    # TODO: Implement report templates listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report templates listing not implemented",
+    )
 
-    Доступ: QA_LEAD+
-    """
-    try:
-        trends = await reporting_service.generate_quality_trends_report(
-            db=db,
-            project_id=project_id,
-            metric_type=metric_type,
-            period=period,
-            current_user=current_user,
-        )
 
-        return trends
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate trends report: {str(e)}",
-        )
+@router.get("/templates/{template_id}", response_model=ReportTemplateResponse)
+async def get_report_template(
+    template_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение шаблона отчета."""
+    # TODO: Implement report template retrieval
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report template retrieval not implemented",
+    )
+
+
+@router.put("/templates/{template_id}", response_model=ReportTemplateResponse)
+async def update_report_template(
+    template_id: int,
+    request: ReportTemplateCreateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Обновление шаблона отчета."""
+    # TODO: Implement report template update
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report template update not implemented",
+    )
+
+
+@router.delete("/templates/{template_id}")
+async def delete_report_template(
+    template_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Удаление шаблона отчета."""
+    # TODO: Implement report template deletion
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Report template deletion not implemented",
+    )
+
+
+# === Search and Statistics ===
+
+
+@router.post("/search", response_model=ReportListResponse)
+async def search_reports(
+    request: ReportSearchRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Поиск отчетов."""
+    # TODO: Implement reports search
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Reports search not implemented",
+    )
+
+
+@router.get("/statistics", response_model=ReportStatisticsResponse)
+async def get_reports_statistics(
+    project_id: Optional[int] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение статистики по отчетам."""
+    # TODO: Implement reports statistics
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Reports statistics not implemented",
+    )
+
+
+# === Specific Report Types ===
+
+
+@router.get("/test-execution/{project_id}")
+async def get_test_execution_report(
+    project_id: int,
+    release_id: Optional[int] = None,
+    test_plan_id: Optional[int] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение отчета по выполнению тестов."""
+    # TODO: Implement test execution report
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Test execution report not implemented",
+    )
+
+
+@router.get("/requirements-coverage/{project_id}")
+async def get_requirements_coverage_report(
+    project_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение отчета по покрытию требований."""
+    # TODO: Implement requirements coverage report
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Requirements coverage report not implemented",
+    )
+
+
+@router.get("/defect-summary/{project_id}")
+async def get_defect_summary_report(
+    project_id: int,
+    date_from: Optional[str] = None,
+    date_to: Optional[str] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение сводного отчета по дефектам."""
+    # TODO: Implement defect summary report
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Defect summary report not implemented",
+    )
+
+
+@router.get("/traceability-matrix/{project_id}")
+async def get_traceability_matrix(
+    project_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add reports permissions
+    # _: None = Depends(require_reports_access),
+):
+    """Получение матрицы трассируемости."""
+    # TODO: Implement traceability matrix
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Traceability matrix not implemented",
+    )

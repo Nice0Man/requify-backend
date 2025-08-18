@@ -49,7 +49,9 @@ async def get_system_health():
     response_model=DetailedHealthResponse,
     summary="Get Detailed System Health",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_detailed_health(
@@ -89,7 +91,9 @@ async def get_detailed_health(
     response_model=DetailedHealthResponse,
     summary="Run Health Check",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def run_health_check(

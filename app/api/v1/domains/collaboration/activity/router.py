@@ -11,7 +11,7 @@ from fastapi import APIRouter, Depends, Query
 from app.api.dependencies import SessionDep, CurrentUserDep
 from app.services.activity_service import activity_service, ActivityType
 from .schemas import (
-    ActivityTypeEnum,
+    ActivityType,
     ActivityFeedResponse,
     ActivityStatisticsResponse,
     ActivityFilterRequest,
@@ -31,7 +31,7 @@ async def get_activity_feed(
     current_user: CurrentUserDep,
     page: int = Query(1, ge=1, description="Page number"),
     size: int = Query(20, ge=1, le=100, description="Page size"),
-    activity_types: Optional[List[ActivityTypeEnum]] = Query(
+    activity_types: Optional[List[ActivityType]] = Query(
         None, description="Filter by activity types"
     ),
     start_date: Optional[datetime] = Query(None, description="Start date filter"),
@@ -75,7 +75,7 @@ async def get_project_activity_feed(
     db: SessionDep,
     current_user: CurrentUserDep,
     limit: int = Query(20, ge=1, le=100, description="Number of activities to return"),
-    activity_types: Optional[List[ActivityTypeEnum]] = Query(
+    activity_types: Optional[List[ActivityType]] = Query(
         None, description="Filter by activity types"
     ),
 ):

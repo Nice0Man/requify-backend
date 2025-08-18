@@ -18,7 +18,7 @@ from app.models.user_settings import (
     UserSettings as UserSettingsModel,
     UserSettingsHistory,
 )
-from app.schemas.settings import (
+from app.api.v1.domains.configuration.settings.schemas import (
     UserSettings,
     UserSettingsUpdate,
     UserProfileSettings,
@@ -28,10 +28,9 @@ from app.schemas.settings import (
     PrivacySettings,
     SettingsResponse,
     UserSession,
-    UserSessionsResponse,
-    RevokeSessionsRequest,
-    ChangePasswordRequest,
 )
+
+# TODO: Создать недостающие схемы UserSessionsResponse, RevokeSessionsRequest, ChangePasswordRequest
 from app.utils.logger import logger
 from app.core.security import get_password_hash, verify_password
 import logging

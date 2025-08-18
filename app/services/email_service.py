@@ -19,10 +19,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from enum import Enum
+from abc import ABC, abstractmethod
 
 from jinja2 import Environment, FileSystemLoader, Template
 
 from app.core.config import settings
+from .base import ServiceError, BaseService
 
 # === Email Configuration ===
 

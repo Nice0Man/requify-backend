@@ -19,8 +19,11 @@ from app.models import User
 from app.core.constants import Permission, RoleScope
 from app.services.company_settings_service import CompanySettingsService
 from app.services.company_contact_service import CompanyContactService
-from app.services.company_branding_service import CompanyBrandingService
-from app.services.company_management_service import CompanyManagementService
+
+# TODO: Fix CompanyBrandingService import issues
+# from app.services.company_branding_service import CompanyBrandingService
+# TODO: Fix CompanyManagementService import issues
+# from app.services.company_management_service import CompanyManagementService
 from .schemas import (
     CompanyCreateRequest,
     CompanyUpdateRequest,
@@ -39,16 +42,14 @@ from .schemas import (
 # Initialize services
 company_settings_service = CompanySettingsService()
 company_contact_service = CompanyContactService()
-company_branding_service = CompanyBrandingService()
-company_management_service = CompanyManagementService()
+# TODO: Fix service initialization after schema issues are resolved
+# company_branding_service = CompanyBrandingService()
+# company_management_service = CompanyManagementService()
 
 # Initialize permission checker
 permission_checker = PermissionChecker()
 
 router = APIRouter()
-
-# # Company CRUD Operations
-#
 
 
 @router.get(
@@ -56,7 +57,7 @@ router = APIRouter()
     summary="Get Companies List",
     description="Get paginated list of companies (Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))
+        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY_USERS))
     ],
     response_model=CompanyListResponse,
 )
@@ -122,7 +123,7 @@ async def get_companies(
     summary="Create Company",
     description="Create new company (Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))
+        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY_USERS))
     ],
     response_model=CompanyDetailResponse,
 )
@@ -241,7 +242,7 @@ async def get_my_company(
     dependencies=[
         Depends(
             permission_checker.require_permission(
-                Permission.MANAGE_COMPANY, scope=RoleScope.COMPANY
+                Permission.MANAGE_COMPANY_USERS, scope=RoleScope.COMPANY
             )
         )
     ],
@@ -390,7 +391,7 @@ async def get_company(
     summary="Delete Company",
     description="Delete company (System Admin only)",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))
+        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY_USERS))
     ],
     response_model=CompanyOperationResponse,
 )

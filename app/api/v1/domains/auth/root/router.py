@@ -26,8 +26,8 @@ from app.services.user_registration_service import (
     UserRegistrationService,
     user_registration_service,
 )
-from app.crud import user as crud_user
-from app.schemas.user import UserResponse
+from app.crud.user import crud_user
+from app.api.v1.domains.identity.schemas import UserResponse
 from app.utils.logger import logger
 
 router = APIRouter()

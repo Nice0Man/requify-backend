@@ -34,7 +34,9 @@ router = APIRouter()
     response_model=SystemMetricsResponse,
     summary="Get System Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_system_metrics(current_user: CurrentUserDep):
@@ -90,7 +92,9 @@ async def get_system_metrics(current_user: CurrentUserDep):
     response_model=MetricsResponse,
     summary="Get Time Series Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_metrics_timeseries(
@@ -136,7 +140,9 @@ async def get_metrics_timeseries(
     response_model=ApplicationMetrics,
     summary="Get Application Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_application_metrics(
@@ -187,7 +193,9 @@ async def get_application_metrics(
     response_model=ErrorMetrics,
     summary="Get Error Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_error_metrics(current_user: CurrentUserDep):
@@ -221,7 +229,9 @@ async def get_error_metrics(current_user: CurrentUserDep):
     response_model=ErrorDetailsResponse,
     summary="Get Error Details",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_error_details(
@@ -262,7 +272,9 @@ async def get_error_details(
     response_model=PerformanceMetrics,
     summary="Get Performance Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_performance_metrics(current_user: CurrentUserDep):
@@ -303,7 +315,9 @@ async def get_performance_metrics(current_user: CurrentUserDep):
     response_model=CustomMetricsListResponse,
     summary="Get Custom Metrics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_custom_metrics(current_user: CurrentUserDep):

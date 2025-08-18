@@ -3,7 +3,7 @@ CRUD операции для модели User.
 """
 
 from datetime import datetime
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, TYPE_CHECKING
 from sqlalchemy import func, select, or_, and_, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -11,8 +11,13 @@ from sqlalchemy.orm import selectinload
 from app.core.security import get_password_hash, verify_password
 from app.crud.base import CRUDBase
 from app.models.user import User
-from app.schemas.user import UserCreate, UserUpdate
-from app.core.security import get_password_hash, verify_password
+
+# Импортируем схемы из домена identity
+from app.api.v1.domains.identity.schemas import (
+    UserCreateRequest as UserCreate,
+    UserUpdateRequest as UserUpdate,
+)
+
 from app.utils.logger import logger
 from app.models.enhanced_role_system import UserRoleAssignment
 
@@ -582,4 +587,4 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
 
 
 # Создаем экземпляр CRUD для использования в API
-user = CRUDUser(User)
+crud_user = CRUDUser(User)

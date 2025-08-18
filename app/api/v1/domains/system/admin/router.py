@@ -34,7 +34,9 @@ router = APIRouter()
     response_model=AdminUserListResponse,
     summary="Get Admin Users List",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_admin_users(
@@ -86,7 +88,9 @@ async def get_admin_users(
     response_model=UserStatsResponse,
     summary="Get Users Statistics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_users_stats(
@@ -122,7 +126,9 @@ async def get_users_stats(
     response_model=UserActionResponse,
     summary="Perform User Action",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def perform_user_action(
@@ -168,7 +174,9 @@ async def perform_user_action(
     response_model=AdminCompanyListResponse,
     summary="Get Admin Companies List",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_admin_companies(
@@ -218,7 +226,9 @@ async def get_admin_companies(
     response_model=CompanyStatsResponse,
     summary="Get Companies Statistics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_companies_stats(
@@ -255,7 +265,9 @@ async def get_companies_stats(
     "/file-service/health",
     summary="Get File Service Health Status",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_file_service_health(
@@ -279,7 +291,9 @@ async def get_file_service_health(
     "/file-service/fix-bucket-policies",
     summary="Fix MinIO Bucket Policies",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def fix_bucket_policies(

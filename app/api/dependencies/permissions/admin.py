@@ -27,7 +27,7 @@ class AdminPermissions(StandardPermissionClass):
     def system() -> Callable:
         """Dependency for system administration."""
         return PermissionDependencyFactory.create_simple(
-            Permission.MANAGE_SYSTEM, ["admin:system"]
+            Permission.MANAGE_SYSTEM_SETTINGS, ["admin:system"]
         )
 
     @staticmethod

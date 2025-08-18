@@ -14,11 +14,20 @@ from sqlalchemy import func, and_, select
 from app.models.project import Project
 from app.models.requirement import Requirement
 from app.models.test_case import TestCase, TestExecution
-from app.schemas.analytics import (
-    DashboardStatsResponse,
-    MetricValueResponse,
-    ChartData,
-)
+
+# TODO: Add analytics schemas to analytics domain
+# from app.api.v1.domains.analytics.schemas import (
+#     DashboardStatsResponse,
+#     MetricValueResponse,
+#     ChartData,
+# )
+
+# Temporary placeholders
+from typing import Dict, Any
+
+DashboardStatsResponse = Dict[str, Any]
+MetricValueResponse = Dict[str, Any]
+ChartData = Dict[str, Any]
 from .base import BaseService, ServiceError
 
 

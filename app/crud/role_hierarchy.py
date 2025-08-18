@@ -10,9 +10,9 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.role_hierarchy import RoleHierarchy, RoleHierarchyCache, InheritanceType
-from app.schemas.role_hierarchy import (
-    RoleHierarchyCreate,
-    RoleHierarchyUpdate,
+from app.api.v1.domains.identity.role_hierarchy.schemas import (
+    RoleHierarchyCreateRequest as RoleHierarchyCreate,
+    RoleHierarchyUpdateRequest as RoleHierarchyUpdate,
     RoleHierarchyCacheCreate,
     RoleHierarchyCacheUpdate,
 )

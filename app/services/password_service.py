@@ -15,7 +15,8 @@ from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import JWTTokenManager, PasswordManager, verify_password
-from app.crud import user as crud_user, crud_refresh_token
+from app.crud.user import crud_user
+from app.crud.refresh_token import crud_refresh_token
 from app.models.user import User
 from app.utils.logger import logger
 from .base import BaseService, ServiceError

@@ -34,6 +34,7 @@ from app.services.role_hierarchy_service import role_hierarchy_service
 from app.utils.logger import logger
 from .base import BaseService
 
+
 class RoleInitializationService(BaseService):
     """Сервис инициализации системы ролей."""
 
@@ -2208,6 +2209,7 @@ class RoleInitializationService(BaseService):
                 f"Ошибка назначения роли администратора: {str(e)}", exc_info=True
             )
             return False
+
 
 # Регистрация сервиса в фабрике
 from .base import ServiceFactory

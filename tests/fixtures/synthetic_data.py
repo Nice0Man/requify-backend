@@ -24,7 +24,7 @@ from app.core.security import get_password_hash
 
 
 # Инициализация Faker с русской локализацией
-fake = Faker(['ru_RU', 'en_US'])
+fake = Faker(["ru_RU", "en_US"])
 Faker.seed(42)  # Фиксированный seed для воспроизводимости
 
 
@@ -38,12 +38,12 @@ class UserFactory(factory.Factory):
     username = factory.LazyAttribute(lambda obj: f"user_{obj.id}_{fake.user_name()}")
     email = factory.LazyAttribute(lambda obj: f"user_{obj.id}@{fake.domain_name()}")
     name = factory.LazyAttribute(lambda _: fake.name())
-    status = factory.Iterator(['active', 'inactive', 'pending'])
-    auth_provider = factory.Iterator(['local', 'google', 'microsoft'])
+    status = factory.Iterator(["active", "inactive", "pending"])
+    auth_provider = factory.Iterator(["local", "google", "microsoft"])
     is_email_verified = factory.Iterator([True, False], cycle=True)
     is_active = factory.Iterator([True, False], cycle=True)
     created_at = factory.LazyAttribute(
-        lambda _: fake.date_time_between(start_date='-2y', end_date='now')
+        lambda _: fake.date_time_between(start_date="-2y", end_date="now")
     )
     updated_at = factory.LazyAttribute(
         lambda obj: obj.created_at + timedelta(days=random.randint(0, 30))
@@ -63,18 +63,18 @@ class CompanyFactory(factory.Factory):
     website = factory.LazyAttribute(lambda _: fake.url())
     industry = factory.Iterator(
         [
-            'Technology',
-            'Healthcare',
-            'Finance',
-            'Education',
-            'Manufacturing',
-            'Retail',
-            'Consulting',
+            "Technology",
+            "Healthcare",
+            "Finance",
+            "Education",
+            "Manufacturing",
+            "Retail",
+            "Consulting",
         ]
     )
-    size = factory.Iterator(['startup', 'small', 'medium', 'large', 'enterprise'])
+    size = factory.Iterator(["startup", "small", "medium", "large", "enterprise"])
     created_at = factory.LazyAttribute(
-        lambda _: fake.date_time_between(start_date='-5y', end_date='-1y')
+        lambda _: fake.date_time_between(start_date="-5y", end_date="-1y")
     )
 
 
@@ -88,11 +88,11 @@ class ProjectFactory(factory.Factory):
     name = factory.LazyAttribute(lambda _: f"Project {fake.word().title()}")
     description = factory.LazyAttribute(lambda _: fake.text(max_nb_chars=200))
     status = factory.Iterator(
-        ['planning', 'active', 'on_hold', 'completed', 'archived']
+        ["planning", "active", "on_hold", "completed", "archived"]
     )
-    priority = factory.Iterator(['low', 'medium', 'high', 'critical'])
+    priority = factory.Iterator(["low", "medium", "high", "critical"])
     start_date = factory.LazyAttribute(
-        lambda _: fake.date_between(start_date='-1y', end_date='now')
+        lambda _: fake.date_between(start_date="-1y", end_date="now")
     )
     end_date = factory.LazyAttribute(
         lambda obj: obj.start_date + timedelta(days=random.randint(30, 365))
@@ -107,11 +107,11 @@ class RequirementFactory(factory.Factory):
         model = dict
 
     id = factory.Sequence(lambda n: n + 1)
-    title = factory.LazyAttribute(lambda _: fake.sentence(nb_words=6).rstrip('.'))
+    title = factory.LazyAttribute(lambda _: fake.sentence(nb_words=6).rstrip("."))
     description = factory.LazyAttribute(lambda _: fake.text(max_nb_chars=500))
-    type = factory.Iterator(['functional', 'non_functional', 'technical', 'business'])
-    priority = factory.Iterator(['low', 'medium', 'high', 'critical'])
-    status = factory.Iterator(['draft', 'review', 'approved', 'implemented', 'tested'])
+    type = factory.Iterator(["functional", "non_functional", "technical", "business"])
+    priority = factory.Iterator(["low", "medium", "high", "critical"])
+    status = factory.Iterator(["draft", "review", "approved", "implemented", "tested"])
     project_id = factory.Sequence(lambda n: random.randint(1, 10))
     created_by = factory.Sequence(lambda n: random.randint(1, 20))
 
@@ -144,10 +144,10 @@ def synthetic_requirements():
 def large_dataset():
     """Генерирует большой набор данных для нагрузочных тестов."""
     return {
-        'users': UserFactory.create_batch(1000),
-        'companies': CompanyFactory.create_batch(100),
-        'projects': ProjectFactory.create_batch(500),
-        'requirements': RequirementFactory.create_batch(2000),
+        "users": UserFactory.create_batch(1000),
+        "companies": CompanyFactory.create_batch(100),
+        "projects": ProjectFactory.create_batch(500),
+        "requirements": RequirementFactory.create_batch(2000),
     }
 
 
@@ -161,11 +161,11 @@ class MockEmailService:
     async def send_email(self, to: str, subject: str, body: str, **kwargs):
         """Имитирует отправку email."""
         email_data = {
-            'to': to,
-            'subject': subject,
-            'body': body,
-            'sent_at': datetime.utcnow(),
-            'status': 'sent',
+            "to": to,
+            "subject": subject,
+            "body": body,
+            "sent_at": datetime.utcnow(),
+            "status": "sent",
             **kwargs,
         }
         self.sent_emails.append(email_data)
@@ -191,10 +191,10 @@ class MockFileStorage:
         """Имитирует загрузку файла."""
         file_id = str(uuid.uuid4())
         self.stored_files[file_id] = {
-            'path': file_path,
-            'content': content,
-            'size': len(content),
-            'uploaded_at': datetime.utcnow(),
+            "path": file_path,
+            "content": content,
+            "size": len(content),
+            "uploaded_at": datetime.utcnow(),
             **kwargs,
         }
         return file_id
@@ -202,7 +202,7 @@ class MockFileStorage:
     async def download_file(self, file_id: str) -> Optional[bytes]:
         """Имитирует скачивание файла."""
         file_data = self.stored_files.get(file_id)
-        return file_data['content'] if file_data else None
+        return file_data["content"] if file_data else None
 
     async def delete_file(self, file_id: str) -> bool:
         """Имитирует удаление файла."""
@@ -221,9 +221,9 @@ class MockAuthProvider:
         token = f"test_token_{user_id}_{uuid.uuid4().hex[:8]}"
         self.valid_tokens.add(token)
         self.user_data[token] = {
-            'user_id': user_id,
-            'scopes': scopes or ['read', 'write'],
-            'created_at': datetime.utcnow(),
+            "user_id": user_id,
+            "scopes": scopes or ["read", "write"],
+            "created_at": datetime.utcnow(),
         }
         return token
 
@@ -262,9 +262,9 @@ def mock_auth_provider():
 def mock_external_services(mock_email_service, mock_file_storage, mock_auth_provider):
     """Предоставляет все моки внешних сервисов."""
     return {
-        'email': mock_email_service,
-        'storage': mock_file_storage,
-        'auth': mock_auth_provider,
+        "email": mock_email_service,
+        "storage": mock_file_storage,
+        "auth": mock_auth_provider,
     }
 
 
@@ -281,7 +281,7 @@ class DatabaseSeeder:
         projects = ProjectFactory.create_batch(10)
 
         # Можно добавить логику создания связанных объектов
-        return {'companies': companies, 'users': users, 'projects': projects}
+        return {"companies": companies, "users": users, "projects": projects}
 
     def seed_large_dataset(self):
         """Заполняет базу большим количеством данных."""
@@ -291,10 +291,10 @@ class DatabaseSeeder:
         requirements = RequirementFactory.create_batch(1000)
 
         return {
-            'companies': companies,
-            'users': users,
-            'projects': projects,
-            'requirements': requirements,
+            "companies": companies,
+            "users": users,
+            "projects": projects,
+            "requirements": requirements,
         }
 
 
@@ -308,17 +308,17 @@ def db_seeder(test_db_session):
 def performance_test_data():
     """Данные для тестов производительности."""
     return {
-        'small_dataset': {
-            'users': UserFactory.create_batch(100),
-            'projects': ProjectFactory.create_batch(50),
+        "small_dataset": {
+            "users": UserFactory.create_batch(100),
+            "projects": ProjectFactory.create_batch(50),
         },
-        'medium_dataset': {
-            'users': UserFactory.create_batch(500),
-            'projects': ProjectFactory.create_batch(200),
+        "medium_dataset": {
+            "users": UserFactory.create_batch(500),
+            "projects": ProjectFactory.create_batch(200),
         },
-        'large_dataset': {
-            'users': UserFactory.create_batch(1000),
-            'projects': ProjectFactory.create_batch(500),
+        "large_dataset": {
+            "users": UserFactory.create_batch(1000),
+            "projects": ProjectFactory.create_batch(500),
         },
     }
 
@@ -327,16 +327,16 @@ def performance_test_data():
 def api_test_data():
     """Данные для API тестов."""
     return {
-        'valid_user': UserFactory.create(),
-        'invalid_user': {
-            'username': '',  # Невалидное имя
-            'email': 'invalid-email',  # Невалидный email
-            'name': 'A' * 256,  # Слишком длинное имя
+        "valid_user": UserFactory.create(),
+        "invalid_user": {
+            "username": "",  # Невалидное имя
+            "email": "invalid-email",  # Невалидный email
+            "name": "A" * 256,  # Слишком длинное имя
         },
-        'edge_cases': {
-            'unicode_name': '测试用户',
-            'special_chars': 'user@#$%',
-            'very_long_email': 'a' * 100 + '@example.com',
+        "edge_cases": {
+            "unicode_name": "测试用户",
+            "special_chars": "user@#$%",
+            "very_long_email": "a" * 100 + "@example.com",
         },
     }
 
@@ -347,7 +347,7 @@ class TimeFreezeMixin:
     @staticmethod
     def freeze_time_at(timestamp: datetime):
         """Фиксирует время на указанной метке."""
-        return patch('datetime.datetime')
+        return patch("datetime.datetime")
 
     @staticmethod
     def advance_time_by(seconds: int):

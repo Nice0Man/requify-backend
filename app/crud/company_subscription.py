@@ -8,18 +8,12 @@ from sqlalchemy import and_, or_, func, desc
 from datetime import datetime, timezone, timedelta
 
 from app.crud.base import CRUDBase
-from app.models.company_subscription import CompanySubscription
-from app.schemas.company_subscription import (
-    CompanySubscriptionCreate,
-    CompanySubscriptionUpdate,
-    SubscriptionStatus,
-    SubscriptionPlan,
-    BillingPeriod,
-)
+from app.models.company_subscription import BillingPeriod, CompanySubscription, SubscriptionPlan, SubscriptionStatus
+
 
 
 class CRUDCompanySubscription(
-    CRUDBase[CompanySubscription, CompanySubscriptionCreate, CompanySubscriptionUpdate]
+    CRUDBase[CompanySubscription, dict, dict]
 ):
     """CRUD операции для подписок компании"""
 
@@ -30,7 +24,7 @@ class CRUDCompanySubscription(
         return db.query(self.model).filter(self.model.company_id == company_id).first()
 
     def create_for_company(
-        self, db: Session, *, obj_in: CompanySubscriptionCreate, company_id: int
+        self, db: Session, *, obj_in: dict, company_id: int
     ) -> CompanySubscription:
         """Создать подписку для компании"""
         # Проверить, нет ли уже подписки для этой компании
@@ -133,7 +127,7 @@ class CRUDCompanySubscription(
             db.query(self.model)
             .filter(
                 and_(
-                    self.model.status == SubscriptionStatus.ACTIVE.value,
+                    self.model.status == SubscriptionStatus.ACTIVE.value
                     self.model.subscription_end_date < datetime.now(timezone.utc),
                 )
             )
@@ -151,7 +145,7 @@ class CRUDCompanySubscription(
             .filter(
                 and_(
                     self.model.auto_renew == True,
-                    self.model.status == SubscriptionStatus.ACTIVE.value,
+                    self.model.status == SubscriptionStatus.ACTIVE.value
                 )
             )
             .offset(skip)

@@ -19,33 +19,59 @@ from app.crud import (
     project as crud_project,
     requirement as crud_requirement,
     user as crud_user,
-    user_preferences,
+    # TODO: Add user_preferences CRUD
+    # user_preferences,
     notification,
     activity,
-    widget,
+    # TODO: Add widget CRUD
+    # widget,
 )
 from app.models.project import Project
 from app.models.requirement import Requirement
-from app.schemas.dashboard import (
-    DashboardStats,
-    DashboardOverviewStats,
-    ProjectPerformanceStats,
-    TrendingMetricsData,
-    QuickAccess,
-    QuickProject,
-    QuickRequirement,
-    ActivityItem,
-    MyDashboardResponse,
-    UserDashboardPreferences as PreferencesSchema,
-    DashboardNotification as NotificationSchema,
-    SystemMetrics,
-    TimelineDataPoint,
-    DistributionDataPoint,
-    ProjectTrendDataPoint,
-    TimelineQueryParams,
-    DistributionQueryParams,
-    ProjectTrendsQueryParams,
-)
+
+# TODO: Add dashboard schemas to analytics domain
+# from app.api.v1.domains.analytics.dashboard.schemas import (
+#     DashboardStats,
+#     DashboardOverviewStats,
+#     ProjectPerformanceStats,
+#     TrendingMetricsData,
+#     QuickAccess,
+#     QuickProject,
+#     QuickRequirement,
+#     ActivityItem,
+#     MyDashboardResponse,
+#     UserDashboardPreferences as PreferencesSchema,
+#     DashboardNotification as NotificationSchema,
+#     SystemMetrics,
+#     TimelineDataPoint,
+#     DistributionDataPoint,
+#     ProjectTrendDataPoint,
+#     TimelineQueryParams,
+#     DistributionQueryParams,
+#     ProjectTrendsQueryParams,
+# )
+
+# Temporary placeholders for schemas
+from typing import Dict, Any
+
+DashboardStats = Dict[str, Any]
+DashboardOverviewStats = Dict[str, Any]
+ProjectPerformanceStats = Dict[str, Any]
+TrendingMetricsData = Dict[str, Any]
+QuickAccess = Dict[str, Any]
+QuickProject = Dict[str, Any]
+QuickRequirement = Dict[str, Any]
+ActivityItem = Dict[str, Any]
+MyDashboardResponse = Dict[str, Any]
+PreferencesSchema = Dict[str, Any]
+NotificationSchema = Dict[str, Any]
+SystemMetrics = Dict[str, Any]
+TimelineDataPoint = Dict[str, Any]
+DistributionDataPoint = Dict[str, Any]
+ProjectTrendDataPoint = Dict[str, Any]
+TimelineQueryParams = Dict[str, Any]
+DistributionQueryParams = Dict[str, Any]
+ProjectTrendsQueryParams = Dict[str, Any]
 from .base import BaseService, ServiceError
 from app.utils.logger import logger
 

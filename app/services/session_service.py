@@ -14,9 +14,9 @@ from fastapi import HTTPException, status, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import get_client_ip, get_user_agent
-from app.crud import crud_refresh_token
+from app.crud.refresh_token import crud_refresh_token
 from app.models.user import User
-from app.schemas.auth import ActiveSession
+from app.api.v1.domains.auth.sessions.schemas import ActiveSession
 from app.utils.logger import logger
 from .base import BaseService, ServiceError
 

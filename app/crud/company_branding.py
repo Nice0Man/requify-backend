@@ -8,11 +8,13 @@ from sqlalchemy import and_, or_, func
 
 from app.crud.base import CRUDBase
 from app.models.company_branding import CompanyBranding
-from app.schemas.company_branding import CompanyBrandingCreate, CompanyBrandingUpdate
+
+# TODO: Add CompanyBranding schemas to companies/schemas.py
+# from app.api.v1.domains.organizations.companies.schemas import CompanyBrandingCreate, dict  # TODO: CompanyBrandingUpdate
 
 
 class CRUDCompanyBranding(
-    CRUDBase[CompanyBranding, CompanyBrandingCreate, CompanyBrandingUpdate]
+    CRUDBase[CompanyBranding, dict, dict]  # TODO: Replace with proper schemas
 ):
     """CRUD операции для брендинга компании"""
 
@@ -23,7 +25,11 @@ class CRUDCompanyBranding(
         return db.query(self.model).filter(self.model.company_id == company_id).first()
 
     def create_for_company(
-        self, db: Session, *, obj_in: CompanyBrandingCreate, company_id: int
+        self,
+        db: Session,
+        *,
+        obj_in: dict,
+        company_id: int,  # TODO: CompanyBrandingCreate
     ) -> CompanyBranding:
         """Создать брендинг для компании"""
         # Проверить, нет ли уже брендинга для этой компании
@@ -40,7 +46,11 @@ class CRUDCompanyBranding(
         return db_obj
 
     def update_for_company(
-        self, db: Session, *, company_id: int, obj_in: CompanyBrandingUpdate
+        self,
+        db: Session,
+        *,
+        company_id: int,
+        obj_in: dict,  # TODO: CompanyBrandingUpdate
     ) -> Optional[CompanyBranding]:
         """Обновить брендинг компании"""
         branding = self.get_by_company(db, company_id=company_id)

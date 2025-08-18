@@ -12,7 +12,9 @@ from app.models.company_branding import CompanyBranding
 from app.models.user import User
 from app.services.permission_service import permission_service
 from app.core.constants import Permission, RoleScope
-from app.schemas.company_branding import (
+
+# TODO: Add CompanyBranding schemas to companies/schemas.py
+from app.api.v1.domains.organizations.companies.schemas import (
     CompanyBrandingCreate,
     CompanyBrandingUpdate,
     CompanyBrandingResponse,

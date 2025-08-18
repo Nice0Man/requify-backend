@@ -44,9 +44,9 @@ class Base(DeclarativeBase):
         Автоматически генерирует имя таблицы в snake_case на основе имени класса,
         если не определено явно.
         """
-        # Если __tablename__ уже определён, используем его
-        if hasattr(cls, "__tablename__") and cls.__tablename__ is not None:
-            return cls.__tablename__
+        # Если __tablename__ уже определён в классе напрямую (не через декоратор), используем его
+        if "__tablename__" in cls.__dict__ and cls.__dict__["__tablename__"] is not None:
+            return cls.__dict__["__tablename__"]
 
         # Иначе генерируем автоматически
         return camel_to_snake(cls.__name__)

@@ -48,7 +48,7 @@ router = APIRouter()
     dependencies=[
         Depends(
             permission_checker.require_permission(
-                Permission.VIEW_DASHBOARD, scope=RoleScope.COMPANY
+                Permission.FILTER_DASHBOARD, scope=RoleScope.COMPANY
             )
         )
     ],

@@ -13,15 +13,9 @@ from app.models.constants import TeamRole, TeamStatus
 from app.models.team import Team
 from app.models.team_member import TeamMember
 from app.models.user import User
-from app.schemas.team import (
-    TeamCreate,
-    TeamMemberCreate,
-    TeamMemberStats,
-    TeamMemberUpdate,
-    TeamSearchRequest,
-    TeamStats,
-    TeamUpdate,
-)
+from app.api.v1.domains.organizations.teams.schemas import TeamCreate, TeamUpdate
+
+# TODO: Создать недостающие схемы для TeamMember и статистики
 
 
 class CRUDTeam(CRUDBase[Team, TeamCreate, TeamUpdate]):

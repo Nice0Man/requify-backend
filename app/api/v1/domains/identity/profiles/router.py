@@ -15,7 +15,9 @@ from app.api.dependencies import (
 )
 from app.models import User
 from app.core.constants import Permission, RoleScope
-from app.services.user_profile_service import UserProfileService
+
+# Lazy import to avoid circular dependencies
+# from app.services.user_profile_service import UserProfileService
 from app.services.file_service import file_service
 from .schemas import (
     ProfileUpdateRequest,
@@ -32,12 +34,20 @@ from .schemas import (
 )
 
 # Initialize services
-user_profile_service = UserProfileService()
+# user_profile_service = UserProfileService()  # Lazy initialization
 
 # Initialize permission checker
 permission_checker = PermissionChecker()
 
 router = APIRouter()
+
+
+def get_user_profile_service():
+    """Lazy initialization of UserProfileService to avoid circular imports."""
+    from app.services.user_profile_service import UserProfileService
+
+    return UserProfileService()
+
 
 # # Current User Profile Management
 #
@@ -57,7 +67,7 @@ async def get_my_extended_profile(
     Получение расширенного профиля текущего пользователя.
     """
     try:
-        profile = await user_profile_service.get_user_profile(
+        profile = await get_user_profile_service().get_user_profile(
             db=db, user_id=current_user.id, current_user=current_user
         )
 
@@ -103,7 +113,7 @@ async def update_my_extended_profile(
     """
     try:
         # Update profile
-        await user_profile_service.update_profile(
+        await get_user_profile_service().update_profile(
             db=db,
             user_id=current_user.id,
             profile_data={
@@ -126,7 +136,7 @@ async def update_my_extended_profile(
         )
 
         # Get updated profile
-        profile = await user_profile_service.get_user_profile(
+        profile = await get_user_profile_service().get_user_profile(
             db=db, user_id=current_user.id, current_user=current_user
         )
 
@@ -179,7 +189,7 @@ async def upload_avatar(
         )
 
         # Update user profile with new avatar URL
-        await user_profile_service.update_profile(
+        await get_user_profile_service().update_profile(
             db=db,
             user_id=current_user.id,
             profile_data={"avatar_url": avatar_url},
@@ -211,7 +221,7 @@ async def remove_avatar(
     """
     try:
         # Get current profile to check if avatar exists
-        profile = await user_profile_service.get_user_profile(
+        profile = await get_user_profile_service().get_user_profile(
             db=db, user_id=current_user.id, current_user=current_user
         )
 
@@ -222,7 +232,7 @@ async def remove_avatar(
             )
 
         # Update profile to remove avatar URL
-        await user_profile_service.update_profile(
+        await get_user_profile_service().update_profile(
             db=db,
             user_id=current_user.id,
             profile_data={"avatar_url": None},
@@ -278,12 +288,12 @@ async def update_user_preferences(
             preferences["time_format"] = preferences_data.time_format
 
         # Update preferences
-        await user_profile_service.update_user_preferences(
+        await get_user_profile_service().update_user_preferences(
             db=db, user_id=current_user.id, preferences=preferences
         )
 
         # Get updated preferences
-        updated_preferences = await user_profile_service.get_user_preferences(
+        updated_preferences = await get_user_profile_service().get_user_preferences(
             db=db, user_id=current_user.id
         )
 
@@ -322,7 +332,7 @@ async def get_user_preferences(
     Получение пользовательских настроек.
     """
     try:
-        preferences = await user_profile_service.get_user_preferences(
+        preferences = await get_user_profile_service().get_user_preferences(
             db=db, user_id=current_user.id
         )
 
@@ -381,7 +391,7 @@ async def get_user_profile(
             )
 
         # Get user profile with context-aware access
-        profile = await user_profile_service.get_user_profile(
+        profile = await get_user_profile_service().get_user_profile(
             db=db, user_id=user_id, current_user=current_user
         )
 
@@ -498,7 +508,7 @@ async def get_user_activity(
                 )
 
         # Get user activity
-        activity_data = await user_profile_service.get_user_activity(
+        activity_data = await get_user_profile_service().get_user_activity(
             db=db, user_id=user_id, skip=skip, limit=limit
         )
 
@@ -564,7 +574,9 @@ async def get_user_stats(
                 )
 
         # Get user statistics
-        stats = await user_profile_service.get_user_statistics(db=db, user_id=user_id)
+        stats = await get_user_profile_service().get_user_statistics(
+            db=db, user_id=user_id
+        )
 
         return UserStatsResponse(
             total_logins=stats.get("total_logins", 0),

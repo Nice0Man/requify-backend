@@ -187,7 +187,9 @@ async def resolve_security_event(
     response_model=SystemLogListResponse,
     summary="Get System Logs",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_system_logs(

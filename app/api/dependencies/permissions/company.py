@@ -42,7 +42,7 @@ class CompanyPermissions(StandardPermissionClass):
     def subscription() -> Callable:
         """Dependency for company subscription management."""
         return PermissionDependencyFactory.create_simple(
-            Permission.MANAGE_COMPANY, ["company:subscription"]
+            Permission.MANAGE_COMPANY_SUBSCRIPTION, ["company:subscription"]
         )
 
     @staticmethod

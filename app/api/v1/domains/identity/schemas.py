@@ -139,6 +139,10 @@ from .profiles.schemas import (
     UserActivityResponse,
     UserStatsResponse,
     AvatarUploadResponse,
+    UserProfileCreate,
+    UserProfileUpdate,
+    UserProfileStats,
+    ProfileValidation,
 )
 
 from .roles.schemas import (
@@ -181,6 +185,10 @@ __all__ = [
     "UserActivityResponse",
     "UserStatsResponse",
     "AvatarUploadResponse",
+    "UserProfileCreate",
+    "UserProfileUpdate",
+    "UserProfileStats",
+    "ProfileValidation",
     # Схемы ролей
     "RoleCreateRequest",
     "RoleUpdateRequest",

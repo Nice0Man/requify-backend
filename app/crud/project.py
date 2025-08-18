@@ -12,7 +12,10 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.project import Project
-from app.schemas.project import ProjectCreate, ProjectUpdate
+from app.api.v1.domains.projects.core.schemas import (
+    ProjectCreateRequest as ProjectCreate,
+    ProjectUpdateRequest as ProjectUpdate,
+)
 
 logger = logging.getLogger(__name__)
 

@@ -56,7 +56,7 @@ class Team(Base, TimestampedMixin):
         comment="ID департамента",
     )
     owner_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Владелец команды",
     )

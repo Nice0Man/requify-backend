@@ -13,9 +13,12 @@ from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import JWTTokenManager
-from app.crud import user as crud_user
+from app.crud.user import crud_user
 from app.models.user import User
-from app.schemas import UserCreate, UserProfileCreate
+from app.api.v1.domains.identity.schemas import (
+    UserCreateRequest as UserCreate,
+    UserProfileCreate,
+)
 from app.services import email_service
 from app.utils.logger import logger
 from .base import BaseService, ServiceError, ValidationError, NotFoundError

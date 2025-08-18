@@ -12,7 +12,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     ForeignKey,
-    JSONnKey,
+    JSON,
     Integer,
     String,
     Text,
@@ -170,7 +170,7 @@ class TestCase(Base, TimestampedMixin):
         comment="ID тестового плана",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Автор тестового случая",
     )
@@ -321,7 +321,7 @@ class TestPlan(Base, TimestampedMixin):
         comment="ID проекта",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Автор плана тестирования",
     )
@@ -423,7 +423,7 @@ class TestExecution(Base, TimestampedMixin):
         comment="ID тестового случая",
     )
     executor_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="ID исполнителя теста",
     )

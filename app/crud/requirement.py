@@ -2,17 +2,21 @@
 CRUD операции для модели Requirement.
 """
 
-from datetime import UTC, datetime
-from typing import List, Optional
+from datetime import UTC, datetime, timedelta
+import logging
+from typing import List, Optional, Dict, Any
 
-from sqlalchemy import func, or_, select
+from sqlalchemy import func, or_, select, text, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.requirement import Requirement
 from app.models.project import Project
-from app.schemas.requirement import RequirementCreate, RequirementUpdate
+from app.api.v1.domains.projects.requirements.schemas import (
+    RequirementCreateRequest as RequirementCreate,
+    RequirementUpdateRequest as RequirementUpdate,
+)
 
 logger = logging.getLogger(__name__)
 

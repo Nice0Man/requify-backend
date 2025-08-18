@@ -11,7 +11,7 @@ from decimal import Decimal
 from sqlalchemy import (
     String,
     ForeignKey,
-    JSONng,
+    JSON,
     Boolean,
     DateTime,
     Integer,

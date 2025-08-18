@@ -17,13 +17,12 @@ from app.models.company_settings import CompanySettings
 from app.models.user import User
 from app.services.permission_service import permission_service
 from app.core.constants import Permission, RoleScope
-from app.schemas.company_settings import (
+from app.api.v1.domains.organizations.companies.schemas import (
     CompanySettingsCreate,
     CompanySettingsUpdate,
     CompanySettingsResponse,
     PasswordPolicySettings,
     NotificationSettings,
-    SSOConfiguration,
     IntegrationSettings,
     CompanySettingsValidation,
 )
@@ -54,7 +53,8 @@ class CompanySettingsNotFoundError(CompanySettingsServiceError):
 class CompanySettingsValidationError(CompanySettingsServiceError):
     """Ошибки валидации настроек компании."""
 
-    pass
+    def __init__(self, message: str):
+        super().__init__(message, "COMPANY_SETTINGS_VALIDATION_ERROR")
 
 
 # Абстрактные интерфейсы
@@ -94,7 +94,7 @@ class ISettingsValidator(ABC):
         pass
 
     @abstractmethod
-    def validate_sso_config(self, sso_config: SSOConfiguration) -> bool:
+    def validate_sso_config(self, sso_config: Dict[str, Any]) -> bool:
         """Валидировать конфигурацию SSO."""
         pass
 
@@ -196,7 +196,7 @@ class StandardSettingsValidator(ISettingsValidator):
             recommendations=recommendations,
         )
 
-    def validate_sso_config(self, sso_config: SSOConfiguration) -> bool:
+    def validate_sso_config(self, sso_config: Dict[str, Any]) -> bool:
         """Валидировать конфигурацию SSO."""
         required_fields = {
             "google": ["client_id", "client_secret"],
@@ -444,6 +444,7 @@ class CompanySettingsService(BaseService):
                 db, company_id=company_id, password_policy=policy_data.dict()
             )
 
+            # Проверить, что настройки были обновлены
             if not settings:
                 raise CompanySettingsNotFoundError(company_id)
 
@@ -456,7 +457,7 @@ class CompanySettingsService(BaseService):
         self,
         db: AsyncSession,
         company_id: int,
-        sso_config: SSOConfiguration,
+        sso_config: Dict[str, Any],
         current_user: User,
     ) -> CompanySettings:
         """Настроить SSO."""
@@ -487,6 +488,7 @@ class CompanySettingsService(BaseService):
                 sso_config=sso_config.dict(exclude={"provider"}),
             )
 
+            # Проверить, что настройки были обновлены
             if not settings:
                 raise CompanySettingsNotFoundError(company_id)
 

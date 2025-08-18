@@ -2,14 +2,16 @@
 CRUD операции для модели UserProfile.
 """
 
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, TYPE_CHECKING
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import and_, or_, func, desc, select
 from datetime import datetime
 
 from app.crud.base import CRUDBase
 from app.models.user_profile import UserProfile
-from app.schemas.user_profile import UserProfileCreate, UserProfileUpdate
+
+# Импортируем схемы из домена identity
+from app.api.v1.domains.identity.schemas import UserProfileCreate, UserProfileUpdate
 
 
 class CRUDUserProfile(CRUDBase[UserProfile, UserProfileCreate, UserProfileUpdate]):

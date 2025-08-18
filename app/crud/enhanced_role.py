@@ -10,15 +10,15 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.enhanced_role_system import EnhancedRole, UserRoleAssignment
-from app.schemas.enhanced_role import (
+from app.api.v1.domains.identity.roles.schemas import (
     EnhancedRoleCreate,
     EnhancedRoleUpdate,
     UserRoleAssignmentCreate,
     UserRoleAssignmentUpdate,
-    RoleScope,
     RoleFilter,
     AssignmentFilter,
 )
+from app.core.constants import RoleScope
 
 
 class CRUDEnhancedRole(CRUDBase[EnhancedRole, EnhancedRoleCreate, EnhancedRoleUpdate]):

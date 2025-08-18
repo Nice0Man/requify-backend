@@ -16,8 +16,10 @@ from app.api.dependencies import (
 )
 from app.models import User
 from app.core.constants import Permission, RoleScope
-from app.services.user_profile_service import user_profile_service
-from app.services.user_profile_service import UserProfileService
+
+# Lazy import to avoid circular dependencies
+# from app.services.user_profile_service import user_profile_service
+# from app.services.user_profile_service import UserProfileService
 from app.services.admin_service import admin_service
 from app.services.permission_service import PermissionService
 from .schemas import (
@@ -33,7 +35,7 @@ from .schemas import (
 )
 
 # Initialize services
-user_profile_service = UserProfileService()
+# user_profile_service = UserProfileService()  # Lazy initialization
 permission_service = PermissionService()
 
 # Initialize permission checker
@@ -204,7 +206,10 @@ async def get_my_profile(
     Доступно всем аутентифицированным пользователям.
     """
     try:
-        # Get user profile
+        # Get user profile - lazy import
+        from app.services.user_profile_service import UserProfileService
+
+        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=current_user.id, current_user=current_user
         )
@@ -261,7 +266,10 @@ async def update_my_profile(
                 db=db, user_id=current_user.id, **user_updates
             )
 
-        # Update profile
+        # Update profile - lazy import
+        from app.services.user_profile_service import UserProfileService
+
+        user_profile_service = UserProfileService()
         await user_profile_service.update_user_profile(
             db=db,
             user_id=current_user.id,
@@ -335,7 +343,10 @@ async def get_user_by_id(
                 status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
             )
 
-        # Get user profile
+        # Get user profile - lazy import
+        from app.services.user_profile_service import UserProfileService
+
+        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=user_id, current_user=current_user
         )
@@ -420,7 +431,10 @@ async def update_user(
                 status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
             )
 
-        # Get user profile
+        # Get user profile - lazy import
+        from app.services.user_profile_service import UserProfileService
+
+        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=user_id, current_user=current_user
         )

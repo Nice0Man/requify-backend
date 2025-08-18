@@ -6,7 +6,10 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.spec import Spec
-from app.schemas.spec import SpecCreate, SpecUpdate
+from app.api.v1.domains.quality.specifications.schemas import (
+    SpecificationCreateRequest as SpecCreate,
+    SpecificationUpdateRequest as SpecUpdate,
+)
 
 
 class CRUDSpec(CRUDBase[Spec, SpecCreate, SpecUpdate]):

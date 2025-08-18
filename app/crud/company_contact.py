@@ -8,7 +8,10 @@ from sqlalchemy import and_, or_, func
 
 from app.crud.base import CRUDBase
 from app.models.company_contact import CompanyContact
-from app.schemas.company_contact import CompanyContactCreate, CompanyContactUpdate
+from app.api.v1.domains.organizations.companies.schemas import (
+    CompanyContactRequest as CompanyContactCreate,
+    CompanyContactRequest as CompanyContactUpdate,
+)
 
 
 class CRUDCompanyContact(

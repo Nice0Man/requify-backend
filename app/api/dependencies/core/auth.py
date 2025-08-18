@@ -7,7 +7,7 @@ Core authentication dependencies.
 - Dependency Inversion: Зависимость от абстракций
 """
 
-from typing import Optional, Annotated, List
+from typing import Optional, Annotated
 from fastapi import Depends, HTTPException, status, Request, Security
 from fastapi.security import (
     OAuth2PasswordBearer,
@@ -15,15 +15,11 @@ from fastapi.security import (
     HTTPAuthorizationCredentials,
     SecurityScopes,
 )
-from sqlalchemy.ext.asyncio import AsyncSession
-from datetime import datetime, UTC
 
 from app.core.config import settings
-from app.core.security import JWTTokenManager, TokenType
-from app.crud import user as crud_user
 from app.models.user import User
 from app.utils.logger import logger
-from app.services.auth_service import AuthenticationService, authentication_service
+from app.services.auth_service import authentication_service
 from app.services.auth0_service import Auth0Service
 from .database import SessionDep
 

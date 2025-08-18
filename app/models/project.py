@@ -77,7 +77,7 @@ class Project(Base, TimestampedMixin):
     #
     owner_id: Mapped[int] = mapped_column(
         Integer,
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Владелец проекта",
     )

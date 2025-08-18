@@ -7,21 +7,7 @@
 from fastapi import APIRouter
 
 
-from .endpoints import (
-    admin_router,
-    auth_router,
-    comments_router,
-    dashboard_router,
-    projects_router,
-    reference_router,
-    relationships_router,
-    releases_router,
-    requirements_router,
-    specifications_router,
-    teams_router,
-    testing_router,
-    users_router,
-)
+# Удалено - будем использовать только доменные роутеры
 from app import __version__
 
 from .domains import (

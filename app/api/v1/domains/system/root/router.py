@@ -98,7 +98,9 @@ async def get_system_status(current_user: CurrentUserDep):
     summary="System Information",
     description="Детальная информация о системе",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_system_info(current_user: CurrentUserDep):

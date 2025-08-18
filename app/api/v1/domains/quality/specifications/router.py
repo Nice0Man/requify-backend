@@ -1,548 +1,326 @@
 """
-Quality Specifications Router.
+Specifications Router.
 
-Handles all specification-related operations including CRUD operations,
-document generation, and requirements coverage analysis.
+API endpoints для операций со спецификациями.
 """
 
-from typing import Optional, List
-from fastapi import APIRouter, Depends, HTTPException, status, Query
+from fastapi import APIRouter, Depends, HTTPException, status
+from typing import List, Optional
 
-from app.api.dependencies import (
-    SessionDep,
-    CurrentActiveUserDep,
-    PermissionChecker,
-)
-from app.models import User
-from app.core.constants import Permission, RoleScope
-from app.services.specification_management_service import (
-    specification_management_service,
-)
+from app.api.dependencies.core.auth import get_current_user
+
+# TODO: Create quality permissions module
+# from app.api.dependencies.permissions.quality import require_specifications_access
+from app.models.user import User
+
 from .schemas import (
     SpecificationCreateRequest,
     SpecificationUpdateRequest,
     SpecificationResponse,
     SpecificationDetailResponse,
     SpecificationListResponse,
-    SpecificationOperationResponse,
-    DocumentGenerationRequest,
-    DocumentGenerationResponse,
+    SpecificationVersionCreateRequest,
+    SpecificationVersionResponse,
+    SpecificationVersionCompareRequest,
+    SpecificationVersionCompareResponse,
+    SpecificationReviewRequest,
+    SpecificationReviewResponse,
+    SpecificationTemplateCreateRequest,
+    SpecificationTemplateResponse,
+    SpecificationFilterRequest,
+    SpecificationSearchRequest,
+    SpecificationStatisticsResponse,
+    SpecificationExportRequest,
+    SpecificationExportResponse,
 )
 
-# Initialize permission checker
-permission_checker = PermissionChecker()
-
-router = APIRouter()
-
-# # Specifications Management
-#
+router = APIRouter(prefix="/specifications", tags=["specifications"])
 
 
-@router.get(
-    "/",
-    summary="Get Specifications",
-    description="Get paginated list of specifications",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=SpecificationListResponse,
-)
-async def get_specifications(
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    skip: int = Query(0, ge=0, description="Number of records to skip"),
-    limit: int = Query(100, ge=1, le=1000, description="Number of records to return"),
-    project_id: Optional[int] = Query(None, description="Filter by project"),
-    status: Optional[str] = Query(None, description="Filter by status"),
-    search: Optional[str] = Query(None, description="Search query"),
-):
-    """
-    Получение списка спецификаций.
-
-    Доступ: PROJECT_VIEWER+
-    """
-    try:
-        result = await specification_management_service.get_specifications_list(
-            db=db,
-            skip=skip,
-            limit=limit,
-            project_id=project_id,
-            status=status,
-            search=search,
-            current_user=current_user,
-        )
-
-        specifications = [
-            SpecificationResponse(
-                id=spec.id,
-                title=spec.title,
-                description=spec.description,
-                project_id=spec.project_id,
-                status=spec.status,
-                version=spec.version,
-                created_at=spec.created_at,
-                updated_at=spec.updated_at,
-            )
-            for spec in result
-        ]
-
-        total = len(result)
-        pages = (total + limit - 1) // limit
-
-        return SpecificationListResponse(
-            specifications=specifications,
-            total=total,
-            page=(skip // limit) + 1,
-            size=limit,
-            pages=pages,
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get specifications: {str(e)}",
-        )
+# === Specification CRUD ===
 
 
-@router.post(
-    "/",
-    status_code=status.HTTP_201_CREATED,
-    summary="Create Specification",
-    description="Create new specification",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.MANAGE_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=SpecificationDetailResponse,
-)
+@router.post("", response_model=SpecificationResponse)
 async def create_specification(
-    spec_data: SpecificationCreateRequest,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+    request: SpecificationCreateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Создание новой спецификации.
-
-    Доступ: ANALYST+
-    """
-    try:
-        new_spec = await specification_management_service.create_specification(
-            db=db,
-            title=spec_data.title,
-            description=spec_data.description,
-            project_id=spec_data.project_id,
-            content=spec_data.content,
-            template_id=spec_data.template_id,
-            created_by=current_user.id,
-        )
-
-        return SpecificationDetailResponse(
-            id=new_spec.id,
-            title=new_spec.title,
-            description=new_spec.description,
-            project_id=new_spec.project_id,
-            status=new_spec.status,
-            version=new_spec.version,
-            content=new_spec.content,
-            created_at=new_spec.created_at,
-            updated_at=new_spec.updated_at,
-            created_by=new_spec.created_by,
-            requirements_count=0,
-            coverage_percentage=0.0,
-            last_generated_at=None,
-        )
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to create specification: {str(e)}",
-        )
+    """Создание новой спецификации."""
+    # TODO: Implement specification creation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification creation not implemented",
+    )
 
 
-@router.get(
-    "/{spec_id}",
-    summary="Get Specification",
-    description="Get specification by ID",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=SpecificationDetailResponse,
-)
+@router.get("", response_model=SpecificationListResponse)
+async def get_specifications(
+    project_id: Optional[int] = None,
+    specification_type: Optional[str] = None,
+    status: Optional[str] = None,
+    page: int = 1,
+    size: int = 20,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Получение списка спецификаций."""
+    # TODO: Implement specifications listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specifications listing not implemented",
+    )
+
+
+@router.get("/{specification_id}", response_model=SpecificationDetailResponse)
 async def get_specification(
-    spec_id: int,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+    specification_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Получение спецификации по ID.
-
-    Доступ: PROJECT_VIEWER+
-    """
-    try:
-        spec = await specification_management_service.get_specification_by_id(
-            db=db, spec_id=spec_id, current_user=current_user
-        )
-        if not spec:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
-
-        # Get statistics
-        stats = await specification_management_service.get_specification_statistics(
-            db=db, spec_id=spec_id
-        )
-
-        return SpecificationDetailResponse(
-            id=spec.id,
-            title=spec.title,
-            description=spec.description,
-            project_id=spec.project_id,
-            status=spec.status,
-            version=spec.version,
-            content=spec.content,
-            created_at=spec.created_at,
-            updated_at=spec.updated_at,
-            created_by=spec.created_by,
-            requirements_count=stats.get("requirements_count", 0),
-            coverage_percentage=stats.get("coverage_percentage", 0.0),
-            last_generated_at=stats.get("last_generated_at"),
-        )
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get specification: {str(e)}",
-        )
+    """Получение детальной информации о спецификации."""
+    # TODO: Implement specification retrieval
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification retrieval not implemented",
+    )
 
 
-@router.put(
-    "/{spec_id}",
-    summary="Update Specification",
-    description="Update specification",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.MANAGE_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=SpecificationDetailResponse,
-)
+@router.put("/{specification_id}", response_model=SpecificationResponse)
 async def update_specification(
-    spec_id: int,
-    spec_data: SpecificationUpdateRequest,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+    specification_id: int,
+    request: SpecificationUpdateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Обновление спецификации.
-
-    Доступ: ANALYST+
-    """
-    try:
-        updated_spec = await specification_management_service.update_specification(
-            db=db,
-            spec_id=spec_id,
-            spec_data=spec_data.model_dump(exclude_unset=True),
-            current_user=current_user,
-        )
-
-        if not updated_spec:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
-
-        # Get statistics
-        stats = await specification_management_service.get_specification_statistics(
-            db=db, spec_id=spec_id
-        )
-
-        return SpecificationDetailResponse(
-            id=updated_spec.id,
-            title=updated_spec.title,
-            description=updated_spec.description,
-            project_id=updated_spec.project_id,
-            status=updated_spec.status,
-            version=updated_spec.version,
-            content=updated_spec.content,
-            created_at=updated_spec.created_at,
-            updated_at=updated_spec.updated_at,
-            created_by=updated_spec.created_by,
-            requirements_count=stats.get("requirements_count", 0),
-            coverage_percentage=stats.get("coverage_percentage", 0.0),
-            last_generated_at=stats.get("last_generated_at"),
-        )
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update specification: {str(e)}",
-        )
+    """Обновление спецификации."""
+    # TODO: Implement specification update
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification update not implemented",
+    )
 
 
-@router.delete(
-    "/{spec_id}",
-    summary="Delete Specification",
-    description="Delete specification",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.MANAGE_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=SpecificationOperationResponse,
-)
+@router.delete("/{specification_id}")
 async def delete_specification(
-    spec_id: int,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+    specification_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Удаление спецификации.
-
-    Доступ: ANALYST+
-    """
-    try:
-        success = await specification_management_service.delete_specification(
-            db=db, spec_id=spec_id, deleted_by=current_user.id
-        )
-
-        if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
-
-        return SpecificationOperationResponse(
-            success=True,
-            message="Specification deleted successfully",
-            specification_id=spec_id,
-        )
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to delete specification: {str(e)}",
-        )
+    """Удаление спецификации."""
+    # TODO: Implement specification deletion
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification deletion not implemented",
+    )
 
 
-# # Specification Requirements Management
-#
-
-
-@router.get(
-    "/{spec_id}/requirements",
-    summary="Get Specification Requirements",
-    description="Get requirements covered by specification",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-)
-async def get_specification_requirements(
-    spec_id: int,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
-    skip: int = Query(0, ge=0, description="Number of records to skip"),
-    limit: int = Query(100, ge=1, le=1000, description="Number of records to return"),
-):
-    """
-    Получение требований, покрытых спецификацией.
-
-    Доступ: PROJECT_VIEWER+
-    """
-    try:
-        requirements = (
-            await specification_management_service.get_specification_requirements(
-                db=db,
-                spec_id=spec_id,
-                skip=skip,
-                limit=limit,
-                current_user=current_user,
-            )
-        )
-
-        return requirements
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get specification requirements: {str(e)}",
-        )
-
-
-# # Document Generation
-#
+# === Version Management ===
 
 
 @router.post(
-    "/{spec_id}/generate-document",
-    summary="Generate Specification Document",
-    description="Generate document from specification",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.GENERATE_DOCUMENTATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
-    response_model=DocumentGenerationResponse,
+    "/{specification_id}/versions", response_model=SpecificationVersionResponse
 )
-async def generate_specification_document(
-    spec_id: int,
-    generation_data: DocumentGenerationRequest,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+async def create_specification_version(
+    specification_id: int,
+    request: SpecificationVersionCreateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Генерация документа из спецификации.
-
-    Доступ: ANALYST+
-    """
-    try:
-        result = await specification_management_service.generate_specification_document(
-            db=db,
-            spec_id=spec_id,
-            format=generation_data.format,
-            template_id=generation_data.template_id,
-            include_requirements=generation_data.include_requirements,
-            include_test_cases=generation_data.include_test_cases,
-            generated_by=current_user.id,
-        )
-
-        if not result:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
-
-        return DocumentGenerationResponse(
-            success=True,
-            document_id=result["document_id"],
-            download_url=result["download_url"],
-            format=generation_data.format,
-            file_size_bytes=result.get("file_size_bytes", 0),
-            pages_count=result.get("pages_count", 0),
-        )
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate document: {str(e)}",
-        )
+    """Создание новой версии спецификации."""
+    # TODO: Implement version creation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification version creation not implemented",
+    )
 
 
 @router.get(
-    "/{spec_id}/download/{format}",
-    summary="Download Specification",
-    description="Download specification in specified format",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
+    "/{specification_id}/versions", response_model=List[SpecificationVersionResponse]
 )
-async def download_specification(
-    spec_id: int,
-    format: str,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+async def get_specification_versions(
+    specification_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Скачивание спецификации в указанном формате.
-
-    Доступ: PROJECT_VIEWER+
-    """
-    try:
-        download_info = (
-            await specification_management_service.prepare_specification_download(
-                db=db,
-                spec_id=spec_id,
-                format=format,
-                current_user=current_user,
-            )
-        )
-
-        if not download_info:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
-
-        return download_info
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to prepare download: {str(e)}",
-        )
+    """Получение списка версий спецификации."""
+    # TODO: Implement versions listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification versions listing not implemented",
+    )
 
 
-# # Specification Coverage Analysis
-#
+@router.post("/versions/compare", response_model=SpecificationVersionCompareResponse)
+async def compare_specification_versions(
+    request: SpecificationVersionCompareRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Сравнение версий спецификации."""
+    # TODO: Implement version comparison
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification version comparison not implemented",
+    )
+
+
+# === Review Process ===
+
+
+@router.post("/{specification_id}/reviews", response_model=SpecificationReviewResponse)
+async def create_specification_review(
+    specification_id: int,
+    request: SpecificationReviewRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Создание обзора спецификации."""
+    # TODO: Implement review creation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification review creation not implemented",
+    )
 
 
 @router.get(
-    "/{spec_id}/coverage",
-    summary="Get Specification Coverage",
-    description="Get requirements coverage analysis",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_SPECIFICATION, scope=RoleScope.PROJECT
-            )
-        )
-    ],
+    "/{specification_id}/reviews", response_model=List[SpecificationReviewResponse]
 )
-async def get_specification_coverage(
-    spec_id: int,
-    db: SessionDep,
-    current_user: CurrentActiveUserDep,
+async def get_specification_reviews(
+    specification_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
 ):
-    """
-    Получение анализа покрытия требований спецификацией.
+    """Получение списка обзоров спецификации."""
+    # TODO: Implement reviews listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification reviews listing not implemented",
+    )
 
-    Доступ: PROJECT_VIEWER+
-    """
-    try:
-        coverage = (
-            await specification_management_service.analyze_specification_coverage(
-                db=db, spec_id=spec_id, current_user=current_user
-            )
-        )
 
-        if not coverage:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Specification not found",
-            )
+@router.put("/reviews/{review_id}", response_model=SpecificationReviewResponse)
+async def update_specification_review(
+    review_id: int,
+    decision: str,
+    comments: Optional[str] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Обновление обзора спецификации."""
+    # TODO: Implement review update
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification review update not implemented",
+    )
 
-        return coverage
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to analyze coverage: {str(e)}",
-        )
+
+# === Templates ===
+
+
+@router.post("/templates", response_model=SpecificationTemplateResponse)
+async def create_specification_template(
+    request: SpecificationTemplateCreateRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Создание шаблона спецификации."""
+    # TODO: Implement template creation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification template creation not implemented",
+    )
+
+
+@router.get("/templates", response_model=List[SpecificationTemplateResponse])
+async def get_specification_templates(
+    specification_type: Optional[str] = None,
+    is_public: Optional[bool] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Получение списка шаблонов спецификаций."""
+    # TODO: Implement templates listing
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification templates listing not implemented",
+    )
+
+
+@router.get("/templates/{template_id}", response_model=SpecificationTemplateResponse)
+async def get_specification_template(
+    template_id: int,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Получение шаблона спецификации."""
+    # TODO: Implement template retrieval
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specification template retrieval not implemented",
+    )
+
+
+# === Search and Filter ===
+
+
+@router.post("/search", response_model=SpecificationListResponse)
+async def search_specifications(
+    request: SpecificationSearchRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Поиск спецификаций."""
+    # TODO: Implement specifications search
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specifications search not implemented",
+    )
+
+
+# === Statistics and Export ===
+
+
+@router.get("/statistics", response_model=SpecificationStatisticsResponse)
+async def get_specifications_statistics(
+    project_id: Optional[int] = None,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Получение статистики по спецификациям."""
+    # TODO: Implement specifications statistics
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specifications statistics not implemented",
+    )
+
+
+@router.post("/export", response_model=SpecificationExportResponse)
+async def export_specifications(
+    request: SpecificationExportRequest,
+    current_user: User = Depends(get_current_user),
+    # TODO: Add specifications permissions
+    # _: None = Depends(require_specifications_access),
+):
+    """Экспорт спецификаций."""
+    # TODO: Implement specifications export
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="Specifications export not implemented",
+    )

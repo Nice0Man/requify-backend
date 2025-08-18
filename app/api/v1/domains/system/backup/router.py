@@ -39,7 +39,9 @@ router = APIRouter()
     response_model=BackupCreateResponse,
     summary="Create Backup",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def create_backup(
@@ -83,7 +85,9 @@ async def create_backup(
     response_model=BackupListResponse,
     summary="List Backups",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def list_backups(
@@ -131,7 +135,9 @@ async def list_backups(
     response_model=BackupRestoreResponse,
     summary="Restore Backup",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def restore_backup(
@@ -173,7 +179,9 @@ async def restore_backup(
     "/{backup_id}",
     summary="Delete Backup",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def delete_backup(
@@ -241,7 +249,9 @@ async def get_maintenance_status():
     response_model=MaintenanceResponse,
     summary="Start Maintenance",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def start_maintenance(
@@ -283,7 +293,9 @@ async def start_maintenance(
     response_model=MaintenanceResponse,
     summary="Stop Maintenance",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def stop_maintenance(
@@ -322,7 +334,9 @@ async def stop_maintenance(
     response_model=CacheStatsResponse,
     summary="Get Cache Statistics",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def get_cache_stats(current_user: CurrentUserDep):
@@ -353,7 +367,9 @@ async def get_cache_stats(current_user: CurrentUserDep):
     response_model=CacheClearResponse,
     summary="Clear Cache",
     dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_SYSTEM))
+        Depends(
+            permission_checker.require_permission(Permission.MANAGE_SYSTEM_SETTINGS)
+        )
     ],
 )
 async def clear_cache(

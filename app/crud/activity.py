@@ -10,7 +10,10 @@ from datetime import datetime, timedelta
 
 from app.crud.base import CRUDBase
 from app.models.activity import Activity
-from app.schemas.activity import ActivityCreate, ActivityUpdate
+from app.api.v1.domains.collaboration.activity.schemas import (
+    ActivityCreateRequest as ActivityCreate,
+    ActivityUpdateRequest as ActivityUpdate,
+)
 
 
 class CRUDActivity(CRUDBase[Activity, ActivityCreate, ActivityUpdate]):

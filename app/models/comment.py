@@ -45,7 +45,7 @@ class Comment(Base, TimestampedMixin):
         comment="ID спецификации",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="REStringCT"),
+        ForeignKey("users.id", ondelete="RESTRICT"),
         nullable=False,
         comment="Автор комментария",
     )

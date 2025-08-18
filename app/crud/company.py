@@ -9,7 +9,10 @@ from sqlalchemy import and_, or_, func, desc
 
 from app.crud.base import CRUDBase
 from app.models.company import Company
-from app.schemas.company import CompanyCreate, CompanyUpdate
+from app.api.v1.domains.organizations.companies.schemas import (
+    CompanyCreateRequest as CompanyCreate,
+    CompanyUpdateRequest as CompanyUpdate,
+)
 from app.models.user import User
 from app.models.project import Project
 from app.models.department import Department

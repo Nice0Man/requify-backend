@@ -109,8 +109,7 @@ class ProjectRole(PyEnum):
 class Permission(PyEnum):
     """Детализированные разрешения в системе"""
 
-    #     # Системные разрешения
-    #     MANAGE_SYSTEM = "manage_system"
+    # Системные разрешения
     VIEW_SYSTEM = "view_system"
     MANAGE_USERS = "manage_users"
     VIEW_USERS = "view_users"
@@ -121,8 +120,7 @@ class Permission(PyEnum):
     AUDIT_SYSTEM = "audit_system"
     MANAGE_SECURITY_POLICIES = "manage_security_policies"
 
-    #     # Компанийные разрешения
-    #     MANAGE_COMPANY = "manage_company"
+    # Компанийные разрешения
     VIEW_COMPANY_SETTINGS = "view_company_settings"
     MANAGE_COMPANY_SETTINGS = "manage_company_settings"
     MANAGE_COMPANY_USERS = "manage_company_users"
@@ -136,8 +134,7 @@ class Permission(PyEnum):
     VIEW_COMPANY_ANALYTICS = "view_company_analytics"
     EXPORT_COMPANY_DATA = "export_company_data"
 
-    #     # Департаментские разрешения
-    #     CREATE_DEPARTMENT = "create_department"
+    # Департаментские разрешения
     MANAGE_DEPARTMENT = "manage_department"
     VIEW_DEPARTMENT = "view_department"
     DELETE_DEPARTMENT = "delete_department"
@@ -146,8 +143,7 @@ class Permission(PyEnum):
     MANAGE_DEPARTMENT_BUDGET = "manage_department_budget"
     VIEW_DEPARTMENT_ANALYTICS = "view_department_analytics"
 
-    #     # Командные разрешения
-    #     CREATE_TEAM = "create_team"
+    # Командные разрешения
     MANAGE_TEAM = "manage_team"
     VIEW_TEAM = "view_team"
     DELETE_TEAM = "delete_team"
@@ -156,8 +152,8 @@ class Permission(PyEnum):
     ASSIGN_TEAM_ROLES = "assign_team_roles"
     VIEW_TEAM_PERFORMANCE = "view_team_performance"
 
-    #     # Проектные разрешения
-    #     CREATE_PROJECT = "create_project"
+    # Проектные разрешения
+    CREATE_PROJECT = "create_project"
     MANAGE_PROJECT = "manage_project"
     VIEW_PROJECT = "view_project"
     DELETE_PROJECT = "delete_project"
@@ -168,8 +164,8 @@ class Permission(PyEnum):
     MANAGE_PROJECT_BUDGET = "manage_project_budget"
     VIEW_PROJECT_ANALYTICS = "view_project_analytics"
 
-    #     # Требования
-    #     CREATE_REQUIREMENT = "create_requirement"
+    # Требования
+    CREATE_REQUIREMENT = "create_requirement"
     EDIT_REQUIREMENT = "edit_requirement"
     VIEW_REQUIREMENT = "view_requirement"
     DELETE_REQUIREMENT = "delete_requirement"
@@ -183,8 +179,8 @@ class Permission(PyEnum):
     CHANGE_REQUIREMENT_STATUS = "change_requirement_status"
     SEARCH_REQUIREMENTS = "search_requirements"
 
-    #     # Релизы
-    #     CREATE_RELEASE = "create_release"
+    # Релизы
+    CREATE_RELEASE = "create_release"
     MANAGE_RELEASE = "manage_release"
     VIEW_RELEASE = "view_release"
     DELETE_RELEASE = "delete_release"
@@ -196,8 +192,8 @@ class Permission(PyEnum):
     SYNC_RELEASE_REQUIREMENTS = "sync_release_requirements"
     VIEW_RELEASE_CHANGELOG = "view_release_changelog"
 
-    #     # Тестирование
-    #     CREATE_TEST = "create_test"
+    # Тестирование
+    CREATE_TEST = "create_test"
     EXECUTE_TEST = "execute_test"
     VIEW_TESTS = "view_tests"
     DELETE_TEST = "delete_test"
@@ -221,8 +217,8 @@ class Permission(PyEnum):
     RUN_INTEGRATION_TESTS = "run_integration_tests"
     GET_INTEGRATION_TEST_STATUS = "get_integration_test_status"
 
-    #     # Документация и спецификации
-    #     CREATE_SPECIFICATION = "create_specification"
+    # Документация и спецификации
+    CREATE_SPECIFICATION = "create_specification"
     EDIT_SPECIFICATION = "edit_specification"
     VIEW_SPECIFICATION = "view_specification"
     MANAGE_SPECIFICATION = "manage_specification"
@@ -232,8 +228,8 @@ class Permission(PyEnum):
     GENERATE_SPECIFICATION_DOCUMENT = "generate_specification_document"
     VIEW_SPECIFICATION_REQUIREMENTS = "view_specification_requirements"
 
-    #     # Коментарии и обратная связь
-    #     CREATE_COMMENT = "create_comment"
+    # Комментарии и обратная связь
+    CREATE_COMMENT = "create_comment"
     EDIT_COMMENT = "edit_comment"
     DELETE_COMMENT = "delete_comment"
     MODERATE_COMMENTS = "moderate_comments"
@@ -243,8 +239,8 @@ class Permission(PyEnum):
     VIEW_RECENT_COMMENTS = "view_recent_comments"
     VIEW_COMMENTS_STATISTICS = "view_comments_statistics"
 
-    #     # Связи между требованиями
-    #     CREATE_RELATIONSHIP = "create_relationship"
+    # Связи между требованиями
+    CREATE_RELATIONSHIP = "create_relationship"
     VIEW_RELATIONSHIP = "view_relationship"
     EDIT_RELATIONSHIP = "edit_relationship"
     DELETE_RELATIONSHIP = "delete_relationship"
@@ -254,8 +250,7 @@ class Permission(PyEnum):
     VIEW_REQUIREMENT_DEPENDENTS = "view_requirement_dependents"
     VIEW_REQUIREMENT_TRACE_MATRIX = "view_requirement_trace_matrix"
 
-    #     # Справочники
-    #     VIEW_REQUIREMENT_TYPES = "view_requirement_types"
+    # Справочники
     CREATE_REQUIREMENT_TYPE = "create_requirement_type"
     EDIT_REQUIREMENT_TYPE = "edit_requirement_type"
     DELETE_REQUIREMENT_TYPE = "delete_requirement_type"
@@ -264,6 +259,7 @@ class Permission(PyEnum):
     EDIT_REQUIREMENT_PRIORITY = "edit_requirement_priority"
     DELETE_REQUIREMENT_PRIORITY = "delete_requirement_priority"
     VIEW_REQUIREMENT_STATUSES = "view_requirement_statuses"
+    VIEW_REQUIREMENT_TYPES = "view_requirement_types"
     CREATE_REQUIREMENT_STATUS = "create_requirement_status"
     EDIT_REQUIREMENT_STATUS = "edit_requirement_status"
     DELETE_REQUIREMENT_STATUS = "delete_requirement_status"
@@ -272,14 +268,14 @@ class Permission(PyEnum):
     EDIT_RELATIONSHIP_TYPE = "edit_relationship_type"
     DELETE_RELATIONSHIP_TYPE = "delete_relationship_type"
 
-    #     # Интеграции и API
-    #     USE_API = "use_api"
+    # Интеграции и API
+    USE_API = "use_api"
     MANAGE_INTEGRATIONS = "manage_integrations"
     VIEW_API_LOGS = "view_api_logs"
     CREATE_API_KEYS = "create_api_keys"
 
-    #     # Отчеты и аналитика
-    #     VIEW_REPORTS = "view_reports"
+    # Отчеты и аналитика
+    VIEW_REPORTS = "view_reports"
     CREATE_REPORTS = "create_reports"
     EXPORT_REPORTS = "export_reports"
     VIEW_ANALYTICS = "view_analytics"
@@ -287,8 +283,7 @@ class Permission(PyEnum):
     VIEW_QUALITY_METRICS = "view_quality_metrics"
     VIEW_ADVANCED_ANALYTICS = "view_advanced_analytics"
 
-    #     # Дашборд
-    #     VIEW_DASHBOARD = "view_dashboard"
+    # Дашборд
     VIEW_DASHBOARD_STATS = "view_dashboard_stats"
     VIEW_DASHBOARD_OVERVIEW = "view_dashboard_overview"
     VIEW_MY_PROJECTS = "view_my_projects"
@@ -311,8 +306,7 @@ class Permission(PyEnum):
     CREATE_NOTIFICATION = "create_notification"
     MARK_NOTIFICATION_READ = "mark_notification_read"
 
-    #     # Административные разрешения
-    #     VIEW_ADMIN_USERS = "view_admin_users"
+    # Административные разрешения
     VIEW_SYSTEM_INFO = "view_system_info"
     VIEW_HEALTH_CHECK = "view_health_check"
     VIEW_METRICS = "view_metrics"
@@ -323,12 +317,11 @@ class Permission(PyEnum):
     UPDATE_SYSTEM_SETTINGS = "update_system_settings"
     VIEW_AUDIT_LOG = "view_audit_log"
 
-    #     # Сессии
-    #     VIEW_USER_SESSIONS = "view_user_sessions"
+    # Сессии
     REVOKE_SESSIONS = "revoke_sessions"
 
-    #     # Роли
-    #     VIEW_ROLES = "view_roles"
+    # Роли
+    VIEW_ROLES = "view_roles"
     CREATE_ROLE = "create_role"
     EDIT_ROLE = "edit_role"
     DELETE_ROLE = "delete_role"

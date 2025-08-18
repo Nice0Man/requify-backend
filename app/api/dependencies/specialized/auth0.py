@@ -10,7 +10,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User
 from app.services import auth0_service
-from app.crud import user as crud_user
 from ..core.database import SessionDep
 
 

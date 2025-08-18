@@ -9,7 +9,10 @@ from datetime import datetime
 
 from app.crud.base import CRUDBase
 from app.models.company_settings import CompanySettings
-from app.schemas.company_settings import CompanySettingsCreate, CompanySettingsUpdate
+from app.api.v1.domains.organizations.companies.schemas import (
+    CompanySettingsCreate,
+    CompanySettingsUpdate,
+)
 
 
 class CRUDCompanySettings(

@@ -4,7 +4,7 @@ Dashboard-related models for user preferences, notifications, and activity track
 
 import uuid
 from datetime import datetime
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 from sqlalchemy import (
     JSON,
@@ -19,7 +19,7 @@ from sqlalchemy import (
     Text,
 )
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped, mapped_column
 
 from .base import Base, TimestampedMixin
 

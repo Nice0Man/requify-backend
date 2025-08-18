@@ -21,7 +21,8 @@ from app.core.security import (
     get_user_agent,
     TokenType,
 )
-from app.crud import user as crud_user, crud_refresh_token
+from app.crud.user import crud_user
+from app.crud.refresh_token import crud_refresh_token
 from app.models.user import User
 from app.utils.logger import logger
 from .base import BaseService, ServiceError

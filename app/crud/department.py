@@ -10,7 +10,10 @@ from app.crud.base import CRUDBase
 from app.models.department import Department
 from app.models.team import Team
 from app.models.project import Project
-from app.schemas.department import DepartmentCreate, DepartmentUpdate
+from app.api.v1.domains.organizations.departments.schemas import (
+    DepartmentCreate,
+    DepartmentUpdate,
+)
 
 
 class CRUDDepartment(CRUDBase[Department, DepartmentCreate, DepartmentUpdate]):

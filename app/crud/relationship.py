@@ -9,8 +9,10 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.relationship import Relationship
-from app.schemas.relationship import RelationshipCreate, RelationshipUpdate
-from app.schemas.trace_matrix import TraceLink, TraceNode
+
+# TODO: Create relationship schemas in collaboration domain
+# from app.api.v1.domains.collaboration.relationships.schemas import RelationshipCreate, RelationshipUpdate
+# from app.schemas.trace_matrix import TraceLink, TraceNode
 
 
 class CRUDRelationship(CRUDBase[Relationship, RelationshipCreate, RelationshipUpdate]):

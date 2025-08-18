@@ -12,18 +12,23 @@ from app.models.company_contact import CompanyContact
 from app.models.user import User
 from app.services.permission_service import permission_service
 from app.core.constants import Permission, RoleScope
-from app.schemas.company_contact import (
-    CompanyContactCreate,
-    CompanyContactUpdate,
+from app.api.v1.domains.organizations.companies.schemas import (
+    CompanyContactRequest as CompanyContactCreate,
+    CompanyContactRequest as CompanyContactUpdate,
     CompanyContactResponse,
 )
+from .base import BaseService
 
 
-class CompanyContactService:
+class CompanyContactService(BaseService):
     """Сервис для работы с контактными данными компании"""
 
     def __init__(self):
+        super().__init__()
         self.crud = company_contact_crud
+
+    def get_service_name(self) -> str:
+        return "CompanyContactService"
 
     def get_company_contact(
         self, db: AsyncSession, *, company_id: int, current_user: User
@@ -332,6 +337,10 @@ class CompanyContactService:
             context_id=company_id,
         )
 
+
+from .base import ServiceFactory
+
+ServiceFactory.register_service("company_contact", CompanyContactService)
 
 # Создаем экземпляр сервиса
 company_contact_service = CompanyContactService()

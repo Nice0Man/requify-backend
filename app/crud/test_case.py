@@ -18,7 +18,10 @@ from app.models.test_case import (
     TestCasePriority,
     TestCaseType,
 )
-from app.schemas.test_case import TestCaseCreate, TestCaseUpdate
+from app.api.v1.domains.quality.testing.schemas import (
+    TestCaseCreateRequest as TestCaseCreate,
+    TestCaseUpdateRequest as TestCaseUpdate,
+)
 
 
 class CRUDTestCase(CRUDBase[TestCase, TestCaseCreate, TestCaseUpdate]):

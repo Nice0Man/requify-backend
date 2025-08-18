@@ -7,7 +7,7 @@ from datetime import datetime
 from faker import Faker
 
 # Простые фабрики без SQLAlchemy зависимостей
-fake = Faker(['ru_RU', 'en_US'])
+fake = Faker(["ru_RU", "en_US"])
 Faker.seed(42)
 
 
@@ -17,15 +17,15 @@ class SimpleUserFactory:
     @staticmethod
     def create(**kwargs):
         base_data = {
-            'id': fake.random_int(min=1, max=1000),
-            'username': fake.user_name(),
-            'email': fake.email(),
-            'name': fake.name(),
-            'status': fake.random_element(['active', 'inactive', 'pending']),
-            'auth_provider': fake.random_element(['local', 'google', 'microsoft']),
-            'is_email_verified': fake.boolean(),
-            'is_active': fake.boolean(),
-            'created_at': fake.date_time_between(start_date='-2y', end_date='now'),
+            "id": fake.random_int(min=1, max=1000),
+            "username": fake.user_name(),
+            "email": fake.email(),
+            "name": fake.name(),
+            "status": fake.random_element(["active", "inactive", "pending"]),
+            "auth_provider": fake.random_element(["local", "google", "microsoft"]),
+            "is_email_verified": fake.boolean(),
+            "is_active": fake.boolean(),
+            "created_at": fake.date_time_between(start_date="-2y", end_date="now"),
         }
         base_data.update(kwargs)
         return base_data
@@ -43,11 +43,11 @@ class MockEmailService:
 
     def send_email(self, to: str, subject: str, body: str):
         email = {
-            'to': to,
-            'subject': subject,
-            'body': body,
-            'sent_at': datetime.utcnow(),
-            'status': 'sent',
+            "to": to,
+            "subject": subject,
+            "body": body,
+            "sent_at": datetime.utcnow(),
+            "status": "sent",
         }
         self.sent_emails.append(email)
         return True
@@ -65,14 +65,14 @@ class TestBasicSyntheticData:
         """Тест простой фабрики пользователей."""
         user = SimpleUserFactory.create()
 
-        assert user['username']
-        assert '@' in user['email']
-        assert user['name']
-        assert user['status'] in ['active', 'inactive', 'pending']
-        assert user['auth_provider'] in ['local', 'google', 'microsoft']
-        assert isinstance(user['is_email_verified'], bool)
-        assert isinstance(user['is_active'], bool)
-        assert isinstance(user['created_at'], datetime)
+        assert user["username"]
+        assert "@" in user["email"]
+        assert user["name"]
+        assert user["status"] in ["active", "inactive", "pending"]
+        assert user["auth_provider"] in ["local", "google", "microsoft"]
+        assert isinstance(user["is_email_verified"], bool)
+        assert isinstance(user["is_active"], bool)
+        assert isinstance(user["created_at"], datetime)
 
     def test_user_factory_batch(self):
         """Тест массового создания пользователей."""
@@ -81,15 +81,15 @@ class TestBasicSyntheticData:
         assert len(users) == 10
 
         # Проверяем уникальность email'ов
-        emails = [user['email'] for user in users]
+        emails = [user["email"] for user in users]
         assert len(set(emails)) == len(emails)
 
     def test_user_factory_with_overrides(self):
         """Тест фабрики с переопределением параметров."""
-        user = SimpleUserFactory.create(status='active', is_email_verified=True)
+        user = SimpleUserFactory.create(status="active", is_email_verified=True)
 
-        assert user['status'] == 'active'
-        assert user['is_email_verified'] is True
+        assert user["status"] == "active"
+        assert user["is_email_verified"] is True
 
     def test_mock_email_service(self):
         """Тест мока email сервиса."""
@@ -107,11 +107,11 @@ class TestBasicSyntheticData:
         assert len(sent_emails) == 1
 
         email = sent_emails[0]
-        assert email['to'] == "test@example.com"
-        assert email['subject'] == "Test Subject"
-        assert email['body'] == "Test Body"
-        assert email['status'] == 'sent'
-        assert isinstance(email['sent_at'], datetime)
+        assert email["to"] == "test@example.com"
+        assert email["subject"] == "Test Subject"
+        assert email["body"] == "Test Body"
+        assert email["status"] == "sent"
+        assert isinstance(email["sent_at"], datetime)
 
     def test_deterministic_data_generation(self):
         """Тест детерминированной генерации данных."""
@@ -123,9 +123,9 @@ class TestBasicSyntheticData:
         user2 = SimpleUserFactory.create()
 
         # При одинаковом seed данные должны совпадать
-        assert user1['username'] == user2['username']
-        assert user1['email'] == user2['email']
-        assert user1['name'] == user2['name']
+        assert user1["username"] == user2["username"]
+        assert user1["email"] == user2["email"]
+        assert user1["name"] == user2["name"]
 
     def test_performance_large_dataset(self):
         """Тест производительности генерации больших данных."""
@@ -147,20 +147,20 @@ class TestBasicSyntheticData:
 
         for user in users:
             # Проверяем основные поля
-            assert user['id'] > 0
-            assert len(user['username']) > 0
-            assert '@' in user['email']
-            assert '.' in user['email']
-            assert len(user['name']) > 0
+            assert user["id"] > 0
+            assert len(user["username"]) > 0
+            assert "@" in user["email"]
+            assert "." in user["email"]
+            assert len(user["name"]) > 0
 
             # Проверяем типы данных
-            assert isinstance(user['id'], int)
-            assert isinstance(user['username'], str)
-            assert isinstance(user['email'], str)
-            assert isinstance(user['name'], str)
-            assert isinstance(user['is_email_verified'], bool)
-            assert isinstance(user['is_active'], bool)
-            assert isinstance(user['created_at'], datetime)
+            assert isinstance(user["id"], int)
+            assert isinstance(user["username"], str)
+            assert isinstance(user["email"], str)
+            assert isinstance(user["name"], str)
+            assert isinstance(user["is_email_verified"], bool)
+            assert isinstance(user["is_active"], bool)
+            assert isinstance(user["created_at"], datetime)
 
 
 @pytest.mark.unit
@@ -196,9 +196,9 @@ class TestBasicMocks:
 
         # Проверяем порядок отправки
         for i, email in enumerate(sent_emails):
-            assert email['to'] == f"test{i}@example.com"
-            assert email['subject'] == f"Subject {i}"
-            assert email['body'] == f"Body {i}"
+            assert email["to"] == f"test{i}@example.com"
+            assert email["subject"] == f"Subject {i}"
+            assert email["body"] == f"Body {i}"
 
 
 @pytest.mark.ci
@@ -212,8 +212,8 @@ class TestCIEnvironment:
 
         # В GitHub Actions эти переменные должны быть установлены
         # Для локального запуска делаем их опциональными
-        testing = os.getenv('TESTING', 'false')
-        log_level = os.getenv('LOG_LEVEL', 'INFO')
+        testing = os.getenv("TESTING", "false")
+        log_level = os.getenv("LOG_LEVEL", "INFO")
 
         # Просто проверяем, что переменные читаются
         assert isinstance(testing, str)

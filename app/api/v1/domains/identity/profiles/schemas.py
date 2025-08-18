@@ -50,6 +50,39 @@ class ActivityType(str, Enum):
 # === Profile Request Schemas ===
 
 
+class UserProfileCreate(BaseSchema):
+    """Схема создания профиля пользователя."""
+
+    user_id: int = Field(..., gt=0, description="ID пользователя")
+    bio: Optional[str] = Field(None, max_length=1000, description="Биография")
+    phone: Optional[str] = Field(None, max_length=20, description="Телефон")
+    position: Optional[str] = Field(None, max_length=100, description="Должность")
+    department: Optional[str] = Field(None, max_length=100, description="Департамент")
+    location: Optional[str] = Field(None, max_length=100, description="Местоположение")
+    website: Optional[HttpUrl] = Field(None, description="Веб-сайт")
+    linkedin_url: Optional[HttpUrl] = Field(None, description="LinkedIn")
+    github_url: Optional[HttpUrl] = Field(None, description="GitHub")
+    avatar_url: Optional[str] = Field(None, description="URL аватара")
+    timezone: Optional[str] = Field(None, description="Часовой пояс")
+    language: Optional[str] = Field(None, description="Язык")
+
+
+class UserProfileUpdate(BaseSchema):
+    """Схема обновления профиля пользователя."""
+
+    bio: Optional[str] = Field(None, max_length=1000, description="Биография")
+    phone: Optional[str] = Field(None, max_length=20, description="Телефон")
+    position: Optional[str] = Field(None, max_length=100, description="Должность")
+    department: Optional[str] = Field(None, max_length=100, description="Департамент")
+    location: Optional[str] = Field(None, max_length=100, description="Местоположение")
+    website: Optional[HttpUrl] = Field(None, description="Веб-сайт")
+    linkedin_url: Optional[HttpUrl] = Field(None, description="LinkedIn")
+    github_url: Optional[HttpUrl] = Field(None, description="GitHub")
+    avatar_url: Optional[str] = Field(None, description="URL аватара")
+    timezone: Optional[str] = Field(None, description="Часовой пояс")
+    language: Optional[str] = Field(None, description="Язык")
+
+
 class ProfileUpdateRequest(BaseSchema):
     """Schema for updating user profile."""
 
@@ -199,3 +232,55 @@ class ProfileOperationResponse(BaseSchema):
     timestamp: datetime = Field(
         default_factory=datetime.utcnow, description="Operation timestamp"
     )
+
+
+# === Service Schemas ===
+
+
+class UserProfileCreate(BaseSchema):
+    """Schema for creating user profile."""
+
+    first_name: Optional[str] = Field(None, description="First name")
+    last_name: Optional[str] = Field(None, description="Last name")
+    bio: Optional[str] = Field(None, description="Biography")
+    phone: Optional[str] = Field(None, description="Phone number")
+    position: Optional[str] = Field(None, description="Job position")
+    department: Optional[str] = Field(None, description="Department")
+    location: Optional[str] = Field(None, description="Location")
+    website: Optional[HttpUrl] = Field(None, description="Website URL")
+    linkedin_url: Optional[HttpUrl] = Field(None, description="LinkedIn profile URL")
+    github_url: Optional[HttpUrl] = Field(None, description="GitHub profile URL")
+
+
+class UserProfileUpdate(BaseSchema):
+    """Schema for updating user profile."""
+
+    first_name: Optional[str] = Field(None, description="First name")
+    last_name: Optional[str] = Field(None, description="Last name")
+    bio: Optional[str] = Field(None, description="Biography")
+    phone: Optional[str] = Field(None, description="Phone number")
+    position: Optional[str] = Field(None, description="Job position")
+    department: Optional[str] = Field(None, description="Department")
+    location: Optional[str] = Field(None, description="Location")
+    website: Optional[HttpUrl] = Field(None, description="Website URL")
+    linkedin_url: Optional[HttpUrl] = Field(None, description="LinkedIn profile URL")
+    github_url: Optional[HttpUrl] = Field(None, description="GitHub profile URL")
+
+
+class UserProfileStats(BaseSchema):
+    """Schema for user profile statistics."""
+
+    completion_percentage: float = Field(
+        0.0, description="Profile completion percentage"
+    )
+    filled_fields_count: int = Field(0, description="Number of filled fields")
+    total_fields_count: int = Field(0, description="Total number of fields")
+    last_updated: Optional[datetime] = Field(None, description="Last update timestamp")
+
+
+class ProfileValidation(BaseSchema):
+    """Profile validation result."""
+
+    is_valid: bool = Field(True, description="Is profile data valid")
+    errors: List[str] = Field(default_factory=list, description="Validation errors")
+    warnings: List[str] = Field(default_factory=list, description="Validation warnings")

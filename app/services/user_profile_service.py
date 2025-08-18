@@ -4,37 +4,25 @@
 Рефакторен с использованием паттернов проектирования и принципов SOLID.
 """
 
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, TYPE_CHECKING
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import HTTPException, status
 from datetime import datetime, timezone
+from pydantic import BaseModel, Field
 
 from app.crud.user_profile import user_profile as profile_crud
-from app.crud.user import user as user_crud
+from app.crud.user import crud_user as user_crud
 from app.models.user_profile import UserProfile
 from app.models.user import User
 from app.services.permission_service import permission_service
 from app.core.constants import Permission, RoleScope
-from app.schemas.user_profile import (
+
+# Импортируем схемы из домена identity
+from app.api.v1.domains.identity.schemas import (
     UserProfileCreate,
     UserProfileUpdate,
-    UserProfileResponse,
-    UserProfilePublic,
-    UserProfileSummary,
-    UserProfileCompletion,
     UserProfileStats,
-    ContactInfo,
-    WorkInfo,
-    PersonalInfo,
-    LocalizationSettings,
     ProfileValidation,
-)
-from .base import (
-    BaseService,
-    ServiceError,
-    ValidationError,
-    NotFoundError,
-    PermissionError,
 )
 
 

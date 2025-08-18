@@ -8,7 +8,10 @@ from sqlalchemy.orm import selectinload
 
 from app.crud.base import CRUDBase
 from app.models.release import Release
-from app.schemas.release import ReleaseCreate, ReleaseUpdate
+from app.api.v1.domains.projects.releases.schemas import (
+    ReleaseCreateRequest as ReleaseCreate,
+    ReleaseUpdateRequest as ReleaseUpdate,
+)
 
 
 class CRUDRelease(CRUDBase[Release, ReleaseCreate, ReleaseUpdate]):

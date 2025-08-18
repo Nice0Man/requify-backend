@@ -40,7 +40,7 @@ class InheritanceType(str, Enum):
     FULL = "full"  # Полное наследование всех разрешений
     PARTIAL = "partial"  # Частичное наследование (только указанные разрешения)
     OVERRIDE = "override"  # Переопределение разрешений родителя
-    REStringCT = "reStringct"  # Ограничение разрешений родителя
+    RESTRICT = "restrict"  # Ограничение разрешений родителя
 
 
 class RoleHierarchy(Base, TimestampedMixin):
@@ -104,8 +104,7 @@ class RoleHierarchy(Base, TimestampedMixin):
         comment="Приоритет наследования (при множественном наследовании)",
     )
 
-    #     # Условия и ограничения
-    #
+    # Условия и ограничения
     conditions: Mapped[Optional[Dict[str, Any]]] = mapped_column(
         JSON, nullable=True, comment="Условия наследования (JSON)"
     )
@@ -115,9 +114,9 @@ class RoleHierarchy(Base, TimestampedMixin):
         JSON, nullable=True, comment="Список наследуемых разрешений (для PARTIAL)"
     )
 
-    # Какие разрешения исключить (для REStringCT)
+    # Какие разрешения исключить (для RESTRICT)
     excluded_permissions: Mapped[Optional[List[str]]] = mapped_column(
-        JSON, nullable=True, comment="Список исключаемых разрешений (для REStringCT)"
+        JSON, nullable=True, comment="Список исключаемых разрешений (для RESTRICT)"
     )
 
     # Переопределения разрешений (для OVERRIDE)
@@ -125,8 +124,7 @@ class RoleHierarchy(Base, TimestampedMixin):
         JSON, nullable=True, comment="Переопределения разрешений (для OVERRIDE)"
     )
 
-    #     # Метаданные
-    #
+    # Метаданные
     is_active: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Активна ли связь наследования"
     )
@@ -152,8 +150,7 @@ class RoleHierarchy(Base, TimestampedMixin):
         ForeignKey("users.id"), nullable=True, comment="Кем создана связь"
     )
 
-    #     # Отношения
-    #
+    # Отношения
     parent_role: Mapped["EnhancedRole"] = relationship(
         "EnhancedRole",
         foreign_keys=[parent_role_id],
@@ -174,8 +171,7 @@ class RoleHierarchy(Base, TimestampedMixin):
             f")>"
         )
 
-    #     # Business Logic Methods
-    #
+    # Business Logic Methods
     @property
     def is_effective(self) -> bool:
         """Проверить, действует ли наследование в данный момент."""
@@ -213,7 +209,7 @@ class RoleHierarchy(Base, TimestampedMixin):
                 return parent_permissions.intersection(set(self.inherited_permissions))
             return set()
 
-        elif self.inheritance_type == InheritanceType.REStringCT:
+        elif self.inheritance_type == InheritanceType.RESTRICT:
             if self.excluded_permissions:
                 return parent_permissions - set(self.excluded_permissions)
             return parent_permissions.copy()
@@ -235,7 +231,7 @@ class RoleHierarchy(Base, TimestampedMixin):
         if self.inheritance_type == InheritanceType.PARTIAL:
             return self.inherited_permissions is not None
 
-        elif self.inheritance_type == InheritanceType.REStringCT:
+        elif self.inheritance_type == InheritanceType.RESTRICT:
             return self.excluded_permissions is not None
 
         elif self.inheritance_type == InheritanceType.OVERRIDE:
