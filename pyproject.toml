@@ -46,6 +46,7 @@ pylint = "^3.3.7"
 safety = "^3.0.0"
 sqlmodel = "^0.0.24"
 pyyaml = "^6.0.2"
+faker = "^37.5.3"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

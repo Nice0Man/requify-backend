@@ -5,13 +5,23 @@
 
 from typing import TYPE_CHECKING, Optional, List
 
-from sqlalchemy import Foreig, JSONnKey, String, Text, Boolean, Integer, Index, ForeignKey
+from sqlalchemy import (
+    ForeignKey,
+    JSONKey,
+    String,
+    Text,
+    Boolean,
+    Integer,
+    Index,
+    ForeignKey,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
 
 if TYPE_CHECKING:
     from .company import Company
+
 
 class CompanyContact(Base, TimestampedMixin):
     """
@@ -38,7 +48,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Типизация контакта
-    # 
+    #
     contact_type: Mapped[str] = mapped_column(
         String(50),
         nullable=False,
@@ -55,7 +65,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Email контакты
-    # 
+    #
     email: Mapped[Optional[str]] = mapped_column(
         String(100), nullable=True, comment="Основной email"
     )
@@ -70,7 +80,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Телефонные контакты
-    # 
+    #
     phone: Mapped[Optional[str]] = mapped_column(
         String(20), nullable=True, comment="Основной телефон"
     )
@@ -85,7 +95,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Физический адрес
-    # 
+    #
     # Страна и регион
     country: Mapped[Optional[str]] = mapped_column(
         String(100), nullable=True, comment="Страна"
@@ -117,7 +127,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Онлайн присутствие
-    # 
+    #
     website: Mapped[Optional[str]] = mapped_column(
         String(500), nullable=True, comment="Основной веб-сайт"
     )
@@ -126,7 +136,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Часовой пояс и рабочее время
-    # 
+    #
     timezone: Mapped[str] = mapped_column(
         String(50),
         nullable=False,
@@ -138,7 +148,7 @@ class CompanyContact(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     company: Mapped["Company"] = relationship(
         "Company", back_populates="contacts", lazy="select"
     )
@@ -147,7 +157,7 @@ class CompanyContact(Base, TimestampedMixin):
         return f"<CompanyContact(id={self.id}, company_id={self.company_id}, type='{self.contact_type}')>"
 
     #     # Business Logic Methods
-    # 
+    #
     @property
     def full_address(self) -> str:
         """Полный адрес в одну строку"""
@@ -167,7 +177,7 @@ class CompanyContact(Base, TimestampedMixin):
         return ", ".join(parts) if parts else ""
 
     @property
-    def location_string(self) -> str:
+    def location_String(self) -> str:
         """Строка местоположения (город, страна)"""
         parts = []
         if self.city:
@@ -211,7 +221,7 @@ class CompanyContact(Base, TimestampedMixin):
         return {
             "email": self.get_primary_email(),
             "phone": self.get_primary_phone(),
-            "location": self.location_string,
+            "location": self.location_String,
             "website": self.website,
             "timezone": self.timezone,
             "working_hours": self.working_hours,

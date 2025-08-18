@@ -52,7 +52,7 @@ class CRUDCompanySubscription(
         *,
         status: SubscriptionStatus,
         skip: int = 0,
-        limit: int = 100
+        limit: int = 100,
     ) -> List[CompanySubscription]:
         """Получить подписки по статусу"""
         return (
@@ -81,7 +81,7 @@ class CRUDCompanySubscription(
         *,
         days_until_expiry: int = 7,
         skip: int = 0,
-        limit: int = 100
+        limit: int = 100,
     ) -> List[CompanySubscription]:
         """Получить триальные подписки, истекающие в ближайшие дни"""
         cutoff_date = datetime.now(timezone.utc) + timedelta(days=days_until_expiry)
@@ -106,7 +106,7 @@ class CRUDCompanySubscription(
         *,
         days_until_expiry: int = 7,
         skip: int = 0,
-        limit: int = 100
+        limit: int = 100,
     ) -> List[CompanySubscription]:
         """Получить подписки, истекающие в ближайшие дни"""
         cutoff_date = datetime.now(timezone.utc) + timedelta(days=days_until_expiry)
@@ -178,7 +178,7 @@ class CRUDCompanySubscription(
         *,
         company_id: int,
         subscription_start_date: Optional[datetime] = None,
-        subscription_end_date: Optional[datetime] = None
+        subscription_end_date: Optional[datetime] = None,
     ) -> Optional[CompanySubscription]:
         """Активировать подписку"""
         subscription = self.get_by_company(db, company_id=company_id)
@@ -251,7 +251,7 @@ class CRUDCompanySubscription(
         db: Session,
         *,
         company_id: int,
-        billing_period: Optional[BillingPeriod] = None
+        billing_period: Optional[BillingPeriod] = None,
     ) -> Optional[CompanySubscription]:
         """Продлить подписку"""
         subscription = self.get_by_company(db, company_id=company_id)
@@ -290,7 +290,7 @@ class CRUDCompanySubscription(
         company_id: int,
         new_plan: SubscriptionPlan,
         monthly_price: Optional[float] = None,
-        yearly_price: Optional[float] = None
+        yearly_price: Optional[float] = None,
     ) -> Optional[CompanySubscription]:
         """Обновить план подписки"""
         subscription = self.get_by_company(db, company_id=company_id)
@@ -392,7 +392,7 @@ class CRUDCompanySubscription(
         limit_type: str,  # 'users', 'projects', 'storage', 'api_calls'
         threshold_percent: float = 80.0,
         skip: int = 0,
-        limit: int = 100
+        limit: int = 100,
     ) -> List[CompanySubscription]:
         """Получить компании, близкие к превышению лимитов"""
         # Это требует дополнительной логики для подсчета текущего использования

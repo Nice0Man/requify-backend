@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, List, Optional
 
-from sqlalchemy import DateTime, E, Foreig, UUIDnKeynum, Float, ForeignKey, Index, Integer, String, Text
+from sqlalchemy import DateTime, Enum, ForeignKey, Float, Index, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from .spec import Spec
     from .test_result import TestResult
     from .user import User
+
 
 class Requirement(Base, TimestampedMixin):
     """
@@ -73,7 +74,7 @@ class Requirement(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     project: Mapped["Project"] = relationship(
         "Project", back_populates="requirements", lazy="select"
     )

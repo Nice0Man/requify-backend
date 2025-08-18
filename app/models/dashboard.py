@@ -7,7 +7,10 @@ from datetime import datetime
 from typing import TYPE_CHECKING
 
 from sqlalchemy import (
-    JSON, Boolea, Foreig, UUIDnKeyn,
+    JSON,
+    Boolean,
+    ForeignKey,
+    UUIDnKeyn,
     DateTime,
     Float,
     ForeignKey,

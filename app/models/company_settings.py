@@ -5,13 +5,24 @@
 
 from typing import TYPE_CHECKING, Optional
 
-from sqlalchemy import Foreig, JSONnKey, String, Boolean, Integer, Index, ForeignKey, Text, JSON
+from sqlalchemy import (
+    ForeignKey,
+    JSONKey,
+    String,
+    Boolean,
+    Integer,
+    Index,
+    ForeignKey,
+    Text,
+    JSON,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
 
 if TYPE_CHECKING:
     from .company import Company
+
 
 class CompanySettings(Base, TimestampedMixin):
     """
@@ -38,7 +49,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Домен и безопасность
-    # 
+    #
     domain: Mapped[Optional[str]] = mapped_column(
         String(100), nullable=True, comment="Корпоративный домен (для SSO)"
     )
@@ -83,7 +94,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Локализация и форматирование
-    # 
+    #
     default_language: Mapped[str] = mapped_column(
         String(10), nullable=False, default="ru", comment="Язык по умолчанию"
     )
@@ -107,7 +118,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Настройки приложения
-    # 
+    #
     # Уведомления
     enable_email_notifications: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Включить email уведомления"
@@ -139,7 +150,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Рабочие процессы
-    # 
+    #
     # Процессы утверждения
     require_requirement_approval: Mapped[bool] = mapped_column(
         Boolean,
@@ -176,11 +187,14 @@ class CompanySettings(Base, TimestampedMixin):
         Integer, nullable=True, comment="Максимальный размер команды"
     )
     allow_cross_department_teams: Mapped[bool] = mapped_column(
-        Boolean, default=True, nullable=False, comment="Разрешить межотдельские команды"
+        Boolean,
+        default=True,
+        nullable=False,
+        comment="Разрешить межотдельские команды",
     )
 
     #     # Аналитика и отчеты
-    # 
+    #
     enable_analytics: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Включить аналитику"
     )
@@ -203,7 +217,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Кастомизация
-    # 
+    #
     # Кастомные поля
     custom_user_fields: Mapped[Optional[dict]] = mapped_column(
         JSON, nullable=True, comment="Кастомные поля пользователей (JSON)"
@@ -224,7 +238,7 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Хранение и бэкапы
-    # 
+    #
     # Хранение файлов
     file_storage_provider: Mapped[str] = mapped_column(
         String(50),
@@ -254,13 +268,13 @@ class CompanySettings(Base, TimestampedMixin):
     )
 
     #     # Дополнительные настройки
-    # 
+    #
     custom_settings: Mapped[Optional[dict]] = mapped_column(
         JSON, nullable=True, comment="Дополнительные кастомные настройки (JSON)"
     )
 
     #     # Отношения
-    # 
+    #
     company: Mapped["Company"] = relationship(
         "Company", back_populates="settings", lazy="select"
     )
@@ -269,7 +283,7 @@ class CompanySettings(Base, TimestampedMixin):
         return f"<CompanySettings(id={self.id}, company_id={self.company_id}, domain='{self.domain}')>"
 
     #     # Business Logic Methods
-    # 
+    #
     def is_domain_allowed(self, email: str) -> bool:
         """Проверить, разрешен ли домен email"""
         if not self.domain or not self.allow_domain_signup:
@@ -329,7 +343,7 @@ class CompanySettings(Base, TimestampedMixin):
         if not self.export_formats:
             return ["pdf", "xlsx", "csv"]
 
-        return [fmt.strip() for fmt in self.export_formats.split(",")]
+        return [fmt.Stringp() for fmt in self.export_formats.split(",")]
 
     def can_export_format(self, format_name: str) -> bool:
         """Проверить, разрешен ли формат экспорта"""
@@ -337,7 +351,7 @@ class CompanySettings(Base, TimestampedMixin):
 
     def get_allowed_file_types(self) -> list:
         """Получить разрешенные типы файлов"""
-        return [ext.strip() for ext in self.allowed_file_types.split(",")]
+        return [ext.Stringp() for ext in self.allowed_file_types.split(",")]
 
     def can_upload_file_type(self, file_extension: str) -> bool:
         """Проверить, разрешен ли тип файла"""

@@ -2,7 +2,15 @@ from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Optional, List
 from enum import Enum as PyEnum
 
-from sqlalchemy import ForeignKey, String, DateTime, Integer, Index, ForeignKey, Enum
+from sqlalchemy import (
+    ForeignKey,
+    String,
+    DateTime,
+    Integer,
+    Index,
+    ForeignKey,
+    Enum,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -10,6 +18,7 @@ from .base import Base, TimestampedMixin
 if TYPE_CHECKING:
     from .project import Project
     from .specification import Specification
+
 
 class ReleaseStatus(PyEnum):
     """Статусы релиза"""
@@ -22,6 +31,7 @@ class ReleaseStatus(PyEnum):
     RELEASED = "released"
     CANCELLED = "cancelled"
     HOTFIX = "hotfix"
+
 
 class Release(Base, TimestampedMixin):
     """
@@ -72,7 +82,7 @@ class Release(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     project: Mapped["Project"] = relationship(
         "Project", back_populates="releases", lazy="select"
     )

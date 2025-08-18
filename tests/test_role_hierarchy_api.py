@@ -90,11 +90,12 @@ class TestRoleHierarchyAPIEndpoints:
     @pytest.fixture
     def mock_auth_dependencies(self, test_user_with_permissions):
         """Mock для зависимостей аутентификации."""
-        with patch(
-            "app.api.dependencies.core.auth.get_current_user"
-        ) as mock_get_user, patch(
-            "app.api.dependencies.permissions.base.require_permission"
-        ) as mock_require_perm:
+        with (
+            patch("app.api.dependencies.core.auth.get_current_user") as mock_get_user,
+            patch(
+                "app.api.dependencies.permissions.base.require_permission"
+            ) as mock_require_perm,
+        ):
 
             mock_get_user.return_value = test_user_with_permissions
             mock_require_perm.return_value = lambda: None  # Разрешаем все операции

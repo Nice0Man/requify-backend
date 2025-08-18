@@ -1,7 +1,15 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Optional
 
-from sqlalchemy import Boolea, ForeignKeyn, DateTime, ForeignKey, Index, Integer, String
+from sqlalchemy import (
+    Boolean,
+    ForeignKey,
+    DateTime,
+    ForeignKey,
+    Index,
+    Integer,
+    String,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin

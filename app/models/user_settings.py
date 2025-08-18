@@ -7,7 +7,16 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Optional
 
-from sqlalchemy import Foreig, Foreig, JSONnKeynKey, Integer, JSON, DateTime, Text, String
+from sqlalchemy import (
+    ForeignKey,
+    ForeignKey,
+    JSONKeynKey,
+    Integer,
+    JSON,
+    DateTime,
+    Text,
+    String,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin

@@ -17,7 +17,8 @@ from app.api.dependencies import (
 router = APIRouter()
 
 # # Department Management
-# 
+#
+
 
 @router.get("/")
 async def get_departments(
@@ -36,6 +37,7 @@ async def get_departments(
     # TODO: Implement departments list with hierarchy support
     return {"departments": []}
 
+
 @router.post("/")
 async def create_department(
     # department_data: DepartmentCreate,
@@ -49,6 +51,7 @@ async def create_department(
     """
     # TODO: Implement department creation
     return {"message": "Department created"}
+
 
 @router.get("/hierarchy")
 async def get_departments_hierarchy(
@@ -64,6 +67,7 @@ async def get_departments_hierarchy(
     # TODO: Implement departments hierarchy
     return {"hierarchy": []}
 
+
 @router.get("/{department_id}")
 async def get_department(
     department_id: int,
@@ -77,6 +81,7 @@ async def get_department(
     """
     # TODO: Implement department retrieval
     return {"department": {"id": department_id}}
+
 
 @router.put("/{department_id}")
 async def update_department(
@@ -93,6 +98,7 @@ async def update_department(
     # TODO: Implement department update
     return {"message": "Department updated"}
 
+
 @router.delete("/{department_id}")
 async def delete_department(
     department_id: int,
@@ -107,8 +113,10 @@ async def delete_department(
     # TODO: Implement department deletion
     return {"message": f"Department {department_id} deleted"}
 
+
 # # Department Members Management
-# 
+#
+
 
 @router.get("/{department_id}/members")
 async def get_department_members(
@@ -126,6 +134,7 @@ async def get_department_members(
     # TODO: Implement department members list
     return {"members": []}
 
+
 @router.post("/{department_id}/members")
 async def add_department_member(
     department_id: int,
@@ -140,6 +149,7 @@ async def add_department_member(
     """
     # TODO: Implement adding department member
     return {"message": "Member added to department"}
+
 
 @router.delete("/{department_id}/members/{user_id}")
 async def remove_department_member(

@@ -17,7 +17,8 @@ from app.api.dependencies import (
 router = APIRouter()
 
 # # Project Overview Analytics
-# 
+#
+
 
 @router.get("/{project_id}/summary")
 async def get_project_analytics_summary(
@@ -43,6 +44,7 @@ async def get_project_analytics_summary(
         },
     }
 
+
 @router.get("/{project_id}/progress")
 async def get_project_progress(
     project_id: int,
@@ -66,6 +68,7 @@ async def get_project_progress(
         },
     }
 
+
 @router.get("/{project_id}/velocity")
 async def get_project_velocity(
     project_id: int,
@@ -83,6 +86,7 @@ async def get_project_velocity(
         "project_id": project_id,
         "velocity": {"average_weekly": 0.0, "trend": "stable", "historical_data": []},
     }
+
 
 @router.get("/{project_id}/quality")
 async def get_project_quality_metrics(
@@ -107,8 +111,10 @@ async def get_project_quality_metrics(
         },
     }
 
+
 # # Requirements Analytics
-# 
+#
+
 
 @router.get("/{project_id}/requirements/analytics")
 async def get_requirements_analytics(
@@ -134,6 +140,7 @@ async def get_requirements_analytics(
         },
     }
 
+
 @router.get("/{project_id}/requirements/burndown")
 async def get_requirements_burndown(
     project_id: int,
@@ -152,8 +159,10 @@ async def get_requirements_burndown(
         "burndown": {"ideal_line": [], "actual_line": [], "remaining_work": 0},
     }
 
+
 # # Team Performance Analytics
-# 
+#
+
 
 @router.get("/{project_id}/team/performance")
 async def get_team_performance(
@@ -177,6 +186,7 @@ async def get_team_performance(
         },
     }
 
+
 @router.get("/{project_id}/team/workload")
 async def get_team_workload(
     project_id: int,
@@ -198,8 +208,10 @@ async def get_team_workload(
         },
     }
 
+
 # # Risk & Insights Analytics
-# 
+#
+
 
 @router.get("/{project_id}/risks")
 async def get_project_risks(
@@ -223,6 +235,7 @@ async def get_project_risks(
         },
     }
 
+
 @router.get("/{project_id}/insights")
 async def get_project_insights(
     project_id: int,
@@ -245,8 +258,10 @@ async def get_project_insights(
         },
     }
 
+
 # # Export & Reporting
-# 
+#
+
 
 @router.get("/{project_id}/reports/generate")
 async def generate_project_report(

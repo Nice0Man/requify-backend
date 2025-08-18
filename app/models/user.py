@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, List, Optional
 
-from sqlalchemy import Boolea, ForeignKeyn, DateTime, ForeignKey, Index, Integer, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from .team import Team
     from .team_member import TeamMember
     from .test_result import TestResult
+
 
 class User(
     Base,
@@ -63,7 +64,7 @@ class User(
     )
 
     #     # Отношения
-    # 
+    #
     company: Mapped[Optional["Company"]] = relationship(
         "Company", back_populates="users", lazy="select"
     )

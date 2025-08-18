@@ -3096,70 +3096,6 @@
         "documentation": {}
     },
     {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "TYPE_CHECKING",
         "importPath": "typing",
         "description": "typing",
@@ -7705,7 +7641,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7713,7 +7649,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7881,7 +7817,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7889,7 +7825,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7953,7 +7889,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7961,7 +7897,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8017,7 +7953,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8025,7 +7961,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8089,7 +8025,7 @@
         "documentation": {}
     },
     {
-        "label": "Stri",
+        "label": "String",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8097,7 +8033,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8105,7 +8041,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKeyng",
+        "label": "JSONKeyng",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8177,7 +8113,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8185,7 +8121,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8305,7 +8241,7 @@
         "documentation": {}
     },
     {
-        "label": "Stri",
+        "label": "String",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8313,7 +8249,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8321,7 +8257,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKeyng",
+        "label": "JSONKeyng",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8385,7 +8321,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8393,7 +8329,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONn",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8433,14 +8369,6 @@
         "documentation": {}
     },
     {
-        "label": "JSON",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "Integer",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -8449,7 +8377,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8457,7 +8385,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8537,7 +8465,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8545,7 +8473,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeynKey",
+        "label": "ForeignKeyKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8585,7 +8513,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8593,7 +8521,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyn",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8657,7 +8585,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8665,7 +8593,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeynKey",
+        "label": "ForeignKeyKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8761,7 +8689,7 @@
         "documentation": {}
     },
     {
-        "label": "E",
+        "label": "Enum",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8769,15 +8697,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "UUIDnKeynum",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8793,14 +8713,6 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKey",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "Index",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -8841,7 +8753,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8849,7 +8761,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeynKey",
+        "label": "ForeignKeyKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8881,7 +8793,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8889,7 +8801,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8897,7 +8809,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8905,7 +8817,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8961,7 +8873,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8969,7 +8881,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONn",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9025,7 +8937,7 @@
         "documentation": {}
     },
     {
-        "label": "Stri",
+        "label": "String",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9033,7 +8945,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9049,7 +8961,7 @@
         "documentation": {}
     },
     {
-        "label": "UniqueConstraintnKeyng",
+        "label": "UniqueConstraint",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9089,31 +9001,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKey",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "Text",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "JSON",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "UniqueConstraint",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9129,7 +9017,7 @@
         "documentation": {}
     },
     {
-        "label": "Stri",
+        "label": "and_",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9137,47 +9025,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "JSON",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "UniqueConstraintnKeynd_",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "or_\r\n\r\nfrom .base import Base",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "TimestampedMixin\r\n\r\nif TYPE_CHECKING:\r\n    from .enhanced_role_system import EnhancedRole\r\n\r\nclass InheritanceTypestr",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "Enum",
+        "label": "or_",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9193,7 +9041,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9201,7 +9049,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9209,7 +9057,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9217,7 +9065,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKey",
+        "label": "JSONKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9257,7 +9105,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9265,7 +9113,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9273,7 +9121,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKeynKey",
+        "label": "JSONKeynKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9377,7 +9225,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9385,7 +9233,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyn",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9433,7 +9281,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9441,7 +9289,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyn",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9497,7 +9345,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9505,7 +9353,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9513,7 +9361,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKeynKey",
+        "label": "JSONKeynKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9585,7 +9433,7 @@
         "documentation": {}
     },
     {
-        "label": "E",
+        "label": "Enum",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9593,7 +9441,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeynum",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9633,15 +9481,7 @@
         "documentation": {}
     },
     {
-        "label": "Boolea",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "ForeignKeyn",
+        "label": "Boolean",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9689,7 +9529,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9697,7 +9537,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeynKey",
+        "label": "ForeignKeyKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9737,7 +9577,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9745,7 +9585,7 @@
         "documentation": {}
     },
     {
-        "label": "Foreig",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9753,7 +9593,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONnKeynKey",
+        "label": "JSONKeynKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -11539,22 +11379,6 @@
     },
     {
         "label": "DatabaseConfig",
-        "importPath": "app.core.config",
-        "description": "app.core.config",
-        "isExtraImport": true,
-        "detail": "app.core.config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "app.core.config",
-        "description": "app.core.config",
-        "isExtraImport": true,
-        "detail": "app.core.config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
         "importPath": "app.core.config",
         "description": "app.core.config",
         "isExtraImport": true,
@@ -15154,14 +14978,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "UTC",
         "importPath": "datetime",
         "description": "datetime",
@@ -16474,6 +16290,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
@@ -16667,6 +16491,14 @@
     },
     {
         "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -20004,22 +19836,6 @@
         "documentation": {}
     },
     {
-        "label": "ABC",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
-        "label": "abstractmethod",
-        "importPath": "abc",
-        "description": "abc",
-        "isExtraImport": true,
-        "detail": "abc",
-        "documentation": {}
-    },
-    {
         "label": "enum",
         "kind": 6,
         "isExtraImport": true,
@@ -21966,14 +21782,6 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
-        "isExtraImport": true,
-        "detail": "dataclasses",
-        "documentation": {}
-    },
-    {
         "label": "field",
         "importPath": "dataclasses",
         "description": "dataclasses",
@@ -22031,22 +21839,6 @@
     },
     {
         "label": "UserNotFoundError",
-        "importPath": "app.core.exceptions",
-        "description": "app.core.exceptions",
-        "isExtraImport": true,
-        "detail": "app.core.exceptions",
-        "documentation": {}
-    },
-    {
-        "label": "ExternalSystemError",
-        "importPath": "app.core.exceptions",
-        "description": "app.core.exceptions",
-        "isExtraImport": true,
-        "detail": "app.core.exceptions",
-        "documentation": {}
-    },
-    {
-        "label": "ExternalServiceError",
         "importPath": "app.core.exceptions",
         "description": "app.core.exceptions",
         "isExtraImport": true,
@@ -26343,22 +26135,6 @@
         "description": "app.models.project",
         "isExtraImport": true,
         "detail": "app.models.project",
-        "documentation": {}
-    },
-    {
-        "label": "Project",
-        "importPath": "app.models.project",
-        "description": "app.models.project",
-        "isExtraImport": true,
-        "detail": "app.models.project",
-        "documentation": {}
-    },
-    {
-        "label": "Requirement",
-        "importPath": "app.models.requirement",
-        "description": "app.models.requirement",
-        "isExtraImport": true,
-        "detail": "app.models.requirement",
         "documentation": {}
     },
     {
@@ -32126,31 +31902,6 @@
         "documentation": {}
     },
     {
-        "label": "httpx",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "httpx",
-        "description": "httpx",
-        "detail": "httpx",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncClient",
-        "importPath": "httpx",
-        "description": "httpx",
-        "isExtraImport": true,
-        "detail": "httpx",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncClient",
-        "importPath": "httpx",
-        "description": "httpx",
-        "isExtraImport": true,
-        "detail": "httpx",
-        "documentation": {}
-    },
-    {
         "label": "Decimal",
         "importPath": "decimal",
         "description": "decimal",
@@ -32997,6 +32748,22 @@
         "documentation": {}
     },
     {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
         "label": "factory",
         "kind": 6,
         "isExtraImport": true,
@@ -33059,6 +32826,31 @@
         "description": "fastapi.testclient",
         "isExtraImport": true,
         "detail": "fastapi.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
         "documentation": {}
     },
     {
@@ -35239,7 +35031,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.dashboard.router",
         "description": "app.api.v1.domains.analytics.dashboard.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Dashboard Overview\n# \n@router.get(\n    \"/overview\",\n    summary=\"Get Dashboard Overview\",\n    description=\"Get comprehensive dashboard overview with key metrics\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Dashboard Overview\n#\n@router.get(\n    \"/overview\",\n    summary=\"Get Dashboard Overview\",\n    description=\"Get comprehensive dashboard overview with key metrics\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.analytics.dashboard.router",
         "documentation": {}
     },
@@ -35248,7 +35040,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.dashboard.router",
         "description": "app.api.v1.domains.analytics.dashboard.router",
-        "peekOfCode": "router = APIRouter()\n# # Dashboard Overview\n# \n@router.get(\n    \"/overview\",\n    summary=\"Get Dashboard Overview\",\n    description=\"Get comprehensive dashboard overview with key metrics\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Dashboard Overview\n#\n@router.get(\n    \"/overview\",\n    summary=\"Get Dashboard Overview\",\n    description=\"Get comprehensive dashboard overview with key metrics\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.analytics.dashboard.router",
         "documentation": {}
     },
@@ -35473,7 +35265,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.metrics.router",
         "description": "app.api.v1.domains.analytics.metrics.router",
-        "peekOfCode": "analytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Metrics Definition Management\n# \n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",",
+        "peekOfCode": "analytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Metrics Definition Management\n#\n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",",
         "detail": "app.api.v1.domains.analytics.metrics.router",
         "documentation": {}
     },
@@ -35482,7 +35274,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.metrics.router",
         "description": "app.api.v1.domains.analytics.metrics.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Metrics Definition Management\n# \n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Metrics Definition Management\n#\n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.analytics.metrics.router",
         "documentation": {}
     },
@@ -35491,7 +35283,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.metrics.router",
         "description": "app.api.v1.domains.analytics.metrics.router",
-        "peekOfCode": "router = APIRouter()\n# # Metrics Definition Management\n# \n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Metrics Definition Management\n#\n@router.get(\n    \"/definitions\",\n    summary=\"Get Metric Definitions\",\n    description=\"Get list of metric definitions\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.analytics.metrics.router",
         "documentation": {}
     },
@@ -35716,7 +35508,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.reports.router",
         "description": "app.api.v1.domains.analytics.reports.router",
-        "peekOfCode": "reporting_service = ReportingService()\nanalytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n# \n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",",
+        "peekOfCode": "reporting_service = ReportingService()\nanalytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n#\n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",",
         "detail": "app.api.v1.domains.analytics.reports.router",
         "documentation": {}
     },
@@ -35725,7 +35517,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.reports.router",
         "description": "app.api.v1.domains.analytics.reports.router",
-        "peekOfCode": "analytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n# \n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",",
+        "peekOfCode": "analytics_service = AnalyticsService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n#\n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",",
         "detail": "app.api.v1.domains.analytics.reports.router",
         "documentation": {}
     },
@@ -35734,7 +35526,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.reports.router",
         "description": "app.api.v1.domains.analytics.reports.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n# \n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Analytics Reports Generation\n#\n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.analytics.reports.router",
         "documentation": {}
     },
@@ -35743,7 +35535,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.reports.router",
         "description": "app.api.v1.domains.analytics.reports.router",
-        "peekOfCode": "router = APIRouter()\n# # Analytics Reports Generation\n# \n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Analytics Reports Generation\n#\n@router.get(\n    \"/\",\n    summary=\"Get Analytics Reports\",\n    description=\"Get list of available analytics reports\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.analytics.reports.router",
         "documentation": {}
     },
@@ -36832,7 +36624,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.permissions.router",
         "description": "app.api.v1.domains.identity.permissions.router",
-        "peekOfCode": "permission_service = PermissionService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Permission Checking\n# \n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",",
+        "peekOfCode": "permission_service = PermissionService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Permission Checking\n#\n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",",
         "detail": "app.api.v1.domains.identity.permissions.router",
         "documentation": {}
     },
@@ -36841,7 +36633,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.permissions.router",
         "description": "app.api.v1.domains.identity.permissions.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Permission Checking\n# \n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",\n    response_model=PermissionCheckResponse,\n)",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Permission Checking\n#\n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",\n    response_model=PermissionCheckResponse,\n)",
         "detail": "app.api.v1.domains.identity.permissions.router",
         "documentation": {}
     },
@@ -36850,7 +36642,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.permissions.router",
         "description": "app.api.v1.domains.identity.permissions.router",
-        "peekOfCode": "router = APIRouter()\n# # Permission Checking\n# \n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",\n    response_model=PermissionCheckResponse,\n)\nasync def check_permissions(",
+        "peekOfCode": "router = APIRouter()\n# # Permission Checking\n#\n@router.post(\n    \"/check\",\n    summary=\"Check Permissions\",\n    description=\"Check if user has specific permissions\",\n    response_model=PermissionCheckResponse,\n)\nasync def check_permissions(",
         "detail": "app.api.v1.domains.identity.permissions.router",
         "documentation": {}
     },
@@ -36985,7 +36777,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.profiles.router",
         "description": "app.api.v1.domains.identity.profiles.router",
-        "peekOfCode": "user_profile_service = UserProfileService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Current User Profile Management\n# \n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",",
+        "peekOfCode": "user_profile_service = UserProfileService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Current User Profile Management\n#\n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",",
         "detail": "app.api.v1.domains.identity.profiles.router",
         "documentation": {}
     },
@@ -36994,7 +36786,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.profiles.router",
         "description": "app.api.v1.domains.identity.profiles.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Current User Profile Management\n# \n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",\n    response_model=ExtendedProfileResponse,\n)",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Current User Profile Management\n#\n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",\n    response_model=ExtendedProfileResponse,\n)",
         "detail": "app.api.v1.domains.identity.profiles.router",
         "documentation": {}
     },
@@ -37003,7 +36795,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.profiles.router",
         "description": "app.api.v1.domains.identity.profiles.router",
-        "peekOfCode": "router = APIRouter()\n# # Current User Profile Management\n# \n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",\n    response_model=ExtendedProfileResponse,\n)\nasync def get_my_extended_profile(",
+        "peekOfCode": "router = APIRouter()\n# # Current User Profile Management\n#\n@router.get(\n    \"/me\",\n    summary=\"Get My Extended Profile\",\n    description=\"Get current user's extended profile information\",\n    response_model=ExtendedProfileResponse,\n)\nasync def get_my_extended_profile(",
         "detail": "app.api.v1.domains.identity.profiles.router",
         "documentation": {}
     },
@@ -37138,7 +36930,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.roles.router",
         "description": "app.api.v1.domains.identity.roles.router",
-        "peekOfCode": "role_service = RoleService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Role CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",",
+        "peekOfCode": "role_service = RoleService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Role CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",",
         "detail": "app.api.v1.domains.identity.roles.router",
         "documentation": {}
     },
@@ -37147,7 +36939,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.roles.router",
         "description": "app.api.v1.domains.identity.roles.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Role CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.VIEW_USERS))",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Role CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.VIEW_USERS))",
         "detail": "app.api.v1.domains.identity.roles.router",
         "documentation": {}
     },
@@ -37156,7 +36948,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.roles.router",
         "description": "app.api.v1.domains.identity.roles.router",
-        "peekOfCode": "router = APIRouter()\n# # Role CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.VIEW_USERS))\n    ],",
+        "peekOfCode": "router = APIRouter()\n# # Role CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Roles List\",\n    description=\"Get list of available roles (Admin+)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.VIEW_USERS))\n    ],",
         "detail": "app.api.v1.domains.identity.roles.router",
         "documentation": {}
     },
@@ -37291,7 +37083,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.root.router",
         "description": "app.api.v1.domains.identity.root.router",
-        "peekOfCode": "router = APIRouter()\n# # Utility Endpoints\n# \nfrom .schemas import TimezoneListResponse, LanguageListResponse\n@router.get(\n    \"/timezones\",\n    summary=\"Get Available Timezones\",\n    description=\"Get list of available timezones for user profiles\",\n    response_model=TimezoneListResponse,\n)",
+        "peekOfCode": "router = APIRouter()\n# # Utility Endpoints\n#\nfrom .schemas import TimezoneListResponse, LanguageListResponse\n@router.get(\n    \"/timezones\",\n    summary=\"Get Available Timezones\",\n    description=\"Get list of available timezones for user profiles\",\n    response_model=TimezoneListResponse,\n)",
         "detail": "app.api.v1.domains.identity.root.router",
         "documentation": {}
     },
@@ -37588,7 +37380,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "company_settings_service = CompanySettingsService()\ncompany_contact_service = CompanyContactService()\ncompany_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(",
+        "peekOfCode": "company_settings_service = CompanySettingsService()\ncompany_contact_service = CompanyContactService()\ncompany_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37597,7 +37389,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "company_contact_service = CompanyContactService()\ncompany_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(\n    \"/\",",
+        "peekOfCode": "company_contact_service = CompanyContactService()\ncompany_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(\n    \"/\",",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37606,7 +37398,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "company_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",",
+        "peekOfCode": "company_branding_service = CompanyBrandingService()\ncompany_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37615,7 +37407,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "company_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",",
+        "peekOfCode": "company_management_service = CompanyManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37624,7 +37416,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37633,7 +37425,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.companies.router",
         "description": "app.api.v1.domains.organizations.companies.router",
-        "peekOfCode": "router = APIRouter()\n# # Company CRUD Operations\n# \n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))\n    ],",
+        "peekOfCode": "router = APIRouter()\n# # Company CRUD Operations\n#\n@router.get(\n    \"/\",\n    summary=\"Get Companies List\",\n    description=\"Get paginated list of companies (Admin only)\",\n    dependencies=[\n        Depends(permission_checker.require_permission(Permission.MANAGE_COMPANY))\n    ],",
         "detail": "app.api.v1.domains.organizations.companies.router",
         "documentation": {}
     },
@@ -37777,7 +37569,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.departments.router",
         "description": "app.api.v1.domains.organizations.departments.router",
-        "peekOfCode": "router = APIRouter()\n# # Department Management\n# \n@router.get(\"/\")\nasync def get_departments(\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    parent_id: Optional[int] = Query(None, description=\"Filter by parent department\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
+        "peekOfCode": "router = APIRouter()\n# # Department Management\n#\n@router.get(\"/\")\nasync def get_departments(\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    parent_id: Optional[int] = Query(None, description=\"Filter by parent department\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
         "detail": "app.api.v1.domains.organizations.departments.router",
         "documentation": {}
     },
@@ -37813,7 +37605,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.departments.schemas",
         "description": "app.api.v1.domains.organizations.departments.schemas",
-        "peekOfCode": "class DepartmentUpdate(BaseModel):\n    \"\"\"Схема для обновления департамента.\"\"\"\n    name: Optional[str] = Field(None, min_length=1, max_length=255)\n    description: Optional[str] = Field(None, max_length=1000)\n    department_type: Optional[DepartmentType] = Field(None)\n    parent_id: Optional[int] = Field(None)\n    head_user_id: Optional[int] = Field(None)\n# # Response Schemas\n# \nclass DepartmentRead(DepartmentBase):",
+        "peekOfCode": "class DepartmentUpdate(BaseModel):\n    \"\"\"Схема для обновления департамента.\"\"\"\n    name: Optional[str] = Field(None, min_length=1, max_length=255)\n    description: Optional[str] = Field(None, max_length=1000)\n    department_type: Optional[DepartmentType] = Field(None)\n    parent_id: Optional[int] = Field(None)\n    head_user_id: Optional[int] = Field(None)\n# # Response Schemas\n#\nclass DepartmentRead(DepartmentBase):",
         "detail": "app.api.v1.domains.organizations.departments.schemas",
         "documentation": {}
     },
@@ -37849,7 +37641,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.departments.schemas",
         "description": "app.api.v1.domains.organizations.departments.schemas",
-        "peekOfCode": "class DepartmentHierarchyResponse(BaseModel):\n    \"\"\"Схема для иерархии департаментов.\"\"\"\n    hierarchy: List[DepartmentWithChildren] = Field(\n        ..., description=\"Иерархия департаментов\"\n    )\n    company_id: int = Field(..., description=\"ID компании\")\n# # Department Members Schemas\n# \nclass DepartmentMemberRole(str, Enum):\n    \"\"\"Роли участников департамента.\"\"\"",
+        "peekOfCode": "class DepartmentHierarchyResponse(BaseModel):\n    \"\"\"Схема для иерархии департаментов.\"\"\"\n    hierarchy: List[DepartmentWithChildren] = Field(\n        ..., description=\"Иерархия департаментов\"\n    )\n    company_id: int = Field(..., description=\"ID компании\")\n# # Department Members Schemas\n#\nclass DepartmentMemberRole(str, Enum):\n    \"\"\"Роли участников департамента.\"\"\"",
         "detail": "app.api.v1.domains.organizations.departments.schemas",
         "documentation": {}
     },
@@ -37903,7 +37695,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.subscriptions.router",
         "description": "app.api.v1.domains.organizations.subscriptions.router",
-        "peekOfCode": "router = APIRouter()\n# # Subscription Management\n# \n@router.get(\"/{company_id}\")\nasync def get_company_subscription(\n    company_id: int,\n    # db: SessionDep,\n    # current_user: CurrentActiveUserDep = Depends(BillingPermissions.read()),\n):\n    \"\"\"",
+        "peekOfCode": "router = APIRouter()\n# # Subscription Management\n#\n@router.get(\"/{company_id}\")\nasync def get_company_subscription(\n    company_id: int,\n    # db: SessionDep,\n    # current_user: CurrentActiveUserDep = Depends(BillingPermissions.read()),\n):\n    \"\"\"",
         "detail": "app.api.v1.domains.organizations.subscriptions.router",
         "documentation": {}
     },
@@ -37912,7 +37704,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.teams.router",
         "description": "app.api.v1.domains.organizations.teams.router",
-        "peekOfCode": "router = APIRouter()\n# # Team Management\n# \n@router.get(\"/\")\nasync def get_teams(\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
+        "peekOfCode": "router = APIRouter()\n# # Team Management\n#\n@router.get(\"/\")\nasync def get_teams(\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
         "detail": "app.api.v1.domains.organizations.teams.router",
         "documentation": {}
     },
@@ -37930,7 +37722,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.teams.schemas",
         "description": "app.api.v1.domains.organizations.teams.schemas",
-        "peekOfCode": "class TeamStatus(str, Enum):\n    \"\"\"Статусы команд.\"\"\"\n    ACTIVE = \"active\"\n    INACTIVE = \"inactive\"\n    ARCHIVED = \"archived\"\n    FORMING = \"forming\"\n# # Base Schemas\n# \nclass TeamBase(BaseModel):\n    \"\"\"Базовая схема команды.\"\"\"",
+        "peekOfCode": "class TeamStatus(str, Enum):\n    \"\"\"Статусы команд.\"\"\"\n    ACTIVE = \"active\"\n    INACTIVE = \"inactive\"\n    ARCHIVED = \"archived\"\n    FORMING = \"forming\"\n# # Base Schemas\n#\nclass TeamBase(BaseModel):\n    \"\"\"Базовая схема команды.\"\"\"",
         "detail": "app.api.v1.domains.organizations.teams.schemas",
         "documentation": {}
     },
@@ -37957,7 +37749,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.teams.schemas",
         "description": "app.api.v1.domains.organizations.teams.schemas",
-        "peekOfCode": "class TeamUpdate(BaseModel):\n    \"\"\"Схема для обновления команды.\"\"\"\n    name: Optional[str] = Field(None, min_length=1, max_length=255)\n    description: Optional[str] = Field(None, max_length=1000)\n    team_type: Optional[TeamType] = Field(None)\n    max_members: Optional[int] = Field(None, ge=1, le=100)\n    status: Optional[TeamStatus] = Field(None)\n    lead_user_id: Optional[int] = Field(None)\n# # Response Schemas\n# ",
+        "peekOfCode": "class TeamUpdate(BaseModel):\n    \"\"\"Схема для обновления команды.\"\"\"\n    name: Optional[str] = Field(None, min_length=1, max_length=255)\n    description: Optional[str] = Field(None, max_length=1000)\n    team_type: Optional[TeamType] = Field(None)\n    max_members: Optional[int] = Field(None, ge=1, le=100)\n    status: Optional[TeamStatus] = Field(None)\n    lead_user_id: Optional[int] = Field(None)\n# # Response Schemas\n#",
         "detail": "app.api.v1.domains.organizations.teams.schemas",
         "documentation": {}
     },
@@ -37975,7 +37767,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.teams.schemas",
         "description": "app.api.v1.domains.organizations.teams.schemas",
-        "peekOfCode": "class TeamListResponse(BaseModel):\n    \"\"\"Схема для списка команд.\"\"\"\n    teams: List[TeamRead] = Field(..., description=\"Список команд\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\n# # Team Members Schemas\n# \nclass TeamMemberRole(str, Enum):\n    \"\"\"Роли участников команды.\"\"\"",
+        "peekOfCode": "class TeamListResponse(BaseModel):\n    \"\"\"Схема для списка команд.\"\"\"\n    teams: List[TeamRead] = Field(..., description=\"Список команд\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\n# # Team Members Schemas\n#\nclass TeamMemberRole(str, Enum):\n    \"\"\"Роли участников команды.\"\"\"",
         "detail": "app.api.v1.domains.organizations.teams.schemas",
         "documentation": {}
     },
@@ -38029,7 +37821,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.teams.schemas",
         "description": "app.api.v1.domains.organizations.teams.schemas",
-        "peekOfCode": "class TeamMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников команды.\"\"\"\n    members: List[TeamMemberRead] = Field(..., description=\"Список участников\")\n    team_id: int = Field(..., description=\"ID команды\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\n# # Team Statistics Schemas\n# \nclass TeamStats(BaseModel):",
+        "peekOfCode": "class TeamMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников команды.\"\"\"\n    members: List[TeamMemberRead] = Field(..., description=\"Список участников\")\n    team_id: int = Field(..., description=\"ID команды\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\n# # Team Statistics Schemas\n#\nclass TeamStats(BaseModel):",
         "detail": "app.api.v1.domains.organizations.teams.schemas",
         "documentation": {}
     },
@@ -38065,7 +37857,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.projects.analytics.router",
         "description": "app.api.v1.domains.projects.analytics.router",
-        "peekOfCode": "router = APIRouter()\n# # Project Overview Analytics\n# \n@router.get(\"/{project_id}/summary\")\nasync def get_project_analytics_summary(\n    project_id: int,\n    period: Optional[str] = Query(\"last_30_days\", description=\"Analytics period\"),\n    # db: SessionDep,\n    # current_user: CurrentActiveUserDep = Depends(ProjectPermissions.analytics_read()),\n):",
+        "peekOfCode": "router = APIRouter()\n# # Project Overview Analytics\n#\n@router.get(\"/{project_id}/summary\")\nasync def get_project_analytics_summary(\n    project_id: int,\n    period: Optional[str] = Query(\"last_30_days\", description=\"Analytics period\"),\n    # db: SessionDep,\n    # current_user: CurrentActiveUserDep = Depends(ProjectPermissions.analytics_read()),\n):",
         "detail": "app.api.v1.domains.projects.analytics.router",
         "documentation": {}
     },
@@ -38074,7 +37866,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.projects.core.router",
         "description": "app.api.v1.domains.projects.core.router",
-        "peekOfCode": "router = APIRouter()\n# # Project Lifecycle Management\n# \n@router.get(\"/\")\nasync def get_projects(\n    team_id: Optional[int] = Query(None, description=\"Filter by team ID\"),\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),",
+        "peekOfCode": "router = APIRouter()\n# # Project Lifecycle Management\n#\n@router.get(\"/\")\nasync def get_projects(\n    team_id: Optional[int] = Query(None, description=\"Filter by team ID\"),\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),",
         "detail": "app.api.v1.domains.projects.core.router",
         "documentation": {}
     },
@@ -38083,7 +37875,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.projects.releases.router",
         "description": "app.api.v1.domains.projects.releases.router",
-        "peekOfCode": "router = APIRouter()\n# # Release Management\n# \n@router.get(\"/all\")\nasync def get_all_releases(\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n):\n    \"\"\"",
+        "peekOfCode": "router = APIRouter()\n# # Release Management\n#\n@router.get(\"/all\")\nasync def get_all_releases(\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n):\n    \"\"\"",
         "detail": "app.api.v1.domains.projects.releases.router",
         "documentation": {}
     },
@@ -38092,7 +37884,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.projects.requirements.router",
         "description": "app.api.v1.domains.projects.requirements.router",
-        "peekOfCode": "router = APIRouter()\n# # Requirements Management\n# \n@router.get(\"/all\")\nasync def get_all_requirements(\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    type_id: Optional[int] = Query(None, description=\"Filter by type\"),\n    priority: Optional[str] = Query(None, description=\"Filter by priority\"),\n    assigned_to: Optional[int] = Query(None, description=\"Filter by assignee\"),\n    skip: int = Query(0, ge=0),",
+        "peekOfCode": "router = APIRouter()\n# # Requirements Management\n#\n@router.get(\"/all\")\nasync def get_all_requirements(\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    type_id: Optional[int] = Query(None, description=\"Filter by type\"),\n    priority: Optional[str] = Query(None, description=\"Filter by priority\"),\n    assigned_to: Optional[int] = Query(None, description=\"Filter by assignee\"),\n    skip: int = Query(0, ge=0),",
         "detail": "app.api.v1.domains.projects.requirements.router",
         "documentation": {}
     },
@@ -38110,7 +37902,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.reports.router",
         "description": "app.api.v1.domains.quality.reports.router",
-        "peekOfCode": "reporting_service = ReportingService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Reports\n# \n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",",
+        "peekOfCode": "reporting_service = ReportingService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Reports\n#\n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",",
         "detail": "app.api.v1.domains.quality.reports.router",
         "documentation": {}
     },
@@ -38119,7 +37911,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.reports.router",
         "description": "app.api.v1.domains.quality.reports.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Reports\n# \n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Reports\n#\n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.quality.reports.router",
         "documentation": {}
     },
@@ -38128,7 +37920,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.reports.router",
         "description": "app.api.v1.domains.quality.reports.router",
-        "peekOfCode": "router = APIRouter()\n# # Test Reports\n# \n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Test Reports\n#\n@router.get(\n    \"/summary\",\n    summary=\"Get Test Summary Report\",\n    description=\"Get comprehensive test summary report\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.quality.reports.router",
         "documentation": {}
     },
@@ -38335,7 +38127,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.specifications.router",
         "description": "app.api.v1.domains.quality.specifications.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Specifications Management\n# \n@router.get(\n    \"/\",\n    summary=\"Get Specifications\",\n    description=\"Get paginated list of specifications\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Specifications Management\n#\n@router.get(\n    \"/\",\n    summary=\"Get Specifications\",\n    description=\"Get paginated list of specifications\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.quality.specifications.router",
         "documentation": {}
     },
@@ -38344,7 +38136,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.specifications.router",
         "description": "app.api.v1.domains.quality.specifications.router",
-        "peekOfCode": "router = APIRouter()\n# # Specifications Management\n# \n@router.get(\n    \"/\",\n    summary=\"Get Specifications\",\n    description=\"Get paginated list of specifications\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Specifications Management\n#\n@router.get(\n    \"/\",\n    summary=\"Get Specifications\",\n    description=\"Get paginated list of specifications\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.quality.specifications.router",
         "documentation": {}
     },
@@ -38533,7 +38325,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.testing.router",
         "description": "app.api.v1.domains.quality.testing.router",
-        "peekOfCode": "test_management_service = TestManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Plans Management\n# \n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",",
+        "peekOfCode": "test_management_service = TestManagementService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Plans Management\n#\n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",",
         "detail": "app.api.v1.domains.quality.testing.router",
         "documentation": {}
     },
@@ -38542,7 +38334,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.testing.router",
         "description": "app.api.v1.domains.quality.testing.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Plans Management\n# \n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",\n    dependencies=[\n        Depends(",
+        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\n# # Test Plans Management\n#\n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",\n    dependencies=[\n        Depends(",
         "detail": "app.api.v1.domains.quality.testing.router",
         "documentation": {}
     },
@@ -38551,7 +38343,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.testing.router",
         "description": "app.api.v1.domains.quality.testing.router",
-        "peekOfCode": "router = APIRouter()\n# # Test Plans Management\n# \n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
+        "peekOfCode": "router = APIRouter()\n# # Test Plans Management\n#\n@router.get(\n    \"/plans\",\n    summary=\"Get Test Plans\",\n    description=\"Get paginated list of test plans\",\n    dependencies=[\n        Depends(\n            permission_checker.require_permission(",
         "detail": "app.api.v1.domains.quality.testing.router",
         "documentation": {}
     },
@@ -40891,7 +40683,7 @@
         "kind": 6,
         "importPath": "app.crud.settings",
         "description": "app.crud.settings",
-        "peekOfCode": "class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate]):\n    \"\"\"CRUD для настроек пользователя\"\"\"\n    #     # Получение настроек\n    # \n    async def get_user_settings(\n        self, db: AsyncSession, *, user_id: int\n    ) -> UserSettings:\n        \"\"\"Получить все настройки пользователя\"\"\"\n        try:\n            # Получаем пользователя с настройками",
+        "peekOfCode": "class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate]):\n    \"\"\"CRUD для настроек пользователя\"\"\"\n    #     # Получение настроек\n    #\n    async def get_user_settings(\n        self, db: AsyncSession, *, user_id: int\n    ) -> UserSettings:\n        \"\"\"Получить все настройки пользователя\"\"\"\n        try:\n            # Получаем пользователя с настройками",
         "detail": "app.crud.settings",
         "documentation": {}
     },
@@ -40900,7 +40692,7 @@
         "kind": 5,
         "importPath": "app.crud.settings",
         "description": "app.crud.settings",
-        "peekOfCode": "logger = logging.getLogger(__name__)\nclass CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate]):\n    \"\"\"CRUD для настроек пользователя\"\"\"\n    #     # Получение настроек\n    # \n    async def get_user_settings(\n        self, db: AsyncSession, *, user_id: int\n    ) -> UserSettings:\n        \"\"\"Получить все настройки пользователя\"\"\"\n        try:",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate]):\n    \"\"\"CRUD для настроек пользователя\"\"\"\n    #     # Получение настроек\n    #\n    async def get_user_settings(\n        self, db: AsyncSession, *, user_id: int\n    ) -> UserSettings:\n        \"\"\"Получить все настройки пользователя\"\"\"\n        try:",
         "detail": "app.crud.settings",
         "documentation": {}
     },
@@ -41323,7 +41115,7 @@
         "kind": 5,
         "importPath": "app.db.session",
         "description": "app.db.session",
-        "peekOfCode": "SessionLocal = sessionmaker(\n    autocommit=False, autoflush=False, bind=engine, class_=Session\n)\n# Создаем фабрику асинхронных сессий для основной БД\nAsyncSessionLocal = async_sessionmaker(\n    async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ТЕСТОВАЯ БАЗА ДАННЫХ\n# \n# Создаем движки для тестовой базы данных",
+        "peekOfCode": "SessionLocal = sessionmaker(\n    autocommit=False, autoflush=False, bind=engine, class_=Session\n)\n# Создаем фабрику асинхронных сессий для основной БД\nAsyncSessionLocal = async_sessionmaker(\n    async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ТЕСТОВАЯ БАЗА ДАННЫХ\n#\n# Создаем движки для тестовой базы данных",
         "detail": "app.db.session",
         "documentation": {}
     },
@@ -41332,7 +41124,7 @@
         "kind": 5,
         "importPath": "app.db.session",
         "description": "app.db.session",
-        "peekOfCode": "AsyncSessionLocal = async_sessionmaker(\n    async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ТЕСТОВАЯ БАЗА ДАННЫХ\n# \n# Создаем движки для тестовой базы данных\ntest_engine = create_engine(\n    settings.test_db.sync_url,\n    pool_size=5,  # Меньший пул для тестов\n    max_overflow=5,",
+        "peekOfCode": "AsyncSessionLocal = async_sessionmaker(\n    async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ТЕСТОВАЯ БАЗА ДАННЫХ\n#\n# Создаем движки для тестовой базы данных\ntest_engine = create_engine(\n    settings.test_db.sync_url,\n    pool_size=5,  # Меньший пул для тестов\n    max_overflow=5,",
         "detail": "app.db.session",
         "documentation": {}
     },
@@ -41359,7 +41151,7 @@
         "kind": 5,
         "importPath": "app.db.session",
         "description": "app.db.session",
-        "peekOfCode": "TestSessionLocal = sessionmaker(\n    autocommit=False, autoflush=False, bind=test_engine, class_=Session\n)\nTestAsyncSessionLocal = async_sessionmaker(\n    test_async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ФУНКЦИИ ДЛЯ РАБОТЫ С ОСНОВНОЙ БД\n# \n# Функция для получения синхронной сессии\ndef get_db():",
+        "peekOfCode": "TestSessionLocal = sessionmaker(\n    autocommit=False, autoflush=False, bind=test_engine, class_=Session\n)\nTestAsyncSessionLocal = async_sessionmaker(\n    test_async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ФУНКЦИИ ДЛЯ РАБОТЫ С ОСНОВНОЙ БД\n#\n# Функция для получения синхронной сессии\ndef get_db():",
         "detail": "app.db.session",
         "documentation": {}
     },
@@ -41368,89 +41160,8 @@
         "kind": 5,
         "importPath": "app.db.session",
         "description": "app.db.session",
-        "peekOfCode": "TestAsyncSessionLocal = async_sessionmaker(\n    test_async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ФУНКЦИИ ДЛЯ РАБОТЫ С ОСНОВНОЙ БД\n# \n# Функция для получения синхронной сессии\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db",
+        "peekOfCode": "TestAsyncSessionLocal = async_sessionmaker(\n    test_async_engine, expire_on_commit=False, autoflush=False, class_=AsyncSession\n)\n# # ФУНКЦИИ ДЛЯ РАБОТЫ С ОСНОВНОЙ БД\n#\n# Функция для получения синхронной сессии\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db",
         "detail": "app.db.session",
-        "documentation": {}
-    },
-    {
-        "label": "ProjectData",
-        "kind": 6,
-        "importPath": "app.integrations.project_management",
-        "description": "app.integrations.project_management",
-        "peekOfCode": "class ProjectData:\n    \"\"\"Данные проекта из внешней системы\"\"\"\n    external_id: str\n    name: str\n    description: Optional[str]\n    status: str\n    start_date: Optional[datetime]\n    end_date: Optional[datetime]\n    manager_email: Optional[str]\n    budget: Optional[float]",
-        "detail": "app.integrations.project_management",
-        "documentation": {}
-    },
-    {
-        "label": "TaskData",
-        "kind": 6,
-        "importPath": "app.integrations.project_management",
-        "description": "app.integrations.project_management",
-        "peekOfCode": "class TaskData:\n    \"\"\"Данные задачи из внешней системы\"\"\"\n    external_id: str\n    project_id: str\n    name: str\n    description: Optional[str]\n    status: str\n    assignee_email: Optional[str]\n    due_date: Optional[datetime]\n    priority: Optional[str]",
-        "detail": "app.integrations.project_management",
-        "documentation": {}
-    },
-    {
-        "label": "ProjectManagementIntegration",
-        "kind": 6,
-        "importPath": "app.integrations.project_management",
-        "description": "app.integrations.project_management",
-        "peekOfCode": "class ProjectManagementIntegration:\n    \"\"\"\n    Интеграция с системой управления проектами.\n    Реализует принципы SOLID:\n    - Single Responsibility: отвечает только за интеграцию с PM системой\n    - Open/Closed: легко расширяется для новых типов данных\n    - Liskov Substitution: может быть заменена другой реализацией\n    - Interface Segregation: предоставляет только необходимые методы\n    - Dependency Inversion: зависит от абстракций, а не от конкретных реализаций\n    \"\"\"",
-        "detail": "app.integrations.project_management",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "kind": 5,
-        "importPath": "app.integrations.project_management",
-        "description": "app.integrations.project_management",
-        "peekOfCode": "logger = logging.getLogger(__name__)\n@dataclass\nclass ProjectData:\n    \"\"\"Данные проекта из внешней системы\"\"\"\n    external_id: str\n    name: str\n    description: Optional[str]\n    status: str\n    start_date: Optional[datetime]\n    end_date: Optional[datetime]",
-        "detail": "app.integrations.project_management",
-        "documentation": {}
-    },
-    {
-        "label": "TestingSystemInterface",
-        "kind": 6,
-        "importPath": "app.integrations.testing_system",
-        "description": "app.integrations.testing_system",
-        "peekOfCode": "class TestingSystemInterface(ABC):\n    \"\"\"\n    Интерфейс для интеграции с системой тестирования (Interface Segregation Principle).\n    \"\"\"\n    @abstractmethod\n    async def create_test_plan(self, plan_data: Dict[str, Any]) -> Dict[str, Any]:\n        \"\"\"Создать тестовый план во внешней системе.\"\"\"\n        pass\n    @abstractmethod\n    async def execute_test_case(",
-        "detail": "app.integrations.testing_system",
-        "documentation": {}
-    },
-    {
-        "label": "TestingSystemIntegration",
-        "kind": 6,
-        "importPath": "app.integrations.testing_system",
-        "description": "app.integrations.testing_system",
-        "peekOfCode": "class TestingSystemIntegration(TestingSystemInterface):\n    \"\"\"\n    Основная реализация интеграции с системой тестирования (Dependency Inversion Principle).\n    \"\"\"\n    def __init__(self):\n        self.base_url = settings.integrations.testing_system.base_url\n        self.api_key = settings.integrations.testing_system.api_key\n        self.timeout = settings.integrations.testing_system.timeout\n    async def _make_request(\n        self,",
-        "detail": "app.integrations.testing_system",
-        "documentation": {}
-    },
-    {
-        "label": "MockTestingSystemIntegration",
-        "kind": 6,
-        "importPath": "app.integrations.testing_system",
-        "description": "app.integrations.testing_system",
-        "peekOfCode": "class MockTestingSystemIntegration(TestingSystemInterface):\n    \"\"\"\n    Mock-реализация интеграции для тестирования и разработки.\n    \"\"\"\n    async def create_test_plan(self, plan_data: Dict[str, Any]) -> Dict[str, Any]:\n        \"\"\"Mock создание тестового плана.\"\"\"\n        return {\n            \"id\": \"mock-plan-123\",\n            \"external_id\": \"ext-plan-456\",\n            \"name\": plan_data.get(\"name\"),",
-        "detail": "app.integrations.testing_system",
-        "documentation": {}
-    },
-    {
-        "label": "get_testing_system_integration",
-        "kind": 2,
-        "importPath": "app.integrations.testing_system",
-        "description": "app.integrations.testing_system",
-        "peekOfCode": "def get_testing_system_integration() -> TestingSystemInterface:\n    \"\"\"\n    Фабричная функция для получения интеграции с системой тестирования.\n    Returns:\n        TestingSystemInterface: Экземпляр интеграции\n    \"\"\"\n    if settings.debug:\n        return MockTestingSystemIntegration()\n    else:\n        return TestingSystemIntegration()",
-        "detail": "app.integrations.testing_system",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "kind": 5,
-        "importPath": "app.integrations.testing_system",
-        "description": "app.integrations.testing_system",
-        "peekOfCode": "logger = logging.getLogger(__name__)\nclass TestingSystemInterface(ABC):\n    \"\"\"\n    Интерфейс для интеграции с системой тестирования (Interface Segregation Principle).\n    \"\"\"\n    @abstractmethod\n    async def create_test_plan(self, plan_data: Dict[str, Any]) -> Dict[str, Any]:\n        \"\"\"Создать тестовый план во внешней системе.\"\"\"\n        pass\n    @abstractmethod",
-        "detail": "app.integrations.testing_system",
         "documentation": {}
     },
     {
@@ -41935,7 +41646,7 @@
         "kind": 6,
         "importPath": "app.models.role_hierarchy",
         "description": "app.models.role_hierarchy",
-        "peekOfCode": "class InheritanceType(str, Enum):\n    \"\"\"Типы наследования ролей.\"\"\"\n    FULL = \"full\"  # Полное наследование всех разрешений\n    PARTIAL = \"partial\"  # Частичное наследование (только указанные разрешения)\n    OVERRIDE = \"override\"  # Переопределение разрешений родителя\n    RESTRICT = \"restrict\"  # Ограничение разрешений родителя\nclass RoleHierarchy(Base, TimestampedMixin):\n    \"\"\"\n    Модель иерархии ролей (DAG).\n    Представляет связь родитель-потомок между ролями:",
+        "peekOfCode": "class InheritanceType(str, Enum):\n    \"\"\"Типы наследования ролей.\"\"\"\n    FULL = \"full\"  # Полное наследование всех разрешений\n    PARTIAL = \"partial\"  # Частичное наследование (только указанные разрешения)\n    OVERRIDE = \"override\"  # Переопределение разрешений родителя\n    REStringCT = \"reStringct\"  # Ограничение разрешений родителя\nclass RoleHierarchy(Base, TimestampedMixin):\n    \"\"\"\n    Модель иерархии ролей (DAG).\n    Представляет связь родитель-потомок между ролями:",
         "detail": "app.models.role_hierarchy",
         "documentation": {}
     },
@@ -42448,7 +42159,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenBase(BaseSchema):\n    \"\"\"Базовая схема токена.\"\"\"\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\nclass AccessToken(TokenBase):\n    \"\"\"Схема для access токена.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")",
+        "peekOfCode": "class TokenBase(BaseModel):\n    \"\"\"Базовая схема токена.\"\"\"\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\nclass AccessToken(TokenBase):\n    \"\"\"Схема для access токена.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42457,7 +42168,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class AccessToken(TokenBase):\n    \"\"\"Схема для access токена.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass TokenPair(BaseSchema):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"",
+        "peekOfCode": "class AccessToken(TokenBase):\n    \"\"\"Схема для access токена.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass TokenPair(BaseModel):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42466,7 +42177,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass TokenPair(BaseSchema):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")",
+        "peekOfCode": "class RefreshToken(TokenBase):\n    \"\"\"Схема для refresh токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    expires_in: int = Field(..., description=\"Время жизни токена в секундах\")\nclass TokenPair(BaseModel):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42475,7 +42186,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenPair(BaseSchema):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: int = Field(\n        ..., description=\"Время жизни refresh токена в секундах\"\n    )\n# === JWT Payload Schemas ===",
+        "peekOfCode": "class TokenPair(BaseModel):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: int = Field(\n        ..., description=\"Время жизни refresh токена в секундах\"\n    )\n# === JWT Payload Schemas ===",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42484,7 +42195,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class AccessTokenPayload(BaseSchema):\n    \"\"\"Схема для данных внутри access JWT токена.\"\"\"\n    sub: str = Field(..., description=\"Subject (user email)\")\n    exp: int = Field(..., description=\"Expiration time (timestamp)\")\n    iat: int = Field(..., description=\"Issued at (timestamp)\")\n    type: str = Field(default=\"access\", description=\"Тип токена\")\n    user_id: int = Field(..., description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID основной компании\")\n    auth0_id: Optional[str] = Field(None, description=\"Auth0 ID пользователя\")",
+        "peekOfCode": "class AccessTokenPayload(BaseModel):\n    \"\"\"Схема для данных внутри access JWT токена.\"\"\"\n    sub: str = Field(..., description=\"Subject (user email)\")\n    exp: int = Field(..., description=\"Expiration time (timestamp)\")\n    iat: int = Field(..., description=\"Issued at (timestamp)\")\n    type: str = Field(default=\"access\", description=\"Тип токена\")\n    user_id: int = Field(..., description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID основной компании\")\n    auth0_id: Optional[str] = Field(None, description=\"Auth0 ID пользователя\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42493,7 +42204,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RefreshTokenPayload(BaseSchema):\n    \"\"\"Схема для данных внутри refresh JWT токена.\"\"\"\n    sub: str = Field(..., description=\"Subject (user email)\")\n    exp: int = Field(..., description=\"Expiration time (timestamp)\")\n    iat: int = Field(..., description=\"Issued at (timestamp)\")\n    type: str = Field(default=\"refresh\", description=\"Тип токена\")\n    user_id: int = Field(..., description=\"ID пользователя\")\n    token_id: str = Field(..., description=\"ID refresh токена в БД\")\n    company_id: Optional[int] = Field(None, description=\"ID основной компании\")\nclass TokenData(BaseSchema):",
+        "peekOfCode": "class RefreshTokenPayload(BaseModel):\n    \"\"\"Схема для данных внутри refresh JWT токена.\"\"\"\n    sub: str = Field(..., description=\"Subject (user email)\")\n    exp: int = Field(..., description=\"Expiration time (timestamp)\")\n    iat: int = Field(..., description=\"Issued at (timestamp)\")\n    type: str = Field(default=\"refresh\", description=\"Тип токена\")\n    user_id: int = Field(..., description=\"ID пользователя\")\n    token_id: str = Field(..., description=\"ID refresh токена в БД\")\n    company_id: Optional[int] = Field(None, description=\"ID основной компании\")\nclass TokenData(BaseModel):",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42502,7 +42213,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenData(BaseSchema):\n    \"\"\"Схема для валидации токена.\"\"\"\n    email: Optional[str] = Field(None, description=\"Email пользователя\")\n    user_id: Optional[int] = Field(None, description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID компании\")\n# === Authentication Request/Response Schemas ===\nclass LoginRequest(CreateSchema, ValidationMixin):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")",
+        "peekOfCode": "class TokenData(BaseModel):\n    \"\"\"Схема для валидации токена.\"\"\"\n    email: Optional[str] = Field(None, description=\"Email пользователя\")\n    user_id: Optional[int] = Field(None, description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID компании\")\n# === Authentication Request/Response Schemas ===\nclass LoginRequest(BaseModel, ):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42511,7 +42222,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LoginRequest(CreateSchema, ValidationMixin):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")\n    username: Optional[str] = Field(None, description=\"Username\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация и нормализация email.\"\"\"",
+        "peekOfCode": "class LoginRequest(BaseModel, ):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")\n    username: Optional[str] = Field(None, description=\"Username\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация и нормализация email.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42520,7 +42231,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n    # Полная информация о пользователе",
+        "peekOfCode": "class LoginResponse(BaseModel):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n    # Полная информация о пользователе",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42529,7 +42240,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RefreshTokenRequest(CreateSchema, ValidationMixin):\n    \"\"\"Схема для запроса обновления токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    @field_validator(\"refresh_token\")\n    @classmethod\n    def validate_refresh_token(cls, v):\n        \"\"\"Валидация refresh токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Refresh token cannot be empty\")\n        return v.strip()",
+        "peekOfCode": "class RefreshTokenRequest(BaseModel, ):\n    \"\"\"Схема для запроса обновления токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    @field_validator(\"refresh_token\")\n    @classmethod\n    def validate_refresh_token(cls, v):\n        \"\"\"Валидация refresh токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Refresh token cannot be empty\")\n        return v.strip()",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42538,7 +42249,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RefreshTokenResponse(BaseSchema):\n    \"\"\"Схема для ответа при обновлении токена.\"\"\"\n    access_token: str = Field(..., description=\"Новый access токен\")\n    refresh_token: Optional[str] = Field(\n        None, description=\"Новый refresh токен (если ротация включена)\"\n    )\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"",
+        "peekOfCode": "class RefreshTokenResponse(BaseModel):\n    \"\"\"Схема для ответа при обновлении токена.\"\"\"\n    access_token: str = Field(..., description=\"Новый access токен\")\n    refresh_token: Optional[str] = Field(\n        None, description=\"Новый refresh токен (если ротация включена)\"\n    )\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42547,7 +42258,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LogoutRequest(CreateSchema):\n    \"\"\"Схема для запроса выхода из системы.\"\"\"\n    refresh_token: Optional[str] = Field(None, description=\"Refresh токен для отзыва\")\n    logout_all: bool = Field(default=False, description=\"Выйти из всех устройств\")\nclass LogoutResponse(BaseSchema):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===",
+        "peekOfCode": "class LogoutRequest(BaseModel):\n    \"\"\"Схема для запроса выхода из системы.\"\"\"\n    refresh_token: Optional[str] = Field(None, description=\"Refresh токен для отзыва\")\n    logout_all: bool = Field(default=False, description=\"Выйти из всех устройств\")\nclass LogoutResponse(BaseModel):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42556,7 +42267,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LogoutResponse(BaseSchema):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===\nclass RegisterRequest(CreateSchema, ValidationMixin):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.",
+        "peekOfCode": "class LogoutResponse(BaseModel):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===\nclass RegisterRequest(BaseModel, ):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42565,7 +42276,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RegisterRequest(CreateSchema, ValidationMixin):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: str = Field(\n        ..., min_length=2, max_length=50, description=\"Имя пользователя\"\n    )",
+        "peekOfCode": "class RegisterRequest(BaseModel, ):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: str = Field(\n        ..., min_length=2, max_length=50, description=\"Имя пользователя\"\n    )",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42574,7 +42285,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"\n    Схема для ответа после регистрации.\n    Возвращает созданного пользователя с профилем и информацию\n    о необходимости верификации email.\n    \"\"\"\n    user: \"UserDetailed\" = Field(..., description=\"Созданный пользователь\")\n    message: str = Field(\n        default=\"User registered successfully\", description=\"Сообщение\"\n    )",
+        "peekOfCode": "class RegisterResponse(BaseModel):\n    \"\"\"\n    Схема для ответа после регистрации.\n    Возвращает созданного пользователя с профилем и информацию\n    о необходимости верификации email.\n    \"\"\"\n    user: \"UserDetailed\" = Field(..., description=\"Созданный пользователь\")\n    message: str = Field(\n        default=\"User registered successfully\", description=\"Сообщение\"\n    )",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42583,7 +42294,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordChangeRequest(CreateSchema, ValidationMixin):\n    \"\"\"Схема для смены пароля.\"\"\"\n    current_password: str = Field(..., description=\"Текущий пароль\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @model_validator(mode=\"after\")\n    def passwords_match(self):\n        \"\"\"Проверка совпадения паролей.\"\"\"\n        if self.new_password != self.confirm_password:\n            raise ValueError(\"Пароли не совпадают\")",
+        "peekOfCode": "class PasswordChangeRequest(BaseModel, ):\n    \"\"\"Схема для смены пароля.\"\"\"\n    current_password: str = Field(..., description=\"Текущий пароль\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @model_validator(mode=\"after\")\n    def passwords_match(self):\n        \"\"\"Проверка совпадения паролей.\"\"\"\n        if self.new_password != self.confirm_password:\n            raise ValueError(\"Пароли не совпадают\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42592,7 +42303,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordResetRequest(CreateSchema, ValidationMixin):\n    \"\"\"Схема для запроса сброса пароля.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()\nclass PasswordResetConfirm(CreateSchema, ValidationMixin):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"",
+        "peekOfCode": "class PasswordResetRequest(BaseModel, ):\n    \"\"\"Схема для запроса сброса пароля.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()\nclass PasswordResetConfirm(BaseModel, ):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42601,7 +42312,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordResetConfirm(CreateSchema, ValidationMixin):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"\n    token: str = Field(..., description=\"Токен сброса пароля\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():",
+        "peekOfCode": "class PasswordResetConfirm(BaseModel, ):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"\n    token: str = Field(..., description=\"Токен сброса пароля\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42610,7 +42321,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordResetResponse(BaseSchema):\n    \"\"\"Схема для ответа после сброса пароля.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    password_changed: bool = Field(..., description=\"Успешно ли изменен пароль\")\n# === Token Validation Schemas ===\nclass TokenValidationRequest(BaseSchema):\n    \"\"\"Схема для валидации токена.\"\"\"\n    token: str = Field(..., description=\"Токен для валидации\")\n    @field_validator(\"token\")\n    @classmethod",
+        "peekOfCode": "class PasswordResetResponse(BaseModel):\n    \"\"\"Схема для ответа после сброса пароля.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    password_changed: bool = Field(..., description=\"Успешно ли изменен пароль\")\n# === Token Validation Schemas ===\nclass TokenValidationRequest(BaseModel):\n    \"\"\"Схема для валидации токена.\"\"\"\n    token: str = Field(..., description=\"Токен для валидации\")\n    @field_validator(\"token\")\n    @classmethod",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42619,7 +42330,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenValidationRequest(BaseSchema):\n    \"\"\"Схема для валидации токена.\"\"\"\n    token: str = Field(..., description=\"Токен для валидации\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Token cannot be empty\")\n        return v.strip()",
+        "peekOfCode": "class TokenValidationRequest(BaseModel):\n    \"\"\"Схема для валидации токена.\"\"\"\n    token: str = Field(..., description=\"Токен для валидации\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Token cannot be empty\")\n        return v.strip()",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42628,7 +42339,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenValidationResponse(BaseSchema):\n    \"\"\"Схема для ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Валиден ли токен\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа токена\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе если токен валиден\"\n    )\n# === Session Management Schemas ===\nclass ActiveSession(BaseSchema):",
+        "peekOfCode": "class TokenValidationResponse(BaseModel):\n    \"\"\"Схема для ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Валиден ли токен\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа токена\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе если токен валиден\"\n    )\n# === Session Management Schemas ===\nclass ActiveSession(BaseModel):",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42637,7 +42348,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class ActiveSession(BaseSchema):\n    \"\"\"Схема для активной сессии пользователя.\"\"\"\n    id: int = Field(..., description=\"ID сессии\")\n    created_at: datetime = Field(..., description=\"Время создания\")\n    last_used_at: Optional[datetime] = Field(\n        None, description=\"Время последнего использования\"\n    )\n    expires_at: datetime = Field(..., description=\"Время истечения\")\n    ip_address: Optional[str] = Field(None, description=\"IP адрес\")\n    user_agent: Optional[str] = Field(None, description=\"User agent\")",
+        "peekOfCode": "class ActiveSession(BaseModel):\n    \"\"\"Схема для активной сессии пользователя.\"\"\"\n    id: int = Field(..., description=\"ID сессии\")\n    created_at: datetime = Field(..., description=\"Время создания\")\n    last_used_at: Optional[datetime] = Field(\n        None, description=\"Время последнего использования\"\n    )\n    expires_at: datetime = Field(..., description=\"Время истечения\")\n    ip_address: Optional[str] = Field(None, description=\"IP адрес\")\n    user_agent: Optional[str] = Field(None, description=\"User agent\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42646,7 +42357,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class SessionListResponse(BaseSchema):\n    \"\"\"Схема для списка активных сессий.\"\"\"\n    sessions: List[ActiveSession] = Field(..., description=\"Список активных сессий\")\n    total: int = Field(..., description=\"Общее количество сессий\")\n    current_session_id: Optional[int] = Field(None, description=\"ID текущей сессии\")\nclass RevokeSessionRequest(BaseSchema):\n    \"\"\"Схема для отзыва сессии.\"\"\"\n    session_id: Optional[int] = Field(None, description=\"ID сессии для отзыва\")\n    revoke_all: bool = Field(default=False, description=\"Отозвать все сессии\")\n    except_current: bool = Field(",
+        "peekOfCode": "class SessionListResponse(BaseModel):\n    \"\"\"Схема для списка активных сессий.\"\"\"\n    sessions: List[ActiveSession] = Field(..., description=\"Список активных сессий\")\n    total: int = Field(..., description=\"Общее количество сессий\")\n    current_session_id: Optional[int] = Field(None, description=\"ID текущей сессии\")\nclass RevokeSessionRequest(BaseModel):\n    \"\"\"Схема для отзыва сессии.\"\"\"\n    session_id: Optional[int] = Field(None, description=\"ID сессии для отзыва\")\n    revoke_all: bool = Field(default=False, description=\"Отозвать все сессии\")\n    except_current: bool = Field(",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42655,7 +42366,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RevokeSessionRequest(BaseSchema):\n    \"\"\"Схема для отзыва сессии.\"\"\"\n    session_id: Optional[int] = Field(None, description=\"ID сессии для отзыва\")\n    revoke_all: bool = Field(default=False, description=\"Отозвать все сессии\")\n    except_current: bool = Field(\n        default=True, description=\"Исключить текущую сессию при отзыве всех\"\n    )\nclass RevokeSessionResponse(BaseSchema):\n    \"\"\"Схема для ответа при отзыве сессий.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")",
+        "peekOfCode": "class RevokeSessionRequest(BaseModel):\n    \"\"\"Схема для отзыва сессии.\"\"\"\n    session_id: Optional[int] = Field(None, description=\"ID сессии для отзыва\")\n    revoke_all: bool = Field(default=False, description=\"Отозвать все сессии\")\n    except_current: bool = Field(\n        default=True, description=\"Исключить текущую сессию при отзыве всех\"\n    )\nclass RevokeSessionResponse(BaseModel):\n    \"\"\"Схема для ответа при отзыве сессий.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42664,7 +42375,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RevokeSessionResponse(BaseSchema):\n    \"\"\"Схема для ответа при отзыве сессий.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    revoked_sessions: int = Field(..., description=\"Количество отозванных сессий\")\n# === Error Schemas ===\nclass AuthError(BaseSchema):\n    \"\"\"Схема для ошибок аутентификации.\"\"\"\n    error: str = Field(..., description=\"Код ошибки\")\n    error_description: str = Field(..., description=\"Описание ошибки\")\n    error_details: Optional[Dict[str, Any]] = Field(",
+        "peekOfCode": "class RevokeSessionResponse(BaseModel):\n    \"\"\"Схема для ответа при отзыве сессий.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    revoked_sessions: int = Field(..., description=\"Количество отозванных сессий\")\n# === Error Schemas ===\nclass AuthError(BaseModel):\n    \"\"\"Схема для ошибок аутентификации.\"\"\"\n    error: str = Field(..., description=\"Код ошибки\")\n    error_description: str = Field(..., description=\"Описание ошибки\")\n    error_details: Optional[Dict[str, Any]] = Field(",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42673,7 +42384,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class AuthError(BaseSchema):\n    \"\"\"Схема для ошибок аутентификации.\"\"\"\n    error: str = Field(..., description=\"Код ошибки\")\n    error_description: str = Field(..., description=\"Описание ошибки\")\n    error_details: Optional[Dict[str, Any]] = Field(\n        None, description=\"Дополнительные детали\"\n    )\n    timestamp: datetime = Field(\n        default_factory=lambda: datetime.now(UTC), description=\"Время ошибки\"\n    )",
+        "peekOfCode": "class AuthError(BaseModel):\n    \"\"\"Схема для ошибок аутентификации.\"\"\"\n    error: str = Field(..., description=\"Код ошибки\")\n    error_description: str = Field(..., description=\"Описание ошибки\")\n    error_details: Optional[Dict[str, Any]] = Field(\n        None, description=\"Дополнительные детали\"\n    )\n    timestamp: datetime = Field(\n        default_factory=lambda: datetime.now(UTC), description=\"Время ошибки\"\n    )",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42682,7 +42393,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class EmailVerificationRequest(BaseSchema):\n    \"\"\"Схема для запроса верификации email.\"\"\"\n    email: EmailStr = Field(..., description=\"Email для верификации\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()\nclass EmailVerificationConfirm(BaseSchema):\n    \"\"\"Схема для подтверждения верификации email.\"\"\"",
+        "peekOfCode": "class EmailVerificationRequest(BaseModel):\n    \"\"\"Схема для запроса верификации email.\"\"\"\n    email: EmailStr = Field(..., description=\"Email для верификации\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()\nclass EmailVerificationConfirm(BaseModel):\n    \"\"\"Схема для подтверждения верификации email.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42691,7 +42402,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class EmailVerificationConfirm(BaseSchema):\n    \"\"\"Схема для подтверждения верификации email.\"\"\"\n    token: str = Field(..., description=\"Токен верификации email\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Verification token cannot be empty\")\n        return v.strip()",
+        "peekOfCode": "class EmailVerificationConfirm(BaseModel):\n    \"\"\"Схема для подтверждения верификации email.\"\"\"\n    token: str = Field(..., description=\"Токен верификации email\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Verification token cannot be empty\")\n        return v.strip()",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42700,7 +42411,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class EmailVerificationResponse(BaseSchema):\n    \"\"\"Схема для ответа после верификации email.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    verified: bool = Field(..., description=\"Успешно ли подтвержден email\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе после верификации\"\n    )\n# === Two-Factor Authentication Schemas ===\nclass TwoFactorSetupRequest(BaseSchema):\n    \"\"\"Схема для настройки 2FA.\"\"\"",
+        "peekOfCode": "class EmailVerificationResponse(BaseModel):\n    \"\"\"Схема для ответа после верификации email.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    verified: bool = Field(..., description=\"Успешно ли подтвержден email\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе после верификации\"\n    )\n# === Two-Factor Authentication Schemas ===\nclass TwoFactorSetupRequest(BaseModel):\n    \"\"\"Схема для настройки 2FA.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42709,7 +42420,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TwoFactorSetupRequest(BaseSchema):\n    \"\"\"Схема для настройки 2FA.\"\"\"\n    password: str = Field(..., description=\"Текущий пароль для подтверждения\")\nclass TwoFactorSetupResponse(BaseSchema):\n    \"\"\"Схема для ответа настройки 2FA.\"\"\"\n    secret: str = Field(..., description=\"Секретный ключ для 2FA\")\n    qr_code: str = Field(..., description=\"QR-код для настройки в приложении\")\n    backup_codes: List[str] = Field(..., description=\"Резервные коды\")\nclass TwoFactorConfirmRequest(BaseSchema):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"",
+        "peekOfCode": "class TwoFactorSetupRequest(BaseModel):\n    \"\"\"Схема для настройки 2FA.\"\"\"\n    password: str = Field(..., description=\"Текущий пароль для подтверждения\")\nclass TwoFactorSetupResponse(BaseModel):\n    \"\"\"Схема для ответа настройки 2FA.\"\"\"\n    secret: str = Field(..., description=\"Секретный ключ для 2FA\")\n    qr_code: str = Field(..., description=\"QR-код для настройки в приложении\")\n    backup_codes: List[str] = Field(..., description=\"Резервные коды\")\nclass TwoFactorConfirmRequest(BaseModel):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42718,7 +42429,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TwoFactorSetupResponse(BaseSchema):\n    \"\"\"Схема для ответа настройки 2FA.\"\"\"\n    secret: str = Field(..., description=\"Секретный ключ для 2FA\")\n    qr_code: str = Field(..., description=\"QR-код для настройки в приложении\")\n    backup_codes: List[str] = Field(..., description=\"Резервные коды\")\nclass TwoFactorConfirmRequest(BaseSchema):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"\n    token: str = Field(..., description=\"Токен из приложения\")\n    @field_validator(\"token\")\n    @classmethod",
+        "peekOfCode": "class TwoFactorSetupResponse(BaseModel):\n    \"\"\"Схема для ответа настройки 2FA.\"\"\"\n    secret: str = Field(..., description=\"Секретный ключ для 2FA\")\n    qr_code: str = Field(..., description=\"QR-код для настройки в приложении\")\n    backup_codes: List[str] = Field(..., description=\"Резервные коды\")\nclass TwoFactorConfirmRequest(BaseModel):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"\n    token: str = Field(..., description=\"Токен из приложения\")\n    @field_validator(\"token\")\n    @classmethod",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42727,7 +42438,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TwoFactorConfirmRequest(BaseSchema):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"\n    token: str = Field(..., description=\"Токен из приложения\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip() or len(v) != 6:\n            raise ValueError(\"Invalid 2FA token format\")\n        return v.strip()",
+        "peekOfCode": "class TwoFactorConfirmRequest(BaseModel):\n    \"\"\"Схема для подтверждения включения 2FA.\"\"\"\n    token: str = Field(..., description=\"Токен из приложения\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip() or len(v) != 6:\n            raise ValueError(\"Invalid 2FA token format\")\n        return v.strip()",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42736,7 +42447,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TwoFactorVerifyRequest(BaseSchema):\n    \"\"\"Схема для верификации 2FA при входе.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    token: str = Field(..., description=\"Токен из приложения или резервный код\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"2FA token cannot be empty\")",
+        "peekOfCode": "class TwoFactorVerifyRequest(BaseModel):\n    \"\"\"Схема для верификации 2FA при входе.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    token: str = Field(..., description=\"Токен из приложения или резервный код\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"2FA token cannot be empty\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42745,7 +42456,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class AccountStatusResponse(BaseSchema):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")\n    last_login: Optional[datetime] = Field(None, description=\"Время последнего входа\")\n    account_locked: bool = Field(default=False, description=\"Заблокирован ли аккаунт\")\n    lock_reason: Optional[str] = Field(None, description=\"Причина блокировки\")",
+        "peekOfCode": "class AccountStatusResponse(BaseModel):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")\n    last_login: Optional[datetime] = Field(None, description=\"Время последнего входа\")\n    account_locked: bool = Field(default=False, description=\"Заблокирован ли аккаунт\")\n    lock_reason: Optional[str] = Field(None, description=\"Причина блокировки\")",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -46381,7 +46092,7 @@
         "kind": 6,
         "importPath": "app.schemas.settings",
         "description": "app.schemas.settings",
-        "peekOfCode": "class PrivacySettings(BaseSchema):\n    \"\"\"Настройки приватности\"\"\"\n    profile_visibility: Literal[\"public\", \"team\", \"private\"] = Field(\n        \"team\", description=\"Видимость профиля\"\n    )\n    show_email: bool = Field(False, description=\"Показывать email\")\n    show_phone: bool = Field(False, description=\"Показывать телефон\")\n    activity_visibility: bool = Field(True, description=\"Показывать активность\")\n# # Комплексные схемы\n# ",
+        "peekOfCode": "class PrivacySettings(BaseSchema):\n    \"\"\"Настройки приватности\"\"\"\n    profile_visibility: Literal[\"public\", \"team\", \"private\"] = Field(\n        \"team\", description=\"Видимость профиля\"\n    )\n    show_email: bool = Field(False, description=\"Показывать email\")\n    show_phone: bool = Field(False, description=\"Показывать телефон\")\n    activity_visibility: bool = Field(True, description=\"Показывать активность\")\n# # Комплексные схемы\n#",
         "detail": "app.schemas.settings",
         "documentation": {}
     },
@@ -46417,7 +46128,7 @@
         "kind": 6,
         "importPath": "app.schemas.settings",
         "description": "app.schemas.settings",
-        "peekOfCode": "class UserSettingsRead(BaseSchema):\n    \"\"\"Схема для чтения настроек пользователя\"\"\"\n    user_id: int = Field(..., description=\"ID пользователя\")\n    settings: UserSettings = Field(..., description=\"Настройки пользователя\")\n    updated_at: Optional[datetime] = Field(None, description=\"Дата обновления\")\n    created_at: Optional[datetime] = Field(None, description=\"Дата создания\")\n# # Схемы для сессий\n# \nclass UserSession(BaseSchema):\n    \"\"\"Схема пользовательской сессии\"\"\"",
+        "peekOfCode": "class UserSettingsRead(BaseSchema):\n    \"\"\"Схема для чтения настроек пользователя\"\"\"\n    user_id: int = Field(..., description=\"ID пользователя\")\n    settings: UserSettings = Field(..., description=\"Настройки пользователя\")\n    updated_at: Optional[datetime] = Field(None, description=\"Дата обновления\")\n    created_at: Optional[datetime] = Field(None, description=\"Дата создания\")\n# # Схемы для сессий\n#\nclass UserSession(BaseSchema):\n    \"\"\"Схема пользовательской сессии\"\"\"",
         "detail": "app.schemas.settings",
         "documentation": {}
     },
@@ -46444,7 +46155,7 @@
         "kind": 6,
         "importPath": "app.schemas.settings",
         "description": "app.schemas.settings",
-        "peekOfCode": "class RevokeSessionsRequest(BaseSchema):\n    \"\"\"Запрос на отзыв сессий\"\"\"\n    session_ids: Optional[List[str]] = Field(\n        None,\n        description=\"ID сессий для отзыва (если None - отзывать все кроме текущей)\",\n    )\n# # Схемы для смены пароля\n# \nclass ChangePasswordRequest(BaseSchema):\n    \"\"\"Запрос на смену пароля\"\"\"",
+        "peekOfCode": "class RevokeSessionsRequest(BaseSchema):\n    \"\"\"Запрос на отзыв сессий\"\"\"\n    session_ids: Optional[List[str]] = Field(\n        None,\n        description=\"ID сессий для отзыва (если None - отзывать все кроме текущей)\",\n    )\n# # Схемы для смены пароля\n#\nclass ChangePasswordRequest(BaseSchema):\n    \"\"\"Запрос на смену пароля\"\"\"",
         "detail": "app.schemas.settings",
         "documentation": {}
     },
@@ -52353,6 +52064,51 @@
         "documentation": {}
     },
     {
+        "label": "mock_email_service",
+        "kind": 2,
+        "importPath": "tests.conftest_isolated",
+        "description": "tests.conftest_isolated",
+        "peekOfCode": "def mock_email_service():\n    \"\"\"Фикстура мока email сервиса.\"\"\"\n    from tests.test_basic_synthetic import MockEmailService\n    return MockEmailService()\n@pytest.fixture\ndef simple_user_factory():\n    \"\"\"Фикстура простой фабрики пользователей.\"\"\"\n    from tests.test_basic_synthetic import SimpleUserFactory\n    return SimpleUserFactory\n# Простые фикстуры для тестирования",
+        "detail": "tests.conftest_isolated",
+        "documentation": {}
+    },
+    {
+        "label": "simple_user_factory",
+        "kind": 2,
+        "importPath": "tests.conftest_isolated",
+        "description": "tests.conftest_isolated",
+        "peekOfCode": "def simple_user_factory():\n    \"\"\"Фикстура простой фабрики пользователей.\"\"\"\n    from tests.test_basic_synthetic import SimpleUserFactory\n    return SimpleUserFactory\n# Простые фикстуры для тестирования\n@pytest.fixture\ndef sample_user_data():\n    \"\"\"Базовые тестовые данные пользователя.\"\"\"\n    return {\n        'id': 1,",
+        "detail": "tests.conftest_isolated",
+        "documentation": {}
+    },
+    {
+        "label": "sample_user_data",
+        "kind": 2,
+        "importPath": "tests.conftest_isolated",
+        "description": "tests.conftest_isolated",
+        "peekOfCode": "def sample_user_data():\n    \"\"\"Базовые тестовые данные пользователя.\"\"\"\n    return {\n        'id': 1,\n        'username': 'testuser',\n        'email': 'test@example.com',\n        'name': 'Test User',\n        'status': 'active',\n        'is_active': True,\n        'is_email_verified': True",
+        "detail": "tests.conftest_isolated",
+        "documentation": {}
+    },
+    {
+        "label": "performance_data_small",
+        "kind": 2,
+        "importPath": "tests.conftest_isolated",
+        "description": "tests.conftest_isolated",
+        "peekOfCode": "def performance_data_small():\n    \"\"\"Небольшой набор данных для тестов производительности.\"\"\"\n    from tests.test_basic_synthetic import SimpleUserFactory\n    return SimpleUserFactory.create_batch(100)\n@pytest.fixture\ndef performance_data_large():\n    \"\"\"Большой набор данных для тестов производительности.\"\"\"\n    from tests.test_basic_synthetic import SimpleUserFactory\n    return SimpleUserFactory.create_batch(1000)",
+        "detail": "tests.conftest_isolated",
+        "documentation": {}
+    },
+    {
+        "label": "performance_data_large",
+        "kind": 2,
+        "importPath": "tests.conftest_isolated",
+        "description": "tests.conftest_isolated",
+        "peekOfCode": "def performance_data_large():\n    \"\"\"Большой набор данных для тестов производительности.\"\"\"\n    from tests.test_basic_synthetic import SimpleUserFactory\n    return SimpleUserFactory.create_batch(1000)",
+        "detail": "tests.conftest_isolated",
+        "documentation": {}
+    },
+    {
         "label": "RoleHierarchyTestHelper",
         "kind": 6,
         "importPath": "tests.conftest_role_hierarchy",
@@ -52623,11 +52379,65 @@
         "documentation": {}
     },
     {
+        "label": "SimpleUserFactory",
+        "kind": 6,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "class SimpleUserFactory:\n    \"\"\"Простая фабрика пользователей без SQLAlchemy.\"\"\"\n    @staticmethod\n    def create(**kwargs):\n        base_data = {\n            'id': fake.random_int(min=1, max=1000),\n            'username': fake.user_name(),\n            'email': fake.email(),\n            'name': fake.name(),\n            'status': fake.random_element(['active', 'inactive', 'pending']),",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
+        "label": "MockEmailService",
+        "kind": 6,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "class MockEmailService:\n    \"\"\"Простой мок сервиса email.\"\"\"\n    def __init__(self):\n        self.sent_emails = []\n    def send_email(self, to: str, subject: str, body: str):\n        email = {\n            'to': to,\n            'subject': subject,\n            'body': body,\n            'sent_at': datetime.utcnow(),",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
+        "label": "TestBasicSyntheticData",
+        "kind": 6,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "class TestBasicSyntheticData:\n    \"\"\"Базовые тесты синтетических данных.\"\"\"\n    def test_simple_user_factory(self):\n        \"\"\"Тест простой фабрики пользователей.\"\"\"\n        user = SimpleUserFactory.create()\n        assert user['username']\n        assert '@' in user['email']\n        assert user['name']\n        assert user['status'] in ['active', 'inactive', 'pending']\n        assert user['auth_provider'] in ['local', 'google', 'microsoft']",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
+        "label": "TestBasicMocks",
+        "kind": 6,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "class TestBasicMocks:\n    \"\"\"Тесты базовых моков.\"\"\"\n    def test_mock_isolation(self):\n        \"\"\"Тест изоляции моков между тестами.\"\"\"\n        email_service = MockEmailService()\n        # Сервис должен начинать с пустого состояния\n        assert len(email_service.get_sent_emails()) == 0\n        # Отправляем email\n        email_service.send_email(\"test@example.com\", \"Subject\", \"Body\")\n        # Проверяем, что email записался",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
+        "label": "TestCIEnvironment",
+        "kind": 6,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "class TestCIEnvironment:\n    \"\"\"Тесты для CI окружения.\"\"\"\n    def test_environment_variables(self):\n        \"\"\"Тест переменных окружения для CI.\"\"\"\n        import os\n        # В GitHub Actions эти переменные должны быть установлены\n        # Для локального запуска делаем их опциональными\n        testing = os.getenv('TESTING', 'false')\n        log_level = os.getenv('LOG_LEVEL', 'INFO')\n        # Просто проверяем, что переменные читаются",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
+        "label": "fake",
+        "kind": 5,
+        "importPath": "tests.test_basic_synthetic",
+        "description": "tests.test_basic_synthetic",
+        "peekOfCode": "fake = Faker(['ru_RU', 'en_US'])\nFaker.seed(42)\nclass SimpleUserFactory:\n    \"\"\"Простая фабрика пользователей без SQLAlchemy.\"\"\"\n    @staticmethod\n    def create(**kwargs):\n        base_data = {\n            'id': fake.random_int(min=1, max=1000),\n            'username': fake.user_name(),\n            'email': fake.email(),",
+        "detail": "tests.test_basic_synthetic",
+        "documentation": {}
+    },
+    {
         "label": "TestSyntheticDataGeneration",
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestSyntheticDataGeneration:\n    \"\"\"Тесты генерации синтетических данных.\"\"\"\n    def test_user_factory_creates_valid_data(self):\n        \"\"\"Тест создания валидных данных пользователя.\"\"\"\n        users = UserFactory.create_batch(10)\n        assert len(users) == 10\n        for user in users:\n            assert user['username']\n            assert '@' in user['email']\n            assert user['name']",
+        "peekOfCode": "class TestSyntheticDataGeneration:\n    \"\"\"Тесты генерации синтетических данных.\"\"\"\n    def test_user_factory_creates_valid_data(self):\n        \"\"\"Тест создания валидных данных пользователя.\"\"\"\n        users = UserFactory.create_batch(10)\n        assert len(users) == 10\n        for user in users:\n            assert user[\"username\"]\n            assert \"@\" in user[\"email\"]\n            assert user[\"name\"]",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -52636,7 +52446,7 @@
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestMockServices:\n    \"\"\"Тесты моков внешних сервисов.\"\"\"\n    def test_mock_email_service(self, mock_email_service):\n        \"\"\"Тест мока сервиса электронной почты.\"\"\"\n        # Отправляем тестовый email\n        result = mock_email_service.send_email(\n            to=\"test@example.com\",\n            subject=\"Test Subject\",\n            body=\"Test Body\"\n        )",
+        "peekOfCode": "class TestMockServices:\n    \"\"\"Тесты моков внешних сервисов.\"\"\"\n    def test_mock_email_service(self, mock_email_service):\n        \"\"\"Тест мока сервиса электронной почты.\"\"\"\n        # Отправляем тестовый email\n        result = mock_email_service.send_email(\n            to=\"test@example.com\", subject=\"Test Subject\", body=\"Test Body\"\n        )\n        assert result is True\n        # Проверяем, что email сохранился",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -52645,7 +52455,7 @@
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestSyntheticDataIntegration:\n    \"\"\"Интеграционные тесты с синтетическими данными.\"\"\"\n    def test_large_dataset_generation_performance(self, large_dataset):\n        \"\"\"Тест производительности генерации больших данных.\"\"\"\n        assert len(large_dataset['users']) == 1000\n        assert len(large_dataset['companies']) == 100\n        assert len(large_dataset['projects']) == 500\n        assert len(large_dataset['requirements']) == 2000\n        # Проверяем, что данные валидны\n        for user in large_dataset['users'][:10]:  # Проверяем первые 10",
+        "peekOfCode": "class TestSyntheticDataIntegration:\n    \"\"\"Интеграционные тесты с синтетическими данными.\"\"\"\n    def test_large_dataset_generation_performance(self, large_dataset):\n        \"\"\"Тест производительности генерации больших данных.\"\"\"\n        assert len(large_dataset[\"users\"]) == 1000\n        assert len(large_dataset[\"companies\"]) == 100\n        assert len(large_dataset[\"projects\"]) == 500\n        assert len(large_dataset[\"requirements\"]) == 2000\n        # Проверяем, что данные валидны\n        for user in large_dataset[\"users\"][:10]:  # Проверяем первые 10",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -52654,7 +52464,7 @@
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestPerformanceWithSyntheticData:\n    \"\"\"Тесты производительности с синтетическими данными.\"\"\"\n    def test_user_creation_performance(self, performance_test_data):\n        \"\"\"Тест производительности создания пользователей.\"\"\"\n        small_users = performance_test_data['small_dataset']['users']\n        medium_users = performance_test_data['medium_dataset']['users']\n        large_users = performance_test_data['large_dataset']['users']\n        assert len(small_users) == 100\n        assert len(medium_users) == 500\n        assert len(large_users) == 1000",
+        "peekOfCode": "class TestPerformanceWithSyntheticData:\n    \"\"\"Тесты производительности с синтетическими данными.\"\"\"\n    def test_user_creation_performance(self, performance_test_data):\n        \"\"\"Тест производительности создания пользователей.\"\"\"\n        small_users = performance_test_data[\"small_dataset\"][\"users\"]\n        medium_users = performance_test_data[\"medium_dataset\"][\"users\"]\n        large_users = performance_test_data[\"large_dataset\"][\"users\"]\n        assert len(small_users) == 100\n        assert len(medium_users) == 500\n        assert len(large_users) == 1000",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -52663,7 +52473,7 @@
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestMockedExternalServices:\n    \"\"\"Тесты с моками внешних сервисов.\"\"\"\n    @patch('app.services.email_service.EmailService.send_email')\n    def test_mocked_email_sending(self, mock_send_email):\n        \"\"\"Тест с моком отправки email.\"\"\"\n        mock_send_email.return_value = True\n        # Имитируем вызов сервиса\n        from app.services.email_service import EmailService\n        # В реальном тесте здесь был бы реальный вызов\n        # email_service = EmailService()",
+        "peekOfCode": "class TestMockedExternalServices:\n    \"\"\"Тесты с моками внешних сервисов.\"\"\"\n    @patch(\"app.services.email_service.EmailService.send_email\")\n    def test_mocked_email_sending(self, mock_send_email):\n        \"\"\"Тест с моком отправки email.\"\"\"\n        mock_send_email.return_value = True\n        # Имитируем вызов сервиса\n        from app.services.email_service import EmailService\n        # В реальном тесте здесь был бы реальный вызов\n        # email_service = EmailService()",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -52672,7 +52482,7 @@
         "kind": 6,
         "importPath": "tests.test_ci_synthetic_data",
         "description": "tests.test_ci_synthetic_data",
-        "peekOfCode": "class TestCIEnvironment:\n    \"\"\"Специальные тесты для CI окружения.\"\"\"\n    def test_ci_environment_setup(self):\n        \"\"\"Тест настройки CI окружения.\"\"\"\n        import os\n        # Проверяем переменные окружения для CI\n        assert os.getenv('TESTING') == 'true'\n        assert 'sqlite:///:memory:' in os.getenv('TEST_DATABASE_URL', '')\n        assert os.getenv('LOG_LEVEL') == 'ERROR'\n    def test_synthetic_data_in_ci(self, synthetic_users, mock_external_services):",
+        "peekOfCode": "class TestCIEnvironment:\n    \"\"\"Специальные тесты для CI окружения.\"\"\"\n    def test_ci_environment_setup(self):\n        \"\"\"Тест настройки CI окружения.\"\"\"\n        import os\n        # Проверяем переменные окружения для CI\n        assert os.getenv(\"TESTING\") == \"true\"\n        assert \"sqlite:///:memory:\" in os.getenv(\"TEST_DATABASE_URL\", \"\")\n        assert os.getenv(\"LOG_LEVEL\") == \"ERROR\"\n    def test_synthetic_data_in_ci(self, synthetic_users, mock_external_services):",
         "detail": "tests.test_ci_synthetic_data",
         "documentation": {}
     },
@@ -53691,6 +53501,78 @@
         "description": "tests.test_validation_simple",
         "peekOfCode": "class TestSimpleValidation:\n    \"\"\"Упрощенные тесты валидации.\"\"\"\n    def test_valid_user_creation(self):\n        \"\"\"Тестирует валидное создание пользователя.\"\"\"\n        user_data = {\n            \"username\": \"validuser\",\n            \"email\": \"user@company.com\",  # Изменяем email\n            \"name\": \"Valid User\",\n            \"password\": \"SafePassword123!\",  # Безопасный пароль, не содержащий части email\n        }",
         "detail": "tests.test_validation_simple",
+        "documentation": {}
+    },
+    {
+        "label": "UserFactory",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class UserFactory:\n    \"\"\"Фабрика для создания синтетических пользователей.\"\"\"\n    @staticmethod\n    def create(**kwargs):\n        base_data = {\n            'id': fake.random_int(min=1, max=10000),\n            'username': fake.user_name(),\n            'email': fake.email(),\n            'name': fake.name(),\n            'status': random.choice(['active', 'inactive', 'pending']),",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "MockEmailService",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class MockEmailService:\n    \"\"\"Мок сервиса электронной почты.\"\"\"\n    def __init__(self):\n        self.sent_emails = []\n        self.is_configured = True\n    def send_email(self, to: str, subject: str, body: str, **kwargs):\n        \"\"\"Имитирует отправку email.\"\"\"\n        email_data = {\n            'to': to,\n            'subject': subject,",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "TestSyntheticDataGeneration",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class TestSyntheticDataGeneration:\n    \"\"\"Тесты генерации синтетических данных.\"\"\"\n    def test_user_factory_creates_valid_data(self):\n        \"\"\"Тест создания валидных данных пользователя.\"\"\"\n        users = UserFactory.create_batch(10)\n        assert len(users) == 10\n        for user in users:\n            assert user['username']\n            assert '@' in user['email']\n            assert user['name']",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "TestMockServices",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class TestMockServices:\n    \"\"\"Тесты моков внешних сервисов.\"\"\"\n    def test_mock_email_service(self):\n        \"\"\"Тест мока сервиса электронной почты.\"\"\"\n        email_service = MockEmailService()\n        # Отправляем тестовый email\n        result = email_service.send_email(\n            to=\"test@example.com\",\n            subject=\"Test Subject\",\n            body=\"Test Body\"",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "TestPerformanceWithSyntheticData",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class TestPerformanceWithSyntheticData:\n    \"\"\"Тесты производительности с синтетическими данными.\"\"\"\n    def test_user_creation_performance(self):\n        \"\"\"Тест производительности создания пользователей.\"\"\"\n        import time\n        # Тест малого набора данных\n        start_time = time.time()\n        small_users = UserFactory.create_batch(100)\n        small_time = time.time() - start_time\n        assert len(small_users) == 100",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "TestSyntheticDataIntegration",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class TestSyntheticDataIntegration:\n    \"\"\"Интеграционные тесты с синтетическими данными.\"\"\"\n    def test_large_dataset_generation(self):\n        \"\"\"Тест генерации большого набора данных.\"\"\"\n        large_dataset = {\n            'users': UserFactory.create_batch(100),\n            'companies': UserFactory.create_batch(10),  # Используем ту же фабрику для простоты\n        }\n        assert len(large_dataset['users']) == 100\n        assert len(large_dataset['companies']) == 10",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "TestCIEnvironment",
+        "kind": 6,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "class TestCIEnvironment:\n    \"\"\"Специальные тесты для CI окружения.\"\"\"\n    def test_ci_environment_setup(self):\n        \"\"\"Тест настройки CI окружения.\"\"\"\n        import os\n        # Проверяем переменные окружения для CI\n        testing = os.getenv('TESTING', 'false')\n        log_level = os.getenv('LOG_LEVEL', 'INFO')\n        # Просто проверяем, что переменные читаются\n        assert isinstance(testing, str)",
+        "detail": "tests_isolated.test_synthetic_data_demo",
+        "documentation": {}
+    },
+    {
+        "label": "fake",
+        "kind": 5,
+        "importPath": "tests_isolated.test_synthetic_data_demo",
+        "description": "tests_isolated.test_synthetic_data_demo",
+        "peekOfCode": "fake = Faker(['ru_RU', 'en_US'])\nFaker.seed(42)\nclass UserFactory:\n    \"\"\"Фабрика для создания синтетических пользователей.\"\"\"\n    @staticmethod\n    def create(**kwargs):\n        base_data = {\n            'id': fake.random_int(min=1, max=10000),\n            'username': fake.user_name(),\n            'email': fake.email(),",
+        "detail": "tests_isolated.test_synthetic_data_demo",
         "documentation": {}
     }
 ]

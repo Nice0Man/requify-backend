@@ -13,26 +13,26 @@ from typing import TYPE_CHECKING, List, Dict, Set, Optional, Any
 from enum import Enum
 
 from sqlalchemy import (
-    Stri, Foreig, JSON, UniqueConstraintnKeyng,
+    String,
+    ForeignKey,
+    JSON,
+    UniqueConstraint,
     Boolean,
     DateTime,
     Integer,
     Index,
-    ForeignKey,
     Text,
-    JSON,
-    UniqueConstraint,
     CheckConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import (
-    Stri, Foreig, JSON, UniqueConstraintnKeynd_, or_
+from sqlalchemy import and_, or_
 
 from .base import Base, TimestampedMixin
 
 if TYPE_CHECKING:
     from .enhanced_role_system import EnhancedRole
+
 
 class InheritanceType(str, Enum):
     """Типы наследования ролей."""
@@ -40,7 +40,8 @@ class InheritanceType(str, Enum):
     FULL = "full"  # Полное наследование всех разрешений
     PARTIAL = "partial"  # Частичное наследование (только указанные разрешения)
     OVERRIDE = "override"  # Переопределение разрешений родителя
-    RESTRICT = "restrict"  # Ограничение разрешений родителя
+    REStringCT = "reStringct"  # Ограничение разрешений родителя
+
 
 class RoleHierarchy(Base, TimestampedMixin):
     """
@@ -75,7 +76,7 @@ class RoleHierarchy(Base, TimestampedMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
 
     #     # Основные связи
-    # 
+    #
     parent_role_id: Mapped[int] = mapped_column(
         ForeignKey("enhanced_roles.id", ondelete="CASCADE"),
         nullable=False,
@@ -88,7 +89,7 @@ class RoleHierarchy(Base, TimestampedMixin):
     )
 
     #     # Конфигурация наследования
-    # 
+    #
     inheritance_type: Mapped[InheritanceType] = mapped_column(
         String(20),
         default=InheritanceType.FULL,
@@ -104,7 +105,7 @@ class RoleHierarchy(Base, TimestampedMixin):
     )
 
     #     # Условия и ограничения
-    # 
+    #
     conditions: Mapped[Optional[Dict[str, Any]]] = mapped_column(
         JSON, nullable=True, comment="Условия наследования (JSON)"
     )
@@ -114,9 +115,9 @@ class RoleHierarchy(Base, TimestampedMixin):
         JSON, nullable=True, comment="Список наследуемых разрешений (для PARTIAL)"
     )
 
-    # Какие разрешения исключить (для RESTRICT)
+    # Какие разрешения исключить (для REStringCT)
     excluded_permissions: Mapped[Optional[List[str]]] = mapped_column(
-        JSON, nullable=True, comment="Список исключаемых разрешений (для RESTRICT)"
+        JSON, nullable=True, comment="Список исключаемых разрешений (для REStringCT)"
     )
 
     # Переопределения разрешений (для OVERRIDE)
@@ -125,7 +126,7 @@ class RoleHierarchy(Base, TimestampedMixin):
     )
 
     #     # Метаданные
-    # 
+    #
     is_active: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Активна ли связь наследования"
     )
@@ -152,7 +153,7 @@ class RoleHierarchy(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     parent_role: Mapped["EnhancedRole"] = relationship(
         "EnhancedRole",
         foreign_keys=[parent_role_id],
@@ -174,7 +175,7 @@ class RoleHierarchy(Base, TimestampedMixin):
         )
 
     #     # Business Logic Methods
-    # 
+    #
     @property
     def is_effective(self) -> bool:
         """Проверить, действует ли наследование в данный момент."""
@@ -212,7 +213,7 @@ class RoleHierarchy(Base, TimestampedMixin):
                 return parent_permissions.intersection(set(self.inherited_permissions))
             return set()
 
-        elif self.inheritance_type == InheritanceType.RESTRICT:
+        elif self.inheritance_type == InheritanceType.REStringCT:
             if self.excluded_permissions:
                 return parent_permissions - set(self.excluded_permissions)
             return parent_permissions.copy()
@@ -234,13 +235,14 @@ class RoleHierarchy(Base, TimestampedMixin):
         if self.inheritance_type == InheritanceType.PARTIAL:
             return self.inherited_permissions is not None
 
-        elif self.inheritance_type == InheritanceType.RESTRICT:
+        elif self.inheritance_type == InheritanceType.REStringCT:
             return self.excluded_permissions is not None
 
         elif self.inheritance_type == InheritanceType.OVERRIDE:
             return self.permission_overrides is not None
 
         return True
+
 
 class RoleHierarchyCache(Base, TimestampedMixin):
     """
@@ -298,6 +300,7 @@ class RoleHierarchyCache(Base, TimestampedMixin):
             return True
 
         return False
+
 
 # Добавляем обратные связи к EnhancedRole (через отдельный файл обновления)
 def add_hierarchy_relationships():

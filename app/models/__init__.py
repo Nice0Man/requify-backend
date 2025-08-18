@@ -110,8 +110,8 @@ def _import_all_models():
                     ):
                         globals_dict[attr_name] = attr
                         all_exports.append(attr_name)
-        except ImportError as e:
-            print(f"Warning: Could not import model from {module_name}: {e}")
+        except ImportError as Enum:
+            print(f"Warning: Could not import model from {module_name}: {Enum}")
 
     return all_exports
 

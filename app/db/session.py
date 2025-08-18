@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from app.core.config import settings
 
 # # ОСНОВНАЯ БАЗА ДАННЫХ
-# 
+#
 # Создаем синхронный движок для соединения с основной базой данных
 engine = create_engine(
     settings.db.sync_url,
@@ -55,7 +55,7 @@ AsyncSessionLocal = async_sessionmaker(
 )
 
 # # ТЕСТОВАЯ БАЗА ДАННЫХ
-# 
+#
 # Создаем движки для тестовой базы данных
 test_engine = create_engine(
     settings.test_db.sync_url,
@@ -98,7 +98,8 @@ TestAsyncSessionLocal = async_sessionmaker(
 )
 
 # # ФУНКЦИИ ДЛЯ РАБОТЫ С ОСНОВНОЙ БД
-# 
+#
+
 
 # Функция для получения синхронной сессии
 def get_db():
@@ -108,6 +109,7 @@ def get_db():
     finally:
         db.close()
 
+
 # Функция для получения асинхронной сессии
 async def get_async_session():
     async with AsyncSessionLocal() as session:
@@ -116,10 +118,12 @@ async def get_async_session():
         finally:
             await session.close()
 
+
 # Контекстный менеджер для асинхронной сессии
 def async_db_session():
     """Контекстный менеджер для асинхронной сессии"""
     return AsyncSessionLocal()
+
 
 # Функция для проверки соединения
 def check_db_connection():
@@ -132,6 +136,7 @@ def check_db_connection():
         print(f"Ошибка подключения к основной базе данных: {e}")
         return False
 
+
 # Функция для проверки асинхронного соединения
 async def check_async_db_connection():
     """Проверяет асинхронное соединение с основной базой данных"""
@@ -143,8 +148,10 @@ async def check_async_db_connection():
         print(f"Ошибка асинхронного подключения к основной базе данных: {e}")
         return False
 
+
 # # ФУНКЦИИ ДЛЯ РАБОТЫ С ТЕСТОВОЙ БД
-# 
+#
+
 
 def get_test_db():
     """Функция для получения тестовой синхронной сессии"""
@@ -154,6 +161,7 @@ def get_test_db():
     finally:
         db.close()
 
+
 async def get_test_async_session():
     """Функция для получения тестовой асинхронной сессии"""
     async with TestAsyncSessionLocal() as session:
@@ -161,6 +169,7 @@ async def get_test_async_session():
             yield session
         finally:
             await session.close()
+
 
 def check_test_db_connection():
     """Проверяет соединение с тестовой базой данных"""
@@ -171,6 +180,7 @@ def check_test_db_connection():
     except Exception as e:
         print(f"Ошибка подключения к тестовой базе данных: {e}")
         return False
+
 
 async def check_test_async_db_connection():
     """Проверяет асинхронное соединение с тестовой базой данных"""

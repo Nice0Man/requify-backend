@@ -38,11 +38,12 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate]):
     """CRUD для настроек пользователя"""
 
     #     # Получение настроек
-    # 
+    #
     async def get_user_settings(
         self, db: AsyncSession, *, user_id: int
     ) -> UserSettings:
@@ -98,7 +99,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
             raise
 
     #     # Обновление настроек
-    # 
+    #
     async def update_user_settings(
         self, db: AsyncSession, *, user_id: int, settings_update: UserSettingsUpdate
     ) -> SettingsResponse:
@@ -331,7 +332,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
             )
 
     #     # Управление паролем
-    # 
+    #
     async def change_password(
         self, db: AsyncSession, *, user_id: int, password_data: ChangePasswordRequest
     ) -> SettingsResponse:
@@ -379,7 +380,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
             )
 
     #     # Управление сессиями
-    # 
+    #
     async def get_user_sessions(
         self, db: AsyncSession, *, user_id: int
     ) -> UserSessionsResponse:
@@ -444,7 +445,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
             )
 
     #     # Импорт/экспорт настроек
-    # 
+    #
     async def export_settings(self, db: AsyncSession, *, user_id: int) -> str:
         """Экспортировать настройки пользователя в JSON"""
         try:
@@ -513,7 +514,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
             )
 
     #     # Вспомогательные методы
-    # 
+    #
     async def _create_default_settings_for_user(
         self, db: AsyncSession, user: User
     ) -> UserSettings:
@@ -610,6 +611,7 @@ class CRUDSettings(CRUDBase[UserSettings, UserSettingsUpdate, UserSettingsUpdate
                 security=SecuritySettings(),
                 privacy=PrivacySettings(),
             )
+
 
 # Создаем singleton instance
 settings_crud = CRUDSettings(UserSettingsModel)

@@ -48,7 +48,8 @@ permission_checker = PermissionChecker()
 router = APIRouter()
 
 # # Company CRUD Operations
-# 
+#
+
 
 @router.get(
     "/",
@@ -114,6 +115,7 @@ async def get_companies(
             detail=f"Failed to get companies: {str(e)}",
         )
 
+
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -169,6 +171,7 @@ async def create_company(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Failed to create company: {str(e)}",
         )
+
 
 @router.get(
     "/my",
@@ -229,6 +232,7 @@ async def get_my_company(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Failed to get company: {str(e)}",
         )
+
 
 @router.put(
     "/my",
@@ -317,6 +321,7 @@ async def update_my_company(
             detail=f"Failed to update company: {str(e)}",
         )
 
+
 @router.get(
     "/{company_id}",
     summary="Get Company by ID",
@@ -379,6 +384,7 @@ async def get_company(
             detail=f"Failed to get company: {str(e)}",
         )
 
+
 @router.delete(
     "/{company_id}",
     summary="Delete Company",
@@ -419,8 +425,10 @@ async def delete_company(
             detail=f"Failed to delete company: {str(e)}",
         )
 
+
 # # Company Settings Management
-# 
+#
+
 
 @router.get(
     "/{company_id}/settings",
@@ -481,6 +489,7 @@ async def get_company_settings(
             detail=f"Failed to get company settings: {str(e)}",
         )
 
+
 @router.put(
     "/{company_id}/settings",
     summary="Update Company Settings",
@@ -538,8 +547,10 @@ async def update_company_settings(
             detail=f"Failed to update company settings: {str(e)}",
         )
 
+
 # # Company Contact Management
-# 
+#
+
 
 @router.get(
     "/{company_id}/contact",
@@ -595,6 +606,7 @@ async def get_company_contact(
             detail=f"Failed to get company contact: {str(e)}",
         )
 
+
 @router.put(
     "/{company_id}/contact",
     summary="Update Company Contact",
@@ -647,8 +659,10 @@ async def update_company_contact(
             detail=f"Failed to update company contact: {str(e)}",
         )
 
+
 # # Company Branding Management
-# 
+#
+
 
 @router.get(
     "/{company_id}/branding",
@@ -702,6 +716,7 @@ async def get_company_branding(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Failed to get company branding: {str(e)}",
         )
+
 
 @router.put(
     "/{company_id}/branding",

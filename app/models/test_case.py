@@ -9,7 +9,10 @@ from typing import List, Optional, TYPE_CHECKING
 from enum import Enum
 
 from sqlalchemy import (
-    DateTime, Foreig, Foreig, JSONnKeynKey,
+    DateTime,
+    ForeignKey,
+    ForeignKey,
+    JSONKeynKey,
     Integer,
     String,
     Text,
@@ -29,6 +32,7 @@ if TYPE_CHECKING:
     from .test_plan import TestPlan
     from .test_execution import TestExecution
 
+
 class TestCaseStatus(str, Enum):
     """Статусы тестового случая."""
 
@@ -38,6 +42,7 @@ class TestCaseStatus(str, Enum):
     DEPRECATED = "deprecated"  # Устарел
     ARCHIVED = "archived"  # Архивирован
 
+
 class TestCasePriority(str, Enum):
     """Приоритеты тестового случая."""
 
@@ -45,6 +50,7 @@ class TestCasePriority(str, Enum):
     MEDIUM = "medium"  # Средний
     HIGH = "high"  # Высокий
     CRITICAL = "critical"  # Критический
+
 
 class TestCaseType(str, Enum):
     """Типы тестовых случаев."""
@@ -57,6 +63,7 @@ class TestCaseType(str, Enum):
     USABILITY = "usability"  # Тестирование удобства использования
     REGRESSION = "regression"  # Регрессионное тестирование
     SMOKE = "smoke"  # Дымовое тестирование
+
 
 class TestCase(Base, TimestampedMixin):
     """
@@ -163,7 +170,7 @@ class TestCase(Base, TimestampedMixin):
         comment="ID тестового плана",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="Автор тестового случая",
     )
@@ -179,7 +186,7 @@ class TestCase(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     project: Mapped[Optional["Project"]] = relationship(
         "Project", back_populates="test_cases", lazy="select"
     )
@@ -213,7 +220,7 @@ class TestCase(Base, TimestampedMixin):
     )
 
     #     # Методы
-    # 
+    #
     def __repr__(self) -> str:
         return f"<TestCase(id={self.id}, name='{self.name}', type={self.type}, status={self.status})>"
 
@@ -259,8 +266,10 @@ class TestCase(Base, TimestampedMixin):
         )
         return (successful / len(self.executions)) * 100.0
 
+
 # # Модель для планов тестирования (если еще не существует)
-# 
+#
+
 
 class TestPlan(Base, TimestampedMixin):
     """
@@ -312,13 +321,13 @@ class TestPlan(Base, TimestampedMixin):
         comment="ID проекта",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="Автор плана тестирования",
     )
 
     #     # Отношения
-    # 
+    #
     project: Mapped["Project"] = relationship(
         "Project", back_populates="test_plans", lazy="select"
     )
@@ -340,8 +349,10 @@ class TestPlan(Base, TimestampedMixin):
     def __repr__(self) -> str:
         return f"<TestPlan(id={self.id}, name='{self.name}', status={self.status})>"
 
+
 # # Модель для выполнения тестов
-# 
+#
+
 
 class ExecutionStatus(str, Enum):
     """Статусы выполнения тестового случая."""
@@ -352,6 +363,7 @@ class ExecutionStatus(str, Enum):
     FAILED = "failed"  # Провалено
     BLOCKED = "blocked"  # Заблокировано
     SKIPPED = "skipped"  # Пропущено
+
 
 class TestExecution(Base, TimestampedMixin):
     """
@@ -411,13 +423,13 @@ class TestExecution(Base, TimestampedMixin):
         comment="ID тестового случая",
     )
     executor_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="ID исполнителя теста",
     )
 
     #     # Отношения
-    # 
+    #
     test_case: Mapped["TestCase"] = relationship(
         "TestCase", back_populates="executions", lazy="select"
     )

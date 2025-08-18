@@ -6,13 +6,14 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, Optional
 
-from sqlalchemy import Foreig, ForeignKeynKey, Integer, String, Text, Index
+from sqlalchemy import ForeignKey, ForeignKeyKey, Integer, String, Text, Index
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
 
 if TYPE_CHECKING:
     from .user import User
+
 
 class UserProfile(Base, TimestampedMixin):
     """
@@ -46,7 +47,7 @@ class UserProfile(Base, TimestampedMixin):
     )
 
     #     # Персональная информация
-    # 
+    #
     first_name: Mapped[Optional[str]] = mapped_column(
         String(100), nullable=True, comment="Имя"
     )
@@ -69,7 +70,7 @@ class UserProfile(Base, TimestampedMixin):
     )
 
     #     # Профессиональная информация
-    # 
+    #
     position: Mapped[Optional[str]] = mapped_column(
         String(200), nullable=True, comment="Должность"
     )
@@ -84,7 +85,7 @@ class UserProfile(Base, TimestampedMixin):
     )
 
     #     # Дополнительная информация
-    # 
+    #
     bio: Mapped[Optional[str]] = mapped_column(Text, nullable=True, comment="О себе")
     avatar_url: Mapped[Optional[str]] = mapped_column(
         String(500), nullable=True, comment="URL аватара"
@@ -99,7 +100,7 @@ class UserProfile(Base, TimestampedMixin):
     )
 
     #     # Метаданные
-    # 
+    #
     profile_completed: Mapped[bool] = mapped_column(
         default=False, nullable=False, comment="Заполнен ли профиль"
     )
@@ -108,7 +109,7 @@ class UserProfile(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     user: Mapped["User"] = relationship(
         "User", back_populates="profile", uselist=False, lazy="select"
     )
@@ -119,7 +120,7 @@ class UserProfile(Base, TimestampedMixin):
         )
 
     #     # Business Logic Methods
-    # 
+    #
     @property
     def full_name(self) -> str:
         """Полное имя пользователя"""

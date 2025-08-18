@@ -9,7 +9,10 @@ from typing import List, Optional, TYPE_CHECKING
 from enum import Enum
 
 from sqlalchemy import (
-    DateTime, Foreig, Foreig, JSONnKeynKey,
+    DateTime,
+    ForeignKey,
+    ForeignKey,
+    JSONKeynKey,
     Integer,
     String,
     Text,
@@ -29,6 +32,7 @@ if TYPE_CHECKING:
     from .requirement import Requirement
     from .comment import Comment
 
+
 class SpecificationType(str, Enum):
     """Типы спецификаций."""
 
@@ -40,6 +44,7 @@ class SpecificationType(str, Enum):
     TEST = "test"  # Тестовая спецификация
     INTEGRATION = "integration"  # Интеграционная спецификация
 
+
 class SpecificationStatus(str, Enum):
     """Статусы спецификации."""
 
@@ -50,6 +55,7 @@ class SpecificationStatus(str, Enum):
     ARCHIVED = "archived"  # Архивирована
     REJECTED = "rejected"  # Отклонена
 
+
 class SpecificationFormat(str, Enum):
     """Форматы экспорта спецификации."""
 
@@ -58,6 +64,7 @@ class SpecificationFormat(str, Enum):
     PDF = "pdf"
     DOCX = "docx"
     JSON = "json"
+
 
 class Specification(Base, TimestampedMixin):
     """
@@ -145,7 +152,7 @@ class Specification(Base, TimestampedMixin):
         comment="ID релиза (если спецификация для конкретного релиза)",
     )
     author_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="Автор спецификации",
     )
@@ -166,7 +173,7 @@ class Specification(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     project: Mapped[Optional["Project"]] = relationship(
         "Project", back_populates="specifications", lazy="select"
     )
@@ -205,7 +212,7 @@ class Specification(Base, TimestampedMixin):
     )
 
     #     # Методы
-    # 
+    #
     def __repr__(self) -> str:
         return f"<Specification(id={self.id}, title='{self.title}', type={self.type}, status={self.status})>"
 
@@ -238,11 +245,10 @@ class Specification(Base, TimestampedMixin):
             return [SpecificationFormat(fmt) for fmt in self.export_formats]
         return [SpecificationFormat.PDF, SpecificationFormat.MARKDOWN]
 
+
 # # Association Table для связи спецификаций и требований
-# 
-from sqlalchemy import (
-    Column, DateTime, ForeignKey, JSON, Table
-)
+#
+from sqlalchemy import Column, DateTime, ForeignKey, JSON, Table
 
 specification_requirements = Table(
     "specification_requirements",

@@ -2,7 +2,15 @@ from datetime import UTC, datetime
 from typing import TYPE_CHECKING, List, Optional
 from enum import Enum as PyEnum
 
-from sqlalchemy import ForeignKey, String, Boolean, Integer, Index, Enum, ForeignKey
+from sqlalchemy import (
+    ForeignKey,
+    String,
+    Boolean,
+    Integer,
+    Index,
+    Enum,
+    ForeignKey,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -16,6 +24,7 @@ if TYPE_CHECKING:
     from .company_branding import CompanyBranding
     from .company_subscription import CompanySubscription
 
+
 class CompanyStatus(PyEnum):
     """Статусы компании"""
 
@@ -24,6 +33,7 @@ class CompanyStatus(PyEnum):
     INACTIVE = "inactive"
     TRIAL = "trial"
     ARCHIVED = "archived"
+
 
 class CompanyType(PyEnum):
     """Типы компаний"""
@@ -35,6 +45,7 @@ class CompanyType(PyEnum):
     NON_PROFIT = "non_profit"
     GOVERNMENT = "government"
     EDUCATIONAL = "educational"
+
 
 class Company(Base, TimestampedMixin):
     """
@@ -82,7 +93,7 @@ class Company(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     users: Mapped[List["User"]] = relationship(
         "User", back_populates="company", lazy="select"
     )

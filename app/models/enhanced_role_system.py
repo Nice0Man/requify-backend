@@ -15,7 +15,9 @@ from app.core.constants import (
 )
 
 from sqlalchemy import (
-    Stri, Foreig, JSONnKeyng,
+    String,
+    ForeignKey,
+    JSONKeyng,
     Boolean,
     DateTime,
     Integer,
@@ -34,6 +36,7 @@ if TYPE_CHECKING:
     from .department import Department
     from .team import Team
     from .project import Project
+
 
 class EnhancedRole(Base, TimestampedMixin):
     """
@@ -59,7 +62,7 @@ class EnhancedRole(Base, TimestampedMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
 
     #     # Основная информация
-    # 
+    #
     name: Mapped[str] = mapped_column(
         String(100), nullable=False, comment="Название роли"
     )
@@ -71,7 +74,7 @@ class EnhancedRole(Base, TimestampedMixin):
     )
 
     #     # Классификация роли
-    # 
+    #
     scope: Mapped[str] = mapped_column(
         String(20), nullable=False, comment="Область действия роли"
     )
@@ -100,7 +103,7 @@ class EnhancedRole(Base, TimestampedMixin):
     )
 
     #     # Статус и настройки
-    # 
+    #
     is_system: Mapped[bool] = mapped_column(
         Boolean, default=False, nullable=False, comment="Системная ли роль"
     )
@@ -121,7 +124,7 @@ class EnhancedRole(Base, TimestampedMixin):
     )
 
     #     # Приоритет и иерархия
-    # 
+    #
     priority: Mapped[int] = mapped_column(
         Integer, default=0, nullable=False, comment="Приоритет роли (выше = важнее)"
     )
@@ -130,11 +133,11 @@ class EnhancedRole(Base, TimestampedMixin):
     )
 
     #     # Расширенные настройки
-    # 
+    #
     permissions_config: Mapped[Optional[dict]] = mapped_column(
         JSON, nullable=True, comment="Конфигурация разрешений (JSON)"
     )
-    restrictions: Mapped[Optional[dict]] = mapped_column(
+    reStringctions: Mapped[Optional[dict]] = mapped_column(
         JSON, nullable=True, comment="Ограничения роли (JSON)"
     )
     role_metadata: Mapped[Optional[dict]] = mapped_column(
@@ -142,7 +145,7 @@ class EnhancedRole(Base, TimestampedMixin):
     )
 
     #     # Отношения иерархии (добавлены для поддержки DAG)
-    # 
+    #
     # Связи с иерархией ролей (будут добавлены после импорта role_hierarchy)
     # parent_relationships - связи где эта роль является родителем
     # child_relationships - связи где эта роль является дочерней
@@ -151,7 +154,7 @@ class EnhancedRole(Base, TimestampedMixin):
         return f"<EnhancedRole(id={self.id}, name='{self.name}', scope='{self.scope}', level={self.role_level})>"
 
     #     # Методы для работы с иерархией
-    # 
+    #
     def get_permissions(self) -> Set[str]:
         """
         Получить собственные разрешения роли (без наследования).
@@ -206,6 +209,7 @@ class EnhancedRole(Base, TimestampedMixin):
         effective_permissions = await self.get_effective_permissions(db_session)
         return permission in effective_permissions
 
+
 class UserRoleAssignment(Base, TimestampedMixin):
     """
     Назначение роли пользователю в определенном контексте.
@@ -240,7 +244,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
 
     #     # Основные связи
-    # 
+    #
     user_id: Mapped[int] = mapped_column(
         ForeignKey("users.id", ondelete="CASCADE"),
         nullable=False,
@@ -253,7 +257,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
     )
 
     #     # Контекст назначения (определяет область действия)
-    # 
+    #
     company_id: Mapped[Optional[int]] = mapped_column(
         ForeignKey("companies.id", ondelete="CASCADE"),
         nullable=True,
@@ -276,7 +280,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
     )
 
     #     # Метаданные назначения
-    # 
+    #
     is_active: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Активно ли назначение"
     )
@@ -312,7 +316,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     user: Mapped["User"] = relationship(
         "User", foreign_keys=[user_id], back_populates="role_assignments"
     )
@@ -336,11 +340,11 @@ class UserRoleAssignment(Base, TimestampedMixin):
     )
 
     def __repr__(self) -> str:
-        context = self._get_context_string()
+        context = self._get_context_String()
         return f"<UserRoleAssignment(user_id={self.user_id}, role='{self.role.name}', context='{context}')>"
 
     #     # Business Logic Methods
-    # 
+    #
     @property
     def is_expired(self) -> bool:
         """Истекло ли назначение роли"""
@@ -373,7 +377,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
         else:
             return RoleScope.SYSTEM.value
 
-    def _get_context_string(self) -> str:
+    def _get_context_String(self) -> str:
         """Получить строковое представление контекста"""
         if self.project_id:
             return f"project:{self.project_id}"

@@ -9,6 +9,7 @@ from typing import Optional, List
 from datetime import datetime
 from enum import Enum
 
+
 class DepartmentType(str, Enum):
     """Типы департаментов."""
 
@@ -22,8 +23,10 @@ class DepartmentType(str, Enum):
     FINANCE = "finance"
     OTHER = "other"
 
+
 # # Base Schemas
-# 
+#
+
 
 class DepartmentBase(BaseModel):
     """Базовая схема департамента."""
@@ -52,6 +55,7 @@ class DepartmentBase(BaseModel):
         }
     )
 
+
 class DepartmentCreate(DepartmentBase):
     """Схема для создания департамента."""
 
@@ -59,6 +63,7 @@ class DepartmentCreate(DepartmentBase):
     head_user_id: Optional[int] = Field(
         None, description="ID руководителя департамента"
     )
+
 
 class DepartmentUpdate(BaseModel):
     """Схема для обновления департамента."""
@@ -69,8 +74,10 @@ class DepartmentUpdate(BaseModel):
     parent_id: Optional[int] = Field(None)
     head_user_id: Optional[int] = Field(None)
 
+
 # # Response Schemas
-# 
+#
+
 
 class DepartmentRead(DepartmentBase):
     """Схема для чтения информации о департаменте."""
@@ -88,12 +95,14 @@ class DepartmentRead(DepartmentBase):
 
     model_config = ConfigDict(from_attributes=True)
 
+
 class DepartmentWithChildren(DepartmentRead):
     """Схема департамента с дочерними департаментами."""
 
     children: List["DepartmentWithChildren"] = Field(
         [], description="Дочерние департаменты"
     )
+
 
 class DepartmentListResponse(BaseModel):
     """Схема для списка департаментов."""
@@ -103,6 +112,7 @@ class DepartmentListResponse(BaseModel):
     skip: int = Field(..., description="Пропущено записей")
     limit: int = Field(..., description="Лимит записей")
 
+
 class DepartmentHierarchyResponse(BaseModel):
     """Схема для иерархии департаментов."""
 
@@ -111,8 +121,10 @@ class DepartmentHierarchyResponse(BaseModel):
     )
     company_id: int = Field(..., description="ID компании")
 
+
 # # Department Members Schemas
-# 
+#
+
 
 class DepartmentMemberRole(str, Enum):
     """Роли участников департамента."""
@@ -124,6 +136,7 @@ class DepartmentMemberRole(str, Enum):
     COORDINATOR = "coordinator"
     MEMBER = "member"
 
+
 class DepartmentMemberBase(BaseModel):
     """Базовая схема участника департамента."""
 
@@ -133,11 +146,13 @@ class DepartmentMemberBase(BaseModel):
     )
     joined_at: Optional[datetime] = Field(None, description="Дата присоединения")
 
+
 class DepartmentMemberAdd(BaseModel):
     """Схема для добавления участника в департамент."""
 
     user_id: int = Field(..., description="ID пользователя")
     role: DepartmentMemberRole = Field(DepartmentMemberRole.MEMBER, description="Роль")
+
 
 class DepartmentMemberRead(DepartmentMemberBase):
     """Схема для чтения информации об участнике департамента."""
@@ -153,6 +168,7 @@ class DepartmentMemberRead(DepartmentMemberBase):
     created_at: datetime = Field(..., description="Дата создания записи")
 
     model_config = ConfigDict(from_attributes=True)
+
 
 class DepartmentMembersResponse(BaseModel):
     """Схема для списка участников департамента."""

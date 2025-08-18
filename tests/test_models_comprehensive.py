@@ -48,6 +48,7 @@ from app.core.constants import RoleScope, SystemRole
 # FIXTURES AND SETUP
 # ======
 
+
 @pytest.fixture(scope="function")
 def db_session():
     """Create a test database session."""
@@ -61,6 +62,7 @@ def db_session():
         yield session
     finally:
         session.close()
+
 
 @pytest.fixture
 def sample_company(db_session: Session) -> Company:
@@ -76,6 +78,7 @@ def sample_company(db_session: Session) -> Company:
     db_session.commit()
     return company
 
+
 @pytest.fixture
 def sample_user(db_session: Session, sample_company: Company) -> User:
     """Create a sample user for testing."""
@@ -90,6 +93,7 @@ def sample_user(db_session: Session, sample_company: Company) -> User:
     db_session.commit()
     return user
 
+
 @pytest.fixture
 def sample_department(db_session: Session, sample_company: Company) -> Department:
     """Create a sample department for testing."""
@@ -102,6 +106,7 @@ def sample_department(db_session: Session, sample_company: Company) -> Departmen
     db_session.add(department)
     db_session.commit()
     return department
+
 
 @pytest.fixture
 def sample_team(
@@ -117,6 +122,7 @@ def sample_team(
     db_session.add(team)
     db_session.commit()
     return team
+
 
 @pytest.fixture
 def sample_project(
@@ -141,6 +147,7 @@ def sample_project(
     db_session.commit()
     return project
 
+
 @pytest.fixture
 def reference_data(db_session: Session):
     """Create reference data for testing."""
@@ -160,9 +167,11 @@ def reference_data(db_session: Session):
         "relationship_type": rel_type,
     }
 
+
 # ======
 # BASE MODEL TESTS
 # ======
+
 
 class TestBaseModel:
     """Test base model functionality."""
@@ -185,9 +194,11 @@ class TestBaseModel:
         assert sample_user.updated_at > initial_updated
         assert sample_user.created_at == initial_created
 
+
 # ======
 # COMPANY MODEL TESTS
 # ======
+
 
 class TestCompanyModel:
     """Test Company model."""
@@ -227,9 +238,11 @@ class TestCompanyModel:
         assert sample_user in sample_company.users
         assert sample_user.company == sample_company
 
+
 # ======
 # USER MODEL TESTS
 # ======
+
 
 class TestUserModel:
     """Test User model."""
@@ -295,9 +308,11 @@ class TestUserModel:
         assert sample_user.profile == profile
         assert profile.user == sample_user
 
+
 # ======
 # DEPARTMENT MODEL TESTS
 # ======
+
 
 class TestDepartmentModel:
     """Test Department model."""
@@ -326,9 +341,11 @@ class TestDepartmentModel:
         assert sample_department.company == sample_company
         assert sample_department in sample_company.departments
 
+
 # ======
 # TEAM MODEL TESTS
 # ======
+
 
 class TestTeamModel:
     """Test Team model."""
@@ -362,9 +379,11 @@ class TestTeamModel:
         assert sample_team in sample_department.teams
         assert sample_team in sample_user.owned_teams
 
+
 # ======
 # TEAM MEMBER MODEL TESTS
 # ======
+
 
 class TestTeamMemberModel:
     """Test TeamMember model."""
@@ -443,9 +462,11 @@ class TestTeamMemberModel:
         assert developer.has_permission("read") is True
         assert developer.has_permission("full_access") is False
 
+
 # ======
 # PROJECT MODEL TESTS
 # ======
+
 
 class TestProjectModel:
     """Test Project model."""
@@ -522,9 +543,11 @@ class TestProjectModel:
         assert sample_project in sample_user.owned_projects
         assert sample_project in sample_team.projects
 
+
 # ======
 # REQUIREMENT MODEL TESTS
 # ======
+
 
 class TestRequirementModel:
     """Test Requirement model."""
@@ -582,9 +605,11 @@ class TestRequirementModel:
         assert requirement in sample_user.authored_requirements
         assert requirement in reference_data["requirement_type"].requirements
 
+
 # ======
 # COMMENT MODEL TESTS
 # ======
+
 
 class TestCommentModel:
     """Test Comment model."""
@@ -655,9 +680,11 @@ class TestCommentModel:
         assert comment in requirement.comments
         assert comment in sample_user.comments
 
+
 # ======
 # RELEASE MODEL TESTS
 # ======
+
 
 class TestReleaseModel:
     """Test Release model."""
@@ -687,9 +714,11 @@ class TestReleaseModel:
         assert release.project == sample_project
         assert release in sample_project.releases
 
+
 # ======
 # SPEC MODEL TESTS
 # ======
+
 
 class TestSpecModel:
     """Test Spec model."""
@@ -724,9 +753,11 @@ class TestSpecModel:
         assert spec.generated_by_user == sample_user
         assert spec in sample_project.specs
 
+
 # ======
 # RELATIONSHIP MODEL TESTS
 # ======
+
 
 class TestRelationshipModel:
     """Test Relationship model."""
@@ -814,9 +845,11 @@ class TestRelationshipModel:
         assert relationship in req1.source_relationships
         assert relationship in req2.target_relationships
 
+
 # ======
 # TEST RESULT MODEL TESTS
 # ======
+
 
 class TestTestResultModel:
     """Test TestResult model."""
@@ -888,9 +921,11 @@ class TestTestResultModel:
         assert test_result in requirement.test_results
         assert test_result in sample_user.test_results
 
+
 # ======
 # USER PROFILE MODEL TESTS
 # ======
+
 
 class TestUserProfileModel:
     """Test UserProfile model."""
@@ -929,9 +964,11 @@ class TestUserProfileModel:
         profile.update_completion_status()
         assert profile.profile_completion_percentage == completion
 
+
 # ======
 # USER SETTINGS MODEL TESTS
 # ======
+
 
 class TestUserSettingsModel:
     """Test UserSettings model."""
@@ -962,9 +999,11 @@ class TestUserSettingsModel:
         assert sample_user.settings == settings
         assert settings.user == sample_user
 
+
 # ======
 # REFRESH TOKEN MODEL TESTS
 # ======
+
 
 class TestRefreshTokenModel:
     """Test RefreshToken model."""
@@ -1015,9 +1054,11 @@ class TestRefreshTokenModel:
         assert token.revoked_at is not None
         assert token.is_valid is False
 
+
 # ======
 # DASHBOARD MODEL TESTS
 # ======
+
 
 class TestDashboardModels:
     """Test Dashboard related models."""
@@ -1125,9 +1166,11 @@ class TestDashboardModels:
         assert activity in sample_user.activities
         assert widget in sample_user.dashboard_widgets
 
+
 # ======
 # ENHANCED ROLE SYSTEM TESTS
 # ======
+
 
 class TestEnhancedRoleSystem:
     """Test Enhanced Role System models."""
@@ -1215,9 +1258,11 @@ class TestEnhancedRoleSystem:
         assert assignment.role == role
         assert assignment in sample_user.role_assignments
 
+
 # ======
 # REQUIREMENT GROUP MODELS TESTS
 # ======
+
 
 class TestRequirementGroupModels:
     """Test Requirement Group models."""
@@ -1276,9 +1321,11 @@ class TestRequirementGroupModels:
         assert version in group.versions
         assert version in sample_user.group_versions
 
+
 # ======
 # INTEGRATION TESTS
 # ======
+
 
 class TestModelIntegration:
     """Test model integration and complex relationships."""
@@ -1480,6 +1527,7 @@ class TestModelIntegration:
         for user in query_users:
             assert user.profile is not None
             assert user.profile.first_name.startswith("First")
+
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])

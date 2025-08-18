@@ -1,7 +1,15 @@
 from typing import TYPE_CHECKING, List, Optional
 from enum import Enum as PyEnum
 
-from sqlalchemy import ForeignKey, String, Boolean, Integer, Index, ForeignKey, Enum
+from sqlalchemy import (
+    ForeignKey,
+    String,
+    Boolean,
+    Integer,
+    Index,
+    ForeignKey,
+    Enum,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -10,6 +18,7 @@ if TYPE_CHECKING:
     from .company import Company
     from .team import Team
     from .project import Project
+
 
 class DepartmentType(PyEnum):
     """Типы департаментов"""
@@ -27,6 +36,7 @@ class DepartmentType(PyEnum):
     OPERATIONS = "operations"
     ADMINISTRATION = "administration"
     CUSTOM = "custom"
+
 
 class Department(Base, TimestampedMixin):
     """
@@ -70,7 +80,7 @@ class Department(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     company: Mapped["Company"] = relationship(
         "Company", back_populates="departments", lazy="select"
     )

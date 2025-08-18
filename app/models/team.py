@@ -1,7 +1,15 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING, List, Optional
 
-from sqlalchemy import Boolea, ForeignKeyn, ForeignKey, Index, Integer, String, Text
+from sqlalchemy import (
+    Boolean,
+    ForeignKey,
+    ForeignKey,
+    Index,
+    Integer,
+    String,
+    Text,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -11,6 +19,7 @@ if TYPE_CHECKING:
     from .project import Project
     from .team_member import TeamMember
     from .user import User
+
 
 class Team(Base, TimestampedMixin):
     """
@@ -47,13 +56,13 @@ class Team(Base, TimestampedMixin):
         comment="ID департамента",
     )
     owner_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="Владелец команды",
     )
 
     #     # Отношения
-    # 
+    #
     department: Mapped["Department"] = relationship(
         "Department", back_populates="teams", lazy="select"
     )

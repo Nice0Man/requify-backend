@@ -2,7 +2,15 @@ from datetime import UTC, datetime
 from enum import Enum
 from typing import TYPE_CHECKING, List, Optional
 
-from sqlalchemy import DateTime, Foreig, ForeignKeynKey, Index, Integer, String, Text
+from sqlalchemy import (
+    DateTime,
+    ForeignKey,
+    ForeignKeyKey,
+    Index,
+    Integer,
+    String,
+    Text,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -16,6 +24,7 @@ if TYPE_CHECKING:
     from .spec import Spec
     from .team import Team
     from .user import User
+
 
 class Project(Base, TimestampedMixin):
     """
@@ -52,7 +61,7 @@ class Project(Base, TimestampedMixin):
     )
 
     #     # Организационная принадлежность
-    # 
+    #
     company_id: Mapped[int] = mapped_column(
         ForeignKey("companies.id", ondelete="CASCADE"),
         nullable=False,
@@ -65,10 +74,10 @@ class Project(Base, TimestampedMixin):
     )
 
     #     # Управление проектом
-    # 
+    #
     owner_id: Mapped[int] = mapped_column(
         Integer,
-        ForeignKey("users.id", ondelete="RESTRICT"),
+        ForeignKey("users.id", ondelete="REStringCT"),
         nullable=False,
         comment="Владелец проекта",
     )
@@ -80,7 +89,7 @@ class Project(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     # Организационные связи
     company: Mapped["Company"] = relationship(
         "Company", back_populates="projects", lazy="select"

@@ -6,7 +6,7 @@ Activity Model.
 
 from typing import TYPE_CHECKING, Optional, Dict, Any
 
-from sqlalchemy import Foreig, JSONnKey, Integer, String, ForeignKey, Index, JSON
+from sqlalchemy import ForeignKey, JSONKey, Integer, String, ForeignKey, Index, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
@@ -14,6 +14,7 @@ from .base import Base, TimestampedMixin
 if TYPE_CHECKING:
     from .user import User
     from .project import Project
+
 
 class Activity(Base, TimestampedMixin):
     """
@@ -64,7 +65,7 @@ class Activity(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     user: Mapped["User"] = relationship(
         "User", back_populates="activities", lazy="select"
     )

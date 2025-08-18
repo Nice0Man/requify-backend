@@ -5,13 +5,24 @@
 
 from typing import TYPE_CHECKING, Optional
 
-from sqlalchemy import Foreig, JSONnKey, String, Boolean, Integer, Index, ForeignKey, Text, JSON
+from sqlalchemy import (
+    ForeignKey,
+    JSONKey,
+    String,
+    Boolean,
+    Integer,
+    Index,
+    ForeignKey,
+    Text,
+    JSON,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
 
 if TYPE_CHECKING:
     from .company import Company
+
 
 class CompanyBranding(Base, TimestampedMixin):
     """
@@ -37,7 +48,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Логотип и изображения
-    # 
+    #
     logo_url: Mapped[Optional[str]] = mapped_column(
         String(500), nullable=True, comment="URL основного логотипа"
     )
@@ -63,7 +74,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Цветовая схема
-    # 
+    #
     # Основные цвета
     primary_color: Mapped[Optional[str]] = mapped_column(
         String(7), nullable=True, comment="Основной цвет (hex, например #007bff)"
@@ -94,17 +105,23 @@ class CompanyBranding(Base, TimestampedMixin):
         String(7), nullable=True, default="#28a745", comment="Цвет успеха (hex)"
     )
     warning_color: Mapped[Optional[str]] = mapped_column(
-        String(7), nullable=True, default="#ffc107", comment="Цвет предупреждения (hex)"
+        String(7),
+        nullable=True,
+        default="#ffc107",
+        comment="Цвет предупреждения (hex)",
     )
     error_color: Mapped[Optional[str]] = mapped_column(
         String(7), nullable=True, default="#dc3545", comment="Цвет ошибки (hex)"
     )
     info_color: Mapped[Optional[str]] = mapped_column(
-        String(7), nullable=True, default="#17a2b8", comment="Информационный цвет (hex)"
+        String(7),
+        nullable=True,
+        default="#17a2b8",
+        comment="Информационный цвет (hex)",
     )
 
     #     # Типографика
-    # 
+    #
     # Шрифты
     primary_font_family: Mapped[Optional[str]] = mapped_column(
         String(200),
@@ -148,7 +165,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # UI компоненты
-    # 
+    #
     # Кнопки
     button_border_radius: Mapped[Optional[str]] = mapped_column(
         String(10), nullable=True, default="4px", comment="Радиус границ кнопок"
@@ -177,7 +194,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Тема и стиль
-    # 
+    #
     theme_name: Mapped[str] = mapped_column(
         String(50),
         nullable=False,
@@ -197,7 +214,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Настройки отображения
-    # 
+    #
     # Макет
     layout_type: Mapped[str] = mapped_column(
         String(20),
@@ -221,7 +238,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Брендинг компании
-    # 
+    #
     # Слоган и описание
     company_slogan: Mapped[Optional[str]] = mapped_column(
         String(200), nullable=True, comment="Слоган компании"
@@ -236,7 +253,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # White Label настройки
-    # 
+    #
     # Кастомизация названий
     product_name: Mapped[Optional[str]] = mapped_column(
         String(100), nullable=True, comment="Кастомное название продукта"
@@ -257,7 +274,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Статус и метаданные
-    # 
+    #
     is_active: Mapped[bool] = mapped_column(
         Boolean, default=True, nullable=False, comment="Активна ли схема брендинга"
     )
@@ -274,7 +291,7 @@ class CompanyBranding(Base, TimestampedMixin):
     )
 
     #     # Отношения
-    # 
+    #
     company: Mapped["Company"] = relationship(
         "Company", back_populates="branding", lazy="select"
     )
@@ -283,7 +300,7 @@ class CompanyBranding(Base, TimestampedMixin):
         return f"<CompanyBranding(id={self.id}, company_id={self.company_id}, theme='{self.theme_name}')>"
 
     #     # Business Logic Methods
-    # 
+    #
     def get_color_palette(self) -> dict:
         """Получить полную цветовую палитру"""
         return {

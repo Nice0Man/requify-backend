@@ -18,7 +18,7 @@ from pydantic import BaseModel, EmailStr, Field, field_validator, model_validato
 # === Base Token Schemas (Single Responsibility Principle) ===
 
 
-class TokenBase(BaseSchema):
+class TokenBase(BaseModel):
     """Базовая схема токена."""
 
     token_type: str = Field(default="bearer", description="Тип токена")
@@ -38,7 +38,7 @@ class RefreshToken(TokenBase):
     expires_in: int = Field(..., description="Время жизни токена в секундах")
 
 
-class TokenPair(BaseSchema):
+class TokenPair(BaseModel):
     """Схема для пары токенов (access + refresh)."""
 
     access_token: str = Field(..., description="Access токен")
@@ -53,7 +53,7 @@ class TokenPair(BaseSchema):
 # === JWT Payload Schemas ===
 
 
-class AccessTokenPayload(BaseSchema):
+class AccessTokenPayload(BaseModel):
     """Схема для данных внутри access JWT токена."""
 
     sub: str = Field(..., description="Subject (user email)")
@@ -66,7 +66,7 @@ class AccessTokenPayload(BaseSchema):
     auth0_id: Optional[str] = Field(None, description="Auth0 ID пользователя")
 
 
-class RefreshTokenPayload(BaseSchema):
+class RefreshTokenPayload(BaseModel):
     """Схема для данных внутри refresh JWT токена."""
 
     sub: str = Field(..., description="Subject (user email)")
@@ -78,7 +78,7 @@ class RefreshTokenPayload(BaseSchema):
     company_id: Optional[int] = Field(None, description="ID основной компании")
 
 
-class TokenData(BaseSchema):
+class TokenData(BaseModel):
     """Схема для валидации токена."""
 
     email: Optional[str] = Field(None, description="Email пользователя")
@@ -90,7 +90,7 @@ class TokenData(BaseSchema):
 # === Authentication Request/Response Schemas ===
 
 
-class LoginRequest(CreateSchema, ValidationMixin):
+class LoginRequest(BaseModel, ):
     """Схема для запроса аутентификации."""
 
     email: EmailStr = Field(..., description="Email")
@@ -105,7 +105,7 @@ class LoginRequest(CreateSchema, ValidationMixin):
         return str(v).lower().strip()
 
 
-class LoginResponse(BaseSchema):
+class LoginResponse(BaseModel):
     """Схема для ответа после успешной аутентификации."""
 
     access_token: str = Field(..., description="Access токен")
@@ -120,7 +120,7 @@ class LoginResponse(BaseSchema):
     user: "UserDetailed" = Field(..., description="Полная информация о пользователе")
 
 
-class RefreshTokenRequest(CreateSchema, ValidationMixin):
+class RefreshTokenRequest(BaseModel, ):
     """Схема для запроса обновления токена."""
 
     refresh_token: str = Field(..., description="Refresh токен")
@@ -134,7 +134,7 @@ class RefreshTokenRequest(CreateSchema, ValidationMixin):
         return v.strip()
 
 
-class RefreshTokenResponse(BaseSchema):
+class RefreshTokenResponse(BaseModel):
     """Схема для ответа при обновлении токена."""
 
     access_token: str = Field(..., description="Новый access токен")
@@ -148,14 +148,14 @@ class RefreshTokenResponse(BaseSchema):
     )
 
 
-class LogoutRequest(CreateSchema):
+class LogoutRequest(BaseModel):
     """Схема для запроса выхода из системы."""
 
     refresh_token: Optional[str] = Field(None, description="Refresh токен для отзыва")
     logout_all: bool = Field(default=False, description="Выйти из всех устройств")
 
 
-class LogoutResponse(BaseSchema):
+class LogoutResponse(BaseModel):
     """Схема для ответа при выходе из системы."""
 
     message: str = Field(default="Successfully logged out", description="Сообщение")
@@ -166,7 +166,7 @@ class LogoutResponse(BaseSchema):
 # === Registration Schemas ===
 
 
-class RegisterRequest(CreateSchema, ValidationMixin):
+class RegisterRequest(BaseModel, ):
     """
     Схема для регистрации нового пользователя через форму.
 
@@ -250,7 +250,7 @@ class RegisterRequest(CreateSchema, ValidationMixin):
         return self
 
 
-class RegisterResponse(BaseSchema):
+class RegisterResponse(BaseModel):
     """
     Схема для ответа после регистрации.
 
@@ -273,7 +273,7 @@ class RegisterResponse(BaseSchema):
 # === Password Management Schemas ===
 
 
-class PasswordChangeRequest(CreateSchema, ValidationMixin):
+class PasswordChangeRequest(BaseModel, ):
     """Схема для смены пароля."""
 
     current_password: str = Field(..., description="Текущий пароль")
@@ -288,7 +288,7 @@ class PasswordChangeRequest(CreateSchema, ValidationMixin):
         return self
 
 
-class PasswordResetRequest(CreateSchema, ValidationMixin):
+class PasswordResetRequest(BaseModel, ):
     """Схема для запроса сброса пароля."""
 
     email: EmailStr = Field(..., description="Email пользователя")
@@ -300,7 +300,7 @@ class PasswordResetRequest(CreateSchema, ValidationMixin):
         return str(v).lower().strip()
 
 
-class PasswordResetConfirm(CreateSchema, ValidationMixin):
+class PasswordResetConfirm(BaseModel, ):
     """Схема для подтверждения сброса пароля."""
 
     token: str = Field(..., description="Токен сброса пароля")
@@ -323,7 +323,7 @@ class PasswordResetConfirm(CreateSchema, ValidationMixin):
         return self
 
 
-class PasswordResetResponse(BaseSchema):
+class PasswordResetResponse(BaseModel):
     """Схема для ответа после сброса пароля."""
 
     message: str = Field(..., description="Сообщение о результате")
@@ -333,7 +333,7 @@ class PasswordResetResponse(BaseSchema):
 # === Token Validation Schemas ===
 
 
-class TokenValidationRequest(BaseSchema):
+class TokenValidationRequest(BaseModel):
     """Схема для валидации токена."""
 
     token: str = Field(..., description="Токен для валидации")
@@ -347,7 +347,7 @@ class TokenValidationRequest(BaseSchema):
         return v.strip()
 
 
-class TokenValidationResponse(BaseSchema):
+class TokenValidationResponse(BaseModel):
     """Схема для ответа валидации токена."""
 
     valid: bool = Field(..., description="Валиден ли токен")
@@ -361,7 +361,7 @@ class TokenValidationResponse(BaseSchema):
 # === Session Management Schemas ===
 
 
-class ActiveSession(BaseSchema):
+class ActiveSession(BaseModel):
     """Схема для активной сессии пользователя."""
 
     id: int = Field(..., description="ID сессии")
@@ -380,7 +380,7 @@ class ActiveSession(BaseSchema):
         from_attributes = True
 
 
-class SessionListResponse(BaseSchema):
+class SessionListResponse(BaseModel):
     """Схема для списка активных сессий."""
 
     sessions: List[ActiveSession] = Field(..., description="Список активных сессий")
@@ -388,7 +388,7 @@ class SessionListResponse(BaseSchema):
     current_session_id: Optional[int] = Field(None, description="ID текущей сессии")
 
 
-class RevokeSessionRequest(BaseSchema):
+class RevokeSessionRequest(BaseModel):
     """Схема для отзыва сессии."""
 
     session_id: Optional[int] = Field(None, description="ID сессии для отзыва")
@@ -398,7 +398,7 @@ class RevokeSessionRequest(BaseSchema):
     )
 
 
-class RevokeSessionResponse(BaseSchema):
+class RevokeSessionResponse(BaseModel):
     """Схема для ответа при отзыве сессий."""
 
     message: str = Field(..., description="Сообщение о результате")
@@ -408,7 +408,7 @@ class RevokeSessionResponse(BaseSchema):
 # === Error Schemas ===
 
 
-class AuthError(BaseSchema):
+class AuthError(BaseModel):
     """Схема для ошибок аутентификации."""
 
     error: str = Field(..., description="Код ошибки")
@@ -424,7 +424,7 @@ class AuthError(BaseSchema):
 # === Email Verification Schemas ===
 
 
-class EmailVerificationRequest(BaseSchema):
+class EmailVerificationRequest(BaseModel):
     """Схема для запроса верификации email."""
 
     email: EmailStr = Field(..., description="Email для верификации")
@@ -436,7 +436,7 @@ class EmailVerificationRequest(BaseSchema):
         return str(v).lower().strip()
 
 
-class EmailVerificationConfirm(BaseSchema):
+class EmailVerificationConfirm(BaseModel):
     """Схема для подтверждения верификации email."""
 
     token: str = Field(..., description="Токен верификации email")
@@ -450,7 +450,7 @@ class EmailVerificationConfirm(BaseSchema):
         return v.strip()
 
 
-class EmailVerificationResponse(BaseSchema):
+class EmailVerificationResponse(BaseModel):
     """Схема для ответа после верификации email."""
 
     message: str = Field(..., description="Сообщение о результате")
@@ -463,13 +463,13 @@ class EmailVerificationResponse(BaseSchema):
 # === Two-Factor Authentication Schemas ===
 
 
-class TwoFactorSetupRequest(BaseSchema):
+class TwoFactorSetupRequest(BaseModel):
     """Схема для настройки 2FA."""
 
     password: str = Field(..., description="Текущий пароль для подтверждения")
 
 
-class TwoFactorSetupResponse(BaseSchema):
+class TwoFactorSetupResponse(BaseModel):
     """Схема для ответа настройки 2FA."""
 
     secret: str = Field(..., description="Секретный ключ для 2FA")
@@ -477,7 +477,7 @@ class TwoFactorSetupResponse(BaseSchema):
     backup_codes: List[str] = Field(..., description="Резервные коды")
 
 
-class TwoFactorConfirmRequest(BaseSchema):
+class TwoFactorConfirmRequest(BaseModel):
     """Схема для подтверждения включения 2FA."""
 
     token: str = Field(..., description="Токен из приложения")
@@ -491,7 +491,7 @@ class TwoFactorConfirmRequest(BaseSchema):
         return v.strip()
 
 
-class TwoFactorVerifyRequest(BaseSchema):
+class TwoFactorVerifyRequest(BaseModel):
     """Схема для верификации 2FA при входе."""
 
     email: EmailStr = Field(..., description="Email пользователя")
@@ -509,7 +509,7 @@ class TwoFactorVerifyRequest(BaseSchema):
 # === User Account Status Schemas ===
 
 
-class AccountStatusResponse(BaseSchema):
+class AccountStatusResponse(BaseModel):
     """Схема для статуса аккаунта пользователя."""
 
     is_active: bool = Field(..., description="Активен ли аккаунт")

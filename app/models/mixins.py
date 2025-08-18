@@ -7,7 +7,7 @@
 from datetime import UTC, datetime
 from typing import Optional
 
-from sqlalchemy import Boolea, JSONn, DateTime, String, Index, Enum, JSON, Integer
+from sqlalchemy import Boolean, JSON, DateTime, String, Index, Enum, Integer
 from sqlalchemy.orm import Mapped, mapped_column
 
 
@@ -31,7 +31,10 @@ class AuthMixin:
 
     # Authentication provider
     auth_provider: Mapped[str] = mapped_column(
-        String(20), default="local", nullable=False, comment="Провайдер аутентификации"
+        String(20),
+        default="local",
+        nullable=False,
+        comment="Провайдер аутентификации",
     )
     auth_provider_id: Mapped[Optional[str]] = mapped_column(
         String(255),

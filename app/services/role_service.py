@@ -34,25 +34,30 @@ from app.utils.logger import logger
 from .base import BaseService, ServiceError
 from .role_hierarchy_service import role_hierarchy_service
 
+
 class RoleServiceError(ServiceError):
     """Ошибки сервиса ролей."""
 
     pass
+
 
 class RoleNotFoundError(RoleServiceError):
     """Ошибка - роль не найдена."""
 
     pass
 
+
 class RoleConflictError(RoleServiceError):
     """Ошибка конфликта ролей."""
 
     pass
 
+
 class InsufficientPermissionsError(RoleServiceError):
     """Ошибка недостаточных прав."""
 
     pass
+
 
 class RoleOperationType(str, Enum):
     """Типы операций с ролями."""
@@ -63,6 +68,7 @@ class RoleOperationType(str, Enum):
     ASSIGN = "assign"
     REVOKE = "revoke"
 
+
 class RoleLevel(str, Enum):
     """Уровни ролей."""
 
@@ -71,6 +77,7 @@ class RoleLevel(str, Enum):
     DEPARTMENT = "department"
     TEAM = "team"
     PROJECT = "project"
+
 
 @dataclass
 class RoleInfo:
@@ -86,6 +93,7 @@ class RoleInfo:
     is_template: bool = False
     is_active: bool = True
 
+
 @dataclass
 class RoleAssignment:
     """Назначение роли."""
@@ -97,6 +105,7 @@ class RoleAssignment:
     assigned_at: Optional[datetime] = None
     assigned_by: Optional[int] = None
     expires_at: Optional[datetime] = None
+
 
 # Абстрактные интерфейсы
 class IRoleRepository(ABC):
@@ -123,6 +132,7 @@ class IRoleRepository(ABC):
         """Обновить роль."""
         pass
 
+
 class IRoleValidator(ABC):
     """Интерфейс валидатора ролей."""
 
@@ -144,6 +154,7 @@ class IRoleValidator(ABC):
         """Валидировать назначение роли."""
         pass
 
+
 class IRoleHierarchyManager(ABC):
     """Интерфейс менеджера иерархии ролей."""
 
@@ -153,6 +164,7 @@ class IRoleHierarchyManager(ABC):
     ) -> Set[str]:
         """Получить унаследованные разрешения."""
         pass
+
 
 # Конкретные реализации
 class DatabaseRoleRepository(IRoleRepository):
@@ -203,6 +215,7 @@ class DatabaseRoleRepository(IRoleRepository):
 
         result = await db.execute(stmt)
         return result.scalars().all()
+
 
 class StandardRoleValidator(IRoleValidator):
     """Стандартный валидатор ролей."""
@@ -292,6 +305,7 @@ class StandardRoleValidator(IRoleValidator):
         except Exception:
             return False
 
+
 class RoleHierarchyManager(IRoleHierarchyManager):
     """Менеджер иерархии ролей."""
 
@@ -336,6 +350,7 @@ class RoleHierarchyManager(IRoleHierarchyManager):
         # Логика наследования ролей через команды/проекты
         # Пока возвращаем пустой список, может быть расширено
         return []
+
 
 class RoleAuditLogger:
     """Логгер аудита операций с ролями."""
@@ -387,6 +402,7 @@ class RoleAuditLogger:
             ]
 
         return filtered_log[-limit:]
+
 
 class RoleService(BaseService):
     """
@@ -690,7 +706,7 @@ class RoleService(BaseService):
             raise self._handle_error(e, "get_audit_log")
 
     #     # Методы для работы с иерархией ролей (DAG)
-    # 
+    #
     async def create_role_inheritance(
         self,
         db: AsyncSession,
@@ -1011,6 +1027,7 @@ class RoleService(BaseService):
 
         except Exception as e:
             raise self._handle_error(e, "get_hierarchy_conflicts")
+
 
 # Регистрация сервиса в фабрике
 from .base import ServiceFactory

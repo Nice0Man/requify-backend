@@ -43,7 +43,7 @@ router.include_router(
     tags=["Organizations - Subscriptions"],
 )
 # # Company Management
-# # 
+# #
 
 # @router.get(
 #     "/companies",
@@ -94,7 +94,7 @@ router.include_router(
 #     pass
 
 # # # # Company Configuration
-# # 
+# #
 
 # @router.get(
 #     "/companies/{company_id}/settings",
@@ -153,7 +153,7 @@ router.include_router(
 #     pass
 
 # # # # Department Management
-# # 
+# #
 
 # @router.get(
 #     "/departments",
@@ -235,7 +235,7 @@ router.include_router(
 #     pass
 
 # # # # Team Management
-# # 
+# #
 
 # @router.get(
 #     "/teams",

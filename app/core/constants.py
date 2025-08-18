@@ -1,5 +1,6 @@
 from enum import Enum as PyEnum
 
+
 class RoleScope(PyEnum):
     """Области действия ролей"""
 
@@ -9,6 +10,7 @@ class RoleScope(PyEnum):
     TEAM = "team"  # Команда
     PROJECT = "project"  # Проект
     RESOURCE = "resource"  # Ресурс (требование, релиз, тест)
+
 
 class SystemRole(PyEnum):
     """Системные роли (глобальные)"""
@@ -23,6 +25,7 @@ class SystemRole(PyEnum):
     DEVELOPER = "developer"  # Техническая поддержка
     DATA_ANALYST = "data_analyst"  # Аналитик данных
 
+
 class CompanyRole(PyEnum):
     """Роли на уровне компании"""
 
@@ -34,6 +37,7 @@ class CompanyRole(PyEnum):
     SECURITY_MANAGER = "security_manager"  # Менеджер безопасности
     COMPANY_VIEWER = "company_viewer"  # Просмотр данных компании
 
+
 class DepartmentRole(PyEnum):
     """Роли на уровне департамента"""
 
@@ -44,6 +48,7 @@ class DepartmentRole(PyEnum):
     MANAGER = "manager"  # Менеджер
     COORDINATOR = "coordinator"  # Координатор
     DEPARTMENT_VIEWER = "department_viewer"  # Просмотр данных департамента
+
 
 class TeamRole(PyEnum):
     """Роли на уровне команды"""
@@ -75,6 +80,7 @@ class TeamRole(PyEnum):
     OBSERVER = "observer"  # Наблюдатель
     TEAM_VIEWER = "team_viewer"  # Просмотр данных команды
 
+
 class ProjectRole(PyEnum):
     """Роли на уровне проекта"""
 
@@ -98,6 +104,7 @@ class ProjectRole(PyEnum):
     PROJECT_VIEWER = "project_viewer"  # Просмотр данных проекта
     STAKEHOLDER = "stakeholder"  # Заинтересованная сторона
     CLIENT = "client"  # Клиент
+
 
 class Permission(PyEnum):
     """Детализированные разрешения в системе"""
