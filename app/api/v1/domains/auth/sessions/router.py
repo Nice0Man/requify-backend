@@ -13,7 +13,7 @@ from app.api.v1.domains.auth.sessions.schemas import (
     RevokeSessionRequest,
     RevokeSessionResponse,
 )
-from app.services.session_service import SessionService
+from app.services.session_service import session_service
 
 router = APIRouter()
 
@@ -31,7 +31,7 @@ async def get_user_sessions(
     - **active_only**: Only return active sessions
     """
     try:
-        sessions = await SessionService.get_user_sessions(
+        sessions = await session_service.get_user_sessions(
             db=db,
             user=current_user,
             request=request,
@@ -73,7 +73,7 @@ async def revoke_sessions(
     - **except_current**: Keep current session when revoking all
     """
     try:
-        revoked_count = await SessionService.revoke_user_sessions(
+        revoked_count = await session_service.revoke_user_sessions(
             db=db,
             user=current_user,
             request=request_obj,

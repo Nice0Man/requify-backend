@@ -11626,6 +11626,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
         "label": "Depends",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -17796,6 +17804,22 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
@@ -23454,7 +23478,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionService",
+        "label": "session_service",
         "importPath": "app.services.session_service",
         "description": "app.services.session_service",
         "isExtraImport": true,
@@ -24739,6 +24763,14 @@
         "description": "app",
         "isExtraImport": true,
         "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -29067,6 +29099,22 @@
     },
     {
         "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "TokenType",
         "importPath": "app.core.security",
         "description": "app.core.security",
         "isExtraImport": true,

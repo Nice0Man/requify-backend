@@ -529,6 +529,60 @@ class SessionService(BaseService):
         except Exception as e:
             raise self._handle_error(e, "get_session_statistics")
 
+    async def revoke_user_sessions(
+        self,
+        db: AsyncSession,
+        user: User,
+        request: Request,
+        session_id: Optional[str] = None,
+        revoke_all: bool = False,
+        except_current: bool = False,
+    ) -> int:
+        """
+        Отозвать сессии пользователя.
+        
+        Args:
+            db: Сессия базы данных
+            user: Пользователь
+            request: HTTP запрос
+            session_id: ID конкретной сессии для отзыва
+            revoke_all: Отозвать все сессии
+            except_current: Не отзывать текущую сессию
+            
+        Returns:
+            Количество отозванных сессий
+        """
+        try:
+            self._log_operation(
+                "revoke_user_sessions",
+                {
+                    "user_id": user.id,
+                    "session_id": session_id,
+                    "revoke_all": revoke_all,
+                    "except_current": except_current,
+                },
+            )
+
+            if revoke_all:
+                # Отзыв всех сессий
+                return await self.revoke_all_sessions(
+                    db, user, exclude_current=except_current, request=request
+                )
+            elif session_id:
+                # Отзыв конкретной сессии
+                success = await self.revoke_session(db, user, request, session_id)
+                return 1 if success else 0
+            else:
+                # Ничего не указано - отзываем текущую сессию
+                current_token_id = getattr(request.state, "current_token_id", None)
+                if current_token_id:
+                    success = await self.revoke_session(db, user, request, current_token_id)
+                    return 1 if success else 0
+                return 0
+
+        except Exception as e:
+            raise self._handle_error(e, "revoke_user_sessions")
+
 
 # Регистрация сервиса в фабрике
 from .base import ServiceFactory
