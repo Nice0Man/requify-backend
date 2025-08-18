@@ -4,7 +4,7 @@
 """
 
 import pytest
-from datetime import datetime
+from datetime import datetime, timezone
 from faker import Faker
 import random
 
@@ -51,7 +51,7 @@ class MockEmailService:
             'to': to,
             'subject': subject,
             'body': body,
-            'sent_at': datetime.utcnow(),
+            'sent_at': datetime.now(timezone.utc),
             'status': 'sent',
             **kwargs
         }
