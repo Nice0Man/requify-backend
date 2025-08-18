@@ -17,7 +17,7 @@ from app.core.constants import (
 from sqlalchemy import (
     String,
     ForeignKey,
-    JSONKeyng,
+    JSONng,
     Boolean,
     DateTime,
     Integer,

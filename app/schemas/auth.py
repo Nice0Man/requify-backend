@@ -90,7 +90,9 @@ class TokenData(BaseModel):
 # === Authentication Request/Response Schemas ===
 
 
-class LoginRequest(BaseModel, ):
+class LoginRequest(
+    BaseModel,
+):
     """Схема для запроса аутентификации."""
 
     email: EmailStr = Field(..., description="Email")
@@ -120,7 +122,9 @@ class LoginResponse(BaseModel):
     user: "UserDetailed" = Field(..., description="Полная информация о пользователе")
 
 
-class RefreshTokenRequest(BaseModel, ):
+class RefreshTokenRequest(
+    BaseModel,
+):
     """Схема для запроса обновления токена."""
 
     refresh_token: str = Field(..., description="Refresh токен")
@@ -166,7 +170,9 @@ class LogoutResponse(BaseModel):
 # === Registration Schemas ===
 
 
-class RegisterRequest(BaseModel, ):
+class RegisterRequest(
+    BaseModel,
+):
     """
     Схема для регистрации нового пользователя через форму.
 
@@ -273,7 +279,9 @@ class RegisterResponse(BaseModel):
 # === Password Management Schemas ===
 
 
-class PasswordChangeRequest(BaseModel, ):
+class PasswordChangeRequest(
+    BaseModel,
+):
     """Схема для смены пароля."""
 
     current_password: str = Field(..., description="Текущий пароль")
@@ -288,7 +296,9 @@ class PasswordChangeRequest(BaseModel, ):
         return self
 
 
-class PasswordResetRequest(BaseModel, ):
+class PasswordResetRequest(
+    BaseModel,
+):
     """Схема для запроса сброса пароля."""
 
     email: EmailStr = Field(..., description="Email пользователя")
@@ -300,7 +310,9 @@ class PasswordResetRequest(BaseModel, ):
         return str(v).lower().strip()
 
 
-class PasswordResetConfirm(BaseModel, ):
+class PasswordResetConfirm(
+    BaseModel,
+):
     """Схема для подтверждения сброса пароля."""
 
     token: str = Field(..., description="Токен сброса пароля")

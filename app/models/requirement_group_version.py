@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import DateTime, ForeignKey, ForeignKey, JSONKey, JSONKey, Integer
+from sqlalchemy import DateTime, ForeignKey, ForeignKey, JSON, JSON, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 if TYPE_CHECKING:

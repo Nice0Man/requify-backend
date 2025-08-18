@@ -12,7 +12,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     ForeignKey,
-    JSONKeynKey,
+    JSONnKey,
     Integer,
     String,
     Text,

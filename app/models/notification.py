@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Optional, Dict, Any
 
 from sqlalchemy import (
     ForeignKey,
-    JSONKey,
+    JSON,
     Integer,
     String,
     Text,

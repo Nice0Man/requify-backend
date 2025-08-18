@@ -10,7 +10,7 @@ from sqlalchemy import (
     JSON,
     Boolean,
     ForeignKey,
-    UUIDnKeyn,
+    UUID,
     DateTime,
     Float,
     ForeignKey,

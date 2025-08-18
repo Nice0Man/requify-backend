@@ -7649,7 +7649,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7825,7 +7825,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7897,7 +7897,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -7961,7 +7961,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8041,7 +8041,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKeyng",
+        "label": "JSONng",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8129,7 +8129,7 @@
         "documentation": {}
     },
     {
-        "label": "UUIDnKeyn",
+        "label": "UUID",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8257,7 +8257,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKeyng",
+        "label": "JSONng",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8385,7 +8385,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8473,7 +8473,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyKey",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8593,7 +8593,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyKey",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8761,7 +8761,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyKey",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8809,7 +8809,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -8817,7 +8817,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9057,7 +9057,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9065,7 +9065,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKey",
+        "label": "JSON",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9121,7 +9121,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKeynKey",
+        "label": "JSONnKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9361,7 +9361,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKeynKey",
+        "label": "JSONnKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9537,7 +9537,7 @@
         "documentation": {}
     },
     {
-        "label": "ForeignKeyKey",
+        "label": "ForeignKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -9593,7 +9593,7 @@
         "documentation": {}
     },
     {
-        "label": "JSONKeynKey",
+        "label": "JSONnKey",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -42221,7 +42221,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class TokenData(BaseModel):\n    \"\"\"Схема для валидации токена.\"\"\"\n    email: Optional[str] = Field(None, description=\"Email пользователя\")\n    user_id: Optional[int] = Field(None, description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID компании\")\n# === Authentication Request/Response Schemas ===\nclass LoginRequest(BaseModel, ):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")",
+        "peekOfCode": "class TokenData(BaseModel):\n    \"\"\"Схема для валидации токена.\"\"\"\n    email: Optional[str] = Field(None, description=\"Email пользователя\")\n    user_id: Optional[int] = Field(None, description=\"ID пользователя\")\n    scopes: List[str] = Field(default_factory=list, description=\"Права доступа\")\n    company_id: Optional[int] = Field(None, description=\"ID компании\")\n# === Authentication Request/Response Schemas ===\nclass LoginRequest(\n    BaseModel,\n):",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42230,7 +42230,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LoginRequest(BaseModel, ):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")\n    username: Optional[str] = Field(None, description=\"Username\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация и нормализация email.\"\"\"",
+        "peekOfCode": "class LoginRequest(\n    BaseModel,\n):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email\")\n    username: Optional[str] = Field(None, description=\"Username\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42248,7 +42248,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RefreshTokenRequest(BaseModel, ):\n    \"\"\"Схема для запроса обновления токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    @field_validator(\"refresh_token\")\n    @classmethod\n    def validate_refresh_token(cls, v):\n        \"\"\"Валидация refresh токена.\"\"\"\n        if not v or not v.strip():\n            raise ValueError(\"Refresh token cannot be empty\")\n        return v.strip()",
+        "peekOfCode": "class RefreshTokenRequest(\n    BaseModel,\n):\n    \"\"\"Схема для запроса обновления токена.\"\"\"\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    @field_validator(\"refresh_token\")\n    @classmethod\n    def validate_refresh_token(cls, v):\n        \"\"\"Валидация refresh токена.\"\"\"\n        if not v or not v.strip():",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42275,7 +42275,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class LogoutResponse(BaseModel):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===\nclass RegisterRequest(BaseModel, ):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.",
+        "peekOfCode": "class LogoutResponse(BaseModel):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Registration Schemas ===\nclass RegisterRequest(\n    BaseModel,\n):\n    \"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42284,7 +42284,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class RegisterRequest(BaseModel, ):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: str = Field(\n        ..., min_length=2, max_length=50, description=\"Имя пользователя\"\n    )",
+        "peekOfCode": "class RegisterRequest(\n    BaseModel,\n):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: str = Field(",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42302,7 +42302,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordChangeRequest(BaseModel, ):\n    \"\"\"Схема для смены пароля.\"\"\"\n    current_password: str = Field(..., description=\"Текущий пароль\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @model_validator(mode=\"after\")\n    def passwords_match(self):\n        \"\"\"Проверка совпадения паролей.\"\"\"\n        if self.new_password != self.confirm_password:\n            raise ValueError(\"Пароли не совпадают\")",
+        "peekOfCode": "class PasswordChangeRequest(\n    BaseModel,\n):\n    \"\"\"Схема для смены пароля.\"\"\"\n    current_password: str = Field(..., description=\"Текущий пароль\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @model_validator(mode=\"after\")\n    def passwords_match(self):\n        \"\"\"Проверка совпадения паролей.\"\"\"",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42311,7 +42311,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordResetRequest(BaseModel, ):\n    \"\"\"Схема для запроса сброса пароля.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()\nclass PasswordResetConfirm(BaseModel, ):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"",
+        "peekOfCode": "class PasswordResetRequest(\n    BaseModel,\n):\n    \"\"\"Схема для запроса сброса пароля.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        return str(v).lower().strip()",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -42320,7 +42320,7 @@
         "kind": 6,
         "importPath": "app.schemas.auth",
         "description": "app.schemas.auth",
-        "peekOfCode": "class PasswordResetConfirm(BaseModel, ):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"\n    token: str = Field(..., description=\"Токен сброса пароля\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):\n        \"\"\"Валидация токена.\"\"\"\n        if not v or not v.strip():",
+        "peekOfCode": "class PasswordResetConfirm(\n    BaseModel,\n):\n    \"\"\"Схема для подтверждения сброса пароля.\"\"\"\n    token: str = Field(..., description=\"Токен сброса пароля\")\n    new_password: str = Field(..., min_length=8, description=\"Новый пароль\")\n    confirm_password: str = Field(..., description=\"Подтверждение нового пароля\")\n    @field_validator(\"token\")\n    @classmethod\n    def validate_token(cls, v):",
         "detail": "app.schemas.auth",
         "documentation": {}
     },
@@ -51509,7 +51509,7 @@
         "kind": 6,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "class CompanyFactory(factory.Factory):\n    \"\"\"Фабрика для создания синтетических компаний.\"\"\"\n    class Meta:\n        model = dict\n    id = factory.Sequence(lambda n: n + 1)\n    name = factory.LazyAttribute(lambda _: fake.company())\n    description = factory.LazyAttribute(lambda _: fake.catch_phrase())\n    website = factory.LazyAttribute(lambda _: fake.url())\n    industry = factory.Iterator([\n        'Technology', 'Healthcare', 'Finance', 'Education', ",
+        "peekOfCode": "class CompanyFactory(factory.Factory):\n    \"\"\"Фабрика для создания синтетических компаний.\"\"\"\n    class Meta:\n        model = dict\n    id = factory.Sequence(lambda n: n + 1)\n    name = factory.LazyAttribute(lambda _: fake.company())\n    description = factory.LazyAttribute(lambda _: fake.catch_phrase())\n    website = factory.LazyAttribute(lambda _: fake.url())\n    industry = factory.Iterator(\n        [",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51518,7 +51518,7 @@
         "kind": 6,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "class ProjectFactory(factory.Factory):\n    \"\"\"Фабрика для создания синтетических проектов.\"\"\"\n    class Meta:\n        model = dict\n    id = factory.Sequence(lambda n: n + 1)\n    name = factory.LazyAttribute(lambda _: f\"Project {fake.word().title()}\")\n    description = factory.LazyAttribute(lambda _: fake.text(max_nb_chars=200))\n    status = factory.Iterator(['planning', 'active', 'on_hold', 'completed', 'archived'])\n    priority = factory.Iterator(['low', 'medium', 'high', 'critical'])\n    start_date = factory.LazyAttribute(lambda _: fake.date_between(",
+        "peekOfCode": "class ProjectFactory(factory.Factory):\n    \"\"\"Фабрика для создания синтетических проектов.\"\"\"\n    class Meta:\n        model = dict\n    id = factory.Sequence(lambda n: n + 1)\n    name = factory.LazyAttribute(lambda _: f\"Project {fake.word().title()}\")\n    description = factory.LazyAttribute(lambda _: fake.text(max_nb_chars=200))\n    status = factory.Iterator(\n        ['planning', 'active', 'on_hold', 'completed', 'archived']\n    )",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51572,7 +51572,7 @@
         "kind": 6,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "class TimeFreezeMixin:\n    \"\"\"Миксин для фиксации времени в тестах.\"\"\"\n    @staticmethod\n    def freeze_time_at(timestamp: datetime):\n        \"\"\"Фиксирует время на указанной метке.\"\"\"\n        return patch('datetime.datetime') as mock_datetime\n    @staticmethod\n    def advance_time_by(seconds: int):\n        \"\"\"Продвигает время на указанное количество секунд.\"\"\"\n        # Можно использовать с freezegun",
+        "peekOfCode": "class TimeFreezeMixin:\n    \"\"\"Миксин для фиксации времени в тестах.\"\"\"\n    @staticmethod\n    def freeze_time_at(timestamp: datetime):\n        \"\"\"Фиксирует время на указанной метке.\"\"\"\n        return patch('datetime.datetime')\n    @staticmethod\n    def advance_time_by(seconds: int):\n        \"\"\"Продвигает время на указанное количество секунд.\"\"\"\n        # Можно использовать с freezegun",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51617,7 +51617,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def large_dataset():\n    \"\"\"Генерирует большой набор данных для нагрузочных тестов.\"\"\"\n    return {\n        'users': UserFactory.create_batch(1000),\n        'companies': CompanyFactory.create_batch(100),\n        'projects': ProjectFactory.create_batch(500),\n        'requirements': RequirementFactory.create_batch(2000)\n    }\nclass MockEmailService:\n    \"\"\"Мок сервиса электронной почты.\"\"\"",
+        "peekOfCode": "def large_dataset():\n    \"\"\"Генерирует большой набор данных для нагрузочных тестов.\"\"\"\n    return {\n        'users': UserFactory.create_batch(1000),\n        'companies': CompanyFactory.create_batch(100),\n        'projects': ProjectFactory.create_batch(500),\n        'requirements': RequirementFactory.create_batch(2000),\n    }\nclass MockEmailService:\n    \"\"\"Мок сервиса электронной почты.\"\"\"",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51644,7 +51644,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def mock_auth_provider():\n    \"\"\"Предоставляет мок провайдера аутентификации.\"\"\"\n    return MockAuthProvider()\n@pytest.fixture\ndef mock_external_services(mock_email_service, mock_file_storage, mock_auth_provider):\n    \"\"\"Предоставляет все моки внешних сервисов.\"\"\"\n    return {\n        'email': mock_email_service,\n        'storage': mock_file_storage,\n        'auth': mock_auth_provider",
+        "peekOfCode": "def mock_auth_provider():\n    \"\"\"Предоставляет мок провайдера аутентификации.\"\"\"\n    return MockAuthProvider()\n@pytest.fixture\ndef mock_external_services(mock_email_service, mock_file_storage, mock_auth_provider):\n    \"\"\"Предоставляет все моки внешних сервисов.\"\"\"\n    return {\n        'email': mock_email_service,\n        'storage': mock_file_storage,\n        'auth': mock_auth_provider,",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51653,7 +51653,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def mock_external_services(mock_email_service, mock_file_storage, mock_auth_provider):\n    \"\"\"Предоставляет все моки внешних сервисов.\"\"\"\n    return {\n        'email': mock_email_service,\n        'storage': mock_file_storage,\n        'auth': mock_auth_provider\n    }\nclass DatabaseSeeder:\n    \"\"\"Утилита для заполнения тестовой базы данных.\"\"\"\n    def __init__(self, session):",
+        "peekOfCode": "def mock_external_services(mock_email_service, mock_file_storage, mock_auth_provider):\n    \"\"\"Предоставляет все моки внешних сервисов.\"\"\"\n    return {\n        'email': mock_email_service,\n        'storage': mock_file_storage,\n        'auth': mock_auth_provider,\n    }\nclass DatabaseSeeder:\n    \"\"\"Утилита для заполнения тестовой базы данных.\"\"\"\n    def __init__(self, session):",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51662,7 +51662,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def db_seeder(test_db_session):\n    \"\"\"Предоставляет утилиту для заполнения базы данных.\"\"\"\n    return DatabaseSeeder(test_db_session)\n@pytest.fixture\ndef performance_test_data():\n    \"\"\"Данные для тестов производительности.\"\"\"\n    return {\n        'small_dataset': {\n            'users': UserFactory.create_batch(100),\n            'projects': ProjectFactory.create_batch(50)",
+        "peekOfCode": "def db_seeder(test_db_session):\n    \"\"\"Предоставляет утилиту для заполнения базы данных.\"\"\"\n    return DatabaseSeeder(test_db_session)\n@pytest.fixture\ndef performance_test_data():\n    \"\"\"Данные для тестов производительности.\"\"\"\n    return {\n        'small_dataset': {\n            'users': UserFactory.create_batch(100),\n            'projects': ProjectFactory.create_batch(50),",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51671,7 +51671,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def performance_test_data():\n    \"\"\"Данные для тестов производительности.\"\"\"\n    return {\n        'small_dataset': {\n            'users': UserFactory.create_batch(100),\n            'projects': ProjectFactory.create_batch(50)\n        },\n        'medium_dataset': {\n            'users': UserFactory.create_batch(500),\n            'projects': ProjectFactory.create_batch(200)",
+        "peekOfCode": "def performance_test_data():\n    \"\"\"Данные для тестов производительности.\"\"\"\n    return {\n        'small_dataset': {\n            'users': UserFactory.create_batch(100),\n            'projects': ProjectFactory.create_batch(50),\n        },\n        'medium_dataset': {\n            'users': UserFactory.create_batch(500),\n            'projects': ProjectFactory.create_batch(200),",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51680,7 +51680,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def api_test_data():\n    \"\"\"Данные для API тестов.\"\"\"\n    return {\n        'valid_user': UserFactory.create(),\n        'invalid_user': {\n            'username': '',  # Невалидное имя\n            'email': 'invalid-email',  # Невалидный email\n            'name': 'A' * 256  # Слишком длинное имя\n        },\n        'edge_cases': {",
+        "peekOfCode": "def api_test_data():\n    \"\"\"Данные для API тестов.\"\"\"\n    return {\n        'valid_user': UserFactory.create(),\n        'invalid_user': {\n            'username': '',  # Невалидное имя\n            'email': 'invalid-email',  # Невалидный email\n            'name': 'A' * 256,  # Слишком длинное имя\n        },\n        'edge_cases': {",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51689,7 +51689,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def time_utils():\n    \"\"\"Предоставляет утилиты для работы со временем в тестах.\"\"\"\n    return TimeFreezeMixin()\n# Маркеры для синтетических данных\ndef pytest_configure(config):\n    \"\"\"Добавляет маркеры для синтетических данных.\"\"\"\n    config.addinivalue_line(\"markers\", \"synthetic: uses synthetic data\")\n    config.addinivalue_line(\"markers\", \"mocked: uses mocked services\")\n    config.addinivalue_line(\"markers\", \"performance_data: uses large synthetic datasets\")\n# Автоматические фикстуры для моков",
+        "peekOfCode": "def time_utils():\n    \"\"\"Предоставляет утилиты для работы со временем в тестах.\"\"\"\n    return TimeFreezeMixin()\n# Маркеры для синтетических данных\ndef pytest_configure(config):\n    \"\"\"Добавляет маркеры для синтетических данных.\"\"\"\n    config.addinivalue_line(\"markers\", \"synthetic: uses synthetic data\")\n    config.addinivalue_line(\"markers\", \"mocked: uses mocked services\")\n    config.addinivalue_line(\n        \"markers\", \"performance_data: uses large synthetic datasets\"",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -51698,7 +51698,7 @@
         "kind": 2,
         "importPath": "tests.fixtures.synthetic_data",
         "description": "tests.fixtures.synthetic_data",
-        "peekOfCode": "def pytest_configure(config):\n    \"\"\"Добавляет маркеры для синтетических данных.\"\"\"\n    config.addinivalue_line(\"markers\", \"synthetic: uses synthetic data\")\n    config.addinivalue_line(\"markers\", \"mocked: uses mocked services\")\n    config.addinivalue_line(\"markers\", \"performance_data: uses large synthetic datasets\")\n# Автоматические фикстуры для моков\n@pytest.fixture(autouse=True)\ndef auto_mock_external_services(monkeypatch):\n    \"\"\"Автоматически мокает внешние сервисы в тестах.\"\"\"\n    # Мокаем только если тест помечен соответствующим маркером",
+        "peekOfCode": "def pytest_configure(config):\n    \"\"\"Добавляет маркеры для синтетических данных.\"\"\"\n    config.addinivalue_line(\"markers\", \"synthetic: uses synthetic data\")\n    config.addinivalue_line(\"markers\", \"mocked: uses mocked services\")\n    config.addinivalue_line(\n        \"markers\", \"performance_data: uses large synthetic datasets\"\n    )\n# Автоматические фикстуры для моков\n@pytest.fixture(autouse=True)\ndef auto_mock_external_services(monkeypatch):",
         "detail": "tests.fixtures.synthetic_data",
         "documentation": {}
     },
@@ -52094,7 +52094,7 @@
         "kind": 2,
         "importPath": "tests.conftest_isolated",
         "description": "tests.conftest_isolated",
-        "peekOfCode": "def sample_user_data():\n    \"\"\"Базовые тестовые данные пользователя.\"\"\"\n    return {\n        'id': 1,\n        'username': 'testuser',\n        'email': 'test@example.com',\n        'name': 'Test User',\n        'status': 'active',\n        'is_active': True,\n        'is_email_verified': True",
+        "peekOfCode": "def sample_user_data():\n    \"\"\"Базовые тестовые данные пользователя.\"\"\"\n    return {\n        'id': 1,\n        'username': 'testuser',\n        'email': 'test@example.com',\n        'name': 'Test User',\n        'status': 'active',\n        'is_active': True,\n        'is_email_verified': True,",
         "detail": "tests.conftest_isolated",
         "documentation": {}
     },
@@ -53543,7 +53543,7 @@
         "kind": 6,
         "importPath": "tests_isolated.test_synthetic_data_demo",
         "description": "tests_isolated.test_synthetic_data_demo",
-        "peekOfCode": "class TestMockServices:\n    \"\"\"Тесты моков внешних сервисов.\"\"\"\n    def test_mock_email_service(self):\n        \"\"\"Тест мока сервиса электронной почты.\"\"\"\n        email_service = MockEmailService()\n        # Отправляем тестовый email\n        result = email_service.send_email(\n            to=\"test@example.com\",\n            subject=\"Test Subject\",\n            body=\"Test Body\"",
+        "peekOfCode": "class TestMockServices:\n    \"\"\"Тесты моков внешних сервисов.\"\"\"\n    def test_mock_email_service(self):\n        \"\"\"Тест мока сервиса электронной почты.\"\"\"\n        email_service = MockEmailService()\n        # Отправляем тестовый email\n        result = email_service.send_email(\n            to=\"test@example.com\", subject=\"Test Subject\", body=\"Test Body\"\n        )\n        assert result is True",
         "detail": "tests_isolated.test_synthetic_data_demo",
         "documentation": {}
     },
@@ -53561,7 +53561,7 @@
         "kind": 6,
         "importPath": "tests_isolated.test_synthetic_data_demo",
         "description": "tests_isolated.test_synthetic_data_demo",
-        "peekOfCode": "class TestSyntheticDataIntegration:\n    \"\"\"Интеграционные тесты с синтетическими данными.\"\"\"\n    def test_large_dataset_generation(self):\n        \"\"\"Тест генерации большого набора данных.\"\"\"\n        large_dataset = {\n            'users': UserFactory.create_batch(100),\n            'companies': UserFactory.create_batch(10),  # Используем ту же фабрику для простоты\n        }\n        assert len(large_dataset['users']) == 100\n        assert len(large_dataset['companies']) == 10",
+        "peekOfCode": "class TestSyntheticDataIntegration:\n    \"\"\"Интеграционные тесты с синтетическими данными.\"\"\"\n    def test_large_dataset_generation(self):\n        \"\"\"Тест генерации большого набора данных.\"\"\"\n        large_dataset = {\n            'users': UserFactory.create_batch(100),\n            'companies': UserFactory.create_batch(\n                10\n            ),  # Используем ту же фабрику для простоты\n        }",
         "detail": "tests_isolated.test_synthetic_data_demo",
         "documentation": {}
     },

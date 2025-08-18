@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional
 
 from sqlalchemy import (
     ForeignKey,
-    JSONKey,
+    JSON,
     String,
     Boolean,
     Integer,

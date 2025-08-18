@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING, Optional
 from sqlalchemy import (
     ForeignKey,
     ForeignKey,
-    JSONKeynKey,
+    JSONnKey,
     Integer,
     JSON,
     DateTime,

@@ -9,6 +9,7 @@ import pytest
 def mock_email_service():
     """Фикстура мока email сервиса."""
     from tests.test_basic_synthetic import MockEmailService
+
     return MockEmailService()
 
 
@@ -16,6 +17,7 @@ def mock_email_service():
 def simple_user_factory():
     """Фикстура простой фабрики пользователей."""
     from tests.test_basic_synthetic import SimpleUserFactory
+
     return SimpleUserFactory
 
 
@@ -30,7 +32,7 @@ def sample_user_data():
         'name': 'Test User',
         'status': 'active',
         'is_active': True,
-        'is_email_verified': True
+        'is_email_verified': True,
     }
 
 
@@ -38,6 +40,7 @@ def sample_user_data():
 def performance_data_small():
     """Небольшой набор данных для тестов производительности."""
     from tests.test_basic_synthetic import SimpleUserFactory
+
     return SimpleUserFactory.create_batch(100)
 
 
@@ -45,4 +48,5 @@ def performance_data_small():
 def performance_data_large():
     """Большой набор данных для тестов производительности."""
     from tests.test_basic_synthetic import SimpleUserFactory
+
     return SimpleUserFactory.create_batch(1000)

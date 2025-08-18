@@ -6,7 +6,7 @@ Activity Model.
 
 from typing import TYPE_CHECKING, Optional, Dict, Any
 
-from sqlalchemy import ForeignKey, JSONKey, Integer, String, ForeignKey, Index, JSON
+from sqlalchemy import ForeignKey, JSON, Integer, String, ForeignKey, Index, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import Base, TimestampedMixin
