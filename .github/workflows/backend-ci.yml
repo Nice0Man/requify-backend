@@ -1,0 +1,438 @@
+name: Backend CI/CD Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths: 
+      - 'app/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - '.github/workflows/backend-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'app/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - '.github/workflows/backend-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    name: Code Quality Checks
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+        
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root
+      
+    - name: Install project
+      run: poetry install --no-interaction
+      
+    - name: Check code formatting with Black
+      run: poetry run black --check --diff .
+      
+    - name: Check import sorting with isort
+      run: poetry run isort --check-only --diff .
+      
+    - name: Run Flake8 linting
+      run: poetry run flake8 --config=setup.cfg .
+      
+    - name: Run Pylint static analysis
+      run: poetry run pylint app/ --rcfile=.pylintrc --output-format=text --reports=no --score=no
+      continue-on-error: true
+
+  security-checks:
+    runs-on: ubuntu-latest
+    name: Security Vulnerability Scan
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Install dependencies
+      run: poetry install --no-interaction
+      
+    - name: Run Safety security check
+      run: poetry run safety check --json --output safety-report.json
+      continue-on-error: true
+      
+    - name: Upload security report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: security-report
+        path: safety-report.json
+
+  test-unit:
+    runs-on: ubuntu-latest
+    name: Unit Tests with Synthetic Data
+    
+    strategy:
+      matrix:
+        python-version: ["3.13"]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
+        
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root
+      
+    - name: Install project
+      run: poetry install --no-interaction
+      
+    - name: Create test environment variables
+      run: |
+        echo "TESTING=true" >> $GITHUB_ENV
+        echo "TEST_DATABASE_URL=sqlite:///:memory:" >> $GITHUB_ENV
+        echo "LOG_LEVEL=ERROR" >> $GITHUB_ENV
+        echo "ENVIRONMENT=testing" >> $GITHUB_ENV
+        
+    - name: Run unit tests with coverage
+      run: |
+        poetry run pytest tests/ \
+          -v \
+          --tb=short \
+          --cov=app \
+          --cov-report=term-missing \
+          --cov-report=xml:coverage.xml \
+          --cov-report=html:htmlcov/ \
+          --cov-fail-under=70 \
+          -m "unit" \
+          --maxfail=10 \
+          --durations=10 \
+          --junit-xml=test-results.xml
+          
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: unit-test-results-${{ matrix.python-version }}
+        path: |
+          test-results.xml
+          htmlcov/
+          coverage.xml
+
+  test-integration:
+    runs-on: ubuntu-latest
+    name: Integration Tests with Mocks
+    needs: [lint-and-format]
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: test_requify
+          POSTGRES_USER: test_user
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+          
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Install dependencies
+      run: poetry install --no-interaction
+      
+    - name: Create integration test environment
+      run: |
+        echo "TESTING=true" >> $GITHUB_ENV
+        echo "DATABASE_URL=postgresql://test_user:test_password@localhost:5432/test_requify" >> $GITHUB_ENV
+        echo "REDIS_URL=redis://localhost:6379/0" >> $GITHUB_ENV
+        echo "LOG_LEVEL=ERROR" >> $GITHUB_ENV
+        echo "ENVIRONMENT=testing" >> $GITHUB_ENV
+        
+    - name: Wait for PostgreSQL
+      run: |
+        until pg_isready -h localhost -p 5432 -U test_user; do
+          echo "Waiting for PostgreSQL..."
+          sleep 2
+        done
+        
+    - name: Run database migrations
+      run: |
+        poetry run alembic upgrade head
+        
+    - name: Seed test database with synthetic data
+      run: |
+        poetry run python scripts/seed_db.py --test-mode
+        
+    - name: Run integration tests with mocks
+      run: |
+        poetry run pytest tests/ \
+          -v \
+          --tb=short \
+          --cov=app \
+          --cov-append \
+          --cov-report=term-missing \
+          --cov-report=xml:integration-coverage.xml \
+          -m "integration" \
+          --maxfail=5 \
+          --durations=10 \
+          --junit-xml=integration-test-results.xml
+          
+    - name: Run API domain tests
+      run: |
+        poetry run python tests/test_all_domains.py
+        
+    - name: Run authentication tests
+      run: |
+        poetry run python tests/manual_auth_test.py --mode comprehensive
+        
+    - name: Upload integration test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: integration-test-results
+        path: |
+          integration-test-results.xml
+          integration-coverage.xml
+
+  test-performance:
+    runs-on: ubuntu-latest
+    name: Performance Tests
+    needs: [test-unit]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Install dependencies
+      run: poetry install --no-interaction
+      
+    - name: Run performance tests
+      run: |
+        poetry run pytest tests/ \
+          -v \
+          -m "performance" \
+          --durations=0 \
+          --junit-xml=performance-test-results.xml
+          
+    - name: Run database performance tests
+      run: |
+        poetry run pytest tests/test_database_performance.py -v --durations=0
+        
+    - name: Upload performance test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: performance-test-results
+        path: performance-test-results.xml
+
+  test-compatibility:
+    runs-on: ubuntu-latest
+    name: Model-Schema Compatibility Tests
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Install dependencies
+      run: poetry install --no-interaction
+      
+    - name: Run model-schema compatibility tests
+      run: |
+        poetry run pytest tests/test_models_schemas_compatibility.py \
+          -v \
+          --cov=app.models \
+          --cov=app.schemas \
+          --cov-report=xml:compatibility-coverage.xml \
+          --junit-xml=compatibility-test-results.xml
+          
+    - name: Run schema validation edge cases
+      run: |
+        poetry run pytest tests/test_schema_validation_edge_cases.py -v
+        
+    - name: Upload compatibility test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: compatibility-test-results
+        path: |
+          compatibility-test-results.xml
+          compatibility-coverage.xml
+
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: Build Package and Docker
+    needs: [test-unit, test-integration]
+    if: github.event_name == 'push'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
+        
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: latest
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        
+    - name: Install dependencies
+      run: poetry install --no-interaction
+      
+    - name: Build Python package
+      run: poetry build
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: python-package
+        path: dist/
+
+  ci-summary:
+    runs-on: ubuntu-latest
+    name: CI Summary Report
+    needs: [lint-and-format, security-checks, test-unit, test-integration, test-compatibility]
+    if: always()
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      
+    - name: Generate CI summary
+      run: |
+        echo "# CI/CD Test Results Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "## Test Status" >> $GITHUB_STEP_SUMMARY
+        echo "- **Code Quality**: ${{ needs.lint-and-format.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Security**: ${{ needs.security-checks.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Unit Tests**: ${{ needs.test-unit.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Integration Tests**: ${{ needs.test-integration.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Compatibility Tests**: ${{ needs.test-compatibility.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "## Coverage Reports" >> $GITHUB_STEP_SUMMARY
+        echo "Coverage reports are available in the job artifacts." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "## Synthetic Data and Mocks" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Tests use in-memory SQLite database for isolation" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Synthetic test data generated via factories and fixtures" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Mock services used for external dependencies" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Performance tests validate response times and memory usage" >> $GITHUB_STEP_SUMMARY
