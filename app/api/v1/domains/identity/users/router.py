@@ -6,22 +6,14 @@ activation/deactivation, and role assignments.
 """
 
 from typing import Optional, List
-from fastapi import APIRouter, Depends, HTTPException, status, Query
+from fastapi import APIRouter, HTTPException, status, Query
 
-from app.api.dependencies import (
-    SessionDep,
-    CurrentActiveUserDep,
-    UserPermissions,
-    PermissionChecker,
-)
-from app.models import User
-from app.core.constants import Permission, RoleScope
+from app.api.dependencies.core.auth import CurrentActiveUserDep
+from app.api.dependencies.core.database import SessionDep
+from app.core.constants import Permission
 
-# Lazy import to avoid circular dependencies
-# from app.services.user_profile_service import user_profile_service
-# from app.services.user_profile_service import UserProfileService
+
 from app.services.admin_service import admin_service
-from app.services.permission_service import PermissionService
 from .schemas import (
     UserCreateRequest,
     UserUpdateRequest,
@@ -33,13 +25,6 @@ from .schemas import (
     UserRoleResponse,
     UserRoleAssignmentRequest,
 )
-
-# Initialize services
-# user_profile_service = UserProfileService()  # Lazy initialization
-permission_service = PermissionService()
-
-# Initialize permission checker
-permission_checker = PermissionChecker()
 
 router = APIRouter()
 
@@ -72,15 +57,13 @@ def _get_context_id(assignment):
         return None
 
 
-# # User CRUD Operations
-#
+# User CRUD Operations
 
 
 @router.get(
     "/",
     summary="Get Users List",
     description="Get paginated list of users with filtering (Admin+ only)",
-    dependencies=[Depends(UserPermissions.read())],
     response_model=UserListResponse,
 )
 async def get_users(
@@ -142,7 +125,6 @@ async def get_users(
     status_code=status.HTTP_201_CREATED,
     summary="Create User",
     description="Create new user (Admin only)",
-    dependencies=[Depends(UserPermissions.create())],
     response_model=UserDetailResponse,
 )
 async def create_user(
@@ -207,9 +189,8 @@ async def get_my_profile(
     """
     try:
         # Get user profile - lazy import
-        from app.services.user_profile_service import UserProfileService
+        from app.services.user_profile_service import user_profile_service
 
-        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=current_user.id, current_user=current_user
         )
@@ -240,7 +221,7 @@ async def get_my_profile(
 @router.put(
     "/me",
     summary="Update My Profile",
-    description="Update current user's profile information",
+    description="Update current users profile information",
     response_model=UserDetailResponse,
 )
 async def update_my_profile(
@@ -267,9 +248,8 @@ async def update_my_profile(
             )
 
         # Update profile - lazy import
-        from app.services.user_profile_service import UserProfileService
+        from app.services.user_profile_service import user_profile_service
 
-        user_profile_service = UserProfileService()
         await user_profile_service.update_user_profile(
             db=db,
             user_id=current_user.id,
@@ -317,13 +297,6 @@ async def update_my_profile(
     "/{user_id}",
     summary="Get User by ID",
     description="Get user profile by ID (team members+ can view colleagues)",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_USERS, scope=RoleScope.COMPANY
-            )
-        )
-    ],
     response_model=UserDetailResponse,
 )
 async def get_user_by_id(
@@ -344,9 +317,8 @@ async def get_user_by_id(
             )
 
         # Get user profile - lazy import
-        from app.services.user_profile_service import UserProfileService
+        from app.services.user_profile_service import user_profile_service
 
-        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=user_id, current_user=current_user
         )
@@ -380,9 +352,6 @@ async def get_user_by_id(
     "/{user_id}",
     summary="Update User",
     description="Update user information (Admin+ or user themselves)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserDetailResponse,
 )
 async def update_user(
@@ -432,9 +401,8 @@ async def update_user(
             )
 
         # Get user profile - lazy import
-        from app.services.user_profile_service import UserProfileService
+        from app.services.user_profile_service import user_profile_service
 
-        user_profile_service = UserProfileService()
         profile = await user_profile_service.get_user_profile(
             db=db, user_id=user_id, current_user=current_user
         )
@@ -468,9 +436,6 @@ async def update_user(
     "/{user_id}",
     summary="Delete User",
     description="Delete user (Admin only)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserOperationResponse,
 )
 async def delete_user(
@@ -512,17 +477,13 @@ async def delete_user(
         )
 
 
-# # User State Management
-#
+# User State Management
 
 
 @router.post(
     "/{user_id}/activate",
     summary="Activate User",
     description="Activate user account (Admin only)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserOperationResponse,
 )
 async def activate_user(
@@ -559,9 +520,6 @@ async def activate_user(
     "/{user_id}/deactivate",
     summary="Deactivate User",
     description="Deactivate user account (Admin only)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserOperationResponse,
 )
 async def deactivate_user(
@@ -609,13 +567,6 @@ async def deactivate_user(
     "/{user_id}/roles",
     summary="Get User Roles",
     description="Get user's role assignments",
-    dependencies=[
-        Depends(
-            permission_checker.require_permission(
-                Permission.VIEW_USERS, scope=RoleScope.COMPANY
-            )
-        )
-    ],
     response_model=List[UserRoleResponse],
 )
 async def get_user_roles(
@@ -658,9 +609,6 @@ async def get_user_roles(
     "/{user_id}/roles",
     summary="Assign Role to User",
     description="Assign role to user (Admin+)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserRoleResponse,
 )
 async def assign_role_to_user(
@@ -706,9 +654,6 @@ async def assign_role_to_user(
     "/{user_id}/roles/{assignment_id}",
     summary="Revoke Role Assignment",
     description="Revoke role assignment from user (Admin+)",
-    dependencies=[
-        Depends(permission_checker.require_permission(Permission.MANAGE_USERS))
-    ],
     response_model=UserOperationResponse,
 )
 async def revoke_role_assignment(

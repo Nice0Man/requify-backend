@@ -5,27 +5,39 @@ Company Settings Service.
 Рефакторен с использованием паттернов проектирования и принципов SOLID.
 """
 
-from typing import List, Optional, Dict, Any
 from abc import ABC, abstractmethod
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException, status
-from datetime import datetime, timezone
+from typing import Optional, Dict, Any, TYPE_CHECKING
 
-from app.crud.company_settings import company_settings as settings_crud
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.core.constants import Permission, RoleScope
 from app.crud.company import company as company_crud
+from app.crud.company_settings import company_settings as settings_crud
 from app.models.company_settings import CompanySettings
 from app.models.user import User
-from app.services.permission_service import permission_service
-from app.core.constants import Permission, RoleScope
-from app.api.v1.domains.organizations.companies.schemas import (
-    CompanySettingsCreate,
-    CompanySettingsUpdate,
-    CompanySettingsResponse,
-    PasswordPolicySettings,
-    NotificationSettings,
-    IntegrationSettings,
-    CompanySettingsValidation,
-)
+
+if TYPE_CHECKING:
+    from app.api.v1.domains.organizations.companies.schemas import (
+        CompanySettingsCreate,
+        CompanySettingsUpdate,
+        CompanySettingsResponse,
+        PasswordPolicySettings,
+        NotificationSettings,
+        IntegrationSettings,
+        CompanySettingsValidation,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    CompanySettingsCreate = Dict[str, Any]
+    CompanySettingsUpdate = Dict[str, Any]
+    CompanySettingsResponse = Dict[str, Any]
+    PasswordPolicySettings = Dict[str, Any]
+    NotificationSettings = Dict[str, Any]
+    IntegrationSettings = Dict[str, Any]
+    CompanySettingsValidation = Dict[str, Any]
+
 from .base import (
     BaseService,
     ServiceError,
@@ -222,6 +234,8 @@ class CompanySettingsPermissionChecker(ICompanySettingsPermissionChecker):
         self, db: AsyncSession, user: User, company_id: int
     ) -> bool:
         """Проверить права доступа к компании."""
+        from app.services.permission_service import permission_service
+
         if user.is_system_admin:
             return True
 
@@ -241,6 +255,8 @@ class CompanySettingsPermissionChecker(ICompanySettingsPermissionChecker):
         self, db: AsyncSession, user: User, company_id: int
     ) -> bool:
         """Проверить права на управление настройками компании."""
+        from app.services.permission_service import permission_service
+
         if user.is_system_admin:
             return True
 

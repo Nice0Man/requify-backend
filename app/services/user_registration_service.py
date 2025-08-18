@@ -6,21 +6,29 @@ User Registration Service.
 Рефакторен с использованием паттернов проектирования.
 """
 
-from typing import Optional, Dict, Any
+from typing import TYPE_CHECKING
 from datetime import datetime, timezone
 
-from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import JWTTokenManager
 from app.crud.user import crud_user
 from app.models.user import User
-from app.api.v1.domains.identity.schemas import (
-    UserCreateRequest as UserCreate,
-    UserProfileCreate,
-)
 from app.services import email_service
-from app.utils.logger import logger
+from app.utils import logger
+
+if TYPE_CHECKING:
+    from app.api.v1.domains.identity.schemas import (
+        UserCreateRequest as UserCreate,
+        UserProfileCreate,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    UserCreate = Dict[str, Any]
+    UserProfileCreate = Dict[str, Any]
+
 from .base import BaseService, ServiceError, ValidationError, NotFoundError
 
 

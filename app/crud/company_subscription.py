@@ -8,13 +8,15 @@ from sqlalchemy import and_, or_, func, desc
 from datetime import datetime, timezone, timedelta
 
 from app.crud.base import CRUDBase
-from app.models.company_subscription import BillingPeriod, CompanySubscription, SubscriptionPlan, SubscriptionStatus
+from app.models.company_subscription import (
+    BillingPeriod,
+    CompanySubscription,
+    SubscriptionPlan,
+    SubscriptionStatus,
+)
 
 
-
-class CRUDCompanySubscription(
-    CRUDBase[CompanySubscription, dict, dict]
-):
+class CRUDCompanySubscription(CRUDBase[CompanySubscription, dict, dict]):
     """CRUD операции для подписок компании"""
 
     def get_by_company(
@@ -145,7 +147,7 @@ class CRUDCompanySubscription(
             .filter(
                 and_(
                     self.model.auto_renew == True,
-                    self.model.status == SubscriptionStatus.ACTIVE.value
+                    self.model.status == SubscriptionStatus.ACTIVE.value,
                 )
             )
             .offset(skip)

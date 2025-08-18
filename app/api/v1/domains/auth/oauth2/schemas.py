@@ -15,7 +15,7 @@ from app.api.v1.common.schemas import (
 )
 
 if TYPE_CHECKING:
-    from app.schemas.user import UserDetailed
+    from app.api.v1.domains.identity.schemas import UserResponse
 
 
 # === OAuth2 Authorization Schemas ===
@@ -154,7 +154,7 @@ class OAuth2UnlinkResponse(BaseSchema):
 def rebuild_oauth2_models():
     """Rebuild models to resolve forward references."""
     try:
-        from app.schemas.user import UserDetailed
+        # Import fixed - using centralized schemas
 
         globals_dict = globals()
         models_to_rebuild = [

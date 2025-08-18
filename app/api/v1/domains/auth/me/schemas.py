@@ -12,7 +12,7 @@ from pydantic import Field
 from app.api.v1.common.schemas import BaseSchema
 
 if TYPE_CHECKING:
-    from app.schemas.user import UserDetailed
+    from app.api.v1.domains.identity.users.schemas import UserWithRelationsResponse
 
 
 # === Current User Info Schemas ===
@@ -21,7 +21,9 @@ if TYPE_CHECKING:
 class CurrentUserResponse(BaseSchema):
     """Схема для ответа с информацией о текущем пользователе."""
 
-    # user: "UserDetailed" = Field(..., description="Полная информация о пользователе")  # TODO: Fix forward reference
+    user: "UserWithRelationsResponse" = Field(
+        ..., description="Полная информация о пользователе"
+    )
 
 
 class AccountStatusResponse(BaseSchema):
@@ -38,7 +40,7 @@ class AccountStatusResponse(BaseSchema):
 def rebuild_me_models():
     """Rebuild models to resolve forward references."""
     try:
-        from app.schemas.user import UserDetailed
+        # Import fixed - using centralized schemas
 
         globals_dict = globals()
         models_to_rebuild = [

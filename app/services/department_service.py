@@ -5,32 +5,32 @@ Department Service.
 Рефакторен с использованием паттернов проектирования и принципов SOLID.
 """
 
-from typing import List, Optional, Dict, Any, Tuple
 from abc import ABC, abstractmethod
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException, status
+from typing import TYPE_CHECKING, List, Optional
 
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.core.constants import Permission, RoleScope
+from app.crud.company import company as company_crud
 from app.crud.department import department as department_crud
 from app.crud.user import user as user_crud
-from app.crud.company import company as company_crud
 from app.models.department import Department
 from app.models.user import User
-from app.services.permission_service import permission_service
-from app.core.constants import Permission, RoleScope
-from app.schemas.department import (
-    DepartmentCreate,
-    DepartmentUpdate,
-    DepartmentResponse,
-    DepartmentHierarchy,
-    DepartmentStats,
-)
-from .base import (
-    BaseService,
-    ServiceError,
-    ValidationError,
-    NotFoundError,
-    PermissionError,
-)
+from app.utils import logger
+
+if TYPE_CHECKING:
+    from app.api.v1.domains.organizations.departments.schemas import (
+        DepartmentCreate,
+        DepartmentUpdate,
+        DepartmentStats,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    DepartmentCreate = Dict[str, Any]
+    DepartmentUpdate = Dict[str, Any]
+    DepartmentStats = Dict[str, Any]
 
 
 class DepartmentServiceError(ServiceError):
@@ -304,6 +304,9 @@ class DepartmentPermissionChecker(IDepartmentPermissionChecker):
             return True
 
         # Проверить доступ через Enhanced Role System
+        # Импорт здесь для избежания циклических зависимостей
+        from app.services.permission_service import permission_service
+
         return await permission_service.check_user_permission(
             db=db,
             user=user,
@@ -324,6 +327,9 @@ class DepartmentPermissionChecker(IDepartmentPermissionChecker):
                 return True
 
             # Проверить права через Enhanced Role System
+            # Импорт здесь для избежания циклических зависимостей
+            from app.services.permission_service import permission_service
+
             return await permission_service.check_user_permission(
                 db=db,
                 user=user,
@@ -571,7 +577,7 @@ class DepartmentService(BaseService):
 
 
 # Регистрация сервиса в фабрике
-from .base import ServiceFactory
+from .base import BaseService, ServiceError, ServiceFactory
 
 ServiceFactory.register_service("department", DepartmentService)
 

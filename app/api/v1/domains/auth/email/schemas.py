@@ -57,5 +57,3 @@ class EmailVerificationConfirmResponse(BaseSchema):
 
     message: str = Field(..., description="Сообщение о результате")
     verified: bool = Field(..., description="Успешно ли подтвержден email")
-
-

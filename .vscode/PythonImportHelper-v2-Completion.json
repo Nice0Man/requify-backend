@@ -2024,30 +2024,6 @@
         "documentation": {}
     },
     {
-        "label": "AsyncGenerator",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -3104,6 +3080,14 @@
         "documentation": {}
     },
     {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -5089,6 +5073,14 @@
     },
     {
         "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -5216,6 +5208,14 @@
         "documentation": {}
     },
     {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -5288,6 +5288,38 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -5352,22 +5384,6 @@
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -5384,15 +5400,7 @@
         "documentation": {}
     },
     {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
+        "label": "TYPE_CHECKING",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -5409,30 +5417,6 @@
     },
     {
         "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -5840,6 +5824,14 @@
         "documentation": {}
     },
     {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -6184,23 +6176,7 @@
         "documentation": {}
     },
     {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
+        "label": "TYPE_CHECKING",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -7842,14 +7818,6 @@
     },
     {
         "label": "or_",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "and_",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -10922,14 +10890,6 @@
         "documentation": {}
     },
     {
-        "label": "AsyncSession",
-        "importPath": "sqlalchemy.ext.asyncio",
-        "description": "sqlalchemy.ext.asyncio",
-        "isExtraImport": true,
-        "detail": "sqlalchemy.ext.asyncio",
-        "documentation": {}
-    },
-    {
         "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
@@ -11431,14 +11391,6 @@
         "description": "app.models.base",
         "isExtraImport": true,
         "detail": "app.models.base",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "app.core.config",
-        "description": "app.core.config",
-        "isExtraImport": true,
-        "detail": "app.core.config",
         "documentation": {}
     },
     {
@@ -12578,14 +12530,6 @@
         "documentation": {}
     },
     {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -13314,46 +13258,6 @@
         "documentation": {}
     },
     {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Request",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Security",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "Request",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -13435,38 +13339,6 @@
     },
     {
         "label": "Request",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -13674,38 +13546,6 @@
         "documentation": {}
     },
     {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPException",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -13754,46 +13594,6 @@
         "documentation": {}
     },
     {
-        "label": "HTTPAuthorizationCredentials",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPBearer",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "OAuth2PasswordBearer",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "SecurityScopes",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "app.models.user",
-        "description": "app.models.user",
-        "isExtraImport": true,
-        "detail": "app.models.user",
-        "documentation": {}
-    },
-    {
         "label": "User",
         "importPath": "app.models.user",
         "description": "app.models.user",
@@ -14311,14 +14111,6 @@
         "description": "app.models.user",
         "isExtraImport": true,
         "detail": "app.models.user",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "app.utils.logger",
-        "description": "app.utils.logger",
-        "isExtraImport": true,
-        "detail": "app.utils.logger",
         "documentation": {}
     },
     {
@@ -14371,22 +14163,6 @@
     },
     {
         "label": "get_logger",
-        "importPath": "app.utils.logger",
-        "description": "app.utils.logger",
-        "isExtraImport": true,
-        "detail": "app.utils.logger",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "app.utils.logger",
-        "description": "app.utils.logger",
-        "isExtraImport": true,
-        "detail": "app.utils.logger",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
         "importPath": "app.utils.logger",
         "description": "app.utils.logger",
         "isExtraImport": true,
@@ -14687,14 +14463,6 @@
         "description": "app.services.auth0_service",
         "isExtraImport": true,
         "detail": "app.services.auth0_service",
-        "documentation": {}
-    },
-    {
-        "label": "get_async_session",
-        "importPath": "app.db.db_helper",
-        "description": "app.db.db_helper",
-        "isExtraImport": true,
-        "detail": "app.db.db_helper",
         "documentation": {}
     },
     {
@@ -15058,14 +14826,6 @@
         "documentation": {}
     },
     {
-        "label": "RoleScope",
-        "importPath": "app.core.constants",
-        "description": "app.core.constants",
-        "isExtraImport": true,
-        "detail": "app.core.constants",
-        "documentation": {}
-    },
-    {
         "label": "Permission",
         "importPath": "app.core.constants",
         "description": "app.core.constants",
@@ -15523,14 +15283,6 @@
     },
     {
         "label": "Permission",
-        "importPath": "app.core.constants",
-        "description": "app.core.constants",
-        "isExtraImport": true,
-        "detail": "app.core.constants",
-        "documentation": {}
-    },
-    {
-        "label": "RoleScope",
         "importPath": "app.core.constants",
         "description": "app.core.constants",
         "isExtraImport": true,
@@ -15763,6 +15515,14 @@
         "documentation": {}
     },
     {
+        "label": "CurrentActiveUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
         "label": "get_current_user",
         "importPath": "app.api.dependencies.core.auth",
         "description": "app.api.dependencies.core.auth",
@@ -15820,54 +15580,6 @@
     },
     {
         "label": "PermissionService",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "PermissionService",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "permission_service",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "permission_service",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "permission_service",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "permission_service",
-        "importPath": "app.services.permission_service",
-        "description": "app.services.permission_service",
-        "isExtraImport": true,
-        "detail": "app.services.permission_service",
-        "documentation": {}
-    },
-    {
-        "label": "permission_service",
         "importPath": "app.services.permission_service",
         "description": "app.services.permission_service",
         "isExtraImport": true,
@@ -16628,22 +16340,6 @@
         "documentation": {}
     },
     {
-        "label": "UTC",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
@@ -17716,39 +17412,7 @@
         "documentation": {}
     },
     {
-        "label": "timezone",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "UTC",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -18053,22 +17717,6 @@
     },
     {
         "label": "UTC",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -20429,22 +20077,6 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
         "label": "ValidationError",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -20654,14 +20286,6 @@
         "documentation": {}
     },
     {
-        "label": "user",
-        "importPath": "app.crud",
-        "description": "app.crud",
-        "isExtraImport": true,
-        "detail": "app.crud",
-        "documentation": {}
-    },
-    {
         "label": "project",
         "importPath": "app.crud",
         "description": "app.crud",
@@ -20811,22 +20435,6 @@
         "description": "app.crud",
         "isExtraImport": true,
         "detail": "app.crud",
-        "documentation": {}
-    },
-    {
-        "label": "UserNotFoundError",
-        "importPath": "app.core.exceptions",
-        "description": "app.core.exceptions",
-        "isExtraImport": true,
-        "detail": "app.core.exceptions",
-        "documentation": {}
-    },
-    {
-        "label": "PermissionDeniedError",
-        "importPath": "app.core.exceptions",
-        "description": "app.core.exceptions",
-        "isExtraImport": true,
-        "detail": "app.core.exceptions",
         "documentation": {}
     },
     {
@@ -21310,38 +20918,6 @@
         "documentation": {}
     },
     {
-        "label": "UserPermissions",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "PermissionChecker",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "CurrentActiveUserDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
         "label": "# CompanyPermissions",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
@@ -21667,14 +21243,6 @@
         "description": "app.api.dependencies",
         "isExtraImport": true,
         "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "app.models",
-        "description": "app.models",
-        "isExtraImport": true,
-        "detail": "app.models",
         "documentation": {}
     },
     {
@@ -23782,14 +23350,6 @@
         "documentation": {}
     },
     {
-        "label": "user",
-        "importPath": "app.crud.user",
-        "description": "app.crud.user",
-        "isExtraImport": true,
-        "detail": "app.crud.user",
-        "documentation": {}
-    },
-    {
         "label": "crud_user",
         "importPath": "app.crud.user",
         "description": "app.crud.user",
@@ -23846,22 +23406,6 @@
         "documentation": {}
     },
     {
-        "label": "UserCreateRequest",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserUpdateRequest",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
         "label": "UserProfileCreate",
         "importPath": "app.api.v1.domains.identity.schemas",
         "description": "app.api.v1.domains.identity.schemas",
@@ -23871,54 +23415,6 @@
     },
     {
         "label": "UserProfileUpdate",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserProfileCreate",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserProfileUpdate",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserProfileStats",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ProfileValidation",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreateRequest",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "UserProfileCreate",
         "importPath": "app.api.v1.domains.identity.schemas",
         "description": "app.api.v1.domains.identity.schemas",
         "isExtraImport": true,
@@ -24127,6 +23623,14 @@
     },
     {
         "label": "get_async_session",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -24430,47 +23934,7 @@
         "documentation": {}
     },
     {
-        "label": "RoleHierarchyCreate",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
         "label": "EnhancedRoleResponse",
-        "importPath": "app.schemas.enhanced_role",
-        "description": "app.schemas.enhanced_role",
-        "isExtraImport": true,
-        "detail": "app.schemas.enhanced_role",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRoleCreate",
-        "importPath": "app.schemas.enhanced_role",
-        "description": "app.schemas.enhanced_role",
-        "isExtraImport": true,
-        "detail": "app.schemas.enhanced_role",
-        "documentation": {}
-    },
-    {
-        "label": "UserRoleAssignmentCreate",
-        "importPath": "app.schemas.enhanced_role",
-        "description": "app.schemas.enhanced_role",
-        "isExtraImport": true,
-        "detail": "app.schemas.enhanced_role",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRoleCreate",
-        "importPath": "app.schemas.enhanced_role",
-        "description": "app.schemas.enhanced_role",
-        "isExtraImport": true,
-        "detail": "app.schemas.enhanced_role",
-        "documentation": {}
-    },
-    {
-        "label": "UserRoleAssignmentCreate",
         "importPath": "app.schemas.enhanced_role",
         "description": "app.schemas.enhanced_role",
         "isExtraImport": true,
@@ -25275,326 +24739,6 @@
         "description": "app",
         "isExtraImport": true,
         "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
         "documentation": {}
     },
     {
@@ -27856,110 +27000,6 @@
         "documentation": {}
     },
     {
-        "label": "CompanyBrandingCreate",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanyBrandingUpdate",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanyBrandingResponse",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ColorPalette",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "TypographyConfig",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ComponentStyles",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "LayoutConfig",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "SocialLinks",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ThemePreset",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "BrandingValidation",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "AssetUpload",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "BrandingExport",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "BrandingImport",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
         "label": "CompanyContactRequest",
         "importPath": "app.api.v1.domains.organizations.companies.schemas",
         "description": "app.api.v1.domains.organizations.companies.schemas",
@@ -27977,62 +27017,6 @@
     },
     {
         "label": "CompanyContactResponse",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanySettingsCreate",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanySettingsUpdate",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanySettingsResponse",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordPolicySettings",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "NotificationSettings",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "IntegrationSettings",
-        "importPath": "app.api.v1.domains.organizations.companies.schemas",
-        "description": "app.api.v1.domains.organizations.companies.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.organizations.companies.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "CompanySettingsValidation",
         "importPath": "app.api.v1.domains.organizations.companies.schemas",
         "description": "app.api.v1.domains.organizations.companies.schemas",
         "isExtraImport": true,
@@ -29834,6 +28818,302 @@
         "documentation": {}
     },
     {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "TokenType",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "TokenType",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
         "label": "Spec",
         "importPath": "app.models.spec",
         "description": "app.models.spec",
@@ -30154,6 +29434,30 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "importPath": "app.utils",
+        "description": "app.utils",
+        "isExtraImport": true,
+        "detail": "app.utils",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils",
+        "description": "app.utils",
+        "isExtraImport": true,
+        "detail": "app.utils",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils",
+        "description": "app.utils",
+        "isExtraImport": true,
+        "detail": "app.utils",
+        "documentation": {}
+    },
+    {
         "label": "UserProfile",
         "importPath": "app.models.user_profile",
         "description": "app.models.user_profile",
@@ -30295,198 +29599,6 @@
         "description": "app.db.session",
         "isExtraImport": true,
         "detail": "app.db.session",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserBase",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserResponse",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserResponse",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserWithRelations",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserDetailed",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserBase",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserUpdate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserResponse",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserWithRelations",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserDetailed",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserDetailed",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserUpdate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserBase",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserDetailed",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserStatus",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "AuthProvider",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserCreate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserUpdate",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
-        "documentation": {}
-    },
-    {
-        "label": "UserBase",
-        "importPath": "app.schemas.user",
-        "description": "app.schemas.user",
-        "isExtraImport": true,
-        "detail": "app.schemas.user",
         "documentation": {}
     },
     {
@@ -31024,6 +30136,46 @@
         "documentation": {}
     },
     {
+        "label": "company",
+        "importPath": "app.crud.company",
+        "description": "app.crud.company",
+        "isExtraImport": true,
+        "detail": "app.crud.company",
+        "documentation": {}
+    },
+    {
+        "label": "company",
+        "importPath": "app.crud.company",
+        "description": "app.crud.company",
+        "isExtraImport": true,
+        "detail": "app.crud.company",
+        "documentation": {}
+    },
+    {
+        "label": "company",
+        "importPath": "app.crud.company",
+        "description": "app.crud.company",
+        "isExtraImport": true,
+        "detail": "app.crud.company",
+        "documentation": {}
+    },
+    {
+        "label": "company",
+        "importPath": "app.crud.company",
+        "description": "app.crud.company",
+        "isExtraImport": true,
+        "detail": "app.crud.company",
+        "documentation": {}
+    },
+    {
+        "label": "company",
+        "importPath": "app.crud.company",
+        "description": "app.crud.company",
+        "isExtraImport": true,
+        "detail": "app.crud.company",
+        "documentation": {}
+    },
+    {
         "label": "company_contact",
         "importPath": "app.crud.company_contact",
         "description": "app.crud.company_contact",
@@ -31037,38 +30189,6 @@
         "description": "app.crud.company_contact",
         "isExtraImport": true,
         "detail": "app.crud.company_contact",
-        "documentation": {}
-    },
-    {
-        "label": "company",
-        "importPath": "app.crud.company",
-        "description": "app.crud.company",
-        "isExtraImport": true,
-        "detail": "app.crud.company",
-        "documentation": {}
-    },
-    {
-        "label": "company",
-        "importPath": "app.crud.company",
-        "description": "app.crud.company",
-        "isExtraImport": true,
-        "detail": "app.crud.company",
-        "documentation": {}
-    },
-    {
-        "label": "company",
-        "importPath": "app.crud.company",
-        "description": "app.crud.company",
-        "isExtraImport": true,
-        "detail": "app.crud.company",
-        "documentation": {}
-    },
-    {
-        "label": "company",
-        "importPath": "app.crud.company",
-        "description": "app.crud.company",
-        "isExtraImport": true,
-        "detail": "app.crud.company",
         "documentation": {}
     },
     {
@@ -31189,54 +30309,6 @@
         "description": "app.crud.department",
         "isExtraImport": true,
         "detail": "app.crud.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentCreate",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentUpdate",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentResponse",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentHierarchy",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentStats",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
-        "documentation": {}
-    },
-    {
-        "label": "DepartmentCreate",
-        "importPath": "app.schemas.department",
-        "description": "app.schemas.department",
-        "isExtraImport": true,
-        "detail": "app.schemas.department",
         "documentation": {}
     },
     {
@@ -31647,6 +30719,198 @@
         "description": "tests.manual_auth_test",
         "isExtraImport": true,
         "detail": "tests.manual_auth_test",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserBase",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelations",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailed",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserBase",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserUpdate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelations",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailed",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailed",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserUpdate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserBase",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailed",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserStatus",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "AuthProvider",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserUpdate",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "UserBase",
+        "importPath": "app.schemas.user",
+        "description": "app.schemas.user",
+        "isExtraImport": true,
+        "detail": "app.schemas.user",
+        "documentation": {}
+    },
+    {
+        "label": "DepartmentCreate",
+        "importPath": "app.schemas.department",
+        "description": "app.schemas.department",
+        "isExtraImport": true,
+        "detail": "app.schemas.department",
         "documentation": {}
     },
     {
@@ -35040,7 +34304,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.me.schemas",
         "description": "app.api.v1.domains.auth.me.schemas",
-        "peekOfCode": "class CurrentUserResponse(BaseSchema):\n    \"\"\"Схема для ответа с информацией о текущем пользователе.\"\"\"\n    # user: \"UserDetailed\" = Field(..., description=\"Полная информация о пользователе\")  # TODO: Fix forward reference\nclass AccountStatusResponse(BaseSchema):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")\n    last_login: Optional[datetime] = Field(None, description=\"Время последнего входа\")\n    account_locked: bool = Field(default=False, description=\"Заблокирован ли аккаунт\")",
+        "peekOfCode": "class CurrentUserResponse(BaseSchema):\n    \"\"\"Схема для ответа с информацией о текущем пользователе.\"\"\"\n    user: \"UserWithRelationsResponse\" = Field(\n        ..., description=\"Полная информация о пользователе\"\n    )\nclass AccountStatusResponse(BaseSchema):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")",
         "detail": "app.api.v1.domains.auth.me.schemas",
         "documentation": {}
     },
@@ -35058,7 +34322,7 @@
         "kind": 2,
         "importPath": "app.api.v1.domains.auth.me.schemas",
         "description": "app.api.v1.domains.auth.me.schemas",
-        "peekOfCode": "def rebuild_me_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        from app.schemas.user import UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"CurrentUserResponse\",\n        ]\n        for model_name in models_to_rebuild:\n            if model_name in globals_dict:",
+        "peekOfCode": "def rebuild_me_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import fixed - using centralized schemas\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"CurrentUserResponse\",\n        ]\n        for model_name in models_to_rebuild:\n            if model_name in globals_dict:",
         "detail": "app.api.v1.domains.auth.me.schemas",
         "documentation": {}
     },
@@ -35148,7 +34412,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.oauth2.schemas",
         "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "peekOfCode": "class OAuth2UnlinkResponse(BaseSchema):\n    \"\"\"Схема для ответа после отвязки OAuth2 аккаунта.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    unlinked: bool = Field(..., description=\"Успешно ли отвязан аккаунт\")\n    provider: str = Field(..., description=\"Провайдер\")\ndef rebuild_oauth2_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        from app.schemas.user import UserDetailed\n        globals_dict = globals()",
+        "peekOfCode": "class OAuth2UnlinkResponse(BaseSchema):\n    \"\"\"Схема для ответа после отвязки OAuth2 аккаунта.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    unlinked: bool = Field(..., description=\"Успешно ли отвязан аккаунт\")\n    provider: str = Field(..., description=\"Провайдер\")\ndef rebuild_oauth2_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import fixed - using centralized schemas\n        globals_dict = globals()",
         "detail": "app.api.v1.domains.auth.oauth2.schemas",
         "documentation": {}
     },
@@ -35157,7 +34421,7 @@
         "kind": 2,
         "importPath": "app.api.v1.domains.auth.oauth2.schemas",
         "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "peekOfCode": "def rebuild_oauth2_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        from app.schemas.user import UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"OAuth2CallbackResponse\",\n        ]\n        for model_name in models_to_rebuild:\n            if model_name in globals_dict:",
+        "peekOfCode": "def rebuild_oauth2_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import fixed - using centralized schemas\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"OAuth2CallbackResponse\",\n        ]\n        for model_name in models_to_rebuild:\n            if model_name in globals_dict:",
         "detail": "app.api.v1.domains.auth.oauth2.schemas",
         "documentation": {}
     },
@@ -35238,7 +34502,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\") ",
+        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -35247,7 +34511,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\") \n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass TokenValidationResponse(BaseSchema):\n    \"\"\"Схема ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Токен валиден\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения токена\")",
+        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass TokenValidationResponse(BaseSchema):\n    \"\"\"Схема ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Токен валиден\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения токена\")",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -35364,7 +34628,7 @@
         "kind": 2,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "def rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import all response models that use UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"LoginResponse\", \n            \"RegisterResponse\",\n            \"TokenValidationResponse\",\n        ]",
+        "peekOfCode": "def rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import all response models that use UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"LoginResponse\",\n            \"RegisterResponse\",\n            \"TokenValidationResponse\",\n        ]",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -37295,24 +36559,6 @@
         "documentation": {}
     },
     {
-        "label": "permission_service",
-        "kind": 5,
-        "importPath": "app.api.v1.domains.identity.users.router",
-        "description": "app.api.v1.domains.identity.users.router",
-        "peekOfCode": "permission_service = PermissionService()\n# Initialize permission checker\npermission_checker = PermissionChecker()\nrouter = APIRouter()\ndef _get_context_type(assignment):\n    \"\"\"Determine context type based on assignment fields\"\"\"\n    if assignment.project_id:\n        return \"project\"\n    elif assignment.team_id:\n        return \"team\"",
-        "detail": "app.api.v1.domains.identity.users.router",
-        "documentation": {}
-    },
-    {
-        "label": "permission_checker",
-        "kind": 5,
-        "importPath": "app.api.v1.domains.identity.users.router",
-        "description": "app.api.v1.domains.identity.users.router",
-        "peekOfCode": "permission_checker = PermissionChecker()\nrouter = APIRouter()\ndef _get_context_type(assignment):\n    \"\"\"Determine context type based on assignment fields\"\"\"\n    if assignment.project_id:\n        return \"project\"\n    elif assignment.team_id:\n        return \"team\"\n    elif assignment.department_id:\n        return \"department\"",
-        "detail": "app.api.v1.domains.identity.users.router",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "kind": 5,
         "importPath": "app.api.v1.domains.identity.users.router",
@@ -38073,7 +37319,16 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.organizations.departments.schemas",
         "description": "app.api.v1.domains.organizations.departments.schemas",
-        "peekOfCode": "class DepartmentMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников департамента.\"\"\"\n    members: List[DepartmentMemberRead] = Field(..., description=\"Список участников\")\n    department_id: int = Field(..., description=\"ID департамента\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")",
+        "peekOfCode": "class DepartmentMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников департамента.\"\"\"\n    members: List[DepartmentMemberRead] = Field(..., description=\"Список участников\")\n    department_id: int = Field(..., description=\"ID департамента\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\nclass DepartmentStats(BaseModel):\n    \"\"\"Схема для статистики департамента.\"\"\"\n    total_members: int = Field(..., description=\"Общее количество участников\")",
+        "detail": "app.api.v1.domains.organizations.departments.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "DepartmentStats",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.organizations.departments.schemas",
+        "description": "app.api.v1.domains.organizations.departments.schemas",
+        "peekOfCode": "class DepartmentStats(BaseModel):\n    \"\"\"Схема для статистики департамента.\"\"\"\n    total_members: int = Field(..., description=\"Общее количество участников\")\n    total_teams: int = Field(..., description=\"Общее количество команд\")\n    total_subdepartments: int = Field(\n        ..., description=\"Общее количество поддепартаментов\"\n    )",
         "detail": "app.api.v1.domains.organizations.departments.schemas",
         "documentation": {}
     },
@@ -40274,42 +39529,6 @@
         "documentation": {}
     },
     {
-        "label": "oauth2_scheme",
-        "kind": 5,
-        "importPath": "app.api.deps",
-        "description": "app.api.deps",
-        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(\n    tokenUrl=f\"{settings.app_config.api_v1_str}/auth/login\",\n    scopes={\n        \"me\": \"Read information about the current user\",\n        \"users:read\": \"Read users information\",\n        \"users:write\": \"Create and update users\",\n        \"users:delete\": \"Delete users\",\n        \"projects:read\": \"Read projects information\",\n        \"projects:write\": \"Create and update projects\",\n        \"projects:delete\": \"Delete projects\",",
-        "detail": "app.api.deps",
-        "documentation": {}
-    },
-    {
-        "label": "security",
-        "kind": 5,
-        "importPath": "app.api.deps",
-        "description": "app.api.deps",
-        "peekOfCode": "security = HTTPBearer(auto_error=False)\n# === Database Dependencies ===\nasync def get_db() -> AsyncGenerator[AsyncSession, None]:\n    \"\"\"\n    Зависимость для получения сессии базы данных.\n    Yields:\n        AsyncSession: Асинхронная сессия SQLAlchemy\n    \"\"\"\n    async for session in get_async_session():\n        yield session",
-        "detail": "app.api.deps",
-        "documentation": {}
-    },
-    {
-        "label": "get_current_user_dep",
-        "kind": 5,
-        "importPath": "app.api.deps",
-        "description": "app.api.deps",
-        "peekOfCode": "get_current_user_dep = get_current_user\nget_superuser_dep = get_superuser",
-        "detail": "app.api.deps",
-        "documentation": {}
-    },
-    {
-        "label": "get_superuser_dep",
-        "kind": 5,
-        "importPath": "app.api.deps",
-        "description": "app.api.deps",
-        "peekOfCode": "get_superuser_dep = get_superuser",
-        "detail": "app.api.deps",
-        "documentation": {}
-    },
-    {
         "label": "RunConfig",
         "kind": 6,
         "importPath": "app.core.config",
@@ -41142,7 +40361,7 @@
         "kind": 6,
         "importPath": "app.crud.company_subscription",
         "description": "app.crud.company_subscription",
-        "peekOfCode": "class CRUDCompanySubscription(\n    CRUDBase[CompanySubscription, dict, dict]\n):\n    \"\"\"CRUD операции для подписок компании\"\"\"\n    def get_by_company(\n        self, db: Session, *, company_id: int\n    ) -> Optional[CompanySubscription]:\n        \"\"\"Получить подписку компании\"\"\"\n        return db.query(self.model).filter(self.model.company_id == company_id).first()\n    def create_for_company(",
+        "peekOfCode": "class CRUDCompanySubscription(CRUDBase[CompanySubscription, dict, dict]):\n    \"\"\"CRUD операции для подписок компании\"\"\"\n    def get_by_company(\n        self, db: Session, *, company_id: int\n    ) -> Optional[CompanySubscription]:\n        \"\"\"Получить подписку компании\"\"\"\n        return db.query(self.model).filter(self.model.company_id == company_id).first()\n    def create_for_company(\n        self, db: Session, *, obj_in: dict, company_id: int\n    ) -> CompanySubscription:",
         "detail": "app.crud.company_subscription",
         "documentation": {}
     },
@@ -44166,7 +43385,16 @@
         "kind": 6,
         "importPath": "app.deprected.schemas.department",
         "description": "app.deprected.schemas.department",
-        "peekOfCode": "class DepartmentMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников департамента.\"\"\"\n    members: List[DepartmentMemberRead] = Field(..., description=\"Список участников\")\n    department_id: int = Field(..., description=\"ID департамента\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")",
+        "peekOfCode": "class DepartmentMembersResponse(BaseModel):\n    \"\"\"Схема для списка участников департамента.\"\"\"\n    members: List[DepartmentMemberRead] = Field(..., description=\"Список участников\")\n    department_id: int = Field(..., description=\"ID департамента\")\n    total: int = Field(..., description=\"Общее количество\")\n    skip: int = Field(..., description=\"Пропущено записей\")\n    limit: int = Field(..., description=\"Лимит записей\")\nclass DepartmentStats(BaseModel):\n    \"\"\"Схема для статистики департамента.\"\"\"\n    total_members: int = Field(..., description=\"Общее количество участников\")",
+        "detail": "app.deprected.schemas.department",
+        "documentation": {}
+    },
+    {
+        "label": "DepartmentStats",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.department",
+        "description": "app.deprected.schemas.department",
+        "peekOfCode": "class DepartmentStats(BaseModel):\n    \"\"\"Схема для статистики департамента.\"\"\"\n    total_members: int = Field(..., description=\"Общее количество участников\")\n    total_teams: int = Field(..., description=\"Общее количество команд\")\n    total_subdepartments: int = Field(\n        ..., description=\"Общее количество поддепартаментов\"\n    )",
         "detail": "app.deprected.schemas.department",
         "documentation": {}
     },
@@ -49917,7 +49145,7 @@
         "kind": 6,
         "importPath": "app.services.company_settings_service",
         "description": "app.services.company_settings_service",
-        "peekOfCode": "class CompanySettingsPermissionChecker(ICompanySettingsPermissionChecker):\n    \"\"\"Проверка прав доступа к настройкам компании.\"\"\"\n    async def can_access_company(\n        self, db: AsyncSession, user: User, company_id: int\n    ) -> bool:\n        \"\"\"Проверить права доступа к компании.\"\"\"\n        if user.is_system_admin:\n            return True\n        if user.company_id == company_id:\n            return True",
+        "peekOfCode": "class CompanySettingsPermissionChecker(ICompanySettingsPermissionChecker):\n    \"\"\"Проверка прав доступа к настройкам компании.\"\"\"\n    async def can_access_company(\n        self, db: AsyncSession, user: User, company_id: int\n    ) -> bool:\n        \"\"\"Проверить права доступа к компании.\"\"\"\n        from app.services.permission_service import permission_service\n        if user.is_system_admin:\n            return True\n        if user.company_id == company_id:",
         "detail": "app.services.company_settings_service",
         "documentation": {}
     },

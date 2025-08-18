@@ -5,8 +5,6 @@ from app.core.config import settings
 from app.db.session import engine
 from app.models.base import Base
 from app.models.user import User
-from app.schemas.user import UserCreate
-from app.crud.user import user as user_crud
 from app.db.seeding import seed_enhanced_roles
 from app.services.role_initialization_service import role_initialization_service
 from app.utils.logger import logger

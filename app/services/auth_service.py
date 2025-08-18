@@ -7,7 +7,7 @@ Authentication Service.
 """
 
 from datetime import datetime, timedelta, timezone
-from typing import Optional, Dict, Any, List, Tuple
+from typing import Optional, Dict, Any, List, Tuple, TYPE_CHECKING
 
 from fastapi import HTTPException, status, Request
 from sqlalchemy.ext.asyncio import AsyncSession

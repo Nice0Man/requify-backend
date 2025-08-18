@@ -4,22 +4,27 @@ CRUD операции для модели User.
 
 from datetime import datetime
 from typing import List, Optional, Dict, Any, TYPE_CHECKING
-from sqlalchemy import func, select, or_, and_, desc
+from sqlalchemy import func, select, or_, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.security import get_password_hash, verify_password
 from app.crud.base import CRUDBase
 from app.models.user import User
-
-# Импортируем схемы из домена identity
-from app.api.v1.domains.identity.schemas import (
-    UserCreateRequest as UserCreate,
-    UserUpdateRequest as UserUpdate,
-)
-
-from app.utils.logger import logger
 from app.models.enhanced_role_system import UserRoleAssignment
+from app.utils import logger
+
+if TYPE_CHECKING:
+    from app.api.v1.domains.identity.schemas import (
+        UserCreateRequest as UserCreate,
+        UserUpdateRequest as UserUpdate,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    UserCreate = Dict[str, Any]
+    UserUpdate = Dict[str, Any]
 
 
 class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):

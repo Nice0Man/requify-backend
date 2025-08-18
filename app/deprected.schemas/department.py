@@ -24,8 +24,7 @@ class DepartmentType(str, Enum):
     OTHER = "other"
 
 
-# # Base Schemas
-#
+# Base Schemas
 
 
 class DepartmentBase(BaseModel):
@@ -178,3 +177,13 @@ class DepartmentMembersResponse(BaseModel):
     total: int = Field(..., description="Общее количество")
     skip: int = Field(..., description="Пропущено записей")
     limit: int = Field(..., description="Лимит записей")
+
+
+class DepartmentStats(BaseModel):
+    """Схема для статистики департамента."""
+
+    total_members: int = Field(..., description="Общее количество участников")
+    total_teams: int = Field(..., description="Общее количество команд")
+    total_subdepartments: int = Field(
+        ..., description="Общее количество поддепартаментов"
+    )

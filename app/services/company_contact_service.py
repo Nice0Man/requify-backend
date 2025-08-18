@@ -10,7 +10,9 @@ from app.crud.company_contact import company_contact as company_contact_crud
 from app.crud.company import company as company_crud
 from app.models.company_contact import CompanyContact
 from app.models.user import User
-from app.services.permission_service import permission_service
+
+# Импорт здесь для избежания циклических зависимостей
+# from app.services.permission_service import permission_service
 from app.core.constants import Permission, RoleScope
 from app.api.v1.domains.organizations.companies.schemas import (
     CompanyContactRequest as CompanyContactCreate,
@@ -310,6 +312,9 @@ class CompanyContactService(BaseService):
             return True
 
         # Проверить доступ через Enhanced Role System
+        # Импорт здесь для избежания циклических зависимостей
+        from app.services.permission_service import permission_service
+
         return await permission_service.check_user_permission(
             db=db,
             user=user,
@@ -329,6 +334,9 @@ class CompanyContactService(BaseService):
             return True
 
         # Проверить права через Enhanced Role System
+        # Импорт здесь для избежания циклических зависимостей
+        from app.services.permission_service import permission_service
+
         return await permission_service.check_user_permission(
             db=db,
             user=user,

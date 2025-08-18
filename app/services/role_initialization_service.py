@@ -8,7 +8,7 @@
 4. Валидация корректности системы
 """
 
-from typing import Dict, List, Optional, Tuple, Set
+from typing import TYPE_CHECKING, Dict, List, Optional, Tuple, Set
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
@@ -28,8 +28,6 @@ from app.models.role_hierarchy import RoleHierarchy, InheritanceType
 from app.models.user import User
 from app.crud.enhanced_role import enhanced_role as role_crud, user_role_assignment
 from app.crud.role_hierarchy import role_hierarchy
-from app.schemas.enhanced_role import EnhancedRoleCreate, UserRoleAssignmentCreate
-from app.schemas.role_hierarchy import RoleHierarchyCreate
 from app.services.role_hierarchy_service import role_hierarchy_service
 from app.utils.logger import logger
 from .base import BaseService

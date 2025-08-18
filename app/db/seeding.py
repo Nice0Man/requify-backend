@@ -3,7 +3,7 @@ Database seeding for Enhanced Role System.
 Creates all roles defined in constants.py and assigns system admin role to admin@example.com.
 """
 
-from typing import Dict, List
+from typing import TYPE_CHECKING, Dict, List
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 
@@ -20,8 +20,13 @@ from app.models.enhanced_role_system import EnhancedRole, UserRoleAssignment
 from app.models.user import User
 from app.crud.enhanced_role import enhanced_role as role_crud
 from app.crud.user import user as user_crud
-from app.schemas.enhanced_role import EnhancedRoleCreate, UserRoleAssignmentCreate
 from app.utils.logger import logger
+
+if TYPE_CHECKING:
+    from app.api.v1.domains.identity.roles.schemas import (
+        EnhancedRoleCreate,
+        UserRoleAssignmentCreate,
+    )
 
 
 def get_system_role_definitions() -> List[Dict]:

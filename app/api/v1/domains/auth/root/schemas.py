@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 
 class LoginResponse(BaseSchema):
     """Схема ответа при успешной аутентификации."""
-    
+
     access_token: str = Field(..., description="Access токен")
     refresh_token: str = Field(..., description="Refresh токен")
     token_type: str = Field(default="bearer", description="Тип токена")
@@ -33,16 +33,16 @@ class LoginResponse(BaseSchema):
 
 class RegisterResponse(BaseSchema):
     """Схема ответа при успешной регистрации."""
-    
+
     access_token: str = Field(..., description="Access токен")
-    refresh_token: str = Field(..., description="Refresh токен") 
+    refresh_token: str = Field(..., description="Refresh токен")
     token_type: str = Field(default="bearer", description="Тип токена")
     expires_in: int = Field(..., description="Время жизни access токена в секундах")
-    
+
 
 class TokenValidationResponse(BaseSchema):
     """Схема ответа валидации токена."""
-    
+
     valid: bool = Field(..., description="Токен валиден")
     expires_at: Optional[datetime] = Field(None, description="Время истечения токена")
     user_id: Optional[int] = Field(None, description="ID пользователя")
@@ -277,7 +277,7 @@ def rebuild_auth_models():
         # Import all response models that use UserDetailed
         globals_dict = globals()
         models_to_rebuild = [
-            "LoginResponse", 
+            "LoginResponse",
             "RegisterResponse",
             "TokenValidationResponse",
         ]

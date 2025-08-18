@@ -5,6 +5,8 @@
 
 from datetime import UTC, datetime, timedelta
 from typing import TYPE_CHECKING, List, Optional, Set
+
+
 from app.core.constants import (
     RoleScope,
     SystemRole,
@@ -175,6 +177,7 @@ class EnhancedRole(Base, TimestampedMixin):
         Returns:
             Множество эффективных разрешений
         """
+        # Импорт здесь для избежания циклических зависимостей
         from app.services.role_hierarchy_service import role_hierarchy_service
 
         return await role_hierarchy_service.get_role_effective_permissions(
@@ -398,7 +401,7 @@ class UserRoleAssignment(Base, TimestampedMixin):
         self.expires_at = datetime.now(UTC)
         if reason:
             self.assignment_reason = (
-                f"{self.assignment_reason or ''}\nRevoked: {reason}" 
+                f"{self.assignment_reason or ''}\nRevoked: {reason}"
             )
         if revoked_by:
             self.revoked_by = revoked_by

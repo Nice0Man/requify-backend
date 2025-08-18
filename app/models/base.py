@@ -45,7 +45,10 @@ class Base(DeclarativeBase):
         если не определено явно.
         """
         # Если __tablename__ уже определён в классе напрямую (не через декоратор), используем его
-        if "__tablename__" in cls.__dict__ and cls.__dict__["__tablename__"] is not None:
+        if (
+            "__tablename__" in cls.__dict__
+            and cls.__dict__["__tablename__"] is not None
+        ):
             return cls.__dict__["__tablename__"]
 
         # Иначе генерируем автоматически

@@ -6,24 +6,28 @@
 
 from typing import List, Optional, Dict, Any, TYPE_CHECKING
 from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException, status
-from datetime import datetime, timezone
-from pydantic import BaseModel, Field
 
 from app.crud.user_profile import user_profile as profile_crud
 from app.crud.user import crud_user as user_crud
 from app.models.user_profile import UserProfile
 from app.models.user import User
-from app.services.permission_service import permission_service
-from app.core.constants import Permission, RoleScope
+from app.core.constants import Permission
 
-# Импортируем схемы из домена identity
-from app.api.v1.domains.identity.schemas import (
-    UserProfileCreate,
-    UserProfileUpdate,
-    UserProfileStats,
-    ProfileValidation,
-)
+if TYPE_CHECKING:
+    from app.api.v1.domains.identity.schemas import (
+        UserProfileCreate,
+        UserProfileUpdate,
+        UserProfileStats,
+        ProfileValidation,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    UserProfileCreate = Dict[str, Any]
+    UserProfileUpdate = Dict[str, Any]
+    UserProfileStats = Dict[str, Any]
+    ProfileValidation = Dict[str, Any]
 
 
 class UserProfileRepository:
@@ -131,6 +135,9 @@ class ProfilePermissionChecker:
             return True
 
         # Проверить системные права
+        # Импорт здесь для избежания циклических зависимостей
+        from app.services.permission_service import permission_service
+
         return await permission_service.has_permission(
             db, current_user, Permission.VIEW_USERS
         )
@@ -145,6 +152,9 @@ class ProfilePermissionChecker:
             return True
 
         # Проверить административные права
+        # Импорт здесь для избежания циклических зависимостей
+        from app.services.permission_service import permission_service
+
         return await permission_service.has_permission(
             db, current_user, Permission.MANAGE_USERS
         )
@@ -449,7 +459,7 @@ class UserProfileService(BaseService):
 
 
 # Регистрация сервиса в фабрике
-from .base import ServiceFactory
+from .base import BaseService, NotFoundError, ServiceFactory, ValidationError
 
 ServiceFactory.register_service("user_profile", UserProfileService)
 

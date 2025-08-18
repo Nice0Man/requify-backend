@@ -2,33 +2,51 @@
 Сервис для бизнес-логики брендинга компании.
 """
 
-from typing import List, Optional, Dict, Any
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException, status
-from datetime import datetime, timezone
+from typing import List, Optional, Dict, Any, TYPE_CHECKING
 
+from fastapi import HTTPException, status
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.core.constants import Permission, RoleScope
 from app.crud.company_branding import company_branding as branding_crud
 from app.models.company_branding import CompanyBranding
 from app.models.user import User
-from app.services.permission_service import permission_service
-from app.core.constants import Permission, RoleScope
+from app.crud.company import company as company_crud
 
 # TODO: Add CompanyBranding schemas to companies/schemas.py
-from app.api.v1.domains.organizations.companies.schemas import (
-    CompanyBrandingCreate,
-    CompanyBrandingUpdate,
-    CompanyBrandingResponse,
-    ColorPalette,
-    TypographyConfig,
-    ComponentStyles,
-    LayoutConfig,
-    SocialLinks,
-    ThemePreset,
-    BrandingValidation,
-    AssetUpload,
-    BrandingExport,
-    BrandingImport,
-)
+if TYPE_CHECKING:
+    from app.api.v1.domains.organizations.companies.schemas import (
+        CompanyBrandingCreate,
+        CompanyBrandingUpdate,
+        CompanyBrandingResponse,
+        ColorPalette,
+        TypographyConfig,
+        ComponentStyles,
+        LayoutConfig,
+        SocialLinks,
+        ThemePreset,
+        BrandingValidation,
+        AssetUpload,
+        BrandingExport,
+        BrandingImport,
+    )
+else:
+    # Runtime заглушки для избежания циклических импортов
+    from typing import Dict, Any
+
+    CompanyBrandingCreate = Dict[str, Any]
+    CompanyBrandingUpdate = Dict[str, Any]
+    CompanyBrandingResponse = Dict[str, Any]
+    ColorPalette = Dict[str, Any]
+    TypographyConfig = Dict[str, Any]
+    ComponentStyles = Dict[str, Any]
+    LayoutConfig = Dict[str, Any]
+    SocialLinks = Dict[str, Any]
+    ThemePreset = Dict[str, Any]
+    BrandingValidation = Dict[str, Any]
+    AssetUpload = Dict[str, Any]
+    BrandingExport = Dict[str, Any]
+    BrandingImport = Dict[str, Any]
 
 
 class CompanyBrandingService:
@@ -646,6 +664,8 @@ class CompanyBrandingService:
             return True
 
         # Проверить доступ через Enhanced Role System
+        from app.services.permission_service import permission_service
+
         return await permission_service.check_user_permission(
             db=db,
             user=user,
@@ -665,6 +685,8 @@ class CompanyBrandingService:
             return True
 
         # Проверить права через Enhanced Role System
+        from app.services.permission_service import permission_service
+
         return await permission_service.check_user_permission(
             db=db,
             user=user,
@@ -673,6 +695,10 @@ class CompanyBrandingService:
             context_id=company_id,
         )
 
+
+from .base import ServiceFactory
+
+ServiceFactory.register_service("company_branding", CompanyBrandingService)
 
 # Создаем экземпляр сервиса
 company_branding_service = CompanyBrandingService()
