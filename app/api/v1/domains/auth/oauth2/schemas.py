@@ -77,7 +77,7 @@ class OAuth2CallbackResponse(BaseSchema):
     )
 
     # Информация о пользователе
-    user: "UserDetailed" = Field(..., description="Информация о пользователе")
+    # user: "UserDetailed" = Field(..., description="Информация о пользователе")  # TODO: Fix forward reference
     is_new_user: bool = Field(default=False, description="Новый ли это пользователь")
 
 

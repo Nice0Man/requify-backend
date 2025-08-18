@@ -21,7 +21,7 @@ if TYPE_CHECKING:
 class CurrentUserResponse(BaseSchema):
     """Схема для ответа с информацией о текущем пользователе."""
 
-    user: "UserDetailed" = Field(..., description="Полная информация о пользователе")
+    # user: "UserDetailed" = Field(..., description="Полная информация о пользователе")  # TODO: Fix forward reference
 
 
 class AccountStatusResponse(BaseSchema):

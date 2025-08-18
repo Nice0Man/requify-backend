@@ -16,7 +16,36 @@ from app.api.v1.common.schemas import (
 )
 
 if TYPE_CHECKING:
-    from app.schemas.user import UserDetailed
+    from app.api.v1.domains.identity.schemas import UserResponse as UserDetailed
+
+
+# === Response Schemas ===
+
+
+class LoginResponse(BaseSchema):
+    """Схема ответа при успешной аутентификации."""
+    
+    access_token: str = Field(..., description="Access токен")
+    refresh_token: str = Field(..., description="Refresh токен")
+    token_type: str = Field(default="bearer", description="Тип токена")
+    expires_in: int = Field(..., description="Время жизни access токена в секундах")
+
+
+class RegisterResponse(BaseSchema):
+    """Схема ответа при успешной регистрации."""
+    
+    access_token: str = Field(..., description="Access токен")
+    refresh_token: str = Field(..., description="Refresh токен") 
+    token_type: str = Field(default="bearer", description="Тип токена")
+    expires_in: int = Field(..., description="Время жизни access токена в секундах")
+    
+
+class TokenValidationResponse(BaseSchema):
+    """Схема ответа валидации токена."""
+    
+    valid: bool = Field(..., description="Токен валиден")
+    expires_at: Optional[datetime] = Field(None, description="Время истечения токена")
+    user_id: Optional[int] = Field(None, description="ID пользователя")
 
 
 # === Base Token Schemas ===
@@ -63,9 +92,6 @@ class LoginResponse(BaseSchema):
     refresh_expires_in: Optional[int] = Field(
         None, description="Время жизни refresh токена в секундах"
     )
-
-    # Полная информация о пользователе
-    user: "UserDetailed" = Field(..., description="Полная информация о пользователе")
 
 
 # === Register Schemas ===
@@ -163,7 +189,6 @@ class RegisterResponse(BaseSchema):
     о необходимости верификации email.
     """
 
-    user: "UserDetailed" = Field(..., description="Созданный пользователь")
     message: str = Field(
         default="User registered successfully", description="Сообщение"
     )
@@ -244,20 +269,15 @@ class TokenValidationResponse(BaseSchema):
     valid: bool = Field(..., description="Валиден ли токен")
     expires_at: Optional[datetime] = Field(None, description="Время истечения")
     scopes: list[str] = Field(default_factory=list, description="Права доступа токена")
-    user: Optional["UserDetailed"] = Field(
-        None, description="Информация о пользователе если токен валиден"
-    )
 
 
 def rebuild_auth_models():
     """Rebuild models to resolve forward references."""
     try:
-        from app.schemas.user import UserDetailed
-
         # Import all response models that use UserDetailed
         globals_dict = globals()
         models_to_rebuild = [
-            "LoginResponse",
+            "LoginResponse", 
             "RegisterResponse",
             "TokenValidationResponse",
         ]

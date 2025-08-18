@@ -35006,16 +35006,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.email.schemas",
         "description": "app.api.v1.domains.auth.email.schemas",
-        "peekOfCode": "class EmailVerificationConfirmResponse(BaseSchema):\n    \"\"\"Схема для ответа после верификации email.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    verified: bool = Field(..., description=\"Успешно ли подтвержден email\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе после верификации\"\n    )\ndef rebuild_email_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:",
-        "detail": "app.api.v1.domains.auth.email.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "rebuild_email_models",
-        "kind": 2,
-        "importPath": "app.api.v1.domains.auth.email.schemas",
-        "description": "app.api.v1.domains.auth.email.schemas",
-        "peekOfCode": "def rebuild_email_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        from app.schemas.user import UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"EmailVerificationConfirmResponse\",\n        ]\n        for model_name in models_to_rebuild:\n            if model_name in globals_dict:",
+        "peekOfCode": "class EmailVerificationConfirmResponse(BaseSchema):\n    \"\"\"Схема для ответа после верификации email.\"\"\"\n    message: str = Field(..., description=\"Сообщение о результате\")\n    verified: bool = Field(..., description=\"Успешно ли подтвержден email\")",
         "detail": "app.api.v1.domains.auth.email.schemas",
         "documentation": {}
     },
@@ -35033,7 +35024,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.me.schemas",
         "description": "app.api.v1.domains.auth.me.schemas",
-        "peekOfCode": "class CurrentUserResponse(BaseSchema):\n    \"\"\"Схема для ответа с информацией о текущем пользователе.\"\"\"\n    user: \"UserDetailed\" = Field(..., description=\"Полная информация о пользователе\")\nclass AccountStatusResponse(BaseSchema):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")\n    last_login: Optional[datetime] = Field(None, description=\"Время последнего входа\")\n    account_locked: bool = Field(default=False, description=\"Заблокирован ли аккаунт\")",
+        "peekOfCode": "class CurrentUserResponse(BaseSchema):\n    \"\"\"Схема для ответа с информацией о текущем пользователе.\"\"\"\n    # user: \"UserDetailed\" = Field(..., description=\"Полная информация о пользователе\")  # TODO: Fix forward reference\nclass AccountStatusResponse(BaseSchema):\n    \"\"\"Схема для статуса аккаунта пользователя.\"\"\"\n    is_active: bool = Field(..., description=\"Активен ли аккаунт\")\n    email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    two_factor_enabled: bool = Field(..., description=\"Включена ли 2FA\")\n    last_login: Optional[datetime] = Field(None, description=\"Время последнего входа\")\n    account_locked: bool = Field(default=False, description=\"Заблокирован ли аккаунт\")",
         "detail": "app.api.v1.domains.auth.me.schemas",
         "documentation": {}
     },
@@ -35227,6 +35218,33 @@
         "documentation": {}
     },
     {
+        "label": "LoginResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\") ",
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"Схема ответа при успешной регистрации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\") \n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\nclass TokenValidationResponse(BaseSchema):\n    \"\"\"Схема ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Токен валиден\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения токена\")",
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenValidationResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "peekOfCode": "class TokenValidationResponse(BaseSchema):\n    \"\"\"Схема ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Токен валиден\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения токена\")\n    user_id: Optional[int] = Field(None, description=\"ID пользователя\")\n# === Base Token Schemas ===\nclass TokenPair(BaseSchema):\n    \"\"\"Схема для пары токенов (access + refresh).\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")",
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
         "label": "TokenPair",
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
@@ -35249,7 +35267,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n    # Полная информация о пользователе",
+        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n# === Register Schemas ===",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -35267,7 +35285,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"\n    Схема для ответа после регистрации.\n    Возвращает созданного пользователя с профилем и информацию\n    о необходимости верификации email.\n    \"\"\"\n    user: \"UserDetailed\" = Field(..., description=\"Созданный пользователь\")\n    message: str = Field(\n        default=\"User registered successfully\", description=\"Сообщение\"\n    )",
+        "peekOfCode": "class RegisterResponse(BaseSchema):\n    \"\"\"\n    Схема для ответа после регистрации.\n    Возвращает созданного пользователя с профилем и информацию\n    о необходимости верификации email.\n    \"\"\"\n    message: str = Field(\n        default=\"User registered successfully\", description=\"Сообщение\"\n    )\n    email_verification_required: bool = Field(",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -35321,7 +35339,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class TokenValidationResponse(BaseSchema):\n    \"\"\"Схема для ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Валиден ли токен\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения\")\n    scopes: list[str] = Field(default_factory=list, description=\"Права доступа токена\")\n    user: Optional[\"UserDetailed\"] = Field(\n        None, description=\"Информация о пользователе если токен валиден\"\n    )\ndef rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"",
+        "peekOfCode": "class TokenValidationResponse(BaseSchema):\n    \"\"\"Схема для ответа валидации токена.\"\"\"\n    valid: bool = Field(..., description=\"Валиден ли токен\")\n    expires_at: Optional[datetime] = Field(None, description=\"Время истечения\")\n    scopes: list[str] = Field(default_factory=list, description=\"Права доступа токена\")\ndef rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import all response models that use UserDetailed\n        globals_dict = globals()",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -35330,7 +35348,7 @@
         "kind": 2,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "def rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        from app.schemas.user import UserDetailed\n        # Import all response models that use UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"LoginResponse\",\n            \"RegisterResponse\",\n            \"TokenValidationResponse\",",
+        "peekOfCode": "def rebuild_auth_models():\n    \"\"\"Rebuild models to resolve forward references.\"\"\"\n    try:\n        # Import all response models that use UserDetailed\n        globals_dict = globals()\n        models_to_rebuild = [\n            \"LoginResponse\", \n            \"RegisterResponse\",\n            \"TokenValidationResponse\",\n        ]",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },

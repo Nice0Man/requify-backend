@@ -127,7 +127,7 @@ class CRUDCompanySubscription(
             db.query(self.model)
             .filter(
                 and_(
-                    self.model.status == SubscriptionStatus.ACTIVE.value
+                    self.model.status == SubscriptionStatus.ACTIVE.value,
                     self.model.subscription_end_date < datetime.now(timezone.utc),
                 )
             )
