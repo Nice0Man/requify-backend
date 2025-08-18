@@ -21,9 +21,9 @@ from app.core.security import (
     TokenType,
 )
 
-# TODO: Fix circular import
-# from app.crud.user import crud_user
-# from app.crud.refresh_token import crud_refresh_token
+
+from app.crud.refresh_token import crud_refresh_token
+from app.crud.user import crud_user
 from app.models.user import User
 from app.utils.logger import logger
 from .base import BaseService, ServiceError, ValidationError, NotFoundError

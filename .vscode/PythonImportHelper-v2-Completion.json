@@ -23790,6 +23790,14 @@
         "documentation": {}
     },
     {
+        "label": "crud_user",
+        "importPath": "app.crud.user",
+        "description": "app.crud.user",
+        "isExtraImport": true,
+        "detail": "app.crud.user",
+        "documentation": {}
+    },
+    {
         "label": "user",
         "importPath": "app.crud.user",
         "description": "app.crud.user",
@@ -30959,6 +30967,38 @@
         "documentation": {}
     },
     {
+        "label": "crud_refresh_token",
+        "importPath": "app.crud.refresh_token",
+        "description": "app.crud.refresh_token",
+        "isExtraImport": true,
+        "detail": "app.crud.refresh_token",
+        "documentation": {}
+    },
+    {
+        "label": "crud_refresh_token",
+        "importPath": "app.crud.refresh_token",
+        "description": "app.crud.refresh_token",
+        "isExtraImport": true,
+        "detail": "app.crud.refresh_token",
+        "documentation": {}
+    },
+    {
+        "label": "crud_refresh_token",
+        "importPath": "app.crud.refresh_token",
+        "description": "app.crud.refresh_token",
+        "isExtraImport": true,
+        "detail": "app.crud.refresh_token",
+        "documentation": {}
+    },
+    {
+        "label": "crud_refresh_token",
+        "importPath": "app.crud.refresh_token",
+        "description": "app.crud.refresh_token",
+        "isExtraImport": true,
+        "detail": "app.crud.refresh_token",
+        "documentation": {}
+    },
+    {
         "label": "threading",
         "kind": 6,
         "isExtraImport": true,
@@ -31362,30 +31402,6 @@
         "importPath": "string",
         "description": "string",
         "detail": "string",
-        "documentation": {}
-    },
-    {
-        "label": "crud_refresh_token",
-        "importPath": "app.crud.refresh_token",
-        "description": "app.crud.refresh_token",
-        "isExtraImport": true,
-        "detail": "app.crud.refresh_token",
-        "documentation": {}
-    },
-    {
-        "label": "crud_refresh_token",
-        "importPath": "app.crud.refresh_token",
-        "description": "app.crud.refresh_token",
-        "isExtraImport": true,
-        "detail": "app.crud.refresh_token",
-        "documentation": {}
-    },
-    {
-        "label": "crud_refresh_token",
-        "importPath": "app.crud.refresh_token",
-        "description": "app.crud.refresh_token",
-        "isExtraImport": true,
-        "detail": "app.crud.refresh_token",
         "documentation": {}
     },
     {
