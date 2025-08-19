@@ -5,9 +5,11 @@ Project Requirements Router.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
-from typing import List, Optional
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import List, Optional
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     # ProjectPermissions,
@@ -18,7 +20,6 @@ router = APIRouter()
 
 # # Requirements Management
 #
-
 
 @router.get("/all")
 async def get_all_requirements(
@@ -35,7 +36,6 @@ async def get_all_requirements(
     Публичный endpoint для получения списка требований.
     """
     return {"requirements": [], "total": 0, "page": (skip // limit) + 1, "size": limit}
-
 
 @router.get("/{project_id}/requirements")
 async def get_project_requirements(
@@ -57,7 +57,6 @@ async def get_project_requirements(
     # TODO: Implement requirements list with filtering
     return {"requirements": []}
 
-
 @router.post("/{project_id}/requirements")
 async def create_requirement(
     project_id: int,
@@ -72,7 +71,6 @@ async def create_requirement(
     """
     # TODO: Implement requirement creation
     return {"message": "Requirement created"}
-
 
 @router.get("/{project_id}/requirements/search")
 async def search_requirements(
@@ -94,7 +92,6 @@ async def search_requirements(
     # TODO: Implement requirements search
     return {"requirements": [], "query": q}
 
-
 @router.get("/{project_id}/requirements/stats")
 async def get_requirements_stats(
     project_id: int,
@@ -112,7 +109,6 @@ async def get_requirements_stats(
         "stats": {"total": 0, "by_status": {}, "by_priority": {}, "by_type": {}},
     }
 
-
 @router.post("/{project_id}/requirements/import")
 async def import_requirements(
     project_id: int,
@@ -129,7 +125,6 @@ async def import_requirements(
     # TODO: Implement requirements import
     return {"message": f"Requirements imported from {file.filename}"}
 
-
 @router.get("/{project_id}/requirements/export")
 async def export_requirements(
     project_id: int,
@@ -145,10 +140,8 @@ async def export_requirements(
     # TODO: Implement requirements export
     return {"download_url": f"/downloads/requirements_export.{format}"}
 
-
 # # Individual Requirements Management
 #
-
 
 @router.get("/{project_id}/requirements/{requirement_id}")
 async def get_requirement(
@@ -164,7 +157,6 @@ async def get_requirement(
     """
     # TODO: Implement requirement retrieval
     return {"requirement": {"id": requirement_id, "project_id": project_id}}
-
 
 @router.put("/{project_id}/requirements/{requirement_id}")
 async def update_requirement(
@@ -182,7 +174,6 @@ async def update_requirement(
     # TODO: Implement requirement update
     return {"message": "Requirement updated"}
 
-
 @router.delete("/{project_id}/requirements/{requirement_id}")
 async def delete_requirement(
     project_id: int,
@@ -198,10 +189,8 @@ async def delete_requirement(
     # TODO: Implement requirement deletion
     return {"message": f"Requirement {requirement_id} deleted"}
 
-
 # # Requirements Approval Workflow
 #
-
 
 @router.post("/{project_id}/requirements/{requirement_id}/approve")
 async def approve_requirement(
@@ -219,7 +208,6 @@ async def approve_requirement(
     # TODO: Implement requirement approval
     return {"message": f"Requirement {requirement_id} approved"}
 
-
 @router.post("/{project_id}/requirements/{requirement_id}/reject")
 async def reject_requirement(
     project_id: int,
@@ -235,7 +223,6 @@ async def reject_requirement(
     """
     # TODO: Implement requirement rejection
     return {"message": f"Requirement {requirement_id} rejected"}
-
 
 @router.put("/{project_id}/requirements/{requirement_id}/status")
 async def change_requirement_status(
@@ -253,10 +240,8 @@ async def change_requirement_status(
     # TODO: Implement requirement status change
     return {"message": f"Status changed for requirement {requirement_id}"}
 
-
 # # Requirements Relationships & Traceability
 #
-
 
 @router.get("/{project_id}/requirements/{requirement_id}/relationships")
 async def get_requirement_relationships(
@@ -273,7 +258,6 @@ async def get_requirement_relationships(
     # TODO: Implement requirement relationships
     return {"relationships": []}
 
-
 @router.post("/{project_id}/requirements/{requirement_id}/relationships")
 async def create_requirement_relationship(
     project_id: int,
@@ -289,7 +273,6 @@ async def create_requirement_relationship(
     """
     # TODO: Implement requirement relationship creation
     return {"message": "Relationship created"}
-
 
 @router.delete(
     "/{project_id}/requirements/{requirement_id}/relationships/{relationship_id}"
@@ -308,7 +291,6 @@ async def delete_requirement_relationship(
     """
     # TODO: Implement relationship deletion
     return {"message": f"Relationship {relationship_id} deleted"}
-
 
 @router.get("/{project_id}/requirements/{requirement_id}/trace-matrix")
 async def get_requirement_trace_matrix(

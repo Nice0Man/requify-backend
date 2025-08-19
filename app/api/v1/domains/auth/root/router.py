@@ -5,10 +5,12 @@ Root Authentication Router.
 """
 
 from fastapi import APIRouter, HTTPException, Request, status, Depends
-from fastapi.security import OAuth2PasswordRequestForm
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from fastapi.security import OAuth2PasswordRequestForm
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.v1.domains.auth.root.schemas import (
+
     LoginRequest,
     LoginResponse,
     RegisterRequest,
@@ -31,7 +33,6 @@ from app.api.v1.domains.identity.schemas import UserResponse
 from app.utils.logger import logger
 
 router = APIRouter()
-
 
 @router.post("/login", response_model=LoginResponse, summary="Authenticate User")
 async def login(
@@ -71,7 +72,7 @@ async def login(
         # Get detailed user info - reload with fresh session context
         fresh_user = await crud_user.get_by_email_with_profile(db, email=user.email)
         if not fresh_user:
-            raise HTTPException(status_code=404, detail="User not found")
+            return not_found_response(message="User not found")
 
         from app.schemas.user import UserDetailed
 
@@ -87,12 +88,9 @@ async def login(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=str(e),
+        return unauthorized_response(message=str(e),
             headers={"WWW-Authenticate": "Bearer"},
         )
-
 
 @router.get("/me", summary="Get Current User")
 async def get_current_user_info(
@@ -115,7 +113,6 @@ async def get_current_user_info(
             "updated_at": current_user.updated_at,
         }
     }
-
 
 @router.post("/register", response_model=RegisterResponse, summary="Register User")
 async def register(
@@ -164,15 +161,8 @@ async def register(
     except Exception as e:
         logger.error(f"Registration failed: {str(e)}", exc_info=True)
         if "already exists" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=str(e),
-            )
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Registration failed: {str(e)}",
-        )
-
+            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
+        return error_response(message=f"Registration failed: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post("/logout", response_model=LogoutResponse, summary="Logout User")
 async def logout(
@@ -202,11 +192,7 @@ async def logout(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
-        )
-
+        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post("/logout/simple", response_model=LogoutResponse, summary="Simple Logout")
 async def logout_simple(
@@ -231,11 +217,7 @@ async def logout_simple(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
-        )
-
+        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post("/refresh", response_model=RefreshTokenResponse, summary="Refresh Token")
 async def refresh_token(
@@ -265,12 +247,9 @@ async def refresh_token(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail=str(e),
+        return unauthorized_response(message=str(e),
             headers={"WWW-Authenticate": "Bearer"},
         )
-
 
 @router.post(
     "/validate-token", response_model=TokenValidationResponse, summary="Validate Token"
@@ -305,7 +284,6 @@ async def validate_token(
             scopes=[],
             user=None,
         )
-
 
 @router.post(
     "/validate-current-token",

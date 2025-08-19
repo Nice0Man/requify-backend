@@ -5,10 +5,12 @@ Handles metrics collection and analysis operations including
 custom metrics definition, real-time metrics tracking, and aggregation.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -39,7 +41,6 @@ router = APIRouter()
 
 # # Metrics Definition Management
 #
-
 
 @router.get(
     "/definitions",
@@ -88,7 +89,4 @@ async def get_metric_definitions(
             pages=pages,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get metric definitions: {str(e)}",
-        )
+        return error_response(message=f"Failed to get metric definitions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

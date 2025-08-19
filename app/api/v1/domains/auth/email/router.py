@@ -4,11 +4,13 @@ Email Verification Router.
 Роутер для верификации email адресов.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
 from app.api.dependencies import SessionDep
 from app.api.v1.domains.auth.email.schemas import (
+
     EmailVerificationRequest,
     EmailVerificationResponse,
     EmailVerificationConfirm,
@@ -17,7 +19,6 @@ from app.api.v1.domains.auth.email.schemas import (
 from app.services.email_service import EmailService
 
 router = APIRouter()
-
 
 @router.post(
     "/request",
@@ -50,7 +51,6 @@ async def request_email_verification(
             message="If the email exists in our system, you will receive a verification link",
             verification_token_sent=True,
         )
-
 
 @router.post(
     "/confirm",
@@ -87,10 +87,7 @@ async def confirm_email_verification(
 
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=str(e),
-            )
+            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to verify email",

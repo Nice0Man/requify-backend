@@ -4,11 +4,13 @@ Session Management Router.
 Роутер для управления сессиями пользователей.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+from app.api.v1.common.responses import create_response, error_response
 
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.v1.domains.auth.sessions.schemas import (
+
     SessionListResponse,
     RevokeSessionRequest,
     RevokeSessionResponse,
@@ -16,7 +18,6 @@ from app.api.v1.domains.auth.sessions.schemas import (
 from app.services.session_service import session_service
 
 router = APIRouter()
-
 
 @router.get("/", response_model=SessionListResponse, summary="Get User Sessions")
 async def get_user_sessions(
@@ -52,11 +53,10 @@ async def get_user_sessions(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
+        return error_response(
+            message=str(e),
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-
 
 @router.post("/revoke", response_model=RevokeSessionResponse, summary="Revoke Sessions")
 async def revoke_sessions(
@@ -99,7 +99,7 @@ async def revoke_sessions(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
+        return error_response(
+            message=str(e),
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )

@@ -5,10 +5,12 @@ Handles dashboard analytics operations including real-time metrics,
 KPI calculations, and dashboard widget management.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -39,7 +41,6 @@ router = APIRouter()
 
 # # Dashboard Overview
 #
-
 
 @router.get(
     "/overview",
@@ -81,11 +82,7 @@ async def get_dashboard_overview(
             generated_at=overview_data.get("generated_at"),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get dashboard overview: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get dashboard overview: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/metrics",
@@ -133,11 +130,7 @@ async def get_dashboard_metrics(
             generated_at=metrics_data.get("generated_at"),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get dashboard metrics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get dashboard metrics: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/widgets",
@@ -179,11 +172,7 @@ async def get_dashboard_widgets(
             for widget in widgets
         ]
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get dashboard widgets: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get dashboard widgets: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/config",
@@ -215,7 +204,4 @@ async def get_dashboard_config(
             preferences=config.get("preferences", {}),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get dashboard config: {str(e)}",
-        )
+        return error_response(message=f"Failed to get dashboard config: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

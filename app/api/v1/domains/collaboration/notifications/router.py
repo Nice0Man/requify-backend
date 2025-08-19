@@ -4,14 +4,16 @@ Notifications Management Router.
 Роутер для управления уведомлениями пользователей.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import SessionDep, CurrentUserDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
 from app.crud.notification import notification as notification_crud
 from .schemas import (
+
     NotificationResponse,
     NotificationListResponse,
     MarkNotificationReadRequest,
@@ -19,7 +21,6 @@ from .schemas import (
 
 permission_checker = PermissionChecker()
 router = APIRouter()
-
 
 @router.get(
     "/my",
@@ -76,7 +77,6 @@ async def get_my_notifications(
         size=size,
     )
 
-
 @router.put(
     "/{notification_id}/read",
     summary="Mark Notification as Read",
@@ -118,7 +118,6 @@ async def mark_notification_read(
         "read": request.read,
     }
 
-
 @router.post(
     "/mark-all-read",
     summary="Mark All Notifications as Read",
@@ -143,7 +142,6 @@ async def mark_all_notifications_read(
         "user_id": current_user.id,
         "updated_count": updated_count,
     }
-
 
 @router.get(
     "/unread-count",

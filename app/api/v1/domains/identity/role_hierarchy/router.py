@@ -2,10 +2,11 @@
 API endpoints для управления иерархией ролей (DAG).
 """
 
-from typing import List, Dict, Any, Optional
-from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import List, Dict, Any, Optional
 from app.api.dependencies.core.auth import get_current_user
 from app.api.dependencies.core.database import get_async_session
 from app.api.dependencies.permissions.base import require_permission
@@ -13,6 +14,7 @@ from app.core.constants import Permission
 from app.models.user import User
 from app.models.role_hierarchy import InheritanceType
 from app.schemas.role_hierarchy import (
+
     RoleHierarchyCreate,
     RoleHierarchyUpdate,
     RoleHierarchyResponse,
@@ -31,7 +33,6 @@ from app.services.role_hierarchy_service import role_hierarchy_service
 from app.crud.role_hierarchy import role_hierarchy
 
 router = APIRouter(prefix="/hierarchy", tags=["Role Hierarchy"])
-
 
 @router.post(
     "/create",
@@ -71,11 +72,7 @@ async def create_role_inheritance(
         return response
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка создания связи наследования: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка создания связи наследования: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{parent_role_id}/{child_role_id}",
@@ -106,11 +103,7 @@ async def remove_role_inheritance(
             )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка удаления связи наследования: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка удаления связи наследования: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/role/{role_id}/ancestors",
@@ -130,11 +123,7 @@ async def get_role_ancestors(
         return [EnhancedRoleResponse.model_validate(role) for role in ancestors]
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка получения предков роли: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка получения предков роли: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/role/{role_id}/descendants",
@@ -154,11 +143,7 @@ async def get_role_descendants(
         return [EnhancedRoleResponse.model_validate(role) for role in descendants]
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка получения потомков роли: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка получения потомков роли: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/role/{role_id}/info",
@@ -179,9 +164,7 @@ async def get_role_inheritance_info(
 
         role = await enhanced_role.get(db, id=role_id)
         if not role:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Роль не найдена"
-            )
+            return not_found_response(message="Роль не найдена")
 
         # Получаем разрешения
         effective_permissions = await role_service.get_role_effective_permissions(
@@ -207,11 +190,7 @@ async def get_role_inheritance_info(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка получения информации о роли: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка получения информации о роли: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/path/{source_role_id}/{target_role_id}",
@@ -266,11 +245,7 @@ async def find_inheritance_path(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка поиска пути наследования: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка поиска пути наследования: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/validate",
@@ -300,7 +275,6 @@ async def validate_role_inheritance(
         return RoleHierarchyValidationResponse(
             is_valid=False, errors=[f"Ошибка валидации: {str(e)}"], warnings=[]
         )
-
 
 @router.get(
     "/conflicts",
@@ -335,11 +309,7 @@ async def get_hierarchy_conflicts(
         return conflicts
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка получения конфликтов: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка получения конфликтов: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/stats",
@@ -424,11 +394,7 @@ async def get_hierarchy_stats(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Ошибка получения статистики: {str(e)}",
-        )
-
+        return error_response(message=f"Ошибка получения статистики: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/bulk-create",

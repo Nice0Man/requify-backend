@@ -592,6 +592,38 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -11722,6 +11754,30 @@
         "documentation": {}
     },
     {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "Security",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -11811,6 +11867,14 @@
     },
     {
         "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -14674,6 +14738,14 @@
         "documentation": {}
     },
     {
+        "label": "Permission",
+        "importPath": "app.core.constants",
+        "description": "app.core.constants",
+        "isExtraImport": true,
+        "detail": "app.core.constants",
+        "documentation": {}
+    },
+    {
         "label": "RoleScope",
         "importPath": "app.core.constants",
         "description": "app.core.constants",
@@ -15515,6 +15587,14 @@
         "documentation": {}
     },
     {
+        "label": "CurrentActiveUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
         "label": "get_current_user",
         "importPath": "app.api.dependencies.core.auth",
         "description": "app.api.dependencies.core.auth",
@@ -15587,11 +15667,67 @@
         "documentation": {}
     },
     {
+        "label": "permission_service",
+        "importPath": "app.services.permission_service",
+        "description": "app.services.permission_service",
+        "isExtraImport": true,
+        "detail": "app.services.permission_service",
+        "documentation": {}
+    },
+    {
         "label": "PermissionService",
         "importPath": "app.services.permission_service",
         "description": "app.services.permission_service",
         "isExtraImport": true,
         "detail": "app.services.permission_service",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_async_session",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
         "documentation": {}
     },
     {
@@ -16045,6 +16181,22 @@
     },
     {
         "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -20630,6 +20782,2294 @@
         "documentation": {}
     },
     {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
         "label": "SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
@@ -23646,22 +26086,6 @@
         "documentation": {}
     },
     {
-        "label": "get_async_session",
-        "importPath": "app.api.dependencies.core.database",
-        "description": "app.api.dependencies.core.database",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies.core.database",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies.core.database",
-        "description": "app.api.dependencies.core.database",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies.core.database",
-        "documentation": {}
-    },
-    {
         "label": "InheritanceType",
         "importPath": "app.models.role_hierarchy",
         "description": "app.models.role_hierarchy",
@@ -24382,6 +26806,70 @@
         "documentation": {}
     },
     {
+        "label": "require_reports_access",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_reports_generate",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_specifications_access",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_specifications_create",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_specifications_edit",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_testing_access",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_testing_create",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
+        "label": "require_testing_execute",
+        "importPath": "app.api.dependencies.permissions.quality",
+        "description": "app.api.dependencies.permissions.quality",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.permissions.quality",
+        "documentation": {}
+    },
+    {
         "label": "AdminUserListResponse",
         "importPath": "app.api.v1.domains.system.admin.schemas",
         "description": "app.api.v1.domains.system.admin.schemas",
@@ -24940,14 +27428,6 @@
         "description": "fastapi.exceptions",
         "isExtraImport": true,
         "detail": "fastapi.exceptions",
-        "documentation": {}
-    },
-    {
-        "label": "JSONResponse",
-        "importPath": "fastapi.responses",
-        "description": "fastapi.responses",
-        "isExtraImport": true,
-        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
@@ -33547,6 +36027,96 @@
         "documentation": {}
     },
     {
+        "label": "create_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def create_response(\n    data: Any = None,\n    message: Optional[str] = None,\n    status_code: int = status.HTTP_200_OK,\n    success: bool = True,\n    error_code: Optional[str] = None,\n    headers: Optional[Dict[str, str]] = None,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "success_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def success_response(\n    data: Any = None,\n    message: str = \"Operation completed successfully\",\n    status_code: int = status.HTTP_200_OK,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает успешный ответ.\n    Args:\n        data: Данные ответа",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "error_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def error_response(\n    message: str,\n    status_code: int = status.HTTP_400_BAD_REQUEST,\n    error_code: Optional[str] = None,\n    details: Optional[Dict[str, Any]] = None,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой.\n    Args:",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "created_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def created_response(\n    data: Any,\n    message: str = \"Resource created successfully\",\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о создании ресурса.\n    Args:\n        data: Созданный ресурс\n        message: Сообщение о создании",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "no_content_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def no_content_response(\n    message: str = \"Operation completed successfully\"\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ без контента.\n    Args:\n        message: Сообщение об успехе\n    Returns:\n        JSONResponse: Ответ без контента\n    \"\"\"",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "not_found_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def not_found_response(\n    message: str = \"Resource not found\",\n    resource_type: Optional[str] = None,\n    resource_id: Optional[Union[str, int]] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о ненайденном ресурсе.\n    Args:\n        message: Сообщение об ошибке\n        resource_type: Тип ресурса",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "validation_error_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def validation_error_response(\n    message: str = \"Validation failed\",\n    errors: Optional[list] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой валидации.\n    Args:\n        message: Сообщение об ошибке\n        errors: Список ошибок валидации\n    Returns:",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def forbidden_response(\n    message: str = \"Access forbidden\",\n    required_permission: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о запрете доступа.\n    Args:\n        message: Сообщение об ошибке\n        required_permission: Требуемое разрешение\n    Returns:",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "unauthorized_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def unauthorized_response(\n    message: str = \"Authentication required\"\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о необходимости аутентификации.\n    Args:\n        message: Сообщение об ошибке\n    Returns:\n        JSONResponse: Ответ о необходимости аутентификации\n    \"\"\"",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "conflict_response",
+        "kind": 2,
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "peekOfCode": "def conflict_response(\n    message: str = \"Resource conflict\",\n    conflict_type: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о конфликте ресурсов.\n    Args:\n        message: Сообщение об ошибке\n        conflict_type: Тип конфликта\n    Returns:",
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
         "label": "permission_checker",
         "kind": 5,
         "importPath": "app.api.v1.domains.analytics.dashboard.router",
@@ -38231,7 +40801,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.reports.router",
         "description": "app.api.v1.domains.quality.reports.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/reports\", tags=[\"quality-reports\"])\n# === Report Management ===\n@router.post(\"\", response_model=ReportOperationResponse)\nasync def generate_report(\n    request: ReportGenerateRequest,\n    current_user: User = Depends(get_current_user),\n    # TODO: Add reports permissions\n    # _: None = Depends(require_reports_access),\n):\n    \"\"\"Генерация отчета по качеству.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/reports\", tags=[\"quality-reports\"])\n# === Report Management ===\n@router.post(\"\", response_model=ReportOperationResponse)\nasync def generate_report(\n    request: ReportGenerateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_reports_generate),\n):\n    \"\"\"Генерация отчета по качеству.\"\"\"",
         "detail": "app.api.v1.domains.quality.reports.router",
         "documentation": {}
     },
@@ -38411,7 +40981,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.specifications.router",
         "description": "app.api.v1.domains.quality.specifications.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/specifications\", tags=[\"specifications\"])\n# === Specification CRUD ===\n@router.post(\"\", response_model=SpecificationResponse)\nasync def create_specification(\n    request: SpecificationCreateRequest,\n    current_user: User = Depends(get_current_user),\n    # TODO: Add specifications permissions\n    # _: None = Depends(require_specifications_access),\n):\n    \"\"\"Создание новой спецификации.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/specifications\", tags=[\"specifications\"])\n# === Specification CRUD ===\n@router.post(\"\", response_model=SpecificationResponse)\nasync def create_specification(\n    request: SpecificationCreateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_specifications_create),\n):\n    \"\"\"Создание новой спецификации.\"\"\"",
         "detail": "app.api.v1.domains.quality.specifications.router",
         "documentation": {}
     },
@@ -38618,7 +41188,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.testing.router",
         "description": "app.api.v1.domains.quality.testing.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/testing\", tags=[\"testing\"])\n# === Test Case Endpoints ===\n@router.post(\"/test-cases\", response_model=TestCaseResponse)\nasync def create_test_case(\n    request: TestCaseCreateRequest,\n    current_user: User = Depends(get_current_user),\n    # TODO: Add testing permissions\n    # _: None = Depends(require_testing_access),\n):\n    \"\"\"Создание нового тест-кейса.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/testing\", tags=[\"testing\"])\n# === Test Case Endpoints ===\n@router.post(\"/test-cases\", response_model=TestCaseResponse)\nasync def create_test_case(\n    request: TestCaseCreateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_testing_create),\n):\n    \"\"\"Создание нового тест-кейса.\"\"\"",
         "detail": "app.api.v1.domains.quality.testing.router",
         "documentation": {}
     },

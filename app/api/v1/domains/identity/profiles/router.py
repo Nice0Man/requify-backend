@@ -5,10 +5,12 @@ Handles extended user profile operations including profile management,
 avatar uploads, preferences, and public profiles.
 """
 
-from typing import Annotated
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Annotated
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -41,17 +43,14 @@ permission_checker = PermissionChecker()
 
 router = APIRouter()
 
-
 def get_user_profile_service():
     """Lazy initialization of UserProfileService to avoid circular imports."""
     from app.services.user_profile_service import UserProfileService
 
     return UserProfileService()
 
-
 # # Current User Profile Management
 #
-
 
 @router.get(
     "/me",
@@ -91,11 +90,7 @@ async def get_my_extended_profile(
             last_login_at=current_user.last_login_at,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get extended profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get extended profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/me",
@@ -160,11 +155,7 @@ async def update_my_extended_profile(
             last_login_at=current_user.last_login_at,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/me/avatar",
@@ -200,11 +191,7 @@ async def upload_avatar(
             success=True, avatar_url=avatar_url, message="Avatar uploaded successfully"
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to upload avatar: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to upload avatar: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/me/avatar",
@@ -243,11 +230,7 @@ async def remove_avatar(
             success=True, message="Avatar removed successfully"
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to remove avatar: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to remove avatar: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/me/preferences",
@@ -312,11 +295,7 @@ async def update_user_preferences(
             time_format=updated_preferences.get("time_format", "24h"),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update preferences: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update preferences: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/me/preferences",
@@ -347,15 +326,10 @@ async def get_user_preferences(
             time_format=preferences.get("time_format", "24h"),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user preferences: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user preferences: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Other User Profiles
 #
-
 
 @router.get(
     "/{user_id}",
@@ -386,9 +360,7 @@ async def get_user_profile(
         # Get user basic info
         user = await user_management_service.get_user_by_id(db=db, user_id=user_id)
         if not user:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         # Get user profile with context-aware access
         profile = await get_user_profile_service().get_user_profile(
@@ -417,11 +389,7 @@ async def get_user_profile(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/{user_id}/public",
@@ -445,9 +413,7 @@ async def get_public_profile(
         # Get user basic info
         user = await user_management_service.get_user_by_id(db=db, user_id=user_id)
         if not user:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         # Get public profile info (limited data)
         profile = await user_profile_service.get_public_profile(db=db, user_id=user_id)
@@ -464,15 +430,10 @@ async def get_public_profile(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get public profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get public profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Profile Statistics and Activity
 #
-
 
 @router.get(
     "/{user_id}/activity",
@@ -538,11 +499,7 @@ async def get_user_activity(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user activity: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user activity: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/{user_id}/stats",
@@ -590,7 +547,4 @@ async def get_user_stats(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user statistics: {str(e)}",
-        )
+        return error_response(message=f"Failed to get user statistics: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

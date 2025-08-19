@@ -4,15 +4,17 @@ Comments Management Router.
 Роутер для управления комментариями к требованиям.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import SessionDep, CurrentUserDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
 from app.services.comment_service import comment_service
 from app.services.permission_service import permission_service
 from .schemas import (
+
     CommentAuthor,
     CommentCreateRequest,
     CommentRequirement,
@@ -25,7 +27,6 @@ from .schemas import (
 
 permission_checker = PermissionChecker()
 router = APIRouter()
-
 
 @router.get(
     "/",
@@ -87,7 +88,6 @@ async def get_comments(
         size=result["size"],
     )
 
-
 @router.post(
     "/",
     response_model=CommentResponse,
@@ -136,7 +136,6 @@ async def create_comment(
         updated_at=comment.updated_at,
     )
 
-
 @router.get(
     "/{comment_id}",
     response_model=CommentResponse,
@@ -157,9 +156,7 @@ async def get_comment(
     # Получаем комментарий из базы данных
     comment = await comment_service.crud.get(db, id=comment_id)
     if not comment:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="Comment not found"
-        )
+        return not_found_response(message="Comment not found")
 
     # Проверяем права доступа к требованию
     has_permission = await permission_service.check_permission(
@@ -200,7 +197,6 @@ async def get_comment(
         created_at=comment.created_at,
         updated_at=comment.updated_at,
     )
-
 
 @router.put(
     "/{comment_id}",
@@ -250,7 +246,6 @@ async def update_comment(
         updated_at=comment.updated_at,
     )
 
-
 @router.delete(
     "/{comment_id}",
     summary="Delete Comment",
@@ -274,7 +269,6 @@ async def delete_comment(
     )
 
     return {"success": success, "message": "Comment deleted successfully"}
-
 
 @router.get(
     "/requirements/{requirement_id}/comments",
@@ -310,7 +304,6 @@ async def get_requirement_comments(
         pages=result["pages"],
         size=result["size"],
     )
-
 
 @router.post(
     "/requirements/{requirement_id}/comments",
@@ -361,7 +354,6 @@ async def create_requirement_comment(
         updated_at=comment.updated_at,
     )
 
-
 @router.get(
     "/recent",
     response_model=List[CommentResponse],
@@ -407,7 +399,6 @@ async def get_recent_comments(
         )
         for comment in comments
     ]
-
 
 @router.get(
     "/statistics",

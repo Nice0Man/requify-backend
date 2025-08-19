@@ -5,9 +5,11 @@ Password Management Router.
 """
 
 from fastapi import APIRouter, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.v1.domains.auth.password.schemas import (
+
     PasswordChangeRequest,
     PasswordChangeResponse,
     PasswordResetRequest,
@@ -19,7 +21,6 @@ from app.api.v1.domains.auth.password.schemas import (
 from app.services.password_service import PasswordService
 
 router = APIRouter()
-
 
 @router.post(
     "/change", response_model=PasswordChangeResponse, summary="Change Password"
@@ -52,15 +53,11 @@ async def change_password(
 
     except Exception as e:
         if "invalid" in str(e).lower() or "incorrect" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=str(e),
-            )
+            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to change password",
         )
-
 
 @router.post(
     "/reset", response_model=PasswordResetResponse, summary="Request Password Reset"
@@ -93,7 +90,6 @@ async def request_password_reset(
             reset_token_sent=True,
         )
 
-
 @router.post(
     "/reset/confirm",
     response_model=PasswordResetConfirmResponse,
@@ -125,10 +121,7 @@ async def confirm_password_reset(
 
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=str(e),
-            )
+            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to reset password",

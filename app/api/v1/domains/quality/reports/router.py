@@ -5,12 +5,16 @@ API endpoints для отчетов по качеству.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from typing import List, Optional
-
 from app.api.dependencies.core.auth import get_current_user
+from app.api.dependencies.core.database import SessionDep
 
-# TODO: Create quality permissions module
-# from app.api.dependencies.permissions.quality import require_reports_access
+from app.api.dependencies.permissions.quality import (
+    require_reports_access,
+    require_reports_generate
+)
 from app.models.user import User
 
 from .schemas import (
@@ -29,24 +33,21 @@ from .schemas import (
 
 router = APIRouter(prefix="/reports", tags=["quality-reports"])
 
-
 # === Report Management ===
-
 
 @router.post("", response_model=ReportOperationResponse)
 async def generate_report(
     request: ReportGenerateRequest,
+    db: SessionDep,
     current_user: User = Depends(get_current_user),
-    # TODO: Add reports permissions
-    # _: None = Depends(require_reports_access),
+    _: None = Depends(require_reports_generate),
 ):
     """Генерация отчета по качеству."""
-    # TODO: Implement report generation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report generation not implemented",
+    # TODO: Implement with proper service
+    return error_response(
+        message="Report generation not implemented yet",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
-
 
 @router.get("", response_model=ReportListResponse)
 async def get_reports(
@@ -66,7 +67,6 @@ async def get_reports(
         detail="Reports listing not implemented",
     )
 
-
 @router.get("/{report_id}", response_model=ReportDetailResponse)
 async def get_report(
     report_id: int,
@@ -80,7 +80,6 @@ async def get_report(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Report retrieval not implemented",
     )
-
 
 @router.put("/{report_id}", response_model=ReportResponse)
 async def update_report(
@@ -97,7 +96,6 @@ async def update_report(
         detail="Report update not implemented",
     )
 
-
 @router.delete("/{report_id}")
 async def delete_report(
     report_id: int,
@@ -112,9 +110,7 @@ async def delete_report(
         detail="Report deletion not implemented",
     )
 
-
 # === Report Operations ===
-
 
 @router.post("/{report_id}/regenerate", response_model=ReportOperationResponse)
 async def regenerate_report(
@@ -130,7 +126,6 @@ async def regenerate_report(
         detail="Report regeneration not implemented",
     )
 
-
 @router.post("/{report_id}/cancel", response_model=ReportOperationResponse)
 async def cancel_report_generation(
     report_id: int,
@@ -144,7 +139,6 @@ async def cancel_report_generation(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Report cancellation not implemented",
     )
-
 
 @router.get("/{report_id}/download")
 async def download_report(
@@ -160,9 +154,7 @@ async def download_report(
         detail="Report download not implemented",
     )
 
-
 # === Report Templates ===
-
 
 @router.post("/templates", response_model=ReportTemplateResponse)
 async def create_report_template(
@@ -177,7 +169,6 @@ async def create_report_template(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Report template creation not implemented",
     )
-
 
 @router.get("/templates", response_model=List[ReportTemplateResponse])
 async def get_report_templates(
@@ -194,7 +185,6 @@ async def get_report_templates(
         detail="Report templates listing not implemented",
     )
 
-
 @router.get("/templates/{template_id}", response_model=ReportTemplateResponse)
 async def get_report_template(
     template_id: int,
@@ -208,7 +198,6 @@ async def get_report_template(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Report template retrieval not implemented",
     )
-
 
 @router.put("/templates/{template_id}", response_model=ReportTemplateResponse)
 async def update_report_template(
@@ -225,7 +214,6 @@ async def update_report_template(
         detail="Report template update not implemented",
     )
 
-
 @router.delete("/templates/{template_id}")
 async def delete_report_template(
     template_id: int,
@@ -240,9 +228,7 @@ async def delete_report_template(
         detail="Report template deletion not implemented",
     )
 
-
 # === Search and Statistics ===
-
 
 @router.post("/search", response_model=ReportListResponse)
 async def search_reports(
@@ -258,7 +244,6 @@ async def search_reports(
         detail="Reports search not implemented",
     )
 
-
 @router.get("/statistics", response_model=ReportStatisticsResponse)
 async def get_reports_statistics(
     project_id: Optional[int] = None,
@@ -273,9 +258,7 @@ async def get_reports_statistics(
         detail="Reports statistics not implemented",
     )
 
-
 # === Specific Report Types ===
-
 
 @router.get("/test-execution/{project_id}")
 async def get_test_execution_report(
@@ -293,7 +276,6 @@ async def get_test_execution_report(
         detail="Test execution report not implemented",
     )
 
-
 @router.get("/requirements-coverage/{project_id}")
 async def get_requirements_coverage_report(
     project_id: int,
@@ -307,7 +289,6 @@ async def get_requirements_coverage_report(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Requirements coverage report not implemented",
     )
-
 
 @router.get("/defect-summary/{project_id}")
 async def get_defect_summary_report(
@@ -324,7 +305,6 @@ async def get_defect_summary_report(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Defect summary report not implemented",
     )
-
 
 @router.get("/traceability-matrix/{project_id}")
 async def get_traceability_matrix(

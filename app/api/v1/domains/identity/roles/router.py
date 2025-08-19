@@ -5,10 +5,12 @@ Handles role-related operations including CRUD operations,
 role assignments, and permission management.
 """
 
-from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -39,7 +41,6 @@ router = APIRouter()
 
 # # Role CRUD Operations
 #
-
 
 @router.get(
     "/",
@@ -87,11 +88,7 @@ async def get_roles(
             roles=roles, total=total, page=(skip // limit) + 1, size=limit, pages=pages
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get roles: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get roles: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/",
@@ -140,11 +137,7 @@ async def create_role(
             updated_by=None,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to create role: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to create role: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/{role_id}",
@@ -165,9 +158,7 @@ async def get_role_details(
     try:
         role = await role_service.get_role_with_details(db=db, role_id=role_id)
         if not role:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Role not found"
-            )
+            return not_found_response(message="Role not found")
 
         # Get role permissions and users count
         permissions = await role_service.get_role_permissions(db=db, role_id=role_id)
@@ -189,11 +180,7 @@ async def get_role_details(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get role details: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get role details: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{role_id}",
@@ -233,9 +220,7 @@ async def update_role(
         )
 
         if not updated_role:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Role not found"
-            )
+            return not_found_response(message="Role not found")
 
         # Get role permissions and users count
         permissions = await role_service.get_role_permissions(db=db, role_id=role_id)
@@ -257,11 +242,7 @@ async def update_role(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update role: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update role: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{role_id}",
@@ -288,22 +269,15 @@ async def delete_role(
             db=db, role_id=role_id, deleted_by=current_user.id
         )
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Role not found"
-            )
+            return not_found_response(message="Role not found")
         return {"success": True, "message": "Role deleted successfully"}
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to delete role: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to delete role: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Role Permissions Management
 #
-
 
 @router.get(
     "/{role_id}/permissions",
@@ -325,11 +299,7 @@ async def get_role_permissions(
         permissions = await role_service.get_role_permissions(db=db, role_id=role_id)
         return permissions
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get role permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get role permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{role_id}/permissions",
@@ -361,9 +331,7 @@ async def update_role_permissions(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Role not found"
-            )
+            return not_found_response(message="Role not found")
 
         return RoleOperationResponse(
             success=True,
@@ -373,15 +341,10 @@ async def update_role_permissions(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update role permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update role permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Role Users Management
 #
-
 
 @router.get(
     "/{role_id}/users",
@@ -407,15 +370,10 @@ async def get_role_users(
         )
         return users
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get role users: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get role users: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Role Statistics
 #
-
 
 @router.get(
     "/{role_id}/stats",
@@ -437,7 +395,4 @@ async def get_role_stats(
         stats = await role_service.get_role_stats(db=db, role_id=role_id)
         return stats
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get role stats: {str(e)}",
-        )
+        return error_response(message=f"Failed to get role stats: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

@@ -5,12 +5,17 @@ API endpoints для операций со спецификациями.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from typing import List, Optional
-
 from app.api.dependencies.core.auth import get_current_user
+from app.api.dependencies.core.database import SessionDep
 
-# TODO: Create quality permissions module
-# from app.api.dependencies.permissions.quality import require_specifications_access
+from app.api.dependencies.permissions.quality import (
+    require_specifications_access,
+    require_specifications_create,
+    require_specifications_edit
+)
 from app.models.user import User
 
 from .schemas import (
@@ -36,24 +41,21 @@ from .schemas import (
 
 router = APIRouter(prefix="/specifications", tags=["specifications"])
 
-
 # === Specification CRUD ===
-
 
 @router.post("", response_model=SpecificationResponse)
 async def create_specification(
     request: SpecificationCreateRequest,
+    db: SessionDep,
     current_user: User = Depends(get_current_user),
-    # TODO: Add specifications permissions
-    # _: None = Depends(require_specifications_access),
+    _: None = Depends(require_specifications_create),
 ):
     """Создание новой спецификации."""
-    # TODO: Implement specification creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification creation not implemented",
+    # TODO: Implement with proper service
+    return error_response(
+        message="Specification creation not implemented yet",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
-
 
 @router.get("", response_model=SpecificationListResponse)
 async def get_specifications(
@@ -73,7 +75,6 @@ async def get_specifications(
         detail="Specifications listing not implemented",
     )
 
-
 @router.get("/{specification_id}", response_model=SpecificationDetailResponse)
 async def get_specification(
     specification_id: int,
@@ -87,7 +88,6 @@ async def get_specification(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Specification retrieval not implemented",
     )
-
 
 @router.put("/{specification_id}", response_model=SpecificationResponse)
 async def update_specification(
@@ -104,7 +104,6 @@ async def update_specification(
         detail="Specification update not implemented",
     )
 
-
 @router.delete("/{specification_id}")
 async def delete_specification(
     specification_id: int,
@@ -119,9 +118,7 @@ async def delete_specification(
         detail="Specification deletion not implemented",
     )
 
-
 # === Version Management ===
-
 
 @router.post(
     "/{specification_id}/versions", response_model=SpecificationVersionResponse
@@ -140,7 +137,6 @@ async def create_specification_version(
         detail="Specification version creation not implemented",
     )
 
-
 @router.get(
     "/{specification_id}/versions", response_model=List[SpecificationVersionResponse]
 )
@@ -157,7 +153,6 @@ async def get_specification_versions(
         detail="Specification versions listing not implemented",
     )
 
-
 @router.post("/versions/compare", response_model=SpecificationVersionCompareResponse)
 async def compare_specification_versions(
     request: SpecificationVersionCompareRequest,
@@ -172,9 +167,7 @@ async def compare_specification_versions(
         detail="Specification version comparison not implemented",
     )
 
-
 # === Review Process ===
-
 
 @router.post("/{specification_id}/reviews", response_model=SpecificationReviewResponse)
 async def create_specification_review(
@@ -190,7 +183,6 @@ async def create_specification_review(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Specification review creation not implemented",
     )
-
 
 @router.get(
     "/{specification_id}/reviews", response_model=List[SpecificationReviewResponse]
@@ -208,7 +200,6 @@ async def get_specification_reviews(
         detail="Specification reviews listing not implemented",
     )
 
-
 @router.put("/reviews/{review_id}", response_model=SpecificationReviewResponse)
 async def update_specification_review(
     review_id: int,
@@ -225,9 +216,7 @@ async def update_specification_review(
         detail="Specification review update not implemented",
     )
 
-
 # === Templates ===
-
 
 @router.post("/templates", response_model=SpecificationTemplateResponse)
 async def create_specification_template(
@@ -242,7 +231,6 @@ async def create_specification_template(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Specification template creation not implemented",
     )
-
 
 @router.get("/templates", response_model=List[SpecificationTemplateResponse])
 async def get_specification_templates(
@@ -259,7 +247,6 @@ async def get_specification_templates(
         detail="Specification templates listing not implemented",
     )
 
-
 @router.get("/templates/{template_id}", response_model=SpecificationTemplateResponse)
 async def get_specification_template(
     template_id: int,
@@ -274,9 +261,7 @@ async def get_specification_template(
         detail="Specification template retrieval not implemented",
     )
 
-
 # === Search and Filter ===
-
 
 @router.post("/search", response_model=SpecificationListResponse)
 async def search_specifications(
@@ -292,9 +277,7 @@ async def search_specifications(
         detail="Specifications search not implemented",
     )
 
-
 # === Statistics and Export ===
-
 
 @router.get("/statistics", response_model=SpecificationStatisticsResponse)
 async def get_specifications_statistics(
@@ -309,7 +292,6 @@ async def get_specifications_statistics(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Specifications statistics not implemented",
     )
-
 
 @router.post("/export", response_model=SpecificationExportResponse)
 async def export_specifications(

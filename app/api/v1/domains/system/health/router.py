@@ -5,11 +5,13 @@ System Health Monitoring Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
-
 from app.api.v1.domains.system.health.schemas import (
+
     SystemHealthResponse,
     DetailedHealthResponse,
     HealthCheckRequest,
@@ -18,7 +20,6 @@ from app.services.admin_service import AdminService, admin_service
 
 permission_checker = PermissionChecker()
 router = APIRouter()
-
 
 @router.get("/", response_model=SystemHealthResponse, summary="Get System Health")
 async def get_system_health():
@@ -38,11 +39,7 @@ async def get_system_health():
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Health check failed: {str(e)}",
-        )
-
+        return error_response(message=f"Health check failed: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.get(
     "/detailed",
@@ -80,11 +77,7 @@ async def get_detailed_health(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Detailed health check failed: {str(e)}",
-        )
-
+        return error_response(message=f"Detailed health check failed: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/check",
@@ -124,7 +117,4 @@ async def run_health_check(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Health check execution failed: {str(e)}",
-        )
+        return error_response(message=f"Health check execution failed: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -5,16 +5,16 @@ Handles all user-related operations including CRUD operations,
 activation/deactivation, and role assignments.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies.core.auth import CurrentActiveUserDep
 from app.api.dependencies.core.database import SessionDep
 from app.core.constants import Permission
-
-
 from app.services.admin_service import admin_service
 from .schemas import (
+
     UserCreateRequest,
     UserUpdateRequest,
     UserProfileUpdateRequest,
@@ -27,7 +27,6 @@ from .schemas import (
 )
 
 router = APIRouter()
-
 
 def _get_context_type(assignment):
     """Determine context type based on assignment fields"""
@@ -42,7 +41,6 @@ def _get_context_type(assignment):
     else:
         return "system"
 
-
 def _get_context_id(assignment):
     """Determine context ID based on assignment fields"""
     if assignment.project_id:
@@ -56,9 +54,7 @@ def _get_context_id(assignment):
     else:
         return None
 
-
 # User CRUD Operations
-
 
 @router.get(
     "/",
@@ -114,11 +110,7 @@ async def get_users(
             users=users, total=total, page=(skip // limit) + 1, size=limit, pages=pages
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get users: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get users: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/",
@@ -166,11 +158,7 @@ async def create_user(
             last_login_at=None,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to create user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to create user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/me",
@@ -212,11 +200,7 @@ async def get_my_profile(
             last_login_at=current_user.last_login_at,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/me",
@@ -287,11 +271,7 @@ async def update_my_profile(
             last_login_at=updated_user.last_login_at,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update profile: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update profile: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/{user_id}",
@@ -312,9 +292,7 @@ async def get_user_by_id(
     try:
         user = await admin_service.get_user_by_id(db=db, user_id=user_id)
         if not user:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         # Get user profile - lazy import
         from app.services.user_profile_service import user_profile_service
@@ -342,11 +320,7 @@ async def get_user_by_id(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{user_id}",
@@ -396,9 +370,7 @@ async def update_user(
         # Get updated user
         updated_user = await admin_service.get_user_by_id(db=db, user_id=user_id)
         if not updated_user:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         # Get user profile - lazy import
         from app.services.user_profile_service import user_profile_service
@@ -426,11 +398,7 @@ async def update_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{user_id}",
@@ -461,9 +429,7 @@ async def delete_user(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         return UserOperationResponse(
             success=True, message="User deleted successfully", user_id=user_id
@@ -471,14 +437,9 @@ async def delete_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to delete user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to delete user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # User State Management
-
 
 @router.post(
     "/{user_id}/activate",
@@ -500,9 +461,7 @@ async def activate_user(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         return UserOperationResponse(
             success=True, message="User activated successfully", user_id=user_id
@@ -510,11 +469,7 @@ async def activate_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to activate user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to activate user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/{user_id}/deactivate",
@@ -543,9 +498,7 @@ async def deactivate_user(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
-            )
+            return not_found_response(message="User not found")
 
         return UserOperationResponse(
             success=True, message="User deactivated successfully", user_id=user_id
@@ -553,15 +506,10 @@ async def deactivate_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to deactivate user: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to deactivate user: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # User Role Management
 #
-
 
 @router.get(
     "/{user_id}/roles",
@@ -599,11 +547,7 @@ async def get_user_roles(
             for assignment in user_roles
         ]
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user roles: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user roles: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/{user_id}/roles",
@@ -644,11 +588,7 @@ async def assign_role_to_user(
             assigned_by=assignment.assigned_by,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to assign role: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to assign role: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{user_id}/roles/{assignment_id}",
@@ -688,7 +628,4 @@ async def revoke_role_assignment(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to revoke role assignment: {str(e)}",
-        )
+        return error_response(message=f"Failed to revoke role assignment: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

@@ -5,9 +5,11 @@ Projects Core Router.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status, Query
-from typing import List, Optional
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import List, Optional
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     # ProjectPermissions,
@@ -18,7 +20,6 @@ router = APIRouter()
 
 # # Project Lifecycle Management
 #
-
 
 @router.get("/")
 async def get_projects(
@@ -38,7 +39,6 @@ async def get_projects(
     # TODO: Implement projects list with access filtering
     return {"projects": []}
 
-
 @router.post("/")
 async def create_project(
     # project_data: ProjectCreate,
@@ -53,7 +53,6 @@ async def create_project(
     # TODO: Implement project creation
     return {"message": "Project created"}
 
-
 @router.get("/{project_id}")
 async def get_project(
     project_id: int,
@@ -67,7 +66,6 @@ async def get_project(
     """
     # TODO: Implement project retrieval
     return {"project": {"id": project_id}}
-
 
 @router.put("/{project_id}")
 async def update_project(
@@ -84,7 +82,6 @@ async def update_project(
     # TODO: Implement project update
     return {"message": "Project updated"}
 
-
 @router.delete("/{project_id}")
 async def delete_project(
     project_id: int,
@@ -98,7 +95,6 @@ async def delete_project(
     """
     # TODO: Implement project deletion
     return {"message": f"Project {project_id} deleted"}
-
 
 @router.post("/{project_id}/archive")
 async def archive_project(
@@ -114,7 +110,6 @@ async def archive_project(
     # TODO: Implement project archiving
     return {"message": f"Project {project_id} archived"}
 
-
 @router.post("/{project_id}/restore")
 async def restore_project(
     project_id: int,
@@ -129,10 +124,8 @@ async def restore_project(
     # TODO: Implement project restoration
     return {"message": f"Project {project_id} restored"}
 
-
 # # Project Team & Access Management
 #
-
 
 @router.get("/{project_id}/members")
 async def get_project_members(
@@ -150,7 +143,6 @@ async def get_project_members(
     # TODO: Implement project members list
     return {"members": []}
 
-
 @router.post("/{project_id}/members")
 async def add_project_member(
     project_id: int,
@@ -165,7 +157,6 @@ async def add_project_member(
     """
     # TODO: Implement adding project member
     return {"message": "Member added to project"}
-
 
 @router.put("/{project_id}/members/{user_id}")
 async def update_project_member_role(
@@ -183,7 +174,6 @@ async def update_project_member_role(
     # TODO: Implement updating project member role
     return {"message": f"Role updated for user {user_id} in project {project_id}"}
 
-
 @router.delete("/{project_id}/members/{user_id}")
 async def remove_project_member(
     project_id: int,
@@ -198,7 +188,6 @@ async def remove_project_member(
     """
     # TODO: Implement removing project member
     return {"message": f"User {user_id} removed from project {project_id}"}
-
 
 @router.get("/{project_id}/permissions")
 async def get_project_permissions(

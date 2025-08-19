@@ -5,11 +5,13 @@ System Audit and Logging Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
-
 from app.api.v1.domains.system.audit.schemas import (
+
     AuditLogListResponse,
     AuditLogFilterRequest,
     SecurityEventListResponse,
@@ -24,9 +26,7 @@ from app.services.admin_service import AdminService, admin_service
 permission_checker = PermissionChecker()
 router = APIRouter()
 
-
 # === Audit Logs ===
-
 
 @router.get(
     "/log",
@@ -78,14 +78,9 @@ async def get_audit_log(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get audit log: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get audit log: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Security Events ===
-
 
 @router.get(
     "/security-events",
@@ -139,11 +134,7 @@ async def get_security_events(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get security events: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get security events: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/security-events/{event_id}/resolve",
@@ -173,14 +164,9 @@ async def resolve_security_event(
         return {"success": True, "message": "Security event resolved successfully"}
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to resolve security event: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to resolve security event: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # === System Logs ===
-
 
 @router.get(
     "/logs",
@@ -227,7 +213,4 @@ async def get_system_logs(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get system logs: {str(e)}",
-        )
+        return error_response(message=f"Failed to get system logs: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

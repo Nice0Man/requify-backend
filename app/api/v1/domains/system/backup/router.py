@@ -5,11 +5,13 @@ System Backup and Maintenance Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
-
 from app.api.v1.domains.system.backup.schemas import (
+
     BackupCreateRequest,
     BackupCreateResponse,
     BackupListResponse,
@@ -30,9 +32,7 @@ from app.services.admin_service import AdminService, admin_service
 permission_checker = PermissionChecker()
 router = APIRouter()
 
-
 # === Backup Operations ===
-
 
 @router.post(
     "/create",
@@ -74,11 +74,7 @@ async def create_backup(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to create backup: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to create backup: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.get(
     "/list",
@@ -124,11 +120,7 @@ async def list_backups(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get backups list: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get backups list: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/restore",
@@ -169,11 +161,7 @@ async def restore_backup(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to restore backup: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to restore backup: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{backup_id}",
@@ -205,14 +193,9 @@ async def delete_backup(
         return {"success": True, "message": "Backup deleted successfully"}
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to delete backup: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to delete backup: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # === Maintenance Operations ===
-
 
 @router.get(
     "/maintenance/status",
@@ -238,11 +221,7 @@ async def get_maintenance_status():
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get maintenance status: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get maintenance status: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/maintenance/start",
@@ -282,11 +261,7 @@ async def start_maintenance(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to start maintenance: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to start maintenance: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/maintenance/stop",
@@ -320,14 +295,9 @@ async def stop_maintenance(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to stop maintenance: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to stop maintenance: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Cache Operations ===
-
 
 @router.get(
     "/cache/stats",
@@ -356,11 +326,7 @@ async def get_cache_stats(current_user: CurrentUserDep):
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get cache stats: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get cache stats: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/cache/clear",
@@ -397,7 +363,4 @@ async def clear_cache(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to clear cache: {str(e)}",
-        )
+        return error_response(message=f"Failed to clear cache: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -4,14 +4,16 @@ Relationships Management Router.
 Роутер для управления отношениями между требованиями.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import SessionDep, CurrentUserDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
 from app.services.relationship_service import relationship_service
 from .schemas import (
+
     RelationshipTypeEnum,
     RelationshipCreateRequest,
     RelationshipResponse,
@@ -23,7 +25,6 @@ from .schemas import (
 
 permission_checker = PermissionChecker()
 router = APIRouter()
-
 
 @router.get(
     "/",
@@ -135,7 +136,6 @@ async def get_relationships(
 
     return relationships
 
-
 @router.post(
     "/",
     response_model=RelationshipResponse,
@@ -186,7 +186,6 @@ async def create_relationship(
         created_at=relationship.created_at,
     )
 
-
 @router.delete(
     "/",
     summary="Delete Relationship",
@@ -214,7 +213,6 @@ async def delete_relationship(
     )
 
     return {"success": success, "message": "Relationship deleted successfully"}
-
 
 @router.get(
     "/requirements/{requirement_id}/dependencies",
@@ -314,7 +312,6 @@ async def get_requirement_dependencies(
             for req in transitive_dependents
         ],
     )
-
 
 @router.get(
     "/requirements/{requirement_id}/trace-matrix",

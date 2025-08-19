@@ -4,13 +4,15 @@ Activity Management Router.
 Роутер для работы с активностью пользователей.
 """
 
+from fastapi import APIRouter, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from typing import Optional, List
 from datetime import datetime
-from fastapi import APIRouter, Depends, Query
-
 from app.api.dependencies import SessionDep, CurrentUserDep
 from app.services.activity_service import activity_service, ActivityType
 from .schemas import (
+
     ActivityType,
     ActivityFeedResponse,
     ActivityStatisticsResponse,
@@ -18,7 +20,6 @@ from .schemas import (
 )
 
 router = APIRouter()
-
 
 @router.get(
     "/feed",
@@ -63,7 +64,6 @@ async def get_activity_feed(
         size=result["size"],
     )
 
-
 @router.get(
     "/projects/{project_id}/feed",
     response_model=List,
@@ -97,7 +97,6 @@ async def get_project_activity_feed(
 
     return activities
 
-
 @router.get(
     "/recent",
     response_model=List,
@@ -119,7 +118,6 @@ async def get_recent_activity(
     )
 
     return activities
-
 
 @router.get(
     "/statistics",

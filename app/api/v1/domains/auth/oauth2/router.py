@@ -5,9 +5,11 @@ OAuth2 Authentication Router.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
 from app.api.dependencies import get_current_user, SessionDep
 from app.api.v1.domains.auth.oauth2.schemas import (
+
     OAuth2AuthorizeRequest,
     OAuth2AuthorizeResponse,
     OAuth2CallbackRequest,
@@ -21,7 +23,6 @@ from app.models.user import User
 from app.services.auth0_service import Auth0Service
 
 router = APIRouter()
-
 
 @router.post(
     "/authorize", response_model=OAuth2AuthorizeResponse, summary="OAuth2 Authorize"
@@ -55,11 +56,7 @@ async def oauth2_authorize(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
-        )
-
+        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/callback/{provider}",
@@ -115,15 +112,11 @@ async def oauth2_callback(
 
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=str(e),
-            )
+            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="OAuth2 authentication failed",
         )
-
 
 @router.post("/link", response_model=OAuth2LinkResponse, summary="Link OAuth2 Account")
 async def link_oauth2_account(
@@ -158,11 +151,7 @@ async def link_oauth2_account(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
-        )
-
+        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/unlink", response_model=OAuth2UnlinkResponse, summary="Unlink OAuth2 Account"
@@ -197,7 +186,4 @@ async def unlink_oauth2_account(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(e),
-        )
+        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

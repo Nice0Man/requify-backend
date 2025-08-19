@@ -5,11 +5,13 @@ System Metrics and Statistics Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from app.api.dependencies import CurrentUserDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
-
 from app.api.v1.domains.system.metrics.schemas import (
+
     SystemMetricsResponse,
     MetricsResponse,
     MetricsRequest,
@@ -25,9 +27,7 @@ from app.services.admin_service import AdminService, admin_service
 permission_checker = PermissionChecker()
 router = APIRouter()
 
-
 # === System Metrics ===
-
 
 @router.get(
     "/system",
@@ -81,11 +81,7 @@ async def get_system_metrics(current_user: CurrentUserDep):
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get system metrics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get system metrics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/timeseries",
@@ -126,14 +122,9 @@ async def get_metrics_timeseries(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get metrics timeseries: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get metrics timeseries: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Application Metrics ===
-
 
 @router.get(
     "/application",
@@ -179,14 +170,9 @@ async def get_application_metrics(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get application metrics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get application metrics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Error Metrics ===
-
 
 @router.get(
     "/errors",
@@ -218,11 +204,7 @@ async def get_error_metrics(current_user: CurrentUserDep):
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get error metrics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get error metrics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.get(
     "/errors/details",
@@ -258,14 +240,9 @@ async def get_error_details(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get error details: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get error details: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Performance Metrics ===
-
 
 @router.get(
     "/performance",
@@ -301,14 +278,9 @@ async def get_performance_metrics(current_user: CurrentUserDep):
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get performance metrics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get performance metrics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === Custom Metrics ===
-
 
 @router.get(
     "/custom",
@@ -335,7 +307,4 @@ async def get_custom_metrics(current_user: CurrentUserDep):
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get custom metrics: {str(e)}",
-        )
+        return error_response(message=f"Failed to get custom metrics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

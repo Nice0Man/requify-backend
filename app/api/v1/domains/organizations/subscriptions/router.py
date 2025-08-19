@@ -5,9 +5,11 @@ Subscriptions Management Router.
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status, Query
-from typing import List, Optional
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import List, Optional
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     # BillingPermissions,
@@ -18,7 +20,6 @@ router = APIRouter()
 
 # # Subscription Management
 #
-
 
 @router.get("/{company_id}")
 async def get_company_subscription(
@@ -34,7 +35,6 @@ async def get_company_subscription(
     # TODO: Implement subscription retrieval
     return {"subscription": {"company_id": company_id}}
 
-
 @router.put("/{company_id}")
 async def update_subscription(
     company_id: int,
@@ -49,7 +49,6 @@ async def update_subscription(
     """
     # TODO: Implement subscription update
     return {"message": "Subscription updated"}
-
 
 @router.get("/{company_id}/usage")
 async def get_subscription_usage(
@@ -77,7 +76,6 @@ async def get_subscription_usage(
         },
     }
 
-
 @router.get("/plans")
 async def get_subscription_plans(
     # current_user: CurrentActiveUserDep,
@@ -90,10 +88,8 @@ async def get_subscription_plans(
     # TODO: Implement plans listing
     return {"plans": []}
 
-
 # # Billing History
 #
-
 
 @router.get("/{company_id}/billing/history")
 async def get_billing_history(
@@ -111,7 +107,6 @@ async def get_billing_history(
     # TODO: Implement billing history
     return {"history": []}
 
-
 @router.get("/{company_id}/billing/invoices/{invoice_id}")
 async def get_invoice(
     company_id: int,
@@ -126,7 +121,6 @@ async def get_invoice(
     """
     # TODO: Implement invoice retrieval
     return {"invoice": {"id": invoice_id, "company_id": company_id}}
-
 
 @router.get("/{company_id}/billing/invoices/{invoice_id}/download")
 async def download_invoice(
@@ -143,10 +137,8 @@ async def download_invoice(
     # TODO: Implement invoice download
     return {"download_url": f"/downloads/invoices/{invoice_id}.pdf"}
 
-
 # # Payment Methods
 #
-
 
 @router.get("/{company_id}/payment-methods")
 async def get_payment_methods(
@@ -161,7 +153,6 @@ async def get_payment_methods(
     """
     # TODO: Implement payment methods retrieval
     return {"payment_methods": []}
-
 
 @router.post("/{company_id}/payment-methods")
 async def add_payment_method(
@@ -178,7 +169,6 @@ async def add_payment_method(
     # TODO: Implement payment method addition
     return {"message": "Payment method added"}
 
-
 @router.delete("/{company_id}/payment-methods/{method_id}")
 async def remove_payment_method(
     company_id: int,
@@ -194,10 +184,8 @@ async def remove_payment_method(
     # TODO: Implement payment method removal
     return {"message": f"Payment method {method_id} removed"}
 
-
 # # Subscription Analytics
 #
-
 
 @router.get("/{company_id}/analytics")
 async def get_subscription_analytics(

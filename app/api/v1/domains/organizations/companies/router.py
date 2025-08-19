@@ -5,10 +5,12 @@ Handles all company-related operations including CRUD operations,
 settings management, and subscription management.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     # CompanyPermissions,
@@ -50,7 +52,6 @@ company_contact_service = CompanyContactService()
 permission_checker = PermissionChecker()
 
 router = APIRouter()
-
 
 @router.get(
     "/",
@@ -111,11 +112,7 @@ async def get_companies(
             pages=pages,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get companies: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get companies: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/",
@@ -168,11 +165,7 @@ async def create_company(
             subscription_expires_at=None,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to create company: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to create company: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/my",
@@ -200,9 +193,7 @@ async def get_my_company(
             db=db, company_id=current_user.company_id
         )
         if not company:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Company not found"
-            )
+            return not_found_response(message="Company not found")
 
         # Get company statistics
         stats = await company_management_service.get_company_statistics(
@@ -229,11 +220,7 @@ async def get_my_company(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get company: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/my",
@@ -288,9 +275,7 @@ async def update_my_company(
             db=db, company_id=current_user.company_id
         )
         if not updated_company:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Company not found"
-            )
+            return not_found_response(message="Company not found")
 
         # Get company statistics
         stats = await company_management_service.get_company_statistics(
@@ -317,11 +302,7 @@ async def update_my_company(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update company: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update company: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/{company_id}",
@@ -351,9 +332,7 @@ async def get_company(
             db=db, company_id=company_id
         )
         if not company:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Company not found"
-            )
+            return not_found_response(message="Company not found")
 
         # Get company statistics
         stats = await company_management_service.get_company_statistics(
@@ -380,11 +359,7 @@ async def get_company(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get company: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.delete(
     "/{company_id}",
@@ -411,9 +386,7 @@ async def delete_company(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND, detail="Company not found"
-            )
+            return not_found_response(message="Company not found")
 
         return CompanyOperationResponse(
             success=True, message="Company deleted successfully", company_id=company_id
@@ -421,15 +394,10 @@ async def delete_company(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to delete company: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to delete company: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Company Settings Management
 #
-
 
 @router.get(
     "/{company_id}/settings",
@@ -485,11 +453,7 @@ async def get_company_settings(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get company settings: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company settings: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{company_id}/settings",
@@ -543,15 +507,10 @@ async def update_company_settings(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update company settings: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update company settings: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Company Contact Management
 #
-
 
 @router.get(
     "/{company_id}/contact",
@@ -602,11 +561,7 @@ async def get_company_contact(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get company contact: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company contact: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{company_id}/contact",
@@ -655,15 +610,10 @@ async def update_company_contact(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update company contact: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to update company contact: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Company Branding Management
 #
-
 
 @router.get(
     "/{company_id}/branding",
@@ -713,11 +663,7 @@ async def get_company_branding(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get company branding: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company branding: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.put(
     "/{company_id}/branding",
@@ -765,7 +711,4 @@ async def update_company_branding(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to update company branding: {str(e)}",
-        )
+        return error_response(message=f"Failed to update company branding: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

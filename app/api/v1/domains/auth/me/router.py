@@ -4,10 +4,12 @@ Current User (Me) Router.
 Роутер для операций с данными текущего пользователя.
 """
 
-from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
 from app.api.v1.domains.auth.me.schemas import (
+
     CurrentUserResponse,
     AccountStatusResponse,
 )
@@ -15,7 +17,6 @@ from app.models.user import User
 from app.api.dependencies import CurrentUserDep, SessionDep
 
 router = APIRouter()
-
 
 @router.get("/", response_model=CurrentUserResponse, summary="Get Current User Info")
 async def get_current_user_info(
@@ -31,14 +32,13 @@ async def get_current_user_info(
 
     fresh_user = await crud_user.get_by_email_with_profile(db, email=current_user.email)
     if not fresh_user:
-        raise HTTPException(status_code=404, detail="User not found")
+        return not_found_response(message="User not found")
 
     user_detailed = UserDetailed.model_validate(fresh_user)
 
     return CurrentUserResponse(
         user=user_detailed,
     )
-
 
 @router.get(
     "/status", response_model=AccountStatusResponse, summary="Get Account Status"

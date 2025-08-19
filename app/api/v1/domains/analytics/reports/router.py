@@ -5,10 +5,12 @@ Handles analytics reporting operations including business intelligence reports,
 data visualization, trend analysis, and automated reporting.
 """
 
-from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import Optional, List
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -40,7 +42,6 @@ router = APIRouter()
 
 # # Analytics Reports Generation
 #
-
 
 @router.get(
     "/",
@@ -89,11 +90,7 @@ async def get_analytics_reports(
             pages=pages,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get analytics reports: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get analytics reports: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/generate",
@@ -139,7 +136,4 @@ async def generate_analytics_report(
             estimated_completion=result.get("estimated_completion"),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to generate analytics report: {str(e)}",
-        )
+        return error_response(message=f"Failed to generate analytics report: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

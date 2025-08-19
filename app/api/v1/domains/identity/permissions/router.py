@@ -5,10 +5,12 @@ Handles permission-related operations including permission checking,
 permission matrix, and system-wide permission management.
 """
 
-from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
+from typing import List, Optional
 from app.api.dependencies import (
+
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
@@ -41,7 +43,6 @@ router = APIRouter()
 
 # # Permission Checking
 #
-
 
 @router.post(
     "/check",
@@ -77,11 +78,7 @@ async def check_permissions(
             expires_at=None,
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to check permission: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to check permission: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/check-bulk",
@@ -124,11 +121,7 @@ async def check_bulk_permissions(
             user_id=current_user.id, permissions=permission_results
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to check permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to check permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/my-permissions",
@@ -179,15 +172,10 @@ async def get_my_permissions(
             effective_permissions=list(user_perms),
         )
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # System Permission Management
 #
-
 
 @router.get(
     "/",
@@ -210,11 +198,7 @@ async def get_all_permissions(
         permissions = await permission_service.get_all_permissions(db=db)
         return permissions
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/matrix",
@@ -241,15 +225,10 @@ async def get_permission_matrix(
         )
         return matrix
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get permission matrix: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get permission matrix: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # User-Specific Permission Management
 #
-
 
 @router.get(
     "/users/{user_id}",
@@ -275,11 +254,7 @@ async def get_user_permissions(
         )
         return permissions
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get user permissions: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user permissions: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/users/{user_id}/grant",
@@ -325,11 +300,7 @@ async def grant_permission_to_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to grant permission: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to grant permission: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.post(
     "/users/{user_id}/revoke",
@@ -374,15 +345,10 @@ async def revoke_permission_from_user(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to revoke permission: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to revoke permission: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # # Permission Auditing
 #
-
 
 @router.get(
     "/audit/{user_id}",
@@ -406,11 +372,7 @@ async def get_permission_audit_trail(
         )
         return audit_trail
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get permission audit trail: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get permission audit trail: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 @router.get(
     "/usage-stats",
@@ -431,7 +393,4 @@ async def get_permission_usage_stats(
         stats = await permission_service.get_permission_usage_stats(db=db)
         return stats
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to get permission usage stats: {str(e)}",
-        )
+        return error_response(message=f"Failed to get permission usage stats: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)

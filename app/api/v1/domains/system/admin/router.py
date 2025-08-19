@@ -5,11 +5,13 @@ System Administration Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+
 from app.api.dependencies import CurrentUserDep, SessionDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
-
 from app.api.v1.domains.system.admin.schemas import (
+
     AdminUserListResponse,
     AdminCompanyListResponse,
     UserStatsResponse,
@@ -25,9 +27,7 @@ from app.services.file_service import file_service
 permission_checker = PermissionChecker()
 router = APIRouter()
 
-
 # === User Administration ===
-
 
 @router.get(
     "/users",
@@ -77,11 +77,7 @@ async def get_admin_users(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get users: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get users: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.get(
     "/users/stats",
@@ -115,11 +111,7 @@ async def get_users_stats(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get user statistics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get user statistics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/users/action",
@@ -160,14 +152,9 @@ async def perform_user_action(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Failed to perform user action: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to perform user action: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
 
 # === Company Administration ===
-
 
 @router.get(
     "/companies",
@@ -215,11 +202,7 @@ async def get_admin_companies(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get companies: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get companies: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.get(
     "/companies/stats",
@@ -252,14 +235,9 @@ async def get_companies_stats(
         )
 
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get company statistics: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get company statistics: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 # === File Storage Administration ===
-
 
 @router.get(
     "/file-service/health",
@@ -281,11 +259,7 @@ async def get_file_service_health(
     try:
         return file_service.get_health_status()
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get file service health: {str(e)}",
-        )
-
+        return error_response(message=f"Failed to get file service health: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/file-service/fix-bucket-policies",
@@ -322,7 +296,4 @@ async def fix_bucket_policies(
     except HTTPException:
         raise
     except Exception as e:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to update bucket policies: {str(e)}",
-        )
+        return error_response(message=f"Failed to update bucket policies: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
