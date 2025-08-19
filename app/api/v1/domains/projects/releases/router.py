@@ -49,7 +49,7 @@ async def get_project_releases(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement releases list
-    return {"releases": []}
+    return { with proper service layer"releases": []}
 
 @router.post("/{project_id}/releases")
 async def create_release(
@@ -64,7 +64,7 @@ async def create_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release creation
-    return {"message": "Release created"}
+    return { with proper service layer"message": "Release created"}
 
 @router.post("/create-from-requirements")
 async def create_release_from_requirements(
@@ -78,7 +78,7 @@ async def create_release_from_requirements(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release creation from requirements
-    return {"message": "Release created from requirements"}
+    return { with proper service layer"message": "Release created from requirements"}
 
 @router.get("/{project_id}/releases/{release_id}")
 async def get_release(
@@ -93,7 +93,7 @@ async def get_release(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement release retrieval
-    return {"release": {"id": release_id, "project_id": project_id}}
+    return { with proper service layer"release": {"id": release_id, "project_id": project_id}}
 
 @router.put("/{project_id}/releases/{release_id}")
 async def update_release(
@@ -109,7 +109,7 @@ async def update_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release update
-    return {"message": "Release updated"}
+    return { with proper service layer"message": "Release updated"}
 
 @router.delete("/{project_id}/releases/{release_id}")
 async def delete_release(
@@ -124,7 +124,7 @@ async def delete_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release deletion
-    return {"message": f"Release {release_id} deleted"}
+    return { with proper service layer"message": f"Release {release_id} deleted"}
 
 # # Release Publishing & Lifecycle
 #
@@ -143,7 +143,7 @@ async def publish_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release publishing
-    return {"message": f"Release {release_id} published"}
+    return { with proper service layer"message": f"Release {release_id} published"}
 
 @router.post("/{project_id}/releases/{release_id}/rollback")
 async def rollback_release(
@@ -159,7 +159,7 @@ async def rollback_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement release rollback
-    return {"message": f"Release {release_id} rolled back"}
+    return { with proper service layer"message": f"Release {release_id} rolled back"}
 
 # # Release Content Management
 #
@@ -179,7 +179,7 @@ async def get_release_requirements(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement release requirements
-    return {"requirements": []}
+    return { with proper service layer"requirements": []}
 
 @router.post("/{project_id}/releases/{release_id}/requirements")
 async def add_requirements_to_release(
@@ -195,7 +195,7 @@ async def add_requirements_to_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement adding requirements to release
-    return {"message": "Requirements added to release"}
+    return { with proper service layer"message": "Requirements added to release"}
 
 @router.delete("/{project_id}/releases/{release_id}/requirements/{requirement_id}")
 async def remove_requirement_from_release(
@@ -212,7 +212,7 @@ async def remove_requirement_from_release(
     """
     # TODO: Implement removing requirement from release
     return {
-        "message": f"Requirement {requirement_id} removed from release {release_id}"
+         with proper service layer"message": f"Requirement {requirement_id} removed from release {release_id}"
     }
 
 # # Release Documentation
@@ -232,7 +232,7 @@ async def get_release_changelog(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement changelog generation
-    return {"changelog": "# Release Changelog\n\n..."}
+    return { with proper service layer"changelog": "# Release Changelog\n\n..."}
 
 @router.post("/{project_id}/releases/{release_id}/generate-specification")
 async def generate_release_specification(
@@ -248,7 +248,7 @@ async def generate_release_specification(
     Доступ: ANALYST+
     """
     # TODO: Implement specification generation
-    return {"message": "Specification generated", "download_url": "/downloads/spec.pdf"}
+    return { with proper service layer"message": "Specification generated", "download_url": "/downloads/spec.pdf"}
 
 # # Project Requirements Sync
 #
@@ -266,7 +266,7 @@ async def sync_project_requirements_to_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement project requirements sync
-    return {"message": "Requirements synced to release"}
+    return { with proper service layer"message": "Requirements synced to release"}
 
 @router.post("/{project_id}/releases/{release_id}/sync-project-requirements")
 async def sync_project_requirements_to_specific_release(
@@ -282,4 +282,4 @@ async def sync_project_requirements_to_specific_release(
     Доступ: RELEASE_MANAGER+
     """
     # TODO: Implement requirements sync to specific release
-    return {"message": f"Requirements synced to release {release_id}"}
+    return { with proper service layer"message": f"Requirements synced to release {release_id}"}

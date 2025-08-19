@@ -55,7 +55,7 @@ async def get_project_requirements(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement requirements list with filtering
-    return {"requirements": []}
+    return { with proper service layer"requirements": []}
 
 @router.post("/{project_id}/requirements")
 async def create_requirement(
@@ -70,7 +70,7 @@ async def create_requirement(
     Доступ: ANALYST+
     """
     # TODO: Implement requirement creation
-    return {"message": "Requirement created"}
+    return { with proper service layer"message": "Requirement created"}
 
 @router.get("/{project_id}/requirements/search")
 async def search_requirements(
@@ -90,7 +90,7 @@ async def search_requirements(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement requirements search
-    return {"requirements": [], "query": q}
+    return { with proper service layer"requirements": [], "query": q}
 
 @router.get("/{project_id}/requirements/stats")
 async def get_requirements_stats(
@@ -105,7 +105,7 @@ async def get_requirements_stats(
     """
     # TODO: Implement requirements statistics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "stats": {"total": 0, "by_status": {}, "by_priority": {}, "by_type": {}},
     }
 
@@ -123,7 +123,7 @@ async def import_requirements(
     Доступ: ANALYST+
     """
     # TODO: Implement requirements import
-    return {"message": f"Requirements imported from {file.filename}"}
+    return { with proper service layer"message": f"Requirements imported from {file.filename}"}
 
 @router.get("/{project_id}/requirements/export")
 async def export_requirements(
@@ -138,7 +138,7 @@ async def export_requirements(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement requirements export
-    return {"download_url": f"/downloads/requirements_export.{format}"}
+    return { with proper service layer"download_url": f"/downloads/requirements_export.{format}"}
 
 # # Individual Requirements Management
 #
@@ -156,7 +156,7 @@ async def get_requirement(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement requirement retrieval
-    return {"requirement": {"id": requirement_id, "project_id": project_id}}
+    return { with proper service layer"requirement": {"id": requirement_id, "project_id": project_id}}
 
 @router.put("/{project_id}/requirements/{requirement_id}")
 async def update_requirement(
@@ -172,7 +172,7 @@ async def update_requirement(
     Доступ: ANALYST+
     """
     # TODO: Implement requirement update
-    return {"message": "Requirement updated"}
+    return { with proper service layer"message": "Requirement updated"}
 
 @router.delete("/{project_id}/requirements/{requirement_id}")
 async def delete_requirement(
@@ -187,7 +187,7 @@ async def delete_requirement(
     Доступ: ANALYST+
     """
     # TODO: Implement requirement deletion
-    return {"message": f"Requirement {requirement_id} deleted"}
+    return { with proper service layer"message": f"Requirement {requirement_id} deleted"}
 
 # # Requirements Approval Workflow
 #
@@ -206,7 +206,7 @@ async def approve_requirement(
     Доступ: APPROVER+
     """
     # TODO: Implement requirement approval
-    return {"message": f"Requirement {requirement_id} approved"}
+    return { with proper service layer"message": f"Requirement {requirement_id} approved"}
 
 @router.post("/{project_id}/requirements/{requirement_id}/reject")
 async def reject_requirement(
@@ -222,7 +222,7 @@ async def reject_requirement(
     Доступ: APPROVER+
     """
     # TODO: Implement requirement rejection
-    return {"message": f"Requirement {requirement_id} rejected"}
+    return { with proper service layer"message": f"Requirement {requirement_id} rejected"}
 
 @router.put("/{project_id}/requirements/{requirement_id}/status")
 async def change_requirement_status(
@@ -238,7 +238,7 @@ async def change_requirement_status(
     Доступ: ANALYST+
     """
     # TODO: Implement requirement status change
-    return {"message": f"Status changed for requirement {requirement_id}"}
+    return { with proper service layer"message": f"Status changed for requirement {requirement_id}"}
 
 # # Requirements Relationships & Traceability
 #
@@ -256,7 +256,7 @@ async def get_requirement_relationships(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement requirement relationships
-    return {"relationships": []}
+    return { with proper service layer"relationships": []}
 
 @router.post("/{project_id}/requirements/{requirement_id}/relationships")
 async def create_requirement_relationship(
@@ -272,7 +272,7 @@ async def create_requirement_relationship(
     Доступ: ANALYST+
     """
     # TODO: Implement requirement relationship creation
-    return {"message": "Relationship created"}
+    return { with proper service layer"message": "Relationship created"}
 
 @router.delete(
     "/{project_id}/requirements/{requirement_id}/relationships/{relationship_id}"
@@ -290,7 +290,7 @@ async def delete_requirement_relationship(
     Доступ: ANALYST+
     """
     # TODO: Implement relationship deletion
-    return {"message": f"Relationship {relationship_id} deleted"}
+    return { with proper service layer"message": f"Relationship {relationship_id} deleted"}
 
 @router.get("/{project_id}/requirements/{requirement_id}/trace-matrix")
 async def get_requirement_trace_matrix(
@@ -305,4 +305,4 @@ async def get_requirement_trace_matrix(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement trace matrix
-    return {"trace_matrix": {}}
+    return { with proper service layer"trace_matrix": {}}

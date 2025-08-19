@@ -36,7 +36,7 @@ async def get_departments(
     Доступ: COMPANY_VIEWER+ (в контексте компании)
     """
     # TODO: Implement departments list with hierarchy support
-    return {"departments": []}
+    return { with proper service layer"departments": []}
 
 @router.post("/")
 async def create_department(
@@ -50,7 +50,7 @@ async def create_department(
     Доступ: COMPANY_ADMIN+ или DEPARTMENT_HEAD (для поддепартаментов)
     """
     # TODO: Implement department creation
-    return {"message": "Department created"}
+    return { with proper service layer"message": "Department created"}
 
 @router.get("/hierarchy")
 async def get_departments_hierarchy(
@@ -64,7 +64,7 @@ async def get_departments_hierarchy(
     Доступ: COMPANY_VIEWER+
     """
     # TODO: Implement departments hierarchy
-    return {"hierarchy": []}
+    return { with proper service layer"hierarchy": []}
 
 @router.get("/{department_id}")
 async def get_department(
@@ -78,7 +78,7 @@ async def get_department(
     Доступ: DEPARTMENT_VIEWER+ (в контексте департамента)
     """
     # TODO: Implement department retrieval
-    return {"department": {"id": department_id}}
+    return { with proper service layer"department": {"id": department_id}}
 
 @router.put("/{department_id}")
 async def update_department(
@@ -93,7 +93,7 @@ async def update_department(
     Доступ: DEPARTMENT_ADMIN+ (в контексте департамента)
     """
     # TODO: Implement department update
-    return {"message": "Department updated"}
+    return { with proper service layer"message": "Department updated"}
 
 @router.delete("/{department_id}")
 async def delete_department(
@@ -107,7 +107,7 @@ async def delete_department(
     Доступ: COMPANY_ADMIN+ или DEPARTMENT_HEAD (owner)
     """
     # TODO: Implement department deletion
-    return {"message": f"Department {department_id} deleted"}
+    return { with proper service layer"message": f"Department {department_id} deleted"}
 
 # # Department Members Management
 #
@@ -126,7 +126,7 @@ async def get_department_members(
     Доступ: DEPARTMENT_VIEWER+
     """
     # TODO: Implement department members list
-    return {"members": []}
+    return { with proper service layer"members": []}
 
 @router.post("/{department_id}/members")
 async def add_department_member(
@@ -141,7 +141,7 @@ async def add_department_member(
     Доступ: DEPARTMENT_ADMIN+
     """
     # TODO: Implement adding department member
-    return {"message": "Member added to department"}
+    return { with proper service layer"message": "Member added to department"}
 
 @router.delete("/{department_id}/members/{user_id}")
 async def remove_department_member(
@@ -156,4 +156,4 @@ async def remove_department_member(
     Доступ: DEPARTMENT_ADMIN+
     """
     # TODO: Implement removing department member
-    return {"message": f"User {user_id} removed from department {department_id}"}
+    return { with proper service layer"message": f"User {user_id} removed from department {department_id}"}

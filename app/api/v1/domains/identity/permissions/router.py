@@ -286,10 +286,7 @@ async def grant_permission_to_user(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Failed to grant permission",
-            )
+            return error_response(message="Failed to grant permission", status_code=status.HTTP_400_BAD_REQUEST)
 
         return PermissionOperationResponse(
             success=True,
@@ -331,10 +328,7 @@ async def revoke_permission_from_user(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Failed to revoke permission or permission not found",
-            )
+            return error_response(message="Failed to revoke permission or permission not found", status_code=status.HTTP_400_BAD_REQUEST)
 
         return PermissionOperationResponse(
             success=True,

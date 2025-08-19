@@ -347,10 +347,7 @@ async def update_user(
                 db=db, user_id=current_user.id, permission=Permission.MANAGE_USERS
             )
             if not has_permission:
-                raise HTTPException(
-                    status_code=status.HTTP_403_FORBIDDEN,
-                    detail="Permission denied to update other users",
-                )
+                return forbidden_response(message="Permission denied to update other users")
 
         # Update user
         user_updates = {}
@@ -419,10 +416,7 @@ async def delete_user(
     try:
         # Prevent self-deletion
         if user_id == current_user.id:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Cannot delete your own account",
-            )
+            return error_response(message="Cannot delete your own account", status_code=status.HTTP_400_BAD_REQUEST)
 
         success = await admin_service.delete_user(
             db=db, user_id=user_id, deleted_by=current_user.id
@@ -488,10 +482,7 @@ async def deactivate_user(
     try:
         # Prevent self-deactivation
         if user_id == current_user.id:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Cannot deactivate your own account",
-            )
+            return error_response(message="Cannot deactivate your own account", status_code=status.HTTP_400_BAD_REQUEST)
 
         success = await admin_service.deactivate_user(
             db=db, user_id=user_id, deactivated_by=current_user.id
@@ -615,10 +606,7 @@ async def revoke_role_assignment(
         )
 
         if not success:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Role assignment not found",
-            )
+            return not_found_response(message="Role assignment not found")
 
         return UserOperationResponse(
             success=True,

@@ -54,7 +54,7 @@ async def create_test_case(
     """Создание нового тест-кейса."""
     # TODO: Implement with proper service
     return error_response(
-        message="Test case creation not implemented yet",
+        message= with proper service layer"Test case creation not implemented yet",
         status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
@@ -70,9 +70,9 @@ async def get_test_cases(
 ):
     """Получение списка тест-кейсов."""
     # TODO: Implement test cases listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test cases listing not implemented",
+    return error_response(
+        message= with proper service layer"Test cases listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/test-cases/{test_case_id}", response_model=TestCaseDetailResponse)
@@ -84,9 +84,9 @@ async def get_test_case(
 ):
     """Получение детальной информации о тест-кейсе."""
     # TODO: Implement test case retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test case retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Test case retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/test-cases/{test_case_id}", response_model=TestCaseResponse)
@@ -99,9 +99,9 @@ async def update_test_case(
 ):
     """Обновление тест-кейса."""
     # TODO: Implement test case update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test case update not implemented",
+    return error_response(
+        message= with proper service layer"Test case update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.delete("/test-cases/{test_case_id}")
@@ -113,9 +113,9 @@ async def delete_test_case(
 ):
     """Удаление тест-кейса."""
     # TODO: Implement test case deletion
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test case deletion not implemented",
+    return error_response(
+        message= with proper service layer"Test case deletion not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Test Result Endpoints ===
@@ -129,9 +129,9 @@ async def create_test_result(
 ):
     """Создание результата выполнения теста."""
     # TODO: Implement test result creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test result creation not implemented",
+    return error_response(
+        message= with proper service layer"Test result creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/test-results", response_model=TestResultListResponse)
@@ -146,9 +146,9 @@ async def get_test_results(
 ):
     """Получение списка результатов тестов."""
     # TODO: Implement test results listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test results listing not implemented",
+    return error_response(
+        message= with proper service layer"Test results listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/test-results/{result_id}", response_model=TestResultResponse)
@@ -160,9 +160,9 @@ async def get_test_result(
 ):
     """Получение результата теста."""
     # TODO: Implement test result retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test result retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Test result retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/test-results/{result_id}", response_model=TestResultResponse)
@@ -175,9 +175,9 @@ async def update_test_result(
 ):
     """Обновление результата теста."""
     # TODO: Implement test result update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test result update not implemented",
+    return error_response(
+        message= with proper service layer"Test result update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Test Plan Endpoints ===
@@ -191,9 +191,9 @@ async def create_test_plan(
 ):
     """Создание тест-плана."""
     # TODO: Implement test plan creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test plan creation not implemented",
+    return error_response(
+        message= with proper service layer"Test plan creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/test-plans", response_model=TestPlanListResponse)
@@ -208,9 +208,9 @@ async def get_test_plans(
 ):
     """Получение списка тест-планов."""
     # TODO: Implement test plans listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test plans listing not implemented",
+    return error_response(
+        message= with proper service layer"Test plans listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/test-plans/{plan_id}", response_model=TestPlanDetailResponse)
@@ -222,9 +222,9 @@ async def get_test_plan(
 ):
     """Получение детальной информации о тест-плане."""
     # TODO: Implement test plan retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test plan retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Test plan retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/test-plans/{plan_id}", response_model=TestPlanResponse)
@@ -237,9 +237,9 @@ async def update_test_plan(
 ):
     """Обновление тест-плана."""
     # TODO: Implement test plan update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test plan update not implemented",
+    return error_response(
+        message= with proper service layer"Test plan update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.delete("/test-plans/{plan_id}")
@@ -251,9 +251,9 @@ async def delete_test_plan(
 ):
     """Удаление тест-плана."""
     # TODO: Implement test plan deletion
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test plan deletion not implemented",
+    return error_response(
+        message= with proper service layer"Test plan deletion not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Statistics and Reporting ===
@@ -268,9 +268,9 @@ async def get_testing_statistics(
 ):
     """Получение статистики по тестированию."""
     # TODO: Implement testing statistics
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Testing statistics not implemented",
+    return error_response(
+        message= with proper service layer"Testing statistics not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.post("/export", response_model=TestingExportResponse)
@@ -282,7 +282,7 @@ async def export_testing_data(
 ):
     """Экспорт данных тестирования."""
     # TODO: Implement testing data export
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Testing data export not implemented",
+    return error_response(
+        message= with proper service layer"Testing data export not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )

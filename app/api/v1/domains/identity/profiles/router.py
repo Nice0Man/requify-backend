@@ -463,10 +463,7 @@ async def get_user_activity(
                 db=db, user_id=current_user.id, permission=Permission.VIEW_USERS
             )
             if not has_permission:
-                raise HTTPException(
-                    status_code=status.HTTP_403_FORBIDDEN,
-                    detail="Permission denied to view user activity",
-                )
+                return forbidden_response(message="Permission denied to view user activity")
 
         # Get user activity
         activity_data = await get_user_profile_service().get_user_activity(
@@ -525,10 +522,7 @@ async def get_user_stats(
                 db=db, user_id=current_user.id, permission=Permission.VIEW_USERS
             )
             if not has_permission:
-                raise HTTPException(
-                    status_code=status.HTTP_403_FORBIDDEN,
-                    detail="Permission denied to view user statistics",
-                )
+                return forbidden_response(message="Permission denied to view user statistics")
 
         # Get user statistics
         stats = await get_user_profile_service().get_user_statistics(

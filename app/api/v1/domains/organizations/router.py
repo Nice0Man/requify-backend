@@ -58,7 +58,7 @@ router.include_router(
 #     pass
 
 # @router.post(
-#     "/companies",
+#      with proper service layer"/companies",
 #     status_code=status.HTTP_201_CREATED,
 #     summary="Create Company",
 #     description="Create new company (System Admin only)",
@@ -72,7 +72,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/companies/my",
+#      with proper service layer"/companies/my",
 #     summary="Get My Company",
 #     description="Get current user's company information",
 # )
@@ -82,7 +82,7 @@ router.include_router(
 #     pass
 
 # @router.put(
-#     "/companies/my",
+#      with proper service layer"/companies/my",
 #     summary="Update My Company",
 #     description="Update company information (Company Admin only)",
 #     dependencies=[
@@ -98,7 +98,7 @@ router.include_router(
 # #
 
 # @router.get(
-#     "/companies/{company_id}/settings",
+#      with proper service layer"/companies/{company_id}/settings",
 #     summary="Get Company Settings",
 #     description="Get company settings and configuration",
 #     dependencies=[
@@ -111,7 +111,7 @@ router.include_router(
 #     pass
 
 # @router.put(
-#     "/companies/{company_id}/settings",
+#      with proper service layer"/companies/{company_id}/settings",
 #     summary="Update Company Settings",
 #     description="Update company settings",
 #     dependencies=[
@@ -126,7 +126,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/companies/{company_id}/branding",
+#      with proper service layer"/companies/{company_id}/branding",
 #     summary="Get Company Branding",
 #     description="Get company branding and visual identity",
 #     dependencies=[
@@ -139,7 +139,7 @@ router.include_router(
 #     pass
 
 # @router.put(
-#     "/companies/{company_id}/branding",
+#      with proper service layer"/companies/{company_id}/branding",
 #     summary="Update Company Branding",
 #     description="Update company branding",
 #     dependencies=[
@@ -157,7 +157,7 @@ router.include_router(
 # #
 
 # @router.get(
-#     "/departments",
+#      with proper service layer"/departments",
 #     summary="Get Departments",
 #     description="Get company departments list",
 #     dependencies=[
@@ -170,7 +170,7 @@ router.include_router(
 #     pass
 
 # @router.post(
-#     "/departments",
+#      with proper service layer"/departments",
 #     status_code=status.HTTP_201_CREATED,
 #     summary="Create Department",
 #     description="Create new department",
@@ -184,7 +184,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/departments/{department_id}",
+#      with proper service layer"/departments/{department_id}",
 #     summary="Get Department",
 #     description="Get department information",
 #     dependencies=[
@@ -197,7 +197,7 @@ router.include_router(
 #     pass
 
 # @router.put(
-#     "/departments/{department_id}",
+#      with proper service layer"/departments/{department_id}",
 #     summary="Update Department",
 #     description="Update department information",
 #     dependencies=[
@@ -210,7 +210,7 @@ router.include_router(
 #     pass
 
 # @router.delete(
-#     "/departments/{department_id}",
+#      with proper service layer"/departments/{department_id}",
 #     summary="Delete Department",
 #     description="Delete department",
 #     dependencies=[
@@ -223,7 +223,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/departments/hierarchy",
+#      with proper service layer"/departments/hierarchy",
 #     summary="Get Department Hierarchy",
 #     description="Get complete department hierarchy",
 #     dependencies=[
@@ -239,7 +239,7 @@ router.include_router(
 # #
 
 # @router.get(
-#     "/teams",
+#      with proper service layer"/teams",
 #     summary="Get Teams",
 #     description="Get teams list with filtering",
 #     dependencies=[Depends(permission_checker.require_permission(Permission.VIEW_TEAM))],
@@ -250,7 +250,7 @@ router.include_router(
 #     pass
 
 # @router.post(
-#     "/teams",
+#      with proper service layer"/teams",
 #     status_code=status.HTTP_201_CREATED,
 #     summary="Create Team",
 #     description="Create new team",
@@ -264,7 +264,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/teams/{team_id}",
+#      with proper service layer"/teams/{team_id}",
 #     summary="Get Team",
 #     description="Get team information",
 #     dependencies=[Depends(permission_checker.require_permission(Permission.VIEW_TEAM))],
@@ -275,7 +275,7 @@ router.include_router(
 #     pass
 
 # @router.put(
-#     "/teams/{team_id}",
+#      with proper service layer"/teams/{team_id}",
 #     summary="Update Team",
 #     description="Update team information",
 #     dependencies=[
@@ -288,7 +288,7 @@ router.include_router(
 #     pass
 
 # @router.delete(
-#     "/teams/{team_id}",
+#      with proper service layer"/teams/{team_id}",
 #     summary="Delete Team",
 #     description="Delete team",
 #     dependencies=[
@@ -301,7 +301,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/teams/{team_id}/members",
+#      with proper service layer"/teams/{team_id}/members",
 #     summary="Get Team Members",
 #     description="Get team members list",
 #     dependencies=[Depends(permission_checker.require_permission(Permission.VIEW_TEAM))],
@@ -312,7 +312,7 @@ router.include_router(
 #     pass
 
 # @router.post(
-#     "/teams/{team_id}/members",
+#      with proper service layer"/teams/{team_id}/members",
 #     summary="Add Team Member",
 #     description="Add member to team",
 #     dependencies=[
@@ -325,7 +325,7 @@ router.include_router(
 #     pass
 
 # @router.delete(
-#     "/teams/{team_id}/members/{user_id}",
+#      with proper service layer"/teams/{team_id}/members/{user_id}",
 #     summary="Remove Team Member",
 #     description="Remove member from team",
 #     dependencies=[
@@ -338,7 +338,7 @@ router.include_router(
 #     pass
 
 # @router.get(
-#     "/teams/my",
+#      with proper service layer"/teams/my",
 #     summary="Get My Teams",
 #     description="Get current user's teams",
 # )
@@ -346,3 +346,4 @@ router.include_router(
 #     """Получение команд текущего пользователя."""
 #     # TODO: Implement my teams retrieval
 #     pass
+ with proper service layer

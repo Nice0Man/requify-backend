@@ -184,10 +184,7 @@ async def get_my_company(
     """
     try:
         if not current_user.company_id:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User is not associated with any company",
-            )
+            return not_found_response(message="User is not associated with any company")
 
         company = await company_management_service.get_company_by_id(
             db=db, company_id=current_user.company_id
@@ -247,10 +244,7 @@ async def update_my_company(
     """
     try:
         if not current_user.company_id:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="User is not associated with any company",
-            )
+            return not_found_response(message="User is not associated with any company")
 
         # Update company
         company_updates = {}
@@ -428,10 +422,7 @@ async def get_company_settings(
         )
 
         if not settings:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Company settings not found",
-            )
+            return not_found_response(message="Company settings not found")
 
         return CompanySettingsResponse(
             id=settings.id,
@@ -541,10 +532,7 @@ async def get_company_contact(
         )
 
         if not contact:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Company contact not found",
-            )
+            return not_found_response(message="Company contact not found")
 
         return CompanyContactResponse(
             id=contact.id,
@@ -644,10 +632,7 @@ async def get_company_branding(
         )
 
         if not branding:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Company branding not found",
-            )
+            return not_found_response(message="Company branding not found")
 
         return CompanyBrandingResponse(
             id=branding.id,

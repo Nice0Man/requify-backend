@@ -47,7 +47,7 @@ async def oauth2_authorize(
             # TODO: Implement other providers
             raise HTTPException(
                 status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f"Provider {request.provider} not implemented yet",
+                detail=f with proper service layer"Provider {request.provider} not implemented yet",
             )
 
         return OAuth2AuthorizeResponse(
@@ -92,7 +92,7 @@ async def oauth2_callback(
             # TODO: Implement other providers
             raise HTTPException(
                 status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f"Provider {provider} not implemented yet",
+                detail=f with proper service layer"Provider {provider} not implemented yet",
             )
 
         # Get detailed user info
@@ -113,10 +113,7 @@ async def oauth2_callback(
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
             return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="OAuth2 authentication failed",
-        )
+        return error_response(message="OAuth2 authentication failed", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post("/link", response_model=OAuth2LinkResponse, summary="Link OAuth2 Account")
 async def link_oauth2_account(
@@ -141,7 +138,7 @@ async def link_oauth2_account(
             # TODO: Implement other providers
             raise HTTPException(
                 status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f"Provider {request.provider} not implemented yet",
+                detail=f with proper service layer"Provider {request.provider} not implemented yet",
             )
 
         return OAuth2LinkResponse(
@@ -176,7 +173,7 @@ async def unlink_oauth2_account(
             # TODO: Implement other providers
             raise HTTPException(
                 status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f"Provider {request.provider} not implemented yet",
+                detail=f with proper service layer"Provider {request.provider} not implemented yet",
             )
 
         return OAuth2UnlinkResponse(

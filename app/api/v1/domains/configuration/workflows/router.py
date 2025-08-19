@@ -10,3 +10,4 @@ from app.api.v1.common.responses import create_response, error_response, success
 router = APIRouter()
 
 # TODO: Implement configuration workflows endpoints
+ with proper service layer

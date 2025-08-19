@@ -35,7 +35,7 @@ async def get_project_analytics_summary(
     """
     # TODO: Implement project analytics summary
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "period": period,
         "summary": {
             "requirements_total": 0,
@@ -59,7 +59,7 @@ async def get_project_progress(
     """
     # TODO: Implement project progress tracking
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "progress": {
             "completion_percentage": 0.0,
             "milestones_completed": 0,
@@ -82,7 +82,7 @@ async def get_project_velocity(
     """
     # TODO: Implement project velocity metrics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "velocity": {"average_weekly": 0.0, "trend": "stable", "historical_data": []},
     }
 
@@ -100,7 +100,7 @@ async def get_project_quality_metrics(
     """
     # TODO: Implement quality metrics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "quality": {
             "requirements_quality": 0.0,
             "test_coverage": 0.0,
@@ -126,7 +126,7 @@ async def get_requirements_analytics(
     """
     # TODO: Implement requirements analytics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "requirements_analytics": {
             "total_count": 0,
             "by_status": {},
@@ -150,7 +150,7 @@ async def get_requirements_burndown(
     """
     # TODO: Implement requirements burndown chart
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "burndown": {"ideal_line": [], "actual_line": [], "remaining_work": 0},
     }
 
@@ -171,7 +171,7 @@ async def get_team_performance(
     """
     # TODO: Implement team performance analytics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "team_performance": {
             "productivity_score": 0.0,
             "collaboration_score": 0.0,
@@ -192,7 +192,7 @@ async def get_team_workload(
     """
     # TODO: Implement team workload analytics
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "workload": {
             "total_capacity": 0.0,
             "current_utilization": 0.0,
@@ -216,7 +216,7 @@ async def get_project_risks(
     """
     # TODO: Implement risk analysis
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "risks": {
             "high_priority": [],
             "medium_priority": [],
@@ -238,7 +238,7 @@ async def get_project_insights(
     """
     # TODO: Implement project insights
     return {
-        "project_id": project_id,
+         with proper service layer"project_id": project_id,
         "insights": {
             "key_findings": [],
             "recommendations": [],
@@ -268,7 +268,7 @@ async def generate_project_report(
     """
     # TODO: Implement report generation
     return {
-        "report_id": "generated_report_123",
+         with proper service layer"report_id": "generated_report_123",
         "download_url": f"/downloads/project_report.{format}",
         "status": "generated",
     }

@@ -45,7 +45,7 @@ async def generate_report(
     """Генерация отчета по качеству."""
     # TODO: Implement with proper service
     return error_response(
-        message="Report generation not implemented yet",
+        message= with proper service layer"Report generation not implemented yet",
         status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
@@ -62,9 +62,9 @@ async def get_reports(
 ):
     """Получение списка отчетов."""
     # TODO: Implement reports listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Reports listing not implemented",
+    return error_response(
+        message= with proper service layer"Reports listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/{report_id}", response_model=ReportDetailResponse)
@@ -76,9 +76,9 @@ async def get_report(
 ):
     """Получение детальной информации об отчете."""
     # TODO: Implement report retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Report retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/{report_id}", response_model=ReportResponse)
@@ -91,9 +91,9 @@ async def update_report(
 ):
     """Обновление настроек отчета."""
     # TODO: Implement report update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report update not implemented",
+    return error_response(
+        message= with proper service layer"Report update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.delete("/{report_id}")
@@ -105,9 +105,9 @@ async def delete_report(
 ):
     """Удаление отчета."""
     # TODO: Implement report deletion
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report deletion not implemented",
+    return error_response(
+        message= with proper service layer"Report deletion not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Report Operations ===
@@ -121,9 +121,9 @@ async def regenerate_report(
 ):
     """Повторная генерация отчета."""
     # TODO: Implement report regeneration
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report regeneration not implemented",
+    return error_response(
+        message= with proper service layer"Report regeneration not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.post("/{report_id}/cancel", response_model=ReportOperationResponse)
@@ -135,9 +135,9 @@ async def cancel_report_generation(
 ):
     """Отмена генерации отчета."""
     # TODO: Implement report cancellation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report cancellation not implemented",
+    return error_response(
+        message= with proper service layer"Report cancellation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/{report_id}/download")
@@ -149,9 +149,9 @@ async def download_report(
 ):
     """Скачивание отчета."""
     # TODO: Implement report download
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report download not implemented",
+    return error_response(
+        message= with proper service layer"Report download not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Report Templates ===
@@ -165,9 +165,9 @@ async def create_report_template(
 ):
     """Создание шаблона отчета."""
     # TODO: Implement report template creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report template creation not implemented",
+    return error_response(
+        message= with proper service layer"Report template creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/templates", response_model=List[ReportTemplateResponse])
@@ -180,9 +180,9 @@ async def get_report_templates(
 ):
     """Получение списка шаблонов отчетов."""
     # TODO: Implement report templates listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report templates listing not implemented",
+    return error_response(
+        message= with proper service layer"Report templates listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/templates/{template_id}", response_model=ReportTemplateResponse)
@@ -194,9 +194,9 @@ async def get_report_template(
 ):
     """Получение шаблона отчета."""
     # TODO: Implement report template retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report template retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Report template retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/templates/{template_id}", response_model=ReportTemplateResponse)
@@ -209,9 +209,9 @@ async def update_report_template(
 ):
     """Обновление шаблона отчета."""
     # TODO: Implement report template update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report template update not implemented",
+    return error_response(
+        message= with proper service layer"Report template update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.delete("/templates/{template_id}")
@@ -223,9 +223,9 @@ async def delete_report_template(
 ):
     """Удаление шаблона отчета."""
     # TODO: Implement report template deletion
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Report template deletion not implemented",
+    return error_response(
+        message= with proper service layer"Report template deletion not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Search and Statistics ===
@@ -239,9 +239,9 @@ async def search_reports(
 ):
     """Поиск отчетов."""
     # TODO: Implement reports search
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Reports search not implemented",
+    return error_response(
+        message= with proper service layer"Reports search not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/statistics", response_model=ReportStatisticsResponse)
@@ -253,9 +253,9 @@ async def get_reports_statistics(
 ):
     """Получение статистики по отчетам."""
     # TODO: Implement reports statistics
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Reports statistics not implemented",
+    return error_response(
+        message= with proper service layer"Reports statistics not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Specific Report Types ===
@@ -271,9 +271,9 @@ async def get_test_execution_report(
 ):
     """Получение отчета по выполнению тестов."""
     # TODO: Implement test execution report
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Test execution report not implemented",
+    return error_response(
+        message= with proper service layer"Test execution report not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/requirements-coverage/{project_id}")
@@ -285,9 +285,9 @@ async def get_requirements_coverage_report(
 ):
     """Получение отчета по покрытию требований."""
     # TODO: Implement requirements coverage report
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Requirements coverage report not implemented",
+    return error_response(
+        message= with proper service layer"Requirements coverage report not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/defect-summary/{project_id}")
@@ -301,9 +301,9 @@ async def get_defect_summary_report(
 ):
     """Получение сводного отчета по дефектам."""
     # TODO: Implement defect summary report
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Defect summary report not implemented",
+    return error_response(
+        message= with proper service layer"Defect summary report not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/traceability-matrix/{project_id}")
@@ -315,7 +315,7 @@ async def get_traceability_matrix(
 ):
     """Получение матрицы трассируемости."""
     # TODO: Implement traceability matrix
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Traceability matrix not implemented",
+    return error_response(
+        message= with proper service layer"Traceability matrix not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )

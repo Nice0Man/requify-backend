@@ -167,10 +167,7 @@ async def get_comment(
     )
 
     if not has_permission:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            detail="Not enough permissions to view this comment",
-        )
+        return forbidden_response(message="Not enough permissions to view this comment")
 
     # Загружаем связанные данные
     await db.refresh(comment, ["author", "requirement"])

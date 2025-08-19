@@ -88,7 +88,4 @@ async def confirm_email_verification(
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
             return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to verify email",
-        )
+        return error_response(message="Failed to verify email", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -106,10 +106,7 @@ async def mark_notification_read(
         )
 
     if not notification:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Notification not found or access denied",
-        )
+        return not_found_response(message="Notification not found or access denied")
 
     return {
         "success": True,

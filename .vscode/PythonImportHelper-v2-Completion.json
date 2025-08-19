@@ -38038,7 +38038,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.configuration.reference.router",
         "description": "app.api.v1.domains.configuration.reference.router",
-        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration reference endpoints",
+        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration reference endpoints\n with proper service layer",
         "detail": "app.api.v1.domains.configuration.reference.router",
         "documentation": {}
     },
@@ -38047,7 +38047,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.configuration.settings.router",
         "description": "app.api.v1.domains.configuration.settings.router",
-        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration settings endpoints",
+        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration settings endpoints\n with proper service layer",
         "detail": "app.api.v1.domains.configuration.settings.router",
         "documentation": {}
     },
@@ -38362,7 +38362,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.configuration.workflows.router",
         "description": "app.api.v1.domains.configuration.workflows.router",
-        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration workflows endpoints",
+        "peekOfCode": "router = APIRouter()\n# TODO: Implement configuration workflows endpoints\n with proper service layer",
         "detail": "app.api.v1.domains.configuration.workflows.router",
         "documentation": {}
     },

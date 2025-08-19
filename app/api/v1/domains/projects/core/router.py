@@ -37,7 +37,7 @@ async def get_projects(
     Доступ: Проекты фильтруются по доступу пользователя
     """
     # TODO: Implement projects list with access filtering
-    return {"projects": []}
+    return { with proper service layer"projects": []}
 
 @router.post("/")
 async def create_project(
@@ -51,7 +51,7 @@ async def create_project(
     Доступ: PROJECT_CREATOR+
     """
     # TODO: Implement project creation
-    return {"message": "Project created"}
+    return { with proper service layer"message": "Project created"}
 
 @router.get("/{project_id}")
 async def get_project(
@@ -65,7 +65,7 @@ async def get_project(
     Доступ: PROJECT_VIEWER+ (в контексте проекта)
     """
     # TODO: Implement project retrieval
-    return {"project": {"id": project_id}}
+    return { with proper service layer"project": {"id": project_id}}
 
 @router.put("/{project_id}")
 async def update_project(
@@ -80,7 +80,7 @@ async def update_project(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement project update
-    return {"message": "Project updated"}
+    return { with proper service layer"message": "Project updated"}
 
 @router.delete("/{project_id}")
 async def delete_project(
@@ -94,7 +94,7 @@ async def delete_project(
     Доступ: PROJECT_OWNER
     """
     # TODO: Implement project deletion
-    return {"message": f"Project {project_id} deleted"}
+    return { with proper service layer"message": f"Project {project_id} deleted"}
 
 @router.post("/{project_id}/archive")
 async def archive_project(
@@ -108,7 +108,7 @@ async def archive_project(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement project archiving
-    return {"message": f"Project {project_id} archived"}
+    return { with proper service layer"message": f"Project {project_id} archived"}
 
 @router.post("/{project_id}/restore")
 async def restore_project(
@@ -122,7 +122,7 @@ async def restore_project(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement project restoration
-    return {"message": f"Project {project_id} restored"}
+    return { with proper service layer"message": f"Project {project_id} restored"}
 
 # # Project Team & Access Management
 #
@@ -141,7 +141,7 @@ async def get_project_members(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement project members list
-    return {"members": []}
+    return { with proper service layer"members": []}
 
 @router.post("/{project_id}/members")
 async def add_project_member(
@@ -156,7 +156,7 @@ async def add_project_member(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement adding project member
-    return {"message": "Member added to project"}
+    return { with proper service layer"message": "Member added to project"}
 
 @router.put("/{project_id}/members/{user_id}")
 async def update_project_member_role(
@@ -172,7 +172,7 @@ async def update_project_member_role(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement updating project member role
-    return {"message": f"Role updated for user {user_id} in project {project_id}"}
+    return { with proper service layer"message": f"Role updated for user {user_id} in project {project_id}"}
 
 @router.delete("/{project_id}/members/{user_id}")
 async def remove_project_member(
@@ -187,7 +187,7 @@ async def remove_project_member(
     Доступ: PROJECT_MANAGER+
     """
     # TODO: Implement removing project member
-    return {"message": f"User {user_id} removed from project {project_id}"}
+    return { with proper service layer"message": f"User {user_id} removed from project {project_id}"}
 
 @router.get("/{project_id}/permissions")
 async def get_project_permissions(
@@ -201,4 +201,4 @@ async def get_project_permissions(
     Доступ: PROJECT_VIEWER+
     """
     # TODO: Implement project permissions retrieval
-    return {"permissions": []}
+    return { with proper service layer"permissions": []}

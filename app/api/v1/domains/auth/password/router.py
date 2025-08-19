@@ -54,10 +54,7 @@ async def change_password(
     except Exception as e:
         if "invalid" in str(e).lower() or "incorrect" in str(e).lower():
             return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to change password",
-        )
+        return error_response(message="Failed to change password", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @router.post(
     "/reset", response_model=PasswordResetResponse, summary="Request Password Reset"
@@ -122,7 +119,4 @@ async def confirm_password_reset(
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
             return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to reset password",
-        )
+        return error_response(message="Failed to reset password", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)

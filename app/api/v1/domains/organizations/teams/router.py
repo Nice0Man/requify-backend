@@ -36,7 +36,7 @@ async def get_teams(
     Доступ: COMPANY_VIEWER+ (в контексте компании/департамента)
     """
     # TODO: Implement teams list with filtering
-    return {"teams": []}
+    return { with proper service layer"teams": []}
 
 @router.post("/")
 async def create_team(
@@ -50,7 +50,7 @@ async def create_team(
     Доступ: DEPARTMENT_MANAGER+
     """
     # TODO: Implement team creation
-    return {"message": "Team created"}
+    return { with proper service layer"message": "Team created"}
 
 @router.get("/my")
 async def get_my_teams(
@@ -63,7 +63,7 @@ async def get_my_teams(
     Доступ: Any authenticated user
     """
     # TODO: Implement my teams retrieval
-    return {"teams": []}
+    return { with proper service layer"teams": []}
 
 @router.get("/{team_id}")
 async def get_team(
@@ -77,7 +77,7 @@ async def get_team(
     Доступ: TEAM_VIEWER+ (в контексте команды)
     """
     # TODO: Implement team retrieval
-    return {"team": {"id": team_id}}
+    return { with proper service layer"team": {"id": team_id}}
 
 @router.put("/{team_id}")
 async def update_team(
@@ -92,7 +92,7 @@ async def update_team(
     Доступ: TEAM_ADMIN+
     """
     # TODO: Implement team update
-    return {"message": "Team updated"}
+    return { with proper service layer"message": "Team updated"}
 
 @router.delete("/{team_id}")
 async def delete_team(
@@ -106,7 +106,7 @@ async def delete_team(
     Доступ: DEPARTMENT_ADMIN+ или TEAM_OWNER
     """
     # TODO: Implement team deletion
-    return {"message": f"Team {team_id} deleted"}
+    return { with proper service layer"message": f"Team {team_id} deleted"}
 
 # # Team Members Management
 #
@@ -125,7 +125,7 @@ async def get_team_members(
     Доступ: TEAM_VIEWER+
     """
     # TODO: Implement team members list
-    return {"members": []}
+    return { with proper service layer"members": []}
 
 @router.post("/{team_id}/members")
 async def add_team_member(
@@ -140,7 +140,7 @@ async def add_team_member(
     Доступ: TEAM_ADMIN+
     """
     # TODO: Implement adding team member
-    return {"message": "Member added to team"}
+    return { with proper service layer"message": "Member added to team"}
 
 @router.put("/{team_id}/members/{user_id}")
 async def update_team_member_role(
@@ -156,7 +156,7 @@ async def update_team_member_role(
     Доступ: TEAM_ADMIN+
     """
     # TODO: Implement updating team member role
-    return {"message": f"Role updated for user {user_id} in team {team_id}"}
+    return { with proper service layer"message": f"Role updated for user {user_id} in team {team_id}"}
 
 @router.delete("/{team_id}/members/{user_id}")
 async def remove_team_member(
@@ -171,7 +171,7 @@ async def remove_team_member(
     Доступ: TEAM_ADMIN+
     """
     # TODO: Implement removing team member
-    return {"message": f"User {user_id} removed from team {team_id}"}
+    return { with proper service layer"message": f"User {user_id} removed from team {team_id}"}
 
 # # Team Statistics
 #
@@ -189,7 +189,7 @@ async def get_team_stats(
     """
     # TODO: Implement team statistics
     return {
-        "team_id": team_id,
+         with proper service layer"team_id": team_id,
         "stats": {
             "members_count": 0,
             "projects_count": 0,

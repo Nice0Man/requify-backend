@@ -70,9 +70,9 @@ async def get_specifications(
 ):
     """Получение списка спецификаций."""
     # TODO: Implement specifications listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specifications listing not implemented",
+    return error_response(
+        message= with proper service layer"Specifications listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/{specification_id}", response_model=SpecificationDetailResponse)
@@ -84,9 +84,9 @@ async def get_specification(
 ):
     """Получение детальной информации о спецификации."""
     # TODO: Implement specification retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Specification retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/{specification_id}", response_model=SpecificationResponse)
@@ -99,9 +99,9 @@ async def update_specification(
 ):
     """Обновление спецификации."""
     # TODO: Implement specification update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification update not implemented",
+    return error_response(
+        message= with proper service layer"Specification update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.delete("/{specification_id}")
@@ -113,9 +113,9 @@ async def delete_specification(
 ):
     """Удаление спецификации."""
     # TODO: Implement specification deletion
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification deletion not implemented",
+    return error_response(
+        message= with proper service layer"Specification deletion not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Version Management ===
@@ -132,9 +132,9 @@ async def create_specification_version(
 ):
     """Создание новой версии спецификации."""
     # TODO: Implement version creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification version creation not implemented",
+    return error_response(
+        message= with proper service layer"Specification version creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get(
@@ -148,9 +148,9 @@ async def get_specification_versions(
 ):
     """Получение списка версий спецификации."""
     # TODO: Implement versions listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification versions listing not implemented",
+    return error_response(
+        message= with proper service layer"Specification versions listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.post("/versions/compare", response_model=SpecificationVersionCompareResponse)
@@ -162,9 +162,9 @@ async def compare_specification_versions(
 ):
     """Сравнение версий спецификации."""
     # TODO: Implement version comparison
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification version comparison not implemented",
+    return error_response(
+        message= with proper service layer"Specification version comparison not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Review Process ===
@@ -179,9 +179,9 @@ async def create_specification_review(
 ):
     """Создание обзора спецификации."""
     # TODO: Implement review creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification review creation not implemented",
+    return error_response(
+        message= with proper service layer"Specification review creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get(
@@ -195,9 +195,9 @@ async def get_specification_reviews(
 ):
     """Получение списка обзоров спецификации."""
     # TODO: Implement reviews listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification reviews listing not implemented",
+    return error_response(
+        message= with proper service layer"Specification reviews listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.put("/reviews/{review_id}", response_model=SpecificationReviewResponse)
@@ -211,9 +211,9 @@ async def update_specification_review(
 ):
     """Обновление обзора спецификации."""
     # TODO: Implement review update
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification review update not implemented",
+    return error_response(
+        message= with proper service layer"Specification review update not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Templates ===
@@ -227,9 +227,9 @@ async def create_specification_template(
 ):
     """Создание шаблона спецификации."""
     # TODO: Implement template creation
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification template creation not implemented",
+    return error_response(
+        message= with proper service layer"Specification template creation not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/templates", response_model=List[SpecificationTemplateResponse])
@@ -242,9 +242,9 @@ async def get_specification_templates(
 ):
     """Получение списка шаблонов спецификаций."""
     # TODO: Implement templates listing
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification templates listing not implemented",
+    return error_response(
+        message= with proper service layer"Specification templates listing not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.get("/templates/{template_id}", response_model=SpecificationTemplateResponse)
@@ -256,9 +256,9 @@ async def get_specification_template(
 ):
     """Получение шаблона спецификации."""
     # TODO: Implement template retrieval
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specification template retrieval not implemented",
+    return error_response(
+        message= with proper service layer"Specification template retrieval not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Search and Filter ===
@@ -272,9 +272,9 @@ async def search_specifications(
 ):
     """Поиск спецификаций."""
     # TODO: Implement specifications search
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specifications search not implemented",
+    return error_response(
+        message= with proper service layer"Specifications search not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 # === Statistics and Export ===
@@ -288,9 +288,9 @@ async def get_specifications_statistics(
 ):
     """Получение статистики по спецификациям."""
     # TODO: Implement specifications statistics
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specifications statistics not implemented",
+    return error_response(
+        message= with proper service layer"Specifications statistics not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )
 
 @router.post("/export", response_model=SpecificationExportResponse)
@@ -302,7 +302,7 @@ async def export_specifications(
 ):
     """Экспорт спецификаций."""
     # TODO: Implement specifications export
-    raise HTTPException(
-        status_code=status.HTTP_501_NOT_IMPLEMENTED,
-        detail="Specifications export not implemented",
+    return error_response(
+        message= with proper service layer"Specifications export not implemented",
+        status_code=status.HTTP_501_NOT_IMPLEMENTED
     )

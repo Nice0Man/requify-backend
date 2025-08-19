@@ -33,7 +33,7 @@ async def get_company_subscription(
     Доступ: BILLING_MANAGER+ или COMPANY_ADMIN+
     """
     # TODO: Implement subscription retrieval
-    return {"subscription": {"company_id": company_id}}
+    return { with proper service layer"subscription": {"company_id": company_id}}
 
 @router.put("/{company_id}")
 async def update_subscription(
@@ -48,7 +48,7 @@ async def update_subscription(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement subscription update
-    return {"message": "Subscription updated"}
+    return { with proper service layer"message": "Subscription updated"}
 
 @router.get("/{company_id}/usage")
 async def get_subscription_usage(
@@ -66,7 +66,7 @@ async def get_subscription_usage(
     """
     # TODO: Implement usage tracking
     return {
-        "company_id": company_id,
+         with proper service layer"company_id": company_id,
         "period": period,
         "usage": {
             "users": {"used": 0, "limit": 100},
@@ -86,7 +86,7 @@ async def get_subscription_plans(
     Доступ: Any authenticated user
     """
     # TODO: Implement plans listing
-    return {"plans": []}
+    return { with proper service layer"plans": []}
 
 # # Billing History
 #
@@ -105,7 +105,7 @@ async def get_billing_history(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement billing history
-    return {"history": []}
+    return { with proper service layer"history": []}
 
 @router.get("/{company_id}/billing/invoices/{invoice_id}")
 async def get_invoice(
@@ -120,7 +120,7 @@ async def get_invoice(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement invoice retrieval
-    return {"invoice": {"id": invoice_id, "company_id": company_id}}
+    return { with proper service layer"invoice": {"id": invoice_id, "company_id": company_id}}
 
 @router.get("/{company_id}/billing/invoices/{invoice_id}/download")
 async def download_invoice(
@@ -135,7 +135,7 @@ async def download_invoice(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement invoice download
-    return {"download_url": f"/downloads/invoices/{invoice_id}.pdf"}
+    return { with proper service layer"download_url": f"/downloads/invoices/{invoice_id}.pdf"}
 
 # # Payment Methods
 #
@@ -152,7 +152,7 @@ async def get_payment_methods(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement payment methods retrieval
-    return {"payment_methods": []}
+    return { with proper service layer"payment_methods": []}
 
 @router.post("/{company_id}/payment-methods")
 async def add_payment_method(
@@ -167,7 +167,7 @@ async def add_payment_method(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement payment method addition
-    return {"message": "Payment method added"}
+    return { with proper service layer"message": "Payment method added"}
 
 @router.delete("/{company_id}/payment-methods/{method_id}")
 async def remove_payment_method(
@@ -182,7 +182,7 @@ async def remove_payment_method(
     Доступ: BILLING_MANAGER+ или COMPANY_OWNER
     """
     # TODO: Implement payment method removal
-    return {"message": f"Payment method {method_id} removed"}
+    return { with proper service layer"message": f"Payment method {method_id} removed"}
 
 # # Subscription Analytics
 #
@@ -201,7 +201,7 @@ async def get_subscription_analytics(
     """
     # TODO: Implement subscription analytics
     return {
-        "company_id": company_id,
+         with proper service layer"company_id": company_id,
         "period": period,
         "analytics": {
             "cost_trends": [],
