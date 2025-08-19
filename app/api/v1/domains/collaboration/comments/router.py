@@ -1,19 +1,20 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import Optional, List
+from app.api.dependencies import SessionDep, CurrentUserDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.dependencies.permissions.base import PermissionChecker
+from app.core.constants import Permission
+from app.services.comment_service import comment_service
+from app.services.permission_service import permission_service
+from .schemas import (
 """
 Comments Management Router.
 
 Роутер для управления комментариями к требованиям.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import Optional, List
-from app.api.dependencies import SessionDep, CurrentUserDep
-from app.api.dependencies.permissions.base import PermissionChecker
-from app.core.constants import Permission
-from app.services.comment_service import comment_service
-from app.services.permission_service import permission_service
-from .schemas import (
 
     CommentAuthor,
     CommentCreateRequest,

@@ -1,15 +1,22 @@
+from fastapi import APIRouter, HTTPException, Request, status, Depends
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from fastapi.security import OAuth2PasswordRequestForm
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.v1.domains.auth.root.schemas import (
+from app.services.auth_service import AuthenticationService, authentication_service
+from app.services.token_service import TokenService, token_service
+from app.services.user_registration_service import (
+from app.crud.user import crud_user
+from app.api.v1.domains.identity.schemas import UserResponse
+from app.utils.logger import logger
 """
 Root Authentication Router.
 
 Роутер для основных операций аутентификации: login, register, logout, refresh token.
 """
 
-from fastapi import APIRouter, HTTPException, Request, status, Depends
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from fastapi.security import OAuth2PasswordRequestForm
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.v1.domains.auth.root.schemas import (
 
     LoginRequest,
     LoginResponse,
@@ -22,15 +29,9 @@ from app.api.v1.domains.auth.root.schemas import (
     TokenValidationRequest,
     TokenValidationResponse,
 )
-from app.services.auth_service import AuthenticationService, authentication_service
-from app.services.token_service import TokenService, token_service
-from app.services.user_registration_service import (
     UserRegistrationService,
     user_registration_service,
 )
-from app.crud.user import crud_user
-from app.api.v1.domains.identity.schemas import UserResponse
-from app.utils.logger import logger
 
 router = APIRouter()
 

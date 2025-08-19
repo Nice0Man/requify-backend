@@ -1,3 +1,12 @@
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import Annotated
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
+from app.models import User
+from app.core.constants import Permission, RoleScope
+from app.services.file_service import file_service
+from .schemas import (
 """
 Profile Management Router.
 
@@ -5,23 +14,15 @@ Handles extended user profile operations including profile management,
 avatar uploads, preferences, and public profiles.
 """
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import Annotated
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
 )
-from app.models import User
-from app.core.constants import Permission, RoleScope
 
 # Lazy import to avoid circular dependencies
 # from app.services.user_profile_service import UserProfileService
-from app.services.file_service import file_service
-from .schemas import (
     ProfileUpdateRequest,
     UserPreferencesRequest,
     AvatarUploadRequest,

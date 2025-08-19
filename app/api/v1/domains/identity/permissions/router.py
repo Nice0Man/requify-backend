@@ -1,3 +1,12 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import List, Optional
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
+from app.models import User
+from app.core.constants import Permission, RoleScope
+from app.services.permission_service import PermissionService
+from .schemas import (
 """
 Permission Management Router.
 
@@ -5,20 +14,12 @@ Handles permission-related operations including permission checking,
 permission matrix, and system-wide permission management.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import List, Optional
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
 )
-from app.models import User
-from app.core.constants import Permission, RoleScope
-from app.services.permission_service import PermissionService
-from .schemas import (
     PermissionCheckRequest,
     PermissionBulkCheckRequest,
     PermissionGrantRequest,

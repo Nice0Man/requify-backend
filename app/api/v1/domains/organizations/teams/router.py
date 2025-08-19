@@ -1,14 +1,15 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import List, Optional
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
 """
 Teams Management Router.
 
 Современный роутер для управления командами в рамках домена Organizations.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import List, Optional
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
@@ -23,6 +24,7 @@ router = APIRouter()
 
 @router.get("/")
 async def get_teams(
+    db: SessionDep,
     department_id: Optional[int] = Query(None, description="Filter by department ID"),
     company_id: Optional[int] = Query(None, description="Filter by company ID"),
     skip: int = Query(0, ge=0),

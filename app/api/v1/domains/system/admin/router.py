@@ -1,16 +1,19 @@
+from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.dependencies.permissions.base import PermissionChecker
+from app.core.constants import Permission
+from app.api.v1.domains.system.admin.schemas import (
+from app.services.admin_service import AdminService
+from app.services.file_service import file_service
 """
 System Administration Router.
 
 Роутер для административных операций системы.
 """
 
-from fastapi import APIRouter, HTTPException, status, Depends, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.dependencies.permissions.base import PermissionChecker
-from app.core.constants import Permission
-from app.api.v1.domains.system.admin.schemas import (
 
     AdminUserListResponse,
     AdminCompanyListResponse,
@@ -21,8 +24,6 @@ from app.api.v1.domains.system.admin.schemas import (
     AdminUsersFilterRequest,
     AdminCompaniesFilterRequest,
 )
-from app.services.admin_service import AdminService
-from app.services.file_service import file_service
 
 permission_checker = PermissionChecker()
 router = APIRouter()

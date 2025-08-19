@@ -1,14 +1,17 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import get_current_user, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.v1.domains.auth.oauth2.schemas import (
+from app.models.user import User
+from app.services.auth0_service import Auth0Service
 """
 OAuth2 Authentication Router.
 
 Роутер для OAuth2 интеграции (Auth0, Google, GitHub и др.).
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import get_current_user, SessionDep
-from app.api.v1.domains.auth.oauth2.schemas import (
 
     OAuth2AuthorizeRequest,
     OAuth2AuthorizeResponse,
@@ -19,8 +22,6 @@ from app.api.v1.domains.auth.oauth2.schemas import (
     OAuth2UnlinkRequest,
     OAuth2UnlinkResponse,
 )
-from app.models.user import User
-from app.services.auth0_service import Auth0Service
 
 router = APIRouter()
 

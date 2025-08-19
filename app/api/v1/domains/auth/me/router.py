@@ -1,20 +1,21 @@
+from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.v1.domains.auth.me.schemas import (
+from app.models.user import User
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
 """
 Current User (Me) Router.
 
 Роутер для операций с данными текущего пользователя.
 """
 
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import APIRouter, Depends, HTTPException
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.v1.domains.auth.me.schemas import (
 
     CurrentUserResponse,
     AccountStatusResponse,
 )
-from app.models.user import User
-from app.api.dependencies import CurrentUserDep, SessionDep
 
 router = APIRouter()
 

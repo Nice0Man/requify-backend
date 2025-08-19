@@ -1,22 +1,23 @@
+from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.v1.domains.auth.email.schemas import (
+from app.services.email_service import EmailService
 """
 Email Verification Router.
 
 Роутер для верификации email адресов.
 """
 
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import SessionDep
-from app.api.v1.domains.auth.email.schemas import (
 
     EmailVerificationRequest,
     EmailVerificationResponse,
     EmailVerificationConfirm,
     EmailVerificationConfirmResponse,
 )
-from app.services.email_service import EmailService
 
 router = APIRouter()
 

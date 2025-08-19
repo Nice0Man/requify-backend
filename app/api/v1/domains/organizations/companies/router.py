@@ -1,3 +1,13 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import Optional, List
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
+from app.models import User
+from app.core.constants import Permission, RoleScope
+from app.services.company_settings_service import CompanySettingsService
+from app.services.company_contact_service import CompanyContactService
+from .schemas import (
 """
 Companies Management Router.
 
@@ -5,11 +15,7 @@ Handles all company-related operations including CRUD operations,
 settings management, and subscription management.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import Optional, List
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
@@ -17,16 +23,11 @@ from app.api.dependencies import (
     # AdminPermissions,
     PermissionChecker,
 )
-from app.models import User
-from app.core.constants import Permission, RoleScope
-from app.services.company_settings_service import CompanySettingsService
-from app.services.company_contact_service import CompanyContactService
 
 # TODO: Fix CompanyBrandingService import issues
 # from app.services.company_branding_service import CompanyBrandingService
 # TODO: Fix CompanyManagementService import issues
 # from app.services.company_management_service import CompanyManagementService
-from .schemas import (
     CompanyCreateRequest,
     CompanyUpdateRequest,
     CompanyResponse,

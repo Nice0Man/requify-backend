@@ -1,14 +1,15 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import List, Optional
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
 """
 Departments Management Router.
 
 Современный роутер для управления департаментами в рамках домена Organizations.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import List, Optional
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
@@ -23,6 +24,7 @@ router = APIRouter()
 
 @router.get("/")
 async def get_departments(
+    db: SessionDep,
     company_id: Optional[int] = Query(None, description="Filter by company ID"),
     parent_id: Optional[int] = Query(None, description="Filter by parent department"),
     skip: int = Query(0, ge=0),
@@ -54,6 +56,7 @@ async def create_department(
 
 @router.get("/hierarchy")
 async def get_departments_hierarchy(
+    db: SessionDep,
     company_id: Optional[int] = Query(None, description="Company ID"),
     # db: SessionDep,
     # current_user: CurrentActiveUserDep = Depends(CompanyPermissions.departments_read()),

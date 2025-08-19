@@ -1,16 +1,18 @@
+from fastapi import APIRouter, HTTPException, status, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.dependencies.permissions.base import PermissionChecker
+from app.core.constants import Permission
+from app.api.v1.domains.system.audit.schemas import (
+from app.services.admin_service import AdminService, admin_service
 """
 System Audit and Logging Router.
 
 Роутер для аудита и логирования системы.
 """
 
-from fastapi import APIRouter, HTTPException, status, Depends, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.dependencies.permissions.base import PermissionChecker
-from app.core.constants import Permission
-from app.api.v1.domains.system.audit.schemas import (
 
     AuditLogListResponse,
     AuditLogFilterRequest,
@@ -21,7 +23,6 @@ from app.api.v1.domains.system.audit.schemas import (
     AuditAction,
     AuditLevel,
 )
-from app.services.admin_service import AdminService, admin_service
 
 permission_checker = PermissionChecker()
 router = APIRouter()

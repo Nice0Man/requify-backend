@@ -5752,6 +5752,78 @@
         "documentation": {}
     },
     {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Set",
         "importPath": "typing",
         "description": "typing",
@@ -6056,7 +6128,71 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -10177,6 +10313,70 @@
         "documentation": {}
     },
     {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "or_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "or_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "delete",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -10353,7 +10553,71 @@
         "documentation": {}
     },
     {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "or_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "desc",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "and_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "or_",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -10987,6 +11251,38 @@
     },
     {
         "label": "create_async_engine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
@@ -14186,6 +14482,38 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "importPath": "app.utils.logger",
         "description": "app.utils.logger",
@@ -14235,6 +14563,38 @@
     },
     {
         "label": "get_logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
         "importPath": "app.utils.logger",
         "description": "app.utils.logger",
         "isExtraImport": true,
@@ -15691,7 +16051,239 @@
         "documentation": {}
     },
     {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
         "label": "get_async_session",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionDep",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -17732,6 +18324,22 @@
         "documentation": {}
     },
     {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "UTC",
         "importPath": "datetime",
         "description": "datetime",
@@ -17813,6 +18421,22 @@
     },
     {
         "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -23070,7 +23694,47 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.dashboard_service import DashboardService",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard_service\r\nfrom app.services.analytics_service import AnalyticsService",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "analytics_service\r\nfrom .schemas import \r\n\"\"\"\r\nAnalytics Dashboard Router.\r\n\r\nHandles dashboard analytics operations including real-time metrics",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "KPI calculations",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and dashboard widget management.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23094,7 +23758,31 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.analytics_service import AnalyticsService\r\nfrom .schemas import \r\n\"\"\"\r\nAnalytics Metrics Router.\r\n\r\nHandles metrics collection and analysis operations including\r\ncustom metrics definition",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "real-time metrics tracking",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and aggregation.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23118,7 +23806,39 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.reporting_service import ReportingService\r\nfrom app.services.analytics_service import AnalyticsService\r\nfrom .schemas import \r\n\"\"\"\r\nAnalytics Reports Router.\r\n\r\nHandles analytics reporting operations including business intelligence reports",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "data visualization",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "trend analysis",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and automated reporting.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23294,7 +24014,31 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.permission_service import PermissionService\r\nfrom .schemas import \r\n\"\"\"\r\nPermission Management Router.\r\n\r\nHandles permission-related operations including permission checking",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "permission matrix",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and system-wide permission management.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23318,7 +24062,39 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.file_service import file_service\r\nfrom .schemas import \r\n\"\"\"\r\nProfile Management Router.\r\n\r\nHandles extended user profile operations including profile management",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "avatar uploads",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "preferences",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and public profiles.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23342,7 +24118,31 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.role_service import RoleService\r\nfrom .schemas import \r\n\"\"\"\r\nRole Management Router.\r\n\r\nHandles role-related operations including CRUD operations",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "role assignments",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and permission management.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23366,7 +24166,31 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\nfrom app.models import User\r\nfrom app.core.constants import Permission",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "RoleScope\r\nfrom app.services.company_settings_service import CompanySettingsService\r\nfrom app.services.company_contact_service import CompanyContactService\r\nfrom .schemas import \r\n\"\"\"\r\nCompanies Management Router.\r\n\r\nHandles all company-related operations including CRUD operations",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "settings management",
+        "importPath": "app.api.dependencies",
+        "description": "app.api.dependencies",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "and subscription management.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23406,7 +24230,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nDepartments Management Router.\r\n\r\nСовременный роутер для управления департаментами в рамках домена Organizations.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23438,7 +24262,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nSubscriptions Management Router.\r\n\r\nСовременный роутер для управления подписками в рамках домена Organizations.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23470,7 +24294,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nTeams Management Router.\r\n\r\nСовременный роутер для управления командами в рамках домена Organizations.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23502,7 +24326,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nProject Analytics Router.\r\n\r\nСовременный роутер для аналитики проектов.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23534,7 +24358,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nProjects Core Router.\r\n\r\nСовременный роутер для основных операций с проектами.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23566,7 +24390,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nProject Releases Router.\r\n\r\nСовременный роутер для управления релизами в рамках проектов.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -23598,7 +24422,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "from app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nProject Requirements Router.\r\n\r\nСовременный роутер для управления требованиями в рамках проектов.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -25510,7 +26334,7 @@
         "documentation": {}
     },
     {
-        "label": "EmailVerificationRequest",
+        "label": "from app.services.email_service import EmailService\r\n\"\"\"\r\nEmail Verification Router.\r\n\r\nРоутер для верификации email адресов.\r\n\"\"\"\r\n\r\n\r\n\r\n    EmailVerificationRequest",
         "importPath": "app.api.v1.domains.auth.email.schemas",
         "description": "app.api.v1.domains.auth.email.schemas",
         "isExtraImport": true,
@@ -25550,7 +26374,7 @@
         "documentation": {}
     },
     {
-        "label": "CurrentUserResponse",
+        "label": "from app.models.user import User\r\nfrom app.api.dependencies import CurrentUserDep",
         "importPath": "app.api.v1.domains.auth.me.schemas",
         "description": "app.api.v1.domains.auth.me.schemas",
         "isExtraImport": true,
@@ -25558,7 +26382,7 @@
         "documentation": {}
     },
     {
-        "label": "AccountStatusResponse",
+        "label": "SessionDep\r\nfrom app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nCurrent User Me",
         "importPath": "app.api.v1.domains.auth.me.schemas",
         "description": "app.api.v1.domains.auth.me.schemas",
         "isExtraImport": true,
@@ -25566,7 +26390,7 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2AuthorizeRequest",
+        "label": "from app.models.user import User\r\nfrom app.services.auth0_service import Auth0Service\r\n\"\"\"\r\nOAuth2 Authentication Router.\r\n\r\nРоутер для OAuth2 интеграции Auth0",
         "importPath": "app.api.v1.domains.auth.oauth2.schemas",
         "description": "app.api.v1.domains.auth.oauth2.schemas",
         "isExtraImport": true,
@@ -25574,7 +26398,7 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2AuthorizeResponse",
+        "label": "Google",
         "importPath": "app.api.v1.domains.auth.oauth2.schemas",
         "description": "app.api.v1.domains.auth.oauth2.schemas",
         "isExtraImport": true,
@@ -25582,7 +26406,7 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2CallbackRequest",
+        "label": "GitHub и др.",
         "importPath": "app.api.v1.domains.auth.oauth2.schemas",
         "description": "app.api.v1.domains.auth.oauth2.schemas",
         "isExtraImport": true,
@@ -25590,47 +26414,23 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2CallbackResponse",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
+        "label": "from app.services.password_service import PasswordService\r\n\"\"\"\r\nPassword Management Router.\r\n\r\nРоутер для операций с паролями: смена",
+        "importPath": "app.api.v1.domains.auth.password.schemas",
+        "description": "app.api.v1.domains.auth.password.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
+        "detail": "app.api.v1.domains.auth.password.schemas",
         "documentation": {}
     },
     {
-        "label": "OAuth2LinkRequest",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
+        "label": "сброс",
+        "importPath": "app.api.v1.domains.auth.password.schemas",
+        "description": "app.api.v1.domains.auth.password.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
+        "detail": "app.api.v1.domains.auth.password.schemas",
         "documentation": {}
     },
     {
-        "label": "OAuth2LinkResponse",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "OAuth2UnlinkRequest",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "OAuth2UnlinkResponse",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordChangeRequest",
+        "label": "подтверждение.\r\n\"\"\"\r\n\r\n\r\n\r\n    PasswordChangeRequest",
         "importPath": "app.api.v1.domains.auth.password.schemas",
         "description": "app.api.v1.domains.auth.password.schemas",
         "isExtraImport": true,
@@ -25686,7 +26486,47 @@
         "documentation": {}
     },
     {
-        "label": "LoginRequest",
+        "label": "from app.services.auth_service import AuthenticationService",
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service\r\nfrom app.services.token_service import TokenService",
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "token_service\r\nfrom app.services.user_registration_service import \r\nfrom app.crud.user import crud_user\r\nfrom app.api.v1.domains.identity.schemas import UserResponse\r\nfrom app.utils.logger import logger\r\n\"\"\"\r\nRoot Authentication Router.\r\n\r\nРоутер для основных операций аутентификации: login",
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "app.api.v1.domains.auth.root.schemas",
+        "description": "app.api.v1.domains.auth.root.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.root.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "refresh token.\r\n\"\"\"\r\n\r\n\r\n\r\n    LoginRequest",
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
         "isExtraImport": true,
@@ -25782,22 +26622,6 @@
         "documentation": {}
     },
     {
-        "label": "UserRegistrationService",
-        "importPath": "app.services.user_registration_service",
-        "description": "app.services.user_registration_service",
-        "isExtraImport": true,
-        "detail": "app.services.user_registration_service",
-        "documentation": {}
-    },
-    {
-        "label": "user_registration_service",
-        "importPath": "app.services.user_registration_service",
-        "description": "app.services.user_registration_service",
-        "isExtraImport": true,
-        "detail": "app.services.user_registration_service",
-        "documentation": {}
-    },
-    {
         "label": "crud_user",
         "importPath": "app.crud.user",
         "description": "app.crud.user",
@@ -25886,7 +26710,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionListResponse",
+        "label": "from app.services.session_service import session_service\r\n\"\"\"\r\nSession Management Router.\r\n\r\nРоутер для управления сессиями пользователей.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionListResponse",
         "importPath": "app.api.v1.domains.auth.sessions.schemas",
         "description": "app.api.v1.domains.auth.sessions.schemas",
         "isExtraImport": true,
@@ -26294,87 +27118,7 @@
         "documentation": {}
     },
     {
-        "label": "RoleHierarchyCreate",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleHierarchyUpdate",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleHierarchyResponse",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleHierarchyValidationRequest",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleHierarchyValidationResponse",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleInheritanceInfo",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "InheritancePathResponse",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleHierarchyStatsResponse",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "BulkRoleHierarchyCreate",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "BulkRoleHierarchyResponse",
-        "importPath": "app.schemas.role_hierarchy",
-        "description": "app.schemas.role_hierarchy",
-        "isExtraImport": true,
-        "detail": "app.schemas.role_hierarchy",
-        "documentation": {}
-    },
-    {
-        "label": "RoleConflictInfo",
+        "label": "from app.schemas.enhanced_role import EnhancedRoleResponse\r\nfrom app.services.role_service import role_service\r\nfrom app.services.role_hierarchy_service import role_hierarchy_service\r\nfrom app.crud.role_hierarchy import role_hierarchy\r\n\"\"\"\r\nAPI endpoints для управления иерархией ролей DAG",
         "importPath": "app.schemas.role_hierarchy",
         "description": "app.schemas.role_hierarchy",
         "isExtraImport": true,
@@ -26870,7 +27614,31 @@
         "documentation": {}
     },
     {
-        "label": "AdminUserListResponse",
+        "label": "quality_reports_service",
+        "importPath": "app.services.quality_reports_service",
+        "description": "app.services.quality_reports_service",
+        "isExtraImport": true,
+        "detail": "app.services.quality_reports_service",
+        "documentation": {}
+    },
+    {
+        "label": "specification_service",
+        "importPath": "app.services.specification_service",
+        "description": "app.services.specification_service",
+        "isExtraImport": true,
+        "detail": "app.services.specification_service",
+        "documentation": {}
+    },
+    {
+        "label": "testing_service",
+        "importPath": "app.services.testing_service",
+        "description": "app.services.testing_service",
+        "isExtraImport": true,
+        "detail": "app.services.testing_service",
+        "documentation": {}
+    },
+    {
+        "label": "from app.services.admin_service import AdminService\r\nfrom app.services.file_service import file_service\r\n\"\"\"\r\nSystem Administration Router.\r\n\r\nРоутер для административных операций системы.\r\n\"\"\"\r\n\r\n\r\n\r\n    AdminUserListResponse",
         "importPath": "app.api.v1.domains.system.admin.schemas",
         "description": "app.api.v1.domains.system.admin.schemas",
         "isExtraImport": true,
@@ -26934,7 +27702,15 @@
         "documentation": {}
     },
     {
-        "label": "AuditLogListResponse",
+        "label": "from app.services.admin_service import AdminService",
+        "importPath": "app.api.v1.domains.system.audit.schemas",
+        "description": "app.api.v1.domains.system.audit.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.system.audit.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "admin_service\r\n\"\"\"\r\nSystem Audit and Logging Router.\r\n\r\nРоутер для аудита и логирования системы.\r\n\"\"\"\r\n\r\n\r\n\r\n    AuditLogListResponse",
         "importPath": "app.api.v1.domains.system.audit.schemas",
         "description": "app.api.v1.domains.system.audit.schemas",
         "isExtraImport": true,
@@ -26998,7 +27774,15 @@
         "documentation": {}
     },
     {
-        "label": "BackupCreateRequest",
+        "label": "from app.services.admin_service import AdminService",
+        "importPath": "app.api.v1.domains.system.backup.schemas",
+        "description": "app.api.v1.domains.system.backup.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.system.backup.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "admin_service\r\n\"\"\"\r\nSystem Backup and Maintenance Router.\r\n\r\nРоутер для резервного копирования и обслуживания системы.\r\n\"\"\"\r\n\r\n\r\n\r\n    BackupCreateRequest",
         "importPath": "app.api.v1.domains.system.backup.schemas",
         "description": "app.api.v1.domains.system.backup.schemas",
         "isExtraImport": true,
@@ -27110,7 +27894,15 @@
         "documentation": {}
     },
     {
-        "label": "SystemHealthResponse",
+        "label": "from app.services.admin_service import AdminService",
+        "importPath": "app.api.v1.domains.system.health.schemas",
+        "description": "app.api.v1.domains.system.health.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.system.health.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "admin_service\r\n\"\"\"\r\nSystem Health Monitoring Router.\r\n\r\nРоутер для мониторинга здоровья системы.\r\n\"\"\"\r\n\r\n\r\n\r\n    SystemHealthResponse",
         "importPath": "app.api.v1.domains.system.health.schemas",
         "description": "app.api.v1.domains.system.health.schemas",
         "isExtraImport": true,
@@ -28721,6 +29513,14 @@
     },
     {
         "label": "joinedload",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "selectinload",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
@@ -32984,6 +33784,14 @@
         "isExtraImport": true,
         "importPath": "io",
         "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
         "detail": "io",
         "documentation": {}
     },
@@ -39820,7 +40628,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.departments.router",
         "description": "app.api.v1.domains.organizations.departments.router",
-        "peekOfCode": "router = APIRouter()\n# # Department Management\n#\n@router.get(\"/\")\nasync def get_departments(\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    parent_id: Optional[int] = Query(None, description=\"Filter by parent department\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
+        "peekOfCode": "router = APIRouter()\n# # Department Management\n#\n@router.get(\"/\")\nasync def get_departments(\n    db: SessionDep,\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    parent_id: Optional[int] = Query(None, description=\"Filter by parent department\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),",
         "detail": "app.api.v1.domains.organizations.departments.router",
         "documentation": {}
     },
@@ -40153,7 +40961,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.organizations.teams.router",
         "description": "app.api.v1.domains.organizations.teams.router",
-        "peekOfCode": "router = APIRouter()\n# # Team Management\n#\n@router.get(\"/\")\nasync def get_teams(\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),\n    # db: SessionDep,",
+        "peekOfCode": "router = APIRouter()\n# # Team Management\n#\n@router.get(\"/\")\nasync def get_teams(\n    db: SessionDep,\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    company_id: Optional[int] = Query(None, description=\"Filter by company ID\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),",
         "detail": "app.api.v1.domains.organizations.teams.router",
         "documentation": {}
     },
@@ -40315,7 +41123,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.projects.core.router",
         "description": "app.api.v1.domains.projects.core.router",
-        "peekOfCode": "router = APIRouter()\n# # Project Lifecycle Management\n#\n@router.get(\"/\")\nasync def get_projects(\n    team_id: Optional[int] = Query(None, description=\"Filter by team ID\"),\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),\n    limit: int = Query(100, ge=1, le=1000),",
+        "peekOfCode": "router = APIRouter()\n# # Project Lifecycle Management\n#\n@router.get(\"/\")\nasync def get_projects(\n    db: SessionDep,\n    team_id: Optional[int] = Query(None, description=\"Filter by team ID\"),\n    department_id: Optional[int] = Query(None, description=\"Filter by department ID\"),\n    status: Optional[str] = Query(None, description=\"Filter by status\"),\n    skip: int = Query(0, ge=0),",
         "detail": "app.api.v1.domains.projects.core.router",
         "documentation": {}
     },
@@ -53055,6 +53863,42 @@
         "documentation": {}
     },
     {
+        "label": "QualityReportsService",
+        "kind": 6,
+        "importPath": "app.services.quality_reports_service",
+        "description": "app.services.quality_reports_service",
+        "peekOfCode": "class QualityReportsService(BaseService):\n    \"\"\"\n    Сервис для генерации отчетов по качеству.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"QualityReportsService\"\n    async def generate_report(\n        self,\n        db: AsyncSession,\n        report_type: str,",
+        "detail": "app.services.quality_reports_service",
+        "documentation": {}
+    },
+    {
+        "label": "quality_reports_service",
+        "kind": 5,
+        "importPath": "app.services.quality_reports_service",
+        "description": "app.services.quality_reports_service",
+        "peekOfCode": "quality_reports_service = QualityReportsService()",
+        "detail": "app.services.quality_reports_service",
+        "documentation": {}
+    },
+    {
+        "label": "QualityService",
+        "kind": 6,
+        "importPath": "app.services.quality_service",
+        "description": "app.services.quality_service",
+        "peekOfCode": "class QualityService(BaseService):\n    \"\"\"\n    Базовый сервис для операций качества.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"QualityService\"\n    async def get_quality_dashboard(\n        self,\n        db: AsyncSession,\n        current_user: User,",
+        "detail": "app.services.quality_service",
+        "documentation": {}
+    },
+    {
+        "label": "quality_service",
+        "kind": 5,
+        "importPath": "app.services.quality_service",
+        "description": "app.services.quality_service",
+        "peekOfCode": "quality_service = QualityService()",
+        "detail": "app.services.quality_service",
+        "documentation": {}
+    },
+    {
         "label": "RelationshipServiceError",
         "kind": 6,
         "importPath": "app.services.relationship_service",
@@ -53847,6 +54691,24 @@
         "documentation": {}
     },
     {
+        "label": "SpecificationService",
+        "kind": 6,
+        "importPath": "app.services.specification_service",
+        "description": "app.services.specification_service",
+        "peekOfCode": "class SpecificationService(BaseService):\n    \"\"\"\n    Сервис для операций со спецификациями.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"SpecificationService\"\n    async def create_specification(\n        self,\n        db: AsyncSession,\n        spec_data: Dict[str, Any],",
+        "detail": "app.services.specification_service",
+        "documentation": {}
+    },
+    {
+        "label": "specification_service",
+        "kind": 5,
+        "importPath": "app.services.specification_service",
+        "description": "app.services.specification_service",
+        "peekOfCode": "specification_service = SpecificationService()",
+        "detail": "app.services.specification_service",
+        "documentation": {}
+    },
+    {
         "label": "TeamServiceError",
         "kind": 6,
         "importPath": "app.services.team_service",
@@ -54060,6 +54922,24 @@
         "description": "app.services.team_service",
         "peekOfCode": "team_service = TeamService()",
         "detail": "app.services.team_service",
+        "documentation": {}
+    },
+    {
+        "label": "TestingService",
+        "kind": 6,
+        "importPath": "app.services.testing_service",
+        "description": "app.services.testing_service",
+        "peekOfCode": "class TestingService(BaseService):\n    \"\"\"\n    Сервис для операций тестирования.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"TestingService\"\n    # === Test Cases ===\n    async def create_test_case(\n        self,\n        db: AsyncSession,",
+        "detail": "app.services.testing_service",
+        "documentation": {}
+    },
+    {
+        "label": "testing_service",
+        "kind": 5,
+        "importPath": "app.services.testing_service",
+        "description": "app.services.testing_service",
+        "peekOfCode": "testing_service = TestingService()",
+        "detail": "app.services.testing_service",
         "documentation": {}
     },
     {

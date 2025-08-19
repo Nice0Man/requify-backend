@@ -1,21 +1,22 @@
+from sqlalchemy.ext.asyncio import AsyncSession
+from fastapi import APIRouter, Depends, HTTPException, Request, status
+from app.api.v1.common.responses import create_response, error_response
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.v1.domains.auth.sessions.schemas import (
+from app.services.session_service import session_service
 """
 Session Management Router.
 
 Роутер для управления сессиями пользователей.
 """
 
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import APIRouter, Depends, HTTPException, Request, status
-from app.api.v1.common.responses import create_response, error_response
 
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.v1.domains.auth.sessions.schemas import (
 
     SessionListResponse,
     RevokeSessionRequest,
     RevokeSessionResponse,
 )
-from app.services.session_service import session_service
 
 router = APIRouter()
 

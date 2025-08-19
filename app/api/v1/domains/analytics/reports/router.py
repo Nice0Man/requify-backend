@@ -1,3 +1,13 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import Optional, List
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
+from app.models import User
+from app.core.constants import Permission, RoleScope
+from app.services.reporting_service import ReportingService
+from app.services.analytics_service import AnalyticsService
+from .schemas import (
 """
 Analytics Reports Router.
 
@@ -5,21 +15,12 @@ Handles analytics reporting operations including business intelligence reports,
 data visualization, trend analysis, and automated reporting.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import Optional, List
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,
     PermissionChecker,
 )
-from app.models import User
-from app.core.constants import Permission, RoleScope
-from app.services.reporting_service import ReportingService
-from app.services.analytics_service import AnalyticsService
-from .schemas import (
     AnalyticsReportRequest,
     AnalyticsReportResponse,
     ReportTemplateResponse,

@@ -1,22 +1,23 @@
+from fastapi import APIRouter, HTTPException, status, Depends
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.dependencies.permissions.base import PermissionChecker
+from app.core.constants import Permission
+from app.api.v1.domains.system.health.schemas import (
+from app.services.admin_service import AdminService, admin_service
 """
 System Health Monitoring Router.
 
 Роутер для мониторинга здоровья системы.
 """
 
-from fastapi import APIRouter, HTTPException, status, Depends
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.dependencies.permissions.base import PermissionChecker
-from app.core.constants import Permission
-from app.api.v1.domains.system.health.schemas import (
 
     SystemHealthResponse,
     DetailedHealthResponse,
     HealthCheckRequest,
 )
-from app.services.admin_service import AdminService, admin_service
 
 permission_checker = PermissionChecker()
 router = APIRouter()

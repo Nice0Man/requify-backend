@@ -1,19 +1,24 @@
-"""
-API endpoints для управления иерархией ролей (DAG).
-"""
-
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
-
 from typing import List, Dict, Any, Optional
 from app.api.dependencies.core.auth import get_current_user
+from app.api.dependencies.core.database import SessionDep
 from app.api.dependencies.core.database import get_async_session
 from app.api.dependencies.permissions.base import require_permission
 from app.core.constants import Permission
 from app.models.user import User
 from app.models.role_hierarchy import InheritanceType
 from app.schemas.role_hierarchy import (
+from app.schemas.enhanced_role import EnhancedRoleResponse
+from app.services.role_service import role_service
+from app.services.role_hierarchy_service import role_hierarchy_service
+from app.crud.role_hierarchy import role_hierarchy
+"""
+API endpoints для управления иерархией ролей (DAG).
+"""
+
+
 
     RoleHierarchyCreate,
     RoleHierarchyUpdate,
@@ -27,10 +32,6 @@ from app.schemas.role_hierarchy import (
     BulkRoleHierarchyResponse,
     RoleConflictInfo,
 )
-from app.schemas.enhanced_role import EnhancedRoleResponse
-from app.services.role_service import role_service
-from app.services.role_hierarchy_service import role_hierarchy_service
-from app.crud.role_hierarchy import role_hierarchy
 
 router = APIRouter(prefix="/hierarchy", tags=["Role Hierarchy"])
 
@@ -280,6 +281,7 @@ async def validate_role_inheritance(
     description="Возвращает список обнаруженных конфликтов в иерархии ролей",
 )
 async def get_hierarchy_conflicts(
+    db: SessionDep,
     role_id: Optional[int] = Query(
         None, description="ID роли для проверки (если не указан, проверяются все роли)"
     ),

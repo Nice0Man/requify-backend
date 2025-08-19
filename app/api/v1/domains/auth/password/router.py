@@ -1,14 +1,16 @@
+from fastapi import APIRouter, HTTPException, status
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.dependencies import CurrentUserDep, SessionDep
+from app.api.dependencies.core.database import SessionDep
+from app.api.v1.domains.auth.password.schemas import (
+from app.services.password_service import PasswordService
 """
 Password Management Router.
 
 Роутер для операций с паролями: смена, сброс, подтверждение.
 """
 
-from fastapi import APIRouter, HTTPException, status
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.v1.domains.auth.password.schemas import (
 
     PasswordChangeRequest,
     PasswordChangeResponse,
@@ -18,7 +20,6 @@ from app.api.v1.domains.auth.password.schemas import (
     PasswordResetConfirmResponse,
 )
 
-from app.services.password_service import PasswordService
 
 router = APIRouter()
 

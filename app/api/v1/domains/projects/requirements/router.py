@@ -1,14 +1,15 @@
+from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import List, Optional
+from app.api.dependencies import (
+from app.api.dependencies.core.database import SessionDep
 """
 Project Requirements Router.
 
 Современный роутер для управления требованиями в рамках проектов.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, status, Query, UploadFile, File
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import List, Optional
-from app.api.dependencies import (
 
     SessionDep,
     CurrentActiveUserDep,

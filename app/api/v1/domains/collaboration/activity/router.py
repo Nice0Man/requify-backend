@@ -1,17 +1,18 @@
+from fastapi import APIRouter, Depends, Query
+from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from typing import Optional, List
+from datetime import datetime
+from app.api.dependencies import SessionDep, CurrentUserDep
+from app.api.dependencies.core.database import SessionDep
+from app.services.activity_service import activity_service, ActivityType
+from .schemas import (
 """
 Activity Management Router.
 
 Роутер для работы с активностью пользователей.
 """
 
-from fastapi import APIRouter, Depends, Query
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 
-from typing import Optional, List
-from datetime import datetime
-from app.api.dependencies import SessionDep, CurrentUserDep
-from app.services.activity_service import activity_service, ActivityType
-from .schemas import (
 
     ActivityType,
     ActivityFeedResponse,
