@@ -5576,6 +5576,78 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -11186,6 +11258,22 @@
         "documentation": {}
     },
     {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
         "label": "AsyncEngine",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
@@ -11251,6 +11339,30 @@
     },
     {
         "label": "create_async_engine",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
+        "importPath": "sqlalchemy.ext.asyncio",
+        "description": "sqlalchemy.ext.asyncio",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncSession",
         "importPath": "sqlalchemy.ext.asyncio",
         "description": "sqlalchemy.ext.asyncio",
         "isExtraImport": true,
@@ -11762,7 +11874,39 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
         "label": "DatabaseConfig",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
         "importPath": "app.core.config",
         "description": "app.core.config",
         "isExtraImport": true,
@@ -12322,14 +12466,6 @@
         "documentation": {}
     },
     {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -12354,7 +12490,7 @@
         "documentation": {}
     },
     {
-        "label": "Depends",
+        "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -12362,7 +12498,7 @@
         "documentation": {}
     },
     {
-        "label": "HTTPException",
+        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -12474,14 +12610,6 @@
         "documentation": {}
     },
     {
-        "label": "Depends",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -12490,7 +12618,7 @@
         "documentation": {}
     },
     {
-        "label": "Request",
+        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -12498,7 +12626,7 @@
         "documentation": {}
     },
     {
-        "label": "status",
+        "label": "Request",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -14514,6 +14642,38 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "importPath": "app.utils.logger",
         "description": "app.utils.logger",
@@ -14563,6 +14723,30 @@
     },
     {
         "label": "get_logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "app.utils.logger",
+        "description": "app.utils.logger",
+        "isExtraImport": true,
+        "detail": "app.utils.logger",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
         "importPath": "app.utils.logger",
         "description": "app.utils.logger",
         "isExtraImport": true,
@@ -14866,7 +15050,47 @@
         "documentation": {}
     },
     {
-        "label": "AuthenticationService",
+        "label": "authentication_service",
+        "importPath": "app.services.auth_service",
+        "description": "app.services.auth_service",
+        "isExtraImport": true,
+        "detail": "app.services.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service",
+        "importPath": "app.services.auth_service",
+        "description": "app.services.auth_service",
+        "isExtraImport": true,
+        "detail": "app.services.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service",
+        "importPath": "app.services.auth_service",
+        "description": "app.services.auth_service",
+        "isExtraImport": true,
+        "detail": "app.services.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service",
+        "importPath": "app.services.auth_service",
+        "description": "app.services.auth_service",
+        "isExtraImport": true,
+        "detail": "app.services.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service",
+        "importPath": "app.services.auth_service",
+        "description": "app.services.auth_service",
+        "isExtraImport": true,
+        "detail": "app.services.auth_service",
+        "documentation": {}
+    },
+    {
+        "label": "authentication_service",
         "importPath": "app.services.auth_service",
         "description": "app.services.auth_service",
         "isExtraImport": true,
@@ -15955,6 +16179,70 @@
         "documentation": {}
     },
     {
+        "label": "CurrentUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "OptionalUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CurrentUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CurrentUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CurrentUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CurrentUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
         "label": "get_current_user",
         "importPath": "app.api.dependencies.core.auth",
         "description": "app.api.dependencies.core.auth",
@@ -15964,6 +16252,14 @@
     },
     {
         "label": "CurrentActiveUserDep",
+        "importPath": "app.api.dependencies.core.auth",
+        "description": "app.api.dependencies.core.auth",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CurrentUserDep",
         "importPath": "app.api.dependencies.core.auth",
         "description": "app.api.dependencies.core.auth",
         "isExtraImport": true,
@@ -16091,7 +16387,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "get_db",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -16108,6 +16404,14 @@
     },
     {
         "label": "SessionDep",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -16275,7 +16579,7 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "get_db",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -16283,7 +16587,15 @@
         "documentation": {}
     },
     {
-        "label": "SessionDep",
+        "label": "get_db",
+        "importPath": "app.api.dependencies.core.database",
+        "description": "app.api.dependencies.core.database",
+        "isExtraImport": true,
+        "detail": "app.api.dependencies.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
         "importPath": "app.api.dependencies.core.database",
         "description": "app.api.dependencies.core.database",
         "isExtraImport": true,
@@ -16717,6 +17029,15 @@
     },
     {
         "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -18285,6 +18606,22 @@
     },
     {
         "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -21086,6 +21423,22 @@
         "documentation": {}
     },
     {
+        "label": "user",
+        "importPath": "app.crud",
+        "description": "app.crud",
+        "isExtraImport": true,
+        "detail": "app.crud",
+        "documentation": {}
+    },
+    {
+        "label": "user",
+        "importPath": "app.crud",
+        "description": "app.crud",
+        "isExtraImport": true,
+        "detail": "app.crud",
+        "documentation": {}
+    },
+    {
         "label": "project",
         "importPath": "app.crud",
         "description": "app.crud",
@@ -21622,7 +21975,23 @@
         "documentation": {}
     },
     {
+        "label": "success_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
         "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
+        "label": "create_response",
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
         "isExtraImport": true,
@@ -21638,23 +22007,15 @@
         "documentation": {}
     },
     {
+        "label": "error_response",
+        "importPath": "app.api.v1.common.responses",
+        "description": "app.api.v1.common.responses",
+        "isExtraImport": true,
+        "detail": "app.api.v1.common.responses",
+        "documentation": {}
+    },
+    {
         "label": "not_found_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "forbidden_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "unauthorized_response",
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
         "isExtraImport": true,
@@ -21814,47 +22175,7 @@
         "documentation": {}
     },
     {
-        "label": "error_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
         "label": "success_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "not_found_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "forbidden_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "unauthorized_response",
-        "importPath": "app.api.v1.common.responses",
-        "description": "app.api.v1.common.responses",
-        "isExtraImport": true,
-        "detail": "app.api.v1.common.responses",
-        "documentation": {}
-    },
-    {
-        "label": "create_response",
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
         "isExtraImport": true,
@@ -23855,94 +24176,6 @@
     },
     {
         "label": "PermissionChecker",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "CurrentUserDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "get_current_user",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "CurrentUserDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "CurrentUserDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "CurrentUserDep",
-        "importPath": "app.api.dependencies",
-        "description": "app.api.dependencies",
-        "isExtraImport": true,
-        "detail": "app.api.dependencies",
-        "documentation": {}
-    },
-    {
-        "label": "SessionDep",
         "importPath": "app.api.dependencies",
         "description": "app.api.dependencies",
         "isExtraImport": true,
@@ -26334,151 +26567,183 @@
         "documentation": {}
     },
     {
-        "label": "from app.services.email_service import EmailService\r\n\"\"\"\r\nEmail Verification Router.\r\n\r\nРоутер для верификации email адресов.\r\n\"\"\"\r\n\r\n\r\n\r\n    EmailVerificationRequest",
-        "importPath": "app.api.v1.domains.auth.email.schemas",
-        "description": "app.api.v1.domains.auth.email.schemas",
+        "label": "EmailVerificationRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.email.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "EmailVerificationResponse",
-        "importPath": "app.api.v1.domains.auth.email.schemas",
-        "description": "app.api.v1.domains.auth.email.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.email.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
         "label": "EmailVerificationConfirm",
-        "importPath": "app.api.v1.domains.auth.email.schemas",
-        "description": "app.api.v1.domains.auth.email.schemas",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.email.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "EmailVerificationConfirmResponse",
-        "importPath": "app.api.v1.domains.auth.email.schemas",
-        "description": "app.api.v1.domains.auth.email.schemas",
+        "label": "EmailVerificationResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.email.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "EmailService",
-        "importPath": "app.services.email_service",
-        "description": "app.services.email_service",
+        "label": "UserBasicResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.services.email_service",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "from app.models.user import User\r\nfrom app.api.dependencies import CurrentUserDep",
-        "importPath": "app.api.v1.domains.auth.me.schemas",
-        "description": "app.api.v1.domains.auth.me.schemas",
+        "label": "UserDetailedResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.me.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "SessionDep\r\nfrom app.api.dependencies.core.database import SessionDep\r\n\"\"\"\r\nCurrent User Me",
-        "importPath": "app.api.v1.domains.auth.me.schemas",
-        "description": "app.api.v1.domains.auth.me.schemas",
+        "label": "UserWithRelationsResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.me.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "from app.models.user import User\r\nfrom app.services.auth0_service import Auth0Service\r\n\"\"\"\r\nOAuth2 Authentication Router.\r\n\r\nРоутер для OAuth2 интеграции Auth0",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "Google",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "GitHub и др.",
-        "importPath": "app.api.v1.domains.auth.oauth2.schemas",
-        "description": "app.api.v1.domains.auth.oauth2.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.oauth2.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "from app.services.password_service import PasswordService\r\n\"\"\"\r\nPassword Management Router.\r\n\r\nРоутер для операций с паролями: смена",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "сброс",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "подтверждение.\r\n\"\"\"\r\n\r\n\r\n\r\n    PasswordChangeRequest",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordChangeResponse",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
         "label": "PasswordResetRequest",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordResetResponse",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
         "label": "PasswordResetConfirm",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "PasswordResetConfirmResponse",
-        "importPath": "app.api.v1.domains.auth.password.schemas",
-        "description": "app.api.v1.domains.auth.password.schemas",
+        "label": "PasswordChangeRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.password.schemas",
+        "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
     {
-        "label": "PasswordService",
+        "label": "PasswordResetResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelationsResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "RefreshTokenRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LogoutRequest",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LoginResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LogoutResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserBasicResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionListResponse",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SessionInfo",
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "password_service",
         "importPath": "app.services.password_service",
         "description": "app.services.password_service",
         "isExtraImport": true,
@@ -26486,139 +26751,356 @@
         "documentation": {}
     },
     {
-        "label": "from app.services.auth_service import AuthenticationService",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "email_service",
+        "importPath": "app.services.email_service",
+        "description": "app.services.email_service",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.services.email_service",
         "documentation": {}
     },
     {
-        "label": "authentication_service\r\nfrom app.services.token_service import TokenService",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "token_service\r\nfrom app.services.user_registration_service import \r\nfrom app.crud.user import crud_user\r\nfrom app.api.v1.domains.identity.schemas import UserResponse\r\nfrom app.utils.logger import logger\r\n\"\"\"\r\nRoot Authentication Router.\r\n\r\nРоутер для основных операций аутентификации: login",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "register",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "logout",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "refresh token.\r\n\"\"\"\r\n\r\n\r\n\r\n    LoginRequest",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "LoginResponse",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "RegisterRequest",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "RegisterResponse",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "LogoutRequest",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "LogoutResponse",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "RefreshTokenRequest",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "RefreshTokenResponse",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "TokenValidationRequest",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "TokenValidationResponse",
-        "importPath": "app.api.v1.domains.auth.root.schemas",
-        "description": "app.api.v1.domains.auth.root.schemas",
+        "label": "TokenType",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.root.schemas",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "TokenService",
-        "importPath": "app.services.token_service",
-        "description": "app.services.token_service",
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.services.token_service",
+        "detail": "app.core.security",
         "documentation": {}
     },
     {
-        "label": "token_service",
-        "importPath": "app.services.token_service",
-        "description": "app.services.token_service",
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
         "isExtraImport": true,
-        "detail": "app.services.token_service",
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedRolePermissionChecker",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "require_system_admin",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_user_permission",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_client_ip",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_agent",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "TokenType",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTTokenManager",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "TokenType",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "user_registration_service",
+        "importPath": "app.services.user_registration_service",
+        "description": "app.services.user_registration_service",
+        "isExtraImport": true,
+        "detail": "app.services.user_registration_service",
         "documentation": {}
     },
     {
@@ -26686,67 +27168,27 @@
         "documentation": {}
     },
     {
-        "label": "UserResponse",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
+        "label": "crud_user",
+        "importPath": "app.crud.user",
+        "description": "app.crud.user",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
+        "detail": "app.crud.user",
         "documentation": {}
     },
     {
-        "label": "UserProfileCreate",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
+        "label": "crud_user",
+        "importPath": "app.crud.user",
+        "description": "app.crud.user",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
+        "detail": "app.crud.user",
         "documentation": {}
     },
     {
-        "label": "UserProfileUpdate",
-        "importPath": "app.api.v1.domains.identity.schemas",
-        "description": "app.api.v1.domains.identity.schemas",
+        "label": "crud_user",
+        "importPath": "app.crud.user",
+        "description": "app.crud.user",
         "isExtraImport": true,
-        "detail": "app.api.v1.domains.identity.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "from app.services.session_service import session_service\r\n\"\"\"\r\nSession Management Router.\r\n\r\nРоутер для управления сессиями пользователей.\r\n\"\"\"\r\n\r\n\r\n\r\n    SessionListResponse",
-        "importPath": "app.api.v1.domains.auth.sessions.schemas",
-        "description": "app.api.v1.domains.auth.sessions.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.sessions.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "RevokeSessionRequest",
-        "importPath": "app.api.v1.domains.auth.sessions.schemas",
-        "description": "app.api.v1.domains.auth.sessions.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.sessions.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "RevokeSessionResponse",
-        "importPath": "app.api.v1.domains.auth.sessions.schemas",
-        "description": "app.api.v1.domains.auth.sessions.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.sessions.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "ActiveSession",
-        "importPath": "app.api.v1.domains.auth.sessions.schemas",
-        "description": "app.api.v1.domains.auth.sessions.schemas",
-        "isExtraImport": true,
-        "detail": "app.api.v1.domains.auth.sessions.schemas",
-        "documentation": {}
-    },
-    {
-        "label": "session_service",
-        "importPath": "app.services.session_service",
-        "description": "app.services.session_service",
-        "isExtraImport": true,
-        "detail": "app.services.session_service",
+        "detail": "app.crud.user",
         "documentation": {}
     },
     {
@@ -28203,15 +28645,6 @@
         "description": "pydantic_settings",
         "isExtraImport": true,
         "detail": "pydantic_settings",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
         "documentation": {}
     },
     {
@@ -31713,6 +32146,14 @@
         "documentation": {}
     },
     {
+        "label": "Requirement",
+        "importPath": "app.models.requirement",
+        "description": "app.models.requirement",
+        "isExtraImport": true,
+        "detail": "app.models.requirement",
+        "documentation": {}
+    },
+    {
         "label": "RequirementCreateRequest",
         "importPath": "app.api.v1.domains.projects.requirements.schemas",
         "description": "app.api.v1.domains.projects.requirements.schemas",
@@ -32130,318 +32571,6 @@
         "documentation": {}
     },
     {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "PasswordManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "EnhancedRolePermissionChecker",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "require_system_admin",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "check_user_permission",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_client_ip",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_user_agent",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "JWTTokenManager",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "TokenType",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "get_password_hash",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "app.core.security",
-        "description": "app.core.security",
-        "isExtraImport": true,
-        "detail": "app.core.security",
-        "documentation": {}
-    },
-    {
         "label": "Spec",
         "importPath": "app.models.spec",
         "description": "app.models.spec",
@@ -32562,6 +32691,22 @@
         "documentation": {}
     },
     {
+        "label": "Specification",
+        "importPath": "app.models.specification",
+        "description": "app.models.specification",
+        "isExtraImport": true,
+        "detail": "app.models.specification",
+        "documentation": {}
+    },
+    {
+        "label": "SpecificationStatus",
+        "importPath": "app.models.specification",
+        "description": "app.models.specification",
+        "isExtraImport": true,
+        "detail": "app.models.specification",
+        "documentation": {}
+    },
+    {
         "label": "TeamMember",
         "importPath": "app.models.team_member",
         "description": "app.models.team_member",
@@ -32658,6 +32803,70 @@
         "documentation": {}
     },
     {
+        "label": "TestPlan",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestExecution",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestCaseStatus",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestPlan",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestExecution",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "ExecutionStatus",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "app.models.test_case",
+        "description": "app.models.test_case",
+        "isExtraImport": true,
+        "detail": "app.models.test_case",
+        "documentation": {}
+    },
+    {
         "label": "TestCaseStatus",
         "importPath": "app.models.test_case",
         "description": "app.models.test_case",
@@ -32714,7 +32923,71 @@
         "documentation": {}
     },
     {
+        "label": "TestCaseCreateRequest",
+        "importPath": "app.api.v1.domains.quality.testing.schemas",
+        "description": "app.api.v1.domains.quality.testing.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.quality.testing.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TestCaseUpdateRequest",
+        "importPath": "app.api.v1.domains.quality.testing.schemas",
+        "description": "app.api.v1.domains.quality.testing.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.quality.testing.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TestResultCreateRequest",
+        "importPath": "app.api.v1.domains.quality.testing.schemas",
+        "description": "app.api.v1.domains.quality.testing.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.quality.testing.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TestResultUpdateRequest",
+        "importPath": "app.api.v1.domains.quality.testing.schemas",
+        "description": "app.api.v1.domains.quality.testing.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.quality.testing.schemas",
+        "documentation": {}
+    },
+    {
         "label": "TestResult",
+        "importPath": "app.models.test_result",
+        "description": "app.models.test_result",
+        "isExtraImport": true,
+        "detail": "app.models.test_result",
+        "documentation": {}
+    },
+    {
+        "label": "TestResult",
+        "importPath": "app.models.test_result",
+        "description": "app.models.test_result",
+        "isExtraImport": true,
+        "detail": "app.models.test_result",
+        "documentation": {}
+    },
+    {
+        "label": "TestStatus",
+        "importPath": "app.models.test_result",
+        "description": "app.models.test_result",
+        "isExtraImport": true,
+        "detail": "app.models.test_result",
+        "documentation": {}
+    },
+    {
+        "label": "TestResult",
+        "importPath": "app.models.test_result",
+        "description": "app.models.test_result",
+        "isExtraImport": true,
+        "detail": "app.models.test_result",
+        "documentation": {}
+    },
+    {
+        "label": "TestStatus",
         "importPath": "app.models.test_result",
         "description": "app.models.test_result",
         "isExtraImport": true,
@@ -32847,6 +33120,22 @@
         "description": "app.models.user_profile",
         "isExtraImport": true,
         "detail": "app.models.user_profile",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfileCreate",
+        "importPath": "app.api.v1.domains.identity.schemas",
+        "description": "app.api.v1.domains.identity.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.identity.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfileUpdate",
+        "importPath": "app.api.v1.domains.identity.schemas",
+        "description": "app.api.v1.domains.identity.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.identity.schemas",
         "documentation": {}
     },
     {
@@ -33804,6 +34093,79 @@
         "documentation": {}
     },
     {
+        "label": "urlencode",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "urlencode",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "urlencode",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncClient",
+        "importPath": "httpx",
+        "description": "httpx",
+        "isExtraImport": true,
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "token_service",
+        "importPath": "app.services.token_service",
+        "description": "app.services.token_service",
+        "isExtraImport": true,
+        "detail": "app.services.token_service",
+        "documentation": {}
+    },
+    {
+        "label": "token_service",
+        "importPath": "app.services.token_service",
+        "description": "app.services.token_service",
+        "isExtraImport": true,
+        "detail": "app.services.token_service",
+        "documentation": {}
+    },
+    {
+        "label": "token_service",
+        "importPath": "app.services.token_service",
+        "description": "app.services.token_service",
+        "isExtraImport": true,
+        "detail": "app.services.token_service",
+        "documentation": {}
+    },
+    {
         "label": "string",
         "kind": 6,
         "isExtraImport": true,
@@ -33843,6 +34205,14 @@
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "ActiveSession",
+        "importPath": "app.api.v1.domains.auth.sessions.schemas",
+        "description": "app.api.v1.domains.auth.sessions.schemas",
+        "isExtraImport": true,
+        "detail": "app.api.v1.domains.auth.sessions.schemas",
         "documentation": {}
     },
     {
@@ -33891,6 +34261,22 @@
         "description": "app.crud.test_case",
         "isExtraImport": true,
         "detail": "app.crud.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "test_case",
+        "importPath": "app.crud.test_case",
+        "description": "app.crud.test_case",
+        "isExtraImport": true,
+        "detail": "app.crud.test_case",
+        "documentation": {}
+    },
+    {
+        "label": "test_result",
+        "importPath": "app.crud.test_result",
+        "description": "app.crud.test_result",
+        "isExtraImport": true,
+        "detail": "app.crud.test_result",
         "documentation": {}
     },
     {
@@ -34618,31 +35004,6 @@
         "description": "fastapi.testclient",
         "isExtraImport": true,
         "detail": "fastapi.testclient",
-        "documentation": {}
-    },
-    {
-        "label": "httpx",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "httpx",
-        "description": "httpx",
-        "detail": "httpx",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncClient",
-        "importPath": "httpx",
-        "description": "httpx",
-        "isExtraImport": true,
-        "detail": "httpx",
-        "documentation": {}
-    },
-    {
-        "label": "AsyncClient",
-        "importPath": "httpx",
-        "description": "httpx",
-        "isExtraImport": true,
-        "detail": "httpx",
         "documentation": {}
     },
     {
@@ -36839,7 +37200,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def create_response(\n    data: Any = None,\n    message: Optional[str] = None,\n    status_code: int = status.HTTP_200_OK,\n    success: bool = True,\n    error_code: Optional[str] = None,\n    headers: Optional[Dict[str, str]] = None,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"",
+        "peekOfCode": "def create_response(\n    data: Any = None,\n    message: Optional[str] = None,\n    status_code: int = status.HTTP_200_OK,\n    success: bool = True,\n    error_code: Optional[str] = None,\n    headers: Optional[Dict[str, str]] = None,\n    **kwargs,\n) -> JSONResponse:\n    \"\"\"",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36848,7 +37209,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def success_response(\n    data: Any = None,\n    message: str = \"Operation completed successfully\",\n    status_code: int = status.HTTP_200_OK,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает успешный ответ.\n    Args:\n        data: Данные ответа",
+        "peekOfCode": "def success_response(\n    data: Any = None,\n    message: str = \"Operation completed successfully\",\n    status_code: int = status.HTTP_200_OK,\n    **kwargs,\n) -> JSONResponse:\n    \"\"\"\n    Создает успешный ответ.\n    Args:\n        data: Данные ответа",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36857,7 +37218,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def error_response(\n    message: str,\n    status_code: int = status.HTTP_400_BAD_REQUEST,\n    error_code: Optional[str] = None,\n    details: Optional[Dict[str, Any]] = None,\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой.\n    Args:",
+        "peekOfCode": "def error_response(\n    message: str,\n    status_code: int = status.HTTP_400_BAD_REQUEST,\n    error_code: Optional[str] = None,\n    details: Optional[Dict[str, Any]] = None,\n    **kwargs,\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой.\n    Args:",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36866,7 +37227,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def created_response(\n    data: Any,\n    message: str = \"Resource created successfully\",\n    **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о создании ресурса.\n    Args:\n        data: Созданный ресурс\n        message: Сообщение о создании",
+        "peekOfCode": "def created_response(\n    data: Any, message: str = \"Resource created successfully\", **kwargs\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о создании ресурса.\n    Args:\n        data: Созданный ресурс\n        message: Сообщение о создании\n        **kwargs: Дополнительные поля\n    Returns:",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36875,7 +37236,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def no_content_response(\n    message: str = \"Operation completed successfully\"\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ без контента.\n    Args:\n        message: Сообщение об успехе\n    Returns:\n        JSONResponse: Ответ без контента\n    \"\"\"",
+        "peekOfCode": "def no_content_response(\n    message: str = \"Operation completed successfully\",\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ без контента.\n    Args:\n        message: Сообщение об успехе\n    Returns:\n        JSONResponse: Ответ без контента\n    \"\"\"",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36884,7 +37245,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def not_found_response(\n    message: str = \"Resource not found\",\n    resource_type: Optional[str] = None,\n    resource_id: Optional[Union[str, int]] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о ненайденном ресурсе.\n    Args:\n        message: Сообщение об ошибке\n        resource_type: Тип ресурса",
+        "peekOfCode": "def not_found_response(\n    message: str = \"Resource not found\",\n    resource_type: Optional[str] = None,\n    resource_id: Optional[Union[str, int]] = None,\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о ненайденном ресурсе.\n    Args:\n        message: Сообщение об ошибке\n        resource_type: Тип ресурса",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36893,7 +37254,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def validation_error_response(\n    message: str = \"Validation failed\",\n    errors: Optional[list] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой валидации.\n    Args:\n        message: Сообщение об ошибке\n        errors: Список ошибок валидации\n    Returns:",
+        "peekOfCode": "def validation_error_response(\n    message: str = \"Validation failed\", errors: Optional[list] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ с ошибкой валидации.\n    Args:\n        message: Сообщение об ошибке\n        errors: Список ошибок валидации\n    Returns:\n        JSONResponse: Ответ с ошибкой валидации",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36902,7 +37263,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def forbidden_response(\n    message: str = \"Access forbidden\",\n    required_permission: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о запрете доступа.\n    Args:\n        message: Сообщение об ошибке\n        required_permission: Требуемое разрешение\n    Returns:",
+        "peekOfCode": "def forbidden_response(\n    message: str = \"Access forbidden\", required_permission: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о запрете доступа.\n    Args:\n        message: Сообщение об ошибке\n        required_permission: Требуемое разрешение\n    Returns:\n        JSONResponse: Ответ о запрете доступа",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36911,7 +37272,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def unauthorized_response(\n    message: str = \"Authentication required\"\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о необходимости аутентификации.\n    Args:\n        message: Сообщение об ошибке\n    Returns:\n        JSONResponse: Ответ о необходимости аутентификации\n    \"\"\"",
+        "peekOfCode": "def unauthorized_response(message: str = \"Authentication required\") -> JSONResponse:\n    \"\"\"\n    Создает ответ о необходимости аутентификации.\n    Args:\n        message: Сообщение об ошибке\n    Returns:\n        JSONResponse: Ответ о необходимости аутентификации\n    \"\"\"\n    return error_response(\n        message=message,",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -36920,7 +37281,7 @@
         "kind": 2,
         "importPath": "app.api.v1.common.responses",
         "description": "app.api.v1.common.responses",
-        "peekOfCode": "def conflict_response(\n    message: str = \"Resource conflict\",\n    conflict_type: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о конфликте ресурсов.\n    Args:\n        message: Сообщение об ошибке\n        conflict_type: Тип конфликта\n    Returns:",
+        "peekOfCode": "def conflict_response(\n    message: str = \"Resource conflict\", conflict_type: Optional[str] = None\n) -> JSONResponse:\n    \"\"\"\n    Создает ответ о конфликте ресурсов.\n    Args:\n        message: Сообщение об ошибке\n        conflict_type: Тип конфликта\n    Returns:\n        JSONResponse: Ответ о конфликте",
         "detail": "app.api.v1.common.responses",
         "documentation": {}
     },
@@ -37676,7 +38037,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.email.router",
         "description": "app.api.v1.domains.auth.email.router",
-        "peekOfCode": "router = APIRouter()\n@router.post(\n    \"/request\",\n    response_model=EmailVerificationResponse,\n    summary=\"Request Email Verification\",\n)\nasync def request_email_verification(\n    request: EmailVerificationRequest,\n    db: SessionDep,\n):",
+        "peekOfCode": "router = APIRouter()\n@router.post(\"/verify\", summary=\"Request Email Verification\")\nasync def request_email_verification(\n    verification_data: EmailVerificationRequest,\n    db: SessionDep,\n):\n    \"\"\"\n    Запросить отправку письма для верификации email.\n    Отправляет письмо с ссылкой для подтверждения email адреса.\n    \"\"\"",
         "detail": "app.api.v1.domains.auth.email.router",
         "documentation": {}
     },
@@ -37721,7 +38082,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.me.router",
         "description": "app.api.v1.domains.auth.me.router",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/\", response_model=CurrentUserResponse, summary=\"Get Current User Info\")\nasync def get_current_user_info(\n    current_user: CurrentUserDep,\n    db: SessionDep,\n):\n    \"\"\"\n    Get information about current authenticated user.\n    \"\"\"\n    # Get detailed user info with fresh session context",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/\", summary=\"Get Current User Information\")\nasync def get_me(\n    current_user: CurrentUserDep,\n):\n    \"\"\"\n    Получить информацию о текущем пользователе.\n    Возвращает детальную информацию о пользователе, включая профиль,\n    настройки и другие связанные данные.\n    \"\"\"",
         "detail": "app.api.v1.domains.auth.me.router",
         "documentation": {}
     },
@@ -37753,11 +38114,20 @@
         "documentation": {}
     },
     {
+        "label": "OAuth2ProviderService",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.oauth2.router",
+        "description": "app.api.v1.domains.auth.oauth2.router",
+        "peekOfCode": "class OAuth2ProviderService:\n    \"\"\"Фабрика OAuth2 провайдеров.\"\"\"\n    @staticmethod\n    async def get_authorization_url(provider: str, redirect_uri: str = None, state: str = None):\n        \"\"\"Получить URL авторизации для провайдера.\"\"\"\n        if provider == \"auth0\":\n            return await Auth0Service().get_authorization_url(\n                redirect_uri=redirect_uri,\n                state=state,\n            )",
+        "detail": "app.api.v1.domains.auth.oauth2.router",
+        "documentation": {}
+    },
+    {
         "label": "router",
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.oauth2.router",
         "description": "app.api.v1.domains.auth.oauth2.router",
-        "peekOfCode": "router = APIRouter()\n@router.post(\n    \"/authorize\", response_model=OAuth2AuthorizeResponse, summary=\"OAuth2 Authorize\"\n)\nasync def oauth2_authorize(\n    request: OAuth2AuthorizeRequest,\n):\n    \"\"\"\n    Initialize OAuth2 authorization flow.\n    - **provider**: OAuth2 provider (auth0, google, github, microsoft)",
+        "peekOfCode": "router = APIRouter()\nclass OAuth2ProviderService:\n    \"\"\"Фабрика OAuth2 провайдеров.\"\"\"\n    @staticmethod\n    async def get_authorization_url(provider: str, redirect_uri: str = None, state: str = None):\n        \"\"\"Получить URL авторизации для провайдера.\"\"\"\n        if provider == \"auth0\":\n            return await Auth0Service().get_authorization_url(\n                redirect_uri=redirect_uri,\n                state=state,",
         "detail": "app.api.v1.domains.auth.oauth2.router",
         "documentation": {}
     },
@@ -37852,11 +38222,20 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "app.api.v1.domains.auth.password.router",
+        "description": "app.api.v1.domains.auth.password.router",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nrouter = APIRouter()\n@router.post(\"/change\", summary=\"Change Password\")\nasync def change_password(\n    change_data: PasswordChangeRequest,\n    current_user: CurrentUserDep,\n    db: SessionDep,\n):\n    \"\"\"\n    Изменить пароль пользователя.",
+        "detail": "app.api.v1.domains.auth.password.router",
+        "documentation": {}
+    },
+    {
         "label": "router",
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.password.router",
         "description": "app.api.v1.domains.auth.password.router",
-        "peekOfCode": "router = APIRouter()\n@router.post(\n    \"/change\", response_model=PasswordChangeResponse, summary=\"Change Password\"\n)\nasync def change_password(\n    request: PasswordChangeRequest,\n    *,\n    current_user: CurrentUserDep,\n    db: SessionDep,\n):",
+        "peekOfCode": "router = APIRouter()\n@router.post(\"/change\", summary=\"Change Password\")\nasync def change_password(\n    change_data: PasswordChangeRequest,\n    current_user: CurrentUserDep,\n    db: SessionDep,\n):\n    \"\"\"\n    Изменить пароль пользователя.\n    - **current_password**: Текущий пароль пользователя",
         "detail": "app.api.v1.domains.auth.password.router",
         "documentation": {}
     },
@@ -37919,7 +38298,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.root.router",
         "description": "app.api.v1.domains.auth.root.router",
-        "peekOfCode": "router = APIRouter()\n@router.post(\"/login\", response_model=LoginResponse, summary=\"Authenticate User\")\nasync def login(\n    db: SessionDep,\n    request_obj: Request,\n    form_data: OAuth2PasswordRequestForm = Depends(),\n):\n    \"\"\"\n    Authenticate user and return JWT tokens.\n    - **email**: User email",
+        "peekOfCode": "router = APIRouter()\n@router.post(\"/login\", response_model=LoginResponse, summary=\"Authenticate User\")\nasync def login(\n    db: SessionDep,\n    request_obj: Request,\n    login_data: LoginRequest,\n):\n    \"\"\"\n    Authenticate user and return JWT tokens.\n    - **email**: User email",
         "detail": "app.api.v1.domains.auth.root.router",
         "documentation": {}
     },
@@ -37964,7 +38343,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class LoginRequest(BaseSchema):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: EmailStr = Field(..., description=\"Email пользователя\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"\n        if not v or not str(v).strip():",
+        "peekOfCode": "class LoginRequest(BaseSchema):\n    \"\"\"Схема для запроса аутентификации.\"\"\"\n    email: Optional[EmailStr] = Field(None, description=\"Email пользователя\")\n    username: Optional[str] = Field(None, description=\"Имя пользователя\")\n    password: str = Field(..., min_length=1, description=\"Пароль\")\n    remember_me: bool = Field(default=False, description=\"Запомнить меня\")\n    @field_validator(\"email\")\n    @classmethod\n    def validate_email(cls, v):\n        \"\"\"Валидация email.\"\"\"",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -37973,7 +38352,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n# === Register Schemas ===",
+        "peekOfCode": "class LoginResponse(BaseSchema):\n    \"\"\"Схема для ответа после успешной аутентификации.\"\"\"\n    access_token: str = Field(..., description=\"Access токен\")\n    refresh_token: str = Field(..., description=\"Refresh токен\")\n    token_type: str = Field(default=\"bearer\", description=\"Тип токена\")\n    expires_in: int = Field(..., description=\"Время жизни access токена в секундах\")\n    refresh_expires_in: Optional[int] = Field(\n        None, description=\"Время жизни refresh токена в секундах\"\n    )\n    user: \"UserWithRelationsResponse\" = Field(..., description=\"Информация о пользователе\")",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -37982,7 +38361,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class RegisterRequest(CreateSchema, ValidationMixin):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: str = Field(\n        ..., min_length=2, max_length=50, description=\"Имя пользователя\"\n    )",
+        "peekOfCode": "class RegisterRequest(CreateSchema, ValidationMixin):\n    \"\"\"\n    Схема для регистрации нового пользователя через форму.\n    Наследует валидацию от UserBase и добавляет confirm_password.\n    Используется для frontend форм, в то время как UserCreate\n    используется для backend API.\n    \"\"\"\n    username: Optional[str] = Field(\n        None, min_length=2, max_length=50, description=\"Имя пользователя\"\n    )",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -38000,7 +38379,7 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.root.schemas",
         "description": "app.api.v1.domains.auth.root.schemas",
-        "peekOfCode": "class LogoutRequest(CreateSchema):\n    \"\"\"Схема для запроса выхода из системы.\"\"\"\n    refresh_token: Optional[str] = Field(None, description=\"Refresh токен для отзыва\")\n    logout_all: bool = Field(default=False, description=\"Выйти из всех устройств\")\nclass LogoutResponse(BaseSchema):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Token Validation Schemas ===",
+        "peekOfCode": "class LogoutRequest(CreateSchema):\n    \"\"\"Схема для запроса выхода из системы.\"\"\"\n    refresh_token: Optional[str] = Field(None, description=\"Refresh токен для отзыва\")\n    logout_all_devices: bool = Field(default=False, description=\"Выйти из всех устройств\")\nclass LogoutResponse(BaseSchema):\n    \"\"\"Схема для ответа при выходе из системы.\"\"\"\n    message: str = Field(default=\"Successfully logged out\", description=\"Сообщение\")\n    revoked_tokens: int = Field(default=0, description=\"Количество отозванных токенов\")\n    sessions_revoked: int = Field(default=0, description=\"Количество отозванных сессий\")\n# === Token Validation Schemas ===",
         "detail": "app.api.v1.domains.auth.root.schemas",
         "documentation": {}
     },
@@ -38063,7 +38442,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.auth.sessions.router",
         "description": "app.api.v1.domains.auth.sessions.router",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/\", response_model=SessionListResponse, summary=\"Get User Sessions\")\nasync def get_user_sessions(\n    db: SessionDep,\n    current_user: CurrentUserDep,\n    request: Request = None,\n    active_only: bool = True,\n):\n    \"\"\"\n    Get list of user active sessions.",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/\", summary=\"List User Sessions\")\nasync def list_sessions(\n    current_user: CurrentUserDep,\n    db: SessionDep,\n):\n    \"\"\"\n    Получить список активных сессий пользователя.\n    Возвращает информацию о всех активных сессиях текущего пользователя\n    включая IP адреса, устройства и время последней активности.",
         "detail": "app.api.v1.domains.auth.sessions.router",
         "documentation": {}
     },
@@ -38378,7 +38757,52 @@
         "kind": 6,
         "importPath": "app.api.v1.domains.auth.schemas",
         "description": "app.api.v1.domains.auth.schemas",
-        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",",
+        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n# === User Response Schemas ===\nclass UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")",
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserBasicResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "peekOfCode": "class UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")\n    email: EmailStr = Field(..., description=\"Email\")\n    name: str = Field(..., description=\"Полное имя\")\n    username: Optional[str] = Field(None, description=\"Имя пользователя\")\n    is_active: bool = Field(..., description=\"Активен ли пользователь\")\n    is_email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    last_login_at: Optional[datetime] = Field(None, description=\"Последний вход\")\n    created_at: datetime = Field(..., description=\"Дата создания\")",
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailedResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "peekOfCode": "class UserDetailedResponse(UserBasicResponse):\n    \"\"\"Детальная информация о пользователе.\"\"\"\n    updated_at: Optional[datetime] = Field(None, description=\"Дата обновления\")\n    status: Optional[str] = Field(None, description=\"Статус пользователя\")\nclass UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"",
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelationsResponse",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "peekOfCode": "class UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"\n    )\n# === OAuth2 Schemas ===\nclass OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"",
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2LoginRequest",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "peekOfCode": "class OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"\n    provider: AuthProvider = Field(..., description=\"OAuth2 провайдер\")\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n    redirect_uri: str = Field(..., description=\"Redirect URI\")\nclass OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")",
+        "detail": "app.api.v1.domains.auth.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2CallbackRequest",
+        "kind": 6,
+        "importPath": "app.api.v1.domains.auth.schemas",
+        "description": "app.api.v1.domains.auth.schemas",
+        "peekOfCode": "class OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",\n    # Token schemas\n    \"TokenBase\",",
         "detail": "app.api.v1.domains.auth.schemas",
         "documentation": {}
     },
@@ -41609,7 +42033,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.reports.router",
         "description": "app.api.v1.domains.quality.reports.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/reports\", tags=[\"quality-reports\"])\n# === Report Management ===\n@router.post(\"\", response_model=ReportOperationResponse)\nasync def generate_report(\n    request: ReportGenerateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_reports_generate),\n):\n    \"\"\"Генерация отчета по качеству.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/reports\", tags=[\"quality-reports\"])\n# === Report Management ===\n@router.post(\"\", response_model=ReportOperationResponse)\nasync def generate_report(\n    request: ReportGenerateRequest,\n    db: SessionDep,\n    current_user: CurrentUserDep,\n    _: None = Depends(require_reports_generate),\n):\n    \"\"\"Генерация отчета по качеству.\"\"\"",
         "detail": "app.api.v1.domains.quality.reports.router",
         "documentation": {}
     },
@@ -41789,7 +42213,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.specifications.router",
         "description": "app.api.v1.domains.quality.specifications.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/specifications\", tags=[\"specifications\"])\n# === Specification CRUD ===\n@router.post(\"\", response_model=SpecificationResponse)\nasync def create_specification(\n    request: SpecificationCreateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_specifications_create),\n):\n    \"\"\"Создание новой спецификации.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/specifications\", tags=[\"specifications\"])\n# === Specification CRUD ===\n@router.post(\"\", response_model=SpecificationResponse)\nasync def create_specification(\n    request: SpecificationCreateRequest,\n    db: AsyncSession = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_specifications_create),\n):\n    \"\"\"Создание новой спецификации.\"\"\"",
         "detail": "app.api.v1.domains.quality.specifications.router",
         "documentation": {}
     },
@@ -41996,7 +42420,7 @@
         "kind": 5,
         "importPath": "app.api.v1.domains.quality.testing.router",
         "description": "app.api.v1.domains.quality.testing.router",
-        "peekOfCode": "router = APIRouter(prefix=\"/testing\", tags=[\"testing\"])\n# === Test Case Endpoints ===\n@router.post(\"/test-cases\", response_model=TestCaseResponse)\nasync def create_test_case(\n    request: TestCaseCreateRequest,\n    db: SessionDep,\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_testing_create),\n):\n    \"\"\"Создание нового тест-кейса.\"\"\"",
+        "peekOfCode": "router = APIRouter(prefix=\"/testing\", tags=[\"testing\"])\n# === Test Case Endpoints ===\n@router.post(\"/test-cases\", response_model=TestCaseResponse)\nasync def create_test_case(\n    request: TestCaseCreateRequest,\n    db: AsyncSession = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n    _: None = Depends(require_testing_create),\n):\n    \"\"\"Создание нового тест-кейса.\"\"\"",
         "detail": "app.api.v1.domains.quality.testing.router",
         "documentation": {}
     },
@@ -45092,7 +45516,52 @@
         "kind": 6,
         "importPath": "app.deprected.schemas.auth",
         "description": "app.deprected.schemas.auth",
-        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",",
+        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n# === User Response Schemas ===\nclass UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")",
+        "detail": "app.deprected.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UserBasicResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.auth",
+        "description": "app.deprected.schemas.auth",
+        "peekOfCode": "class UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")\n    email: EmailStr = Field(..., description=\"Email\")\n    name: str = Field(..., description=\"Полное имя\")\n    username: Optional[str] = Field(None, description=\"Имя пользователя\")\n    is_active: bool = Field(..., description=\"Активен ли пользователь\")\n    is_email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    last_login_at: Optional[datetime] = Field(None, description=\"Последний вход\")\n    created_at: datetime = Field(..., description=\"Дата создания\")",
+        "detail": "app.deprected.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailedResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.auth",
+        "description": "app.deprected.schemas.auth",
+        "peekOfCode": "class UserDetailedResponse(UserBasicResponse):\n    \"\"\"Детальная информация о пользователе.\"\"\"\n    updated_at: Optional[datetime] = Field(None, description=\"Дата обновления\")\n    status: Optional[str] = Field(None, description=\"Статус пользователя\")\nclass UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"",
+        "detail": "app.deprected.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelationsResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.auth",
+        "description": "app.deprected.schemas.auth",
+        "peekOfCode": "class UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"\n    )\n# === OAuth2 Schemas ===\nclass OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"",
+        "detail": "app.deprected.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2LoginRequest",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.auth",
+        "description": "app.deprected.schemas.auth",
+        "peekOfCode": "class OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"\n    provider: AuthProvider = Field(..., description=\"OAuth2 провайдер\")\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n    redirect_uri: str = Field(..., description=\"Redirect URI\")\nclass OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")",
+        "detail": "app.deprected.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2CallbackRequest",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.auth",
+        "description": "app.deprected.schemas.auth",
+        "peekOfCode": "class OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",\n    # Token schemas\n    \"TokenBase\",",
         "detail": "app.deprected.schemas.auth",
         "documentation": {}
     },
@@ -50465,7 +50934,52 @@
         "kind": 6,
         "importPath": "app.deprected.schemas.token",
         "description": "app.deprected.schemas.token",
-        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",",
+        "peekOfCode": "class SecurityStatsResponse(BaseSchema):\n    \"\"\"Статистика безопасности.\"\"\"\n    failed_logins_today: int = Field(..., description=\"Неудачных входов сегодня\")\n    blocked_accounts: int = Field(..., description=\"Заблокированных аккаунтов\")\n    password_resets_today: int = Field(..., description=\"Сбросов паролей сегодня\")\n    suspicious_activities: int = Field(..., description=\"Подозрительных активностей\")\n# === User Response Schemas ===\nclass UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")",
+        "detail": "app.deprected.schemas.token",
+        "documentation": {}
+    },
+    {
+        "label": "UserBasicResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.token",
+        "description": "app.deprected.schemas.token",
+        "peekOfCode": "class UserBasicResponse(ResponseSchema):\n    \"\"\"Базовая информация о пользователе.\"\"\"\n    id: int = Field(..., description=\"ID пользователя\")\n    email: EmailStr = Field(..., description=\"Email\")\n    name: str = Field(..., description=\"Полное имя\")\n    username: Optional[str] = Field(None, description=\"Имя пользователя\")\n    is_active: bool = Field(..., description=\"Активен ли пользователь\")\n    is_email_verified: bool = Field(..., description=\"Подтвержден ли email\")\n    last_login_at: Optional[datetime] = Field(None, description=\"Последний вход\")\n    created_at: datetime = Field(..., description=\"Дата создания\")",
+        "detail": "app.deprected.schemas.token",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailedResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.token",
+        "description": "app.deprected.schemas.token",
+        "peekOfCode": "class UserDetailedResponse(UserBasicResponse):\n    \"\"\"Детальная информация о пользователе.\"\"\"\n    updated_at: Optional[datetime] = Field(None, description=\"Дата обновления\")\n    status: Optional[str] = Field(None, description=\"Статус пользователя\")\nclass UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"",
+        "detail": "app.deprected.schemas.token",
+        "documentation": {}
+    },
+    {
+        "label": "UserWithRelationsResponse",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.token",
+        "description": "app.deprected.schemas.token",
+        "peekOfCode": "class UserWithRelationsResponse(UserDetailedResponse):\n    \"\"\"Пользователь с загруженными связями.\"\"\"\n    profile: Optional[Dict[str, Any]] = Field(None, description=\"Профиль пользователя\")\n    company: Optional[Dict[str, Any]] = Field(None, description=\"Компания пользователя\")\n    role_assignments: Optional[List[Dict[str, Any]]] = Field(\n        default_factory=list, description=\"Назначения ролей\"\n    )\n# === OAuth2 Schemas ===\nclass OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"",
+        "detail": "app.deprected.schemas.token",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2LoginRequest",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.token",
+        "description": "app.deprected.schemas.token",
+        "peekOfCode": "class OAuth2LoginRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 аутентификации.\"\"\"\n    provider: AuthProvider = Field(..., description=\"OAuth2 провайдер\")\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n    redirect_uri: str = Field(..., description=\"Redirect URI\")\nclass OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")",
+        "detail": "app.deprected.schemas.token",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2CallbackRequest",
+        "kind": 6,
+        "importPath": "app.deprected.schemas.token",
+        "description": "app.deprected.schemas.token",
+        "peekOfCode": "class OAuth2CallbackRequest(BaseSchema):\n    \"\"\"Схема для OAuth2 callback.\"\"\"\n    code: str = Field(..., description=\"Authorization code\")\n    state: Optional[str] = Field(None, description=\"State parameter\")\n__all__ = [\n    # Enums\n    \"TokenType\",\n    \"AuthProvider\",\n    # Token schemas\n    \"TokenBase\",",
         "detail": "app.deprected.schemas.token",
         "documentation": {}
     },
@@ -53404,12 +53918,66 @@
         "documentation": {}
     },
     {
+        "label": "GitHubOAuthError",
+        "kind": 6,
+        "importPath": "app.services.github_oauth_service",
+        "description": "app.services.github_oauth_service",
+        "peekOfCode": "class GitHubOAuthError(ServiceError):\n    \"\"\"Ошибки GitHub OAuth.\"\"\"\n    pass\nclass GitHubOAuthService(BaseService):\n    \"\"\"Сервис для работы с GitHub OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"GitHubOAuthService\"\n    def __init__(self):\n        self.client_id = settings.github_oauth.client_id if hasattr(settings, 'github_oauth') else None\n        self.client_secret = settings.github_oauth.client_secret if hasattr(settings, 'github_oauth') else None",
+        "detail": "app.services.github_oauth_service",
+        "documentation": {}
+    },
+    {
+        "label": "GitHubOAuthService",
+        "kind": 6,
+        "importPath": "app.services.github_oauth_service",
+        "description": "app.services.github_oauth_service",
+        "peekOfCode": "class GitHubOAuthService(BaseService):\n    \"\"\"Сервис для работы с GitHub OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"GitHubOAuthService\"\n    def __init__(self):\n        self.client_id = settings.github_oauth.client_id if hasattr(settings, 'github_oauth') else None\n        self.client_secret = settings.github_oauth.client_secret if hasattr(settings, 'github_oauth') else None\n        self.redirect_uri = settings.github_oauth.redirect_uri if hasattr(settings, 'github_oauth') else None\n        self.scope = \"user:email\"\n        # URLs",
+        "detail": "app.services.github_oauth_service",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleOAuthError",
+        "kind": 6,
+        "importPath": "app.services.google_oauth_service",
+        "description": "app.services.google_oauth_service",
+        "peekOfCode": "class GoogleOAuthError(ServiceError):\n    \"\"\"Ошибки Google OAuth.\"\"\"\n    pass\nclass GoogleOAuthService(BaseService):\n    \"\"\"Сервис для работы с Google OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"GoogleOAuthService\"\n    def __init__(self):\n        self.client_id = settings.google_oauth.client_id if hasattr(settings, 'google_oauth') else None\n        self.client_secret = settings.google_oauth.client_secret if hasattr(settings, 'google_oauth') else None",
+        "detail": "app.services.google_oauth_service",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleOAuthService",
+        "kind": 6,
+        "importPath": "app.services.google_oauth_service",
+        "description": "app.services.google_oauth_service",
+        "peekOfCode": "class GoogleOAuthService(BaseService):\n    \"\"\"Сервис для работы с Google OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"GoogleOAuthService\"\n    def __init__(self):\n        self.client_id = settings.google_oauth.client_id if hasattr(settings, 'google_oauth') else None\n        self.client_secret = settings.google_oauth.client_secret if hasattr(settings, 'google_oauth') else None\n        self.redirect_uri = settings.google_oauth.redirect_uri if hasattr(settings, 'google_oauth') else None\n        self.scope = \"openid email profile\"\n        # URLs",
+        "detail": "app.services.google_oauth_service",
+        "documentation": {}
+    },
+    {
         "label": "ServiceIntegrationTester",
         "kind": 6,
         "importPath": "app.services.integration_test",
         "description": "app.services.integration_test",
         "peekOfCode": "class ServiceIntegrationTester:\n    \"\"\"Тестер интеграции сервисов.\"\"\"\n    def __init__(self):\n        self.test_results: Dict[str, Any] = {}\n        self.passed_tests = 0\n        self.failed_tests = 0\n    def log_test_result(self, test_name: str, success: bool, message: str = \"\"):\n        \"\"\"Логирование результата теста.\"\"\"\n        self.test_results[test_name] = {\"success\": success, \"message\": message}\n        if success:",
         "detail": "app.services.integration_test",
+        "documentation": {}
+    },
+    {
+        "label": "MicrosoftOAuthError",
+        "kind": 6,
+        "importPath": "app.services.microsoft_oauth_service",
+        "description": "app.services.microsoft_oauth_service",
+        "peekOfCode": "class MicrosoftOAuthError(ServiceError):\n    \"\"\"Ошибки Microsoft OAuth.\"\"\"\n    pass\nclass MicrosoftOAuthService(BaseService):\n    \"\"\"Сервис для работы с Microsoft OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"MicrosoftOAuthService\"\n    def __init__(self):\n        self.client_id = settings.microsoft_oauth.client_id if hasattr(settings, 'microsoft_oauth') else None\n        self.client_secret = settings.microsoft_oauth.client_secret if hasattr(settings, 'microsoft_oauth') else None",
+        "detail": "app.services.microsoft_oauth_service",
+        "documentation": {}
+    },
+    {
+        "label": "MicrosoftOAuthService",
+        "kind": 6,
+        "importPath": "app.services.microsoft_oauth_service",
+        "description": "app.services.microsoft_oauth_service",
+        "peekOfCode": "class MicrosoftOAuthService(BaseService):\n    \"\"\"Сервис для работы с Microsoft OAuth2.\"\"\"\n    def get_service_name(self) -> str:\n        return \"MicrosoftOAuthService\"\n    def __init__(self):\n        self.client_id = settings.microsoft_oauth.client_id if hasattr(settings, 'microsoft_oauth') else None\n        self.client_secret = settings.microsoft_oauth.client_secret if hasattr(settings, 'microsoft_oauth') else None\n        self.redirect_uri = settings.microsoft_oauth.redirect_uri if hasattr(settings, 'microsoft_oauth') else None\n        self.tenant_id = getattr(settings.microsoft_oauth, 'tenant_id', 'common') if hasattr(settings, 'microsoft_oauth') else 'common'\n        self.scope = \"openid email profile User.Read\"",
+        "detail": "app.services.microsoft_oauth_service",
         "documentation": {}
     },
     {
@@ -54695,7 +55263,7 @@
         "kind": 6,
         "importPath": "app.services.specification_service",
         "description": "app.services.specification_service",
-        "peekOfCode": "class SpecificationService(BaseService):\n    \"\"\"\n    Сервис для операций со спецификациями.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"SpecificationService\"\n    async def create_specification(\n        self,\n        db: AsyncSession,\n        spec_data: Dict[str, Any],",
+        "peekOfCode": "class SpecificationService(BaseService):\n    \"\"\"\n    Сервис для операций со спецификациями.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"SpecificationService\"\n    async def create_specification(\n        self, db: AsyncSession, spec_data: Dict[str, Any], current_user: User\n    ) -> Dict[str, Any]:\n        \"\"\"Создать спецификацию.\"\"\"",
         "detail": "app.services.specification_service",
         "documentation": {}
     },
@@ -54929,7 +55497,7 @@
         "kind": 6,
         "importPath": "app.services.testing_service",
         "description": "app.services.testing_service",
-        "peekOfCode": "class TestingService(BaseService):\n    \"\"\"\n    Сервис для операций тестирования.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"TestingService\"\n    # === Test Cases ===\n    async def create_test_case(\n        self,\n        db: AsyncSession,",
+        "peekOfCode": "class TestingService(BaseService):\n    \"\"\"\n    Сервис для операций тестирования.\n    \"\"\"\n    def get_service_name(self) -> str:\n        return \"TestingService\"\n    # === Test Cases ===\n    async def create_test_case(\n        self, db: AsyncSession, test_case_data: Dict[str, Any], current_user: User\n    ) -> Dict[str, Any]:",
         "detail": "app.services.testing_service",
         "documentation": {}
     },

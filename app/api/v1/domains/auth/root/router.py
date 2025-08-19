@@ -1,15 +1,35 @@
 from fastapi import APIRouter, HTTPException, Request, status, Depends
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
 from fastapi.security import OAuth2PasswordRequestForm
-from app.api.dependencies import CurrentUserDep, SessionDep
-from app.api.dependencies.core.database import SessionDep
-from app.api.v1.domains.auth.root.schemas import (
-from app.services.auth_service import AuthenticationService, authentication_service
-from app.services.token_service import TokenService, token_service
-from app.services.user_registration_service import (
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.api.v1.common.responses import (
+    create_response,
+    error_response,
+    success_response,
+    not_found_response,
+    forbidden_response,
+    unauthorized_response,
+)
+from app.api.dependencies.core.auth import CurrentUserDep, get_current_user
+from app.api.dependencies.core.database import SessionDep, get_db
+from app.api.v1.domains.auth.schemas import (
+    UserWithRelationsResponse,
+    LoginRequest,
+    RegisterRequest,
+    RefreshTokenRequest,
+    LogoutRequest,
+    LoginResponse,
+    RegisterResponse,
+    LogoutResponse,
+    TokenRefreshResponse,
+    UserBasicResponse,
+)
+from app.services.auth_service import authentication_service
+from app.services.user_registration_service import user_registration_service
 from app.crud.user import crud_user
-from app.api.v1.domains.identity.schemas import UserResponse
+from app.models.user import User
 from app.utils.logger import logger
+
 """
 Root Authentication Router.
 
@@ -17,29 +37,14 @@ Root Authentication Router.
 """
 
 
-
-    LoginRequest,
-    LoginResponse,
-    RegisterRequest,
-    RegisterResponse,
-    LogoutRequest,
-    LogoutResponse,
-    RefreshTokenRequest,
-    RefreshTokenResponse,
-    TokenValidationRequest,
-    TokenValidationResponse,
-)
-    UserRegistrationService,
-    user_registration_service,
-)
-
 router = APIRouter()
+
 
 @router.post("/login", response_model=LoginResponse, summary="Authenticate User")
 async def login(
     db: SessionDep,
     request_obj: Request,
-    form_data: OAuth2PasswordRequestForm = Depends(),
+    login_data: LoginRequest,
 ):
     """
     Authenticate user and return JWT tokens.
@@ -53,45 +58,50 @@ async def login(
         user = await authentication_service.authenticate_user(
             db=db,
             credentials={
-                "username_or_email": form_data.username,  # OAuth2PasswordRequestForm uses username field for email
-                "password": form_data.password,
+                "username_or_email": login_data.email or login_data.username,
+                "password": login_data.password,
             },
         )
 
         # Generate tokens
-        remember_me = hasattr(form_data, "remember_me") and form_data.remember_me
-        tokens = await token_service.create_tokens_for_user(
+        tokens = await authentication_service.create_user_tokens(
             db=db,
             user=user,
             request=request_obj,
-            remember_me=remember_me,
         )
 
-        # Update last login timestamp
-        await authentication_service.update_last_login(db, user)
+        # Get user data for response
+        user_data = UserBasicResponse(
+            id=user.id,
+            email=user.email,
+            name=user.name,
+            username=user.username,
+            is_active=user.is_active,
+            is_email_verified=user.is_email_verified,
+            last_login_at=user.last_login_at,
+            created_at=user.created_at,
+            company_id=user.company_id,
+        )
 
-        # Get detailed user info - reload with fresh session context
-        fresh_user = await crud_user.get_by_email_with_profile(db, email=user.email)
-        if not fresh_user:
-            return not_found_response(message="User not found")
-
-        from app.schemas.user import UserDetailed
-
-        user_detailed = UserDetailed.model_validate(fresh_user)
-
-        return LoginResponse(
-            access_token=tokens["access_token"],
-            refresh_token=tokens["refresh_token"],
-            token_type="bearer",
-            expires_in=tokens["expires_in"],
-            refresh_expires_in=tokens.get("refresh_expires_in"),
-            user=user_detailed,
+        return create_response(
+            data={
+                "access_token": tokens["access_token"],
+                "refresh_token": tokens["refresh_token"],
+                "token_type": "bearer",
+                "expires_in": tokens["expires_in"],
+                "refresh_expires_in": tokens.get("refresh_expires_in"),
+                "user": user_data.model_dump(),
+            },
+            message="Authentication successful",
+            status_code=status.HTTP_200_OK,
         )
 
     except Exception as e:
-        return unauthorized_response(message=str(e),
+        return unauthorized_response(
+            message=str(e),
             headers={"WWW-Authenticate": "Bearer"},
         )
+
 
 @router.get("/me", summary="Get Current User")
 async def get_current_user_info(
@@ -115,10 +125,10 @@ async def get_current_user_info(
         }
     }
 
+
 @router.post("/register", response_model=RegisterResponse, summary="Register User")
 async def register(
-    request: RegisterRequest,
-    *,
+    register_data: RegisterRequest,
     db: SessionDep,
 ):
     """
@@ -128,47 +138,51 @@ async def register(
     - **email**: Valid email address
     - **password**: Strong password
     - **confirm_password**: Password confirmation
-    - **company_id**: Optional company ID
+    - **company_name**: Optional company name
     """
     try:
+        # Check if user exists
+        existing_user = await crud_user.get_by_email(db, register_data.email)
+        if existing_user:
+            return error_response(
+                message="User with this email already exists",
+                status_code=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Create user data
+        user_data = {
+            "email": register_data.email,
+            "password": register_data.password,
+            "name": register_data.name,
+            "username": register_data.username,
+            "company_name": register_data.company_name,
+        }
+
         # Register user
-        from app.schemas.user import UserCreate
+        user = await user_registration_service.register_user(db, user_data)
 
-        user_data = UserCreate(
-            username=request.username,
-            email=request.email,
-            name=request.username,  # Use username as name for now
-            password=request.password,
-            company_id=request.company_id,
-        )
-        user = await user_registration_service.register_user(
-            db=db,
-            user_data=user_data,
-            send_verification=True,
-        )
-
-        # Get detailed user info
-        from app.schemas.user import UserDetailed
-
-        user_detailed = UserDetailed.model_validate(user)
-
-        return RegisterResponse(
-            user=user_detailed,
+        return create_response(
+            data={
+                "success": True,
+                "message": "User registered successfully. Please verify your email.",
+                "user_id": user.id,
+                "email_verification_required": True,
+            },
             message="User registered successfully",
-            email_verification_required=True,
-            verification_token_sent=True,
+            status_code=status.HTTP_201_CREATED,
         )
 
     except Exception as e:
         logger.error(f"Registration failed: {str(e)}", exc_info=True)
-        if "already exists" in str(e).lower():
-            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        return error_response(message=f"Registration failed: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=f"Registration failed: {str(e)}",
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
+
 
 @router.post("/logout", response_model=LogoutResponse, summary="Logout User")
 async def logout(
-    request: LogoutRequest,
-    *,
+    logout_data: LogoutRequest,
     current_user: CurrentUserDep,
     db: SessionDep,
 ):
@@ -176,26 +190,33 @@ async def logout(
     Logout user and revoke tokens.
 
     - **refresh_token**: Optional refresh token to revoke
-    - **logout_all**: Whether to logout from all devices
+    - **logout_all_devices**: Whether to logout from all devices
     """
     try:
-        revoked_count = await authentication_service.logout_user(
+        # Logout user
+        await authentication_service.logout_user(
             db=db,
-            user=current_user,
-            refresh_token=request.refresh_token,
-            logout_all=request.logout_all,
+            user_id=current_user.id,
+            refresh_token=logout_data.refresh_token,
+            logout_all_devices=logout_data.logout_all_devices,
         )
 
-        return LogoutResponse(
-            message="Successfully logged out",
-            revoked_tokens=revoked_count,
-            sessions_revoked=revoked_count,
+        return create_response(
+            data={
+                "success": True,
+                "message": "Successfully logged out",
+            },
+            message="Logout successful",
+            status_code=status.HTTP_200_OK,
         )
 
     except Exception as e:
-        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=str(e), status_code=status.HTTP_400_BAD_REQUEST
+        )
 
-@router.post("/logout/simple", response_model=LogoutResponse, summary="Simple Logout")
+
+@router.post("/logout/simple", summary="Simple Logout")
 async def logout_simple(
     current_user: CurrentUserDep,
     db: SessionDep,
@@ -204,27 +225,32 @@ async def logout_simple(
     Simple logout - revoke current user's tokens without body parameters.
     """
     try:
-        revoked_count = await authentication_service.logout_user(
+        await authentication_service.logout_user(
             db=db,
-            user=current_user,
+            user_id=current_user.id,
             refresh_token=None,
-            logout_all=False,
+            logout_all_devices=False,
         )
 
-        return LogoutResponse(
-            message="Successfully logged out",
-            revoked_tokens=revoked_count,
-            sessions_revoked=revoked_count,
+        return create_response(
+            data={
+                "success": True,
+                "message": "Successfully logged out",
+            },
+            message="Logout successful",
+            status_code=status.HTTP_200_OK,
         )
 
     except Exception as e:
-        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=str(e), status_code=status.HTTP_400_BAD_REQUEST
+        )
 
-@router.post("/refresh", response_model=RefreshTokenResponse, summary="Refresh Token")
+
+@router.post("/refresh", response_model=TokenRefreshResponse, summary="Refresh Token")
 async def refresh_token(
-    request: RefreshTokenRequest,
+    refresh_data: RefreshTokenRequest,
     request_obj: Request,
-    *,
     db: SessionDep,
 ):
     """
@@ -233,65 +259,31 @@ async def refresh_token(
     - **refresh_token**: Valid refresh token
     """
     try:
-        tokens = await token_service.refresh_access_token(
+        tokens = await authentication_service.refresh_access_token(
             db=db,
-            refresh_token=request.refresh_token,
+            refresh_token=refresh_data.refresh_token,
             request=request_obj,
         )
 
-        return RefreshTokenResponse(
-            access_token=tokens["access_token"],
-            refresh_token=tokens.get("refresh_token"),
-            token_type="bearer",
-            expires_in=tokens["expires_in"],
-            refresh_expires_in=tokens.get("refresh_expires_in"),
+        return create_response(
+            data={
+                "access_token": tokens["access_token"],
+                "token_type": "bearer",
+                "expires_in": tokens["expires_in"],
+            },
+            message="Token refreshed successfully",
+            status_code=status.HTTP_200_OK,
         )
 
     except Exception as e:
-        return unauthorized_response(message=str(e),
+        return unauthorized_response(
+            message=str(e),
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-@router.post(
-    "/validate-token", response_model=TokenValidationResponse, summary="Validate Token"
-)
+
+@router.post("/validate-token", summary="Validate Token")
 async def validate_token(
-    request: TokenValidationRequest,
-    *,
-    db: SessionDep,
-):
-    """
-    Validate JWT token and return user info if valid.
-
-    - **token**: JWT token to validate
-    """
-    try:
-        validation_result = await token_service.validate_token(
-            db=db,
-            token=request.token,
-        )
-
-        return TokenValidationResponse(
-            valid=validation_result["valid"],
-            expires_at=validation_result.get("expires_at"),
-            scopes=validation_result.get("scopes", []),
-            user=validation_result.get("user"),
-        )
-
-    except Exception as e:
-        return TokenValidationResponse(
-            valid=False,
-            expires_at=None,
-            scopes=[],
-            user=None,
-        )
-
-@router.post(
-    "/validate-current-token",
-    response_model=TokenValidationResponse,
-    summary="Validate Current Token",
-)
-async def validate_current_token(
     current_user: CurrentUserDep,
 ):
     """
@@ -300,21 +292,29 @@ async def validate_current_token(
     Returns information about the current valid token.
     """
     try:
-        from app.schemas.user import UserDetailed
+        user_data = UserBasicResponse(
+            id=current_user.id,
+            email=current_user.email,
+            name=current_user.name,
+            username=current_user.username,
+            is_active=current_user.is_active,
+            is_email_verified=current_user.is_email_verified,
+            last_login_at=current_user.last_login_at,
+            created_at=current_user.created_at,
+            company_id=current_user.company_id,
+        )
 
-        user_detailed = UserDetailed.model_validate(current_user)
-
-        return TokenValidationResponse(
-            valid=True,
-            expires_at=None,  # We don't have expiry info from current_user
-            scopes=[],  # We don't have scopes info from current_user
-            user=user_detailed,
+        return create_response(
+            data={
+                "valid": True,
+                "user": user_data.model_dump(),
+            },
+            message="Token is valid",
+            status_code=status.HTTP_200_OK,
         )
 
     except Exception as e:
-        return TokenValidationResponse(
-            valid=False,
-            expires_at=None,
-            scopes=[],
-            user=None,
+        return unauthorized_response(
+            message="Invalid token",
+            headers={"WWW-Authenticate": "Bearer"},
         )

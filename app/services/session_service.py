@@ -540,7 +540,7 @@ class SessionService(BaseService):
     ) -> int:
         """
         Отозвать сессии пользователя.
-        
+
         Args:
             db: Сессия базы данных
             user: Пользователь
@@ -548,7 +548,7 @@ class SessionService(BaseService):
             session_id: ID конкретной сессии для отзыва
             revoke_all: Отозвать все сессии
             except_current: Не отзывать текущую сессию
-            
+
         Returns:
             Количество отозванных сессий
         """
@@ -576,7 +576,9 @@ class SessionService(BaseService):
                 # Ничего не указано - отзываем текущую сессию
                 current_token_id = getattr(request.state, "current_token_id", None)
                 if current_token_id:
-                    success = await self.revoke_session(db, user, request, current_token_id)
+                    success = await self.revoke_session(
+                        db, user, request, current_token_id
+                    )
                     return 1 if success else 0
                 return 0
 

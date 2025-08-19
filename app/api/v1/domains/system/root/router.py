@@ -5,13 +5,19 @@ Root System Endpoints Router.
 """
 
 from fastapi import APIRouter, HTTPException, status, Depends
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.v1.common.responses import (
+    create_response,
+    error_response,
+    success_response,
+    not_found_response,
+    forbidden_response,
+    unauthorized_response,
+)
 
 from app.api.dependencies import CurrentUserDep
 from app.api.dependencies.permissions.base import PermissionChecker
 from app.core.constants import Permission
 from app.api.v2.domains.system.root.schemas import (
-
     RootResponse,
     SystemStatusResponse,
     SystemInfoResponse,
@@ -20,6 +26,7 @@ from app.services.admin_service import SystemService
 
 permission_checker = PermissionChecker()
 router = APIRouter()
+
 
 @router.get(
     "/",
@@ -50,7 +57,11 @@ async def get_root():
             },
         )
     except Exception as e:
-        return error_response(message=f"Failed to get system information: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=f"Failed to get system information: {str(e)}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
+
 
 @router.get(
     "/status",
@@ -83,7 +94,11 @@ async def get_system_status(current_user: CurrentUserDep):
             disk_usage=status_info.disk_usage,
         )
     except Exception as e:
-        return error_response(message=f"Failed to get system status: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=f"Failed to get system status: {str(e)}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
+
 
 @router.get(
     "/info",
@@ -118,4 +133,7 @@ async def get_system_info(current_user: CurrentUserDep):
             security_settings=info.security_settings,
         )
     except Exception as e:
-        return error_response(message=f"Failed to get system information: {str(e)}", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=f"Failed to get system information: {str(e)}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )

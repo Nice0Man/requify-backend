@@ -1,106 +1,112 @@
-from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import APIRouter, Depends, HTTPException, Request, status
-from app.api.v1.common.responses import create_response, error_response
-from app.api.dependencies import CurrentUserDep, SessionDep
+"""
+Sessions Management Router.
+
+Роутер для управления пользовательскими сессиями.
+"""
+
+from fastapi import APIRouter, HTTPException, status, Request
+from app.api.dependencies.core.auth import CurrentUserDep
 from app.api.dependencies.core.database import SessionDep
-from app.api.v1.domains.auth.sessions.schemas import (
-from app.services.session_service import session_service
-"""
-Session Management Router.
-
-Роутер для управления сессиями пользователей.
-"""
-
-
-
-    SessionListResponse,
-    RevokeSessionRequest,
-    RevokeSessionResponse,
-)
+from app.api.v1.common.responses import create_response, success_response, error_response
+from app.api.v1.domains.auth.schemas import SessionListResponse, SessionInfo
+from app.services.auth_service import authentication_service
 
 router = APIRouter()
 
-@router.get("/", response_model=SessionListResponse, summary="Get User Sessions")
-async def get_user_sessions(
-    db: SessionDep,
+
+@router.get("/", summary="List User Sessions")
+async def list_sessions(
     current_user: CurrentUserDep,
-    request: Request = None,
-    active_only: bool = True,
+    db: SessionDep,
 ):
     """
-    Get list of user active sessions.
+    Получить список активных сессий пользователя.
 
-    - **active_only**: Only return active sessions
+    Возвращает информацию о всех активных сессиях текущего пользователя
+    включая IP адреса, устройства и время последней активности.
     """
     try:
-        sessions = await session_service.get_user_sessions(
+        # Получаем активные сессии пользователя
+        sessions_data = await authentication_service.get_user_sessions(
             db=db,
-            user=current_user,
-            request=request,
-            active_only=active_only,
+            user_id=current_user.id
         )
-
-        # Find current session
-        current_session_id = None
-        for session in sessions:
-            if session.is_current:
-                current_session_id = session.id
-                break
-
-        return SessionListResponse(
-            sessions=sessions,
-            total=len(sessions),
-            current_session_id=current_session_id,
+        
+        return create_response(
+            data=sessions_data,
+            message="Sessions retrieved successfully",
+            status_code=status.HTTP_200_OK,
         )
-
     except Exception as e:
         return error_response(
-            message=str(e),
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+            message=f"Failed to retrieve sessions: {str(e)}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         )
 
-@router.post("/revoke", response_model=RevokeSessionResponse, summary="Revoke Sessions")
-async def revoke_sessions(
-    db: SessionDep,
-    request: RevokeSessionRequest,
+
+@router.delete("/{session_id}", summary="Revoke Session")
+async def revoke_session(
+    session_id: str,
     current_user: CurrentUserDep,
-    request_obj: Request = None,
+    db: SessionDep,
 ):
     """
-    Revoke user sessions.
+    Отозвать конкретную сессию.
 
-    - **session_id**: Specific session ID to revoke (optional)
-    - **revoke_all**: Revoke all sessions
-    - **except_current**: Keep current session when revoking all
+    Завершает указанную сессию и аннулирует связанные токены.
     """
     try:
-        revoked_count = await session_service.revoke_user_sessions(
+        # Отзываем конкретную сессию
+        await authentication_service.revoke_session(
             db=db,
-            user=current_user,
-            request=request_obj,
-            session_id=request.session_id,
-            revoke_all=request.revoke_all,
-            except_current=request.except_current,
+            user_id=current_user.id,
+            session_id=session_id
         )
-
-        message = "Session revoked successfully"
-        if request.revoke_all:
-            if request.except_current:
-                message = (
-                    f"All sessions except current revoked ({revoked_count} sessions)"
-                )
-            else:
-                message = f"All sessions revoked ({revoked_count} sessions)"
-        elif request.session_id:
-            message = "Specific session revoked"
-
-        return RevokeSessionResponse(
-            message=message,
-            revoked_sessions=revoked_count,
+        
+        return create_response(
+            data={
+                "success": True,
+                "message": f"Session {session_id} revoked successfully",
+            },
+            message="Session revoked successfully",
+            status_code=status.HTTP_200_OK,
         )
-
     except Exception as e:
         return error_response(
-            message=str(e),
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+            message=f"Failed to revoke session: {str(e)}",
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
+
+
+@router.delete("/", summary="Revoke All Sessions")
+async def revoke_all_sessions(
+    current_user: CurrentUserDep,
+    db: SessionDep,
+):
+    """
+    Отозвать все сессии пользователя.
+
+    Завершает все активные сессии пользователя кроме текущей.
+    """
+    try:
+        # Отзываем все сессии кроме текущей
+        revoked_count = await authentication_service.revoke_all_user_sessions(
+            db=db,
+            user_id=current_user.id,
+            except_current=True
+        )
+        
+        return create_response(
+            data={
+                "success": True,
+                "revoked_sessions": revoked_count,
+                "message": "All other sessions revoked successfully",
+            },
+            message="All sessions revoked successfully",
+            status_code=status.HTTP_200_OK,
+        )
+    except Exception as e:
+        return error_response(
+            message=f"Failed to revoke sessions: {str(e)}",
+            status_code=status.HTTP_400_BAD_REQUEST,
         )

@@ -15,14 +15,12 @@ async def require_specifications_access(
 ):
     """Проверка доступа к спецификациям."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.VIEW_SPECIFICATIONS
+        db=db, user_id=current_user.id, permission=Permission.VIEW_SPECIFICATIONS
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to access specifications"
+            detail="Insufficient permissions to access specifications",
         )
     return True
 
@@ -33,14 +31,12 @@ async def require_specifications_create(
 ):
     """Проверка разрешения на создание спецификаций."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.CREATE_SPECIFICATION
+        db=db, user_id=current_user.id, permission=Permission.CREATE_SPECIFICATION
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to create specifications"
+            detail="Insufficient permissions to create specifications",
         )
     return True
 
@@ -51,14 +47,12 @@ async def require_specifications_edit(
 ):
     """Проверка разрешения на редактирование спецификаций."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.EDIT_SPECIFICATION
+        db=db, user_id=current_user.id, permission=Permission.EDIT_SPECIFICATION
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to edit specifications"
+            detail="Insufficient permissions to edit specifications",
         )
     return True
 
@@ -69,14 +63,12 @@ async def require_testing_access(
 ):
     """Проверка доступа к тестированию."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.VIEW_TESTS
+        db=db, user_id=current_user.id, permission=Permission.VIEW_TESTS
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to access testing"
+            detail="Insufficient permissions to access testing",
         )
     return True
 
@@ -87,14 +79,12 @@ async def require_testing_create(
 ):
     """Проверка разрешения на создание тестов."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.CREATE_TEST
+        db=db, user_id=current_user.id, permission=Permission.CREATE_TEST
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to create tests"
+            detail="Insufficient permissions to create tests",
         )
     return True
 
@@ -105,14 +95,12 @@ async def require_testing_execute(
 ):
     """Проверка разрешения на выполнение тестов."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.EXECUTE_TEST
+        db=db, user_id=current_user.id, permission=Permission.EXECUTE_TEST
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to execute tests"
+            detail="Insufficient permissions to execute tests",
         )
     return True
 
@@ -123,14 +111,12 @@ async def require_reports_access(
 ):
     """Проверка доступа к отчетам."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.VIEW_REPORTS
+        db=db, user_id=current_user.id, permission=Permission.VIEW_REPORTS
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to access reports"
+            detail="Insufficient permissions to access reports",
         )
     return True
 
@@ -141,13 +127,11 @@ async def require_reports_generate(
 ):
     """Проверка разрешения на генерацию отчетов."""
     has_permission = await permission_service.check_permission(
-        db=db, 
-        user_id=current_user.id, 
-        permission=Permission.GENERATE_REPORT
+        db=db, user_id=current_user.id, permission=Permission.GENERATE_REPORT
     )
     if not has_permission:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="Insufficient permissions to generate reports"
+            detail="Insufficient permissions to generate reports",
         )
     return True

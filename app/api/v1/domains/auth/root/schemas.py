@@ -17,6 +17,7 @@ from app.api.v1.common.schemas import (
 
 if TYPE_CHECKING:
     from app.api.v1.domains.identity.schemas import UserResponse as UserDetailed
+    from app.api.v1.domains.auth.schemas import UserWithRelationsResponse
 
 
 # === Response Schemas ===
@@ -69,7 +70,8 @@ class TokenPair(BaseSchema):
 class LoginRequest(BaseSchema):
     """Схема для запроса аутентификации."""
 
-    email: EmailStr = Field(..., description="Email пользователя")
+    email: Optional[EmailStr] = Field(None, description="Email пользователя")
+    username: Optional[str] = Field(None, description="Имя пользователя")
     password: str = Field(..., min_length=1, description="Пароль")
     remember_me: bool = Field(default=False, description="Запомнить меня")
 
@@ -77,9 +79,18 @@ class LoginRequest(BaseSchema):
     @classmethod
     def validate_email(cls, v):
         """Валидация email."""
-        if not v or not str(v).strip():
-            raise ValueError("Email cannot be empty")
-        return str(v).lower().strip()
+        if v is not None:
+            if not str(v).strip():
+                raise ValueError("Email cannot be empty")
+            return str(v).lower().strip()
+        return v
+
+    @model_validator(mode="after")
+    def validate_credentials(self):
+        """Валидация учетных данных."""
+        if not self.email and not self.username:
+            raise ValueError("Either email or username is required")
+        return self
 
 
 class LoginResponse(BaseSchema):
@@ -92,6 +103,7 @@ class LoginResponse(BaseSchema):
     refresh_expires_in: Optional[int] = Field(
         None, description="Время жизни refresh токена в секундах"
     )
+    user: "UserWithRelationsResponse" = Field(..., description="Информация о пользователе")
 
 
 # === Register Schemas ===
@@ -106,16 +118,20 @@ class RegisterRequest(CreateSchema, ValidationMixin):
     используется для backend API.
     """
 
-    username: str = Field(
-        ..., min_length=2, max_length=50, description="Имя пользователя"
+    username: Optional[str] = Field(
+        None, min_length=2, max_length=50, description="Имя пользователя"
     )
     email: EmailStr = Field(..., description="Email пользователя")
+    name: str = Field(..., min_length=1, max_length=100, description="Полное имя")
     password: str = Field(..., min_length=8, description="Пароль")
     confirm_password: str = Field(..., description="Подтверждение пароля")
-    company_id: Optional[int] = Field(
-        None, description="ID компании (если регистрируется в компании)"
+    company_name: Optional[str] = Field(
+        None, max_length=255, description="Название компании"
     )
-    auth0_id: Optional[str] = Field(None, description="Auth0 ID пользователя")
+    accept_terms: bool = Field(..., description="Принятие условий использования")
+    accept_privacy: bool = Field(
+        ..., description="Принятие политики конфиденциальности"
+    )
 
     @field_validator("username")
     @classmethod
@@ -180,6 +196,15 @@ class RegisterRequest(CreateSchema, ValidationMixin):
             raise ValueError("Пароли не совпадают")
         return self
 
+    @model_validator(mode="after")
+    def validate_terms(self):
+        """Проверка принятия условий."""
+        if not self.accept_terms:
+            raise ValueError("Terms of service must be accepted")
+        if not self.accept_privacy:
+            raise ValueError("Privacy policy must be accepted")
+        return self
+
 
 class RegisterResponse(BaseSchema):
     """
@@ -207,7 +232,7 @@ class LogoutRequest(CreateSchema):
     """Схема для запроса выхода из системы."""
 
     refresh_token: Optional[str] = Field(None, description="Refresh токен для отзыва")
-    logout_all: bool = Field(default=False, description="Выйти из всех устройств")
+    logout_all_devices: bool = Field(default=False, description="Выйти из всех устройств")
 
 
 class LogoutResponse(BaseSchema):

@@ -92,7 +92,9 @@ class EmailPasswordStrategy(IAuthenticationStrategy):
             raise ValidationError("Username/email and password are required")
 
         # Try to find user by email first
-        user = await crud_user.get_by_email_with_profile(db, email=username_or_email)
+        user = await crud_user.get_by_email_with_all_relations(
+            db, email=username_or_email
+        )
         if not user:
             # Try to find by username
             user = await crud_user.get_by_username_with_profile(

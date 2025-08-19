@@ -5,7 +5,14 @@ Main Authentication Domain Router.
 """
 
 from fastapi import APIRouter
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
+from app.api.v1.common.responses import (
+    create_response,
+    error_response,
+    success_response,
+    not_found_response,
+    forbidden_response,
+    unauthorized_response,
+)
 
 from .root import router as root_router
 from .password import router as password_router

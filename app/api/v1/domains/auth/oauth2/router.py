@@ -1,18 +1,26 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.v1.common.responses import create_response, error_response, success_response, not_found_response, forbidden_response, unauthorized_response
-from app.api.dependencies import get_current_user, SessionDep
-from app.api.dependencies.core.database import SessionDep
-from app.api.v1.domains.auth.oauth2.schemas import (
-from app.models.user import User
-from app.services.auth0_service import Auth0Service
 """
 OAuth2 Authentication Router.
 
 Роутер для OAuth2 интеграции (Auth0, Google, GitHub и др.).
 """
 
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.api.v1.common.responses import (
+    create_response,
+    error_response,
+    success_response,
+    not_found_response,
+    forbidden_response,
+    unauthorized_response,
+)
+from app.api.dependencies.core.auth import get_current_user
+from app.api.dependencies.core.database import get_db
+from app.models.user import User
+from app.services.auth0_service import Auth0Service
 
+from .schemas import (
     OAuth2AuthorizeRequest,
     OAuth2AuthorizeResponse,
     OAuth2CallbackRequest,
@@ -24,6 +32,150 @@ OAuth2 Authentication Router.
 )
 
 router = APIRouter()
+
+
+class OAuth2ProviderService:
+    """Фабрика OAuth2 провайдеров."""
+    
+    @staticmethod
+    async def get_authorization_url(provider: str, redirect_uri: str = None, state: str = None):
+        """Получить URL авторизации для провайдера."""
+        if provider == "auth0":
+            return await Auth0Service().get_authorization_url(
+                redirect_uri=redirect_uri,
+                state=state,
+            )
+        elif provider == "google":
+            # Реализация Google OAuth2
+            from app.services.google_oauth_service import GoogleOAuthService
+            return await GoogleOAuthService().get_authorization_url(
+                redirect_uri=redirect_uri,
+                state=state,
+            )
+        elif provider == "github":
+            # Реализация GitHub OAuth2
+            from app.services.github_oauth_service import GitHubOAuthService
+            return await GitHubOAuthService().get_authorization_url(
+                redirect_uri=redirect_uri,
+                state=state,
+            )
+        elif provider == "microsoft":
+            # Реализация Microsoft OAuth2
+            from app.services.microsoft_oauth_service import MicrosoftOAuthService
+            return await MicrosoftOAuthService().get_authorization_url(
+                redirect_uri=redirect_uri,
+                state=state,
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_501_NOT_IMPLEMENTED,
+                detail=f"Provider {provider} not implemented yet",
+            )
+
+    @staticmethod
+    async def handle_callback(provider: str, db: AsyncSession, code: str, state: str = None):
+        """Обработать callback от провайдера."""
+        if provider == "auth0":
+            return await Auth0Service().handle_callback(
+                db=db,
+                code=code,
+                state=state,
+            )
+        elif provider == "google":
+            from app.services.google_oauth_service import GoogleOAuthService
+            return await GoogleOAuthService().handle_callback(
+                db=db,
+                code=code,
+                state=state,
+            )
+        elif provider == "github":
+            from app.services.github_oauth_service import GitHubOAuthService
+            return await GitHubOAuthService().handle_callback(
+                db=db,
+                code=code,
+                state=state,
+            )
+        elif provider == "microsoft":
+            from app.services.microsoft_oauth_service import MicrosoftOAuthService
+            return await MicrosoftOAuthService().handle_callback(
+                db=db,
+                code=code,
+                state=state,
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_501_NOT_IMPLEMENTED,
+                detail=f"Provider {provider} not implemented yet",
+            )
+
+    @staticmethod
+    async def link_account(provider: str, db: AsyncSession, user: User, access_token: str):
+        """Привязать OAuth2 аккаунт к пользователю."""
+        if provider == "auth0":
+            return await Auth0Service().link_account(
+                db=db,
+                user=user,
+                access_token=access_token,
+            )
+        elif provider == "google":
+            from app.services.google_oauth_service import GoogleOAuthService
+            return await GoogleOAuthService().link_account(
+                db=db,
+                user=user,
+                access_token=access_token,
+            )
+        elif provider == "github":
+            from app.services.github_oauth_service import GitHubOAuthService
+            return await GitHubOAuthService().link_account(
+                db=db,
+                user=user,
+                access_token=access_token,
+            )
+        elif provider == "microsoft":
+            from app.services.microsoft_oauth_service import MicrosoftOAuthService
+            return await MicrosoftOAuthService().link_account(
+                db=db,
+                user=user,
+                access_token=access_token,
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_501_NOT_IMPLEMENTED,
+                detail=f"Provider {provider} not implemented yet",
+            )
+
+    @staticmethod
+    async def unlink_account(provider: str, db: AsyncSession, user: User):
+        """Отвязать OAuth2 аккаунт от пользователя."""
+        if provider == "auth0":
+            return await Auth0Service().unlink_account(
+                db=db,
+                user=user,
+            )
+        elif provider == "google":
+            from app.services.google_oauth_service import GoogleOAuthService
+            return await GoogleOAuthService().unlink_account(
+                db=db,
+                user=user,
+            )
+        elif provider == "github":
+            from app.services.github_oauth_service import GitHubOAuthService
+            return await GitHubOAuthService().unlink_account(
+                db=db,
+                user=user,
+            )
+        elif provider == "microsoft":
+            from app.services.microsoft_oauth_service import MicrosoftOAuthService
+            return await MicrosoftOAuthService().unlink_account(
+                db=db,
+                user=user,
+            )
+        else:
+            raise HTTPException(
+                status_code=status.HTTP_501_NOT_IMPLEMENTED,
+                detail=f"Provider {provider} not implemented yet",
+            )
+
 
 @router.post(
     "/authorize", response_model=OAuth2AuthorizeResponse, summary="OAuth2 Authorize"
@@ -39,25 +191,24 @@ async def oauth2_authorize(
     - **state**: Optional state parameter for CSRF protection
     """
     try:
-        if request.provider == "auth0":
-            authorization_data = await Auth0Service.get_authorization_url(
-                redirect_uri=request.redirect_uri,
-                state=request.state,
-            )
-        else:
-            # TODO: Implement other providers
-            raise HTTPException(
-                status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f with proper service layer"Provider {request.provider} not implemented yet",
-            )
+        authorization_data = await OAuth2ProviderService.get_authorization_url(
+            provider=request.provider,
+            redirect_uri=request.redirect_uri,
+            state=request.state,
+        )
 
         return OAuth2AuthorizeResponse(
             authorization_url=authorization_data["authorization_url"],
             state=authorization_data["state"],
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
-        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
 
 @router.post(
     "/callback/{provider}",
@@ -67,7 +218,7 @@ async def oauth2_authorize(
 async def oauth2_callback(
     provider: str,
     request: OAuth2CallbackRequest,
-    db: SessionDep,
+    db: AsyncSession = Depends(get_db),
 ):
     """
     Handle OAuth2 callback from provider.
@@ -83,23 +234,17 @@ async def oauth2_callback(
                 detail=f"OAuth2 error: {request.error} - {request.error_description}",
             )
 
-        if provider == "auth0":
-            auth_result = await Auth0Service.handle_callback(
-                db=db,
-                code=request.code,
-                state=request.state,
-            )
-        else:
-            # TODO: Implement other providers
-            raise HTTPException(
-                status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f with proper service layer"Provider {provider} not implemented yet",
-            )
+        auth_result = await OAuth2ProviderService.handle_callback(
+            provider=provider,
+            db=db,
+            code=request.code,
+            state=request.state,
+        )
 
         # Get detailed user info
-        from app.schemas.user import UserDetailed
+        from app.api.v1.domains.auth.schemas import UserWithRelationsResponse
 
-        user_detailed = UserDetailed.model_validate(auth_result["user"])
+        user_detailed = UserWithRelationsResponse.model_validate(auth_result["user"])
 
         return OAuth2CallbackResponse(
             access_token=auth_result["access_token"],
@@ -111,15 +256,23 @@ async def oauth2_callback(
             is_new_user=auth_result.get("is_new_user", False),
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
         if "invalid" in str(e).lower() or "expired" in str(e).lower():
-            return error_response(message=str(e), status_code=status.HTTP_400_BAD_REQUEST)
-        return error_response(message="OAuth2 authentication failed", status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return error_response(
+                message=str(e), status_code=status.HTTP_400_BAD_REQUEST
+            )
+        return error_response(
+            message="OAuth2 authentication failed",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
+
 
 @router.post("/link", response_model=OAuth2LinkResponse, summary="Link OAuth2 Account")
 async def link_oauth2_account(
-    db: SessionDep,
     request: OAuth2LinkRequest,
+    db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
     """
@@ -129,18 +282,12 @@ async def link_oauth2_account(
     - **access_token**: Access token from provider
     """
     try:
-        if request.provider == "auth0":
-            await Auth0Service.link_account(
-                db=db,
-                user=current_user,
-                access_token=request.access_token,
-            )
-        else:
-            # TODO: Implement other providers
-            raise HTTPException(
-                status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f with proper service layer"Provider {request.provider} not implemented yet",
-            )
+        await OAuth2ProviderService.link_account(
+            provider=request.provider,
+            db=db,
+            user=current_user,
+            access_token=request.access_token,
+        )
 
         return OAuth2LinkResponse(
             message="OAuth2 account linked successfully",
@@ -148,15 +295,20 @@ async def link_oauth2_account(
             provider=request.provider,
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
-        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
 
 @router.post(
     "/unlink", response_model=OAuth2UnlinkResponse, summary="Unlink OAuth2 Account"
 )
 async def unlink_oauth2_account(
-    db: SessionDep,
     request: OAuth2UnlinkRequest,
+    db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
     """
@@ -165,17 +317,11 @@ async def unlink_oauth2_account(
     - **provider**: OAuth2 provider to unlink
     """
     try:
-        if request.provider == "auth0":
-            await Auth0Service.unlink_account(
-                db=db,
-                user=current_user,
-            )
-        else:
-            # TODO: Implement other providers
-            raise HTTPException(
-                status_code=status.HTTP_501_NOT_IMPLEMENTED,
-                detail=f with proper service layer"Provider {request.provider} not implemented yet",
-            )
+        await OAuth2ProviderService.unlink_account(
+            provider=request.provider,
+            db=db,
+            user=current_user,
+        )
 
         return OAuth2UnlinkResponse(
             message="OAuth2 account unlinked successfully",
@@ -183,5 +329,9 @@ async def unlink_oauth2_account(
             provider=request.provider,
         )
 
+    except HTTPException:
+        raise
     except Exception as e:
-        return error_response(message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return error_response(
+            message=str(e), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

@@ -447,6 +447,47 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
         except Exception as e:
             return {"valid": False, "errors": [str(e)]}
 
+    async def get_by_email_with_all_relations(
+        self, db: AsyncSession, *, email: str
+    ) -> Optional[User]:
+        """Получить пользователя по email с предварительной загрузкой всех связей."""
+        from app.models.enhanced_role_system import UserRoleAssignment
+
+        stmt = (
+            select(User)
+            .where(User.email == email)
+            .options(
+                selectinload(User.profile),
+                selectinload(User.settings),
+                selectinload(User.company),
+                selectinload(User.role_assignments).selectinload(
+                    UserRoleAssignment.role
+                ),
+                selectinload(User.owned_projects),
+                selectinload(User.authored_requirements),
+                selectinload(User.authored_specifications),
+                selectinload(User.approved_specifications),
+                selectinload(User.authored_test_cases),
+                selectinload(User.authored_test_plans),
+                selectinload(User.executed_tests),
+                selectinload(User.comments),
+                selectinload(User.owned_teams),
+                selectinload(User.team_memberships),
+                selectinload(User.dashboard_preferences),
+                selectinload(User.notifications),
+                selectinload(User.dashboard_activities),
+                selectinload(User.dashboard_widgets),
+                selectinload(User.activities),
+                selectinload(User.user_notifications),
+                selectinload(User.group_versions),
+                selectinload(User.test_results),
+                selectinload(User.refresh_tokens),
+                selectinload(User.settings_history),
+            )
+        )
+        result = await db.execute(stmt)
+        return result.scalar_one_or_none()
+
     async def get_multi_filtered(
         self,
         db: AsyncSession,

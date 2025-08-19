@@ -384,6 +384,59 @@ class SecurityStatsResponse(BaseSchema):
     suspicious_activities: int = Field(..., description="Подозрительных активностей")
 
 
+# === User Response Schemas ===
+
+
+class UserBasicResponse(ResponseSchema):
+    """Базовая информация о пользователе."""
+
+    id: int = Field(..., description="ID пользователя")
+    email: EmailStr = Field(..., description="Email")
+    name: str = Field(..., description="Полное имя")
+    username: Optional[str] = Field(None, description="Имя пользователя")
+    is_active: bool = Field(..., description="Активен ли пользователь")
+    is_email_verified: bool = Field(..., description="Подтвержден ли email")
+    last_login_at: Optional[datetime] = Field(None, description="Последний вход")
+    created_at: datetime = Field(..., description="Дата создания")
+    company_id: Optional[int] = Field(None, description="ID компании")
+
+
+class UserDetailedResponse(UserBasicResponse):
+    """Детальная информация о пользователе."""
+
+    updated_at: Optional[datetime] = Field(None, description="Дата обновления")
+    status: Optional[str] = Field(None, description="Статус пользователя")
+
+
+class UserWithRelationsResponse(UserDetailedResponse):
+    """Пользователь с загруженными связями."""
+
+    profile: Optional[Dict[str, Any]] = Field(None, description="Профиль пользователя")
+    company: Optional[Dict[str, Any]] = Field(None, description="Компания пользователя")
+    role_assignments: Optional[List[Dict[str, Any]]] = Field(
+        default_factory=list, description="Назначения ролей"
+    )
+
+
+# === OAuth2 Schemas ===
+
+
+class OAuth2LoginRequest(BaseSchema):
+    """Схема для OAuth2 аутентификации."""
+
+    provider: AuthProvider = Field(..., description="OAuth2 провайдер")
+    code: str = Field(..., description="Authorization code")
+    state: Optional[str] = Field(None, description="State parameter")
+    redirect_uri: str = Field(..., description="Redirect URI")
+
+
+class OAuth2CallbackRequest(BaseSchema):
+    """Схема для OAuth2 callback."""
+
+    code: str = Field(..., description="Authorization code")
+    state: Optional[str] = Field(None, description="State parameter")
+
+
 __all__ = [
     # Enums
     "TokenType",
@@ -409,7 +462,7 @@ __all__ = [
     "EmailVerificationRequest",
     "EmailVerificationConfirm",
     # OAuth2 schemas
-    "OAuth2LoginRequest",
+    "OAuth2LoginRequest", 
     "OAuth2CallbackRequest",
     # Response schemas
     "LoginResponse",
@@ -424,4 +477,8 @@ __all__ = [
     # Security schemas
     "SecurityEventRequest",
     "SecurityStatsResponse",
+    # User response schemas
+    "UserBasicResponse",
+    "UserDetailedResponse",
+    "UserWithRelationsResponse",
 ]
